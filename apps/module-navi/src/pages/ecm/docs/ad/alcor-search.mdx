@@ -1,0 +1,245 @@
+import Html from 'src/components/Html'
+import Code from 'src/components/Code'
+import Note from 'src/components/Note'
+import { Tabs } from '@mantine/core'
+import Space from 'src/components/Space'
+
+import {
+  soloEllipseHtml,
+  soloListHtml,
+  soloDefaultWithTextHtml,
+  soloListWithTextHtml,
+  soloListTopTitleWithTextHtml,
+} from 'ecm/src/modules/alcor-search-v2/static'
+
+import {
+  integrationListHtml,
+  integrationEllipseHtml,
+  integrationDefaultWithTextHtml,
+  integrationListWithTextHtml,
+  integrationListTopTitleWithTextHtml,
+} from 'ecm/src/modules/alcor-search-v2/integration'
+
+export const meta = {
+  title: 'サーチアルコル',
+  description: 'eventページに検索結果のリンク集を作成',
+  url: '/ecm/docs/ad/alcor-search',
+  tags: ['商品', 'alcor', 'search', 'ad'],
+}
+
+# サーチアルコル
+
+<Note type='info'>
+2025年4月24日にコードの更新を行いました。  
+過去のversionをご覧になりたい方は[こちら](/ecm/docs/ad/alcor-search-v1)  をご覧ください
+基本的には本リファレンスのコードをご利用ください。
+</Note>
+
+<Space />
+
+サーチアルコルとは、アルコルの仕組みを使って、eventページに任意の検索結果のリンク集を作成することです。  
+導入の背景・メリットについて、アルコルの設定方法については、こちらの[サーチアルコル](https://confluence.rakuten-it.com/confluence/pages/viewpage.action?pageId=2273032730)（閲覧は社内環境限定）をご確認ください。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html adHighlight={true} content={soloEllipseHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html adHighlight={true} device='lg' content={soloEllipseHtml} />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={integrationEllipseHtml} />
+  </Tabs.Panel>
+</Tabs>
+
+## 使い方
+
+1. テンプレートを選んでアルコルを作成する
+
+    <Space />
+
+    アルコルの「商品一覧のHTMLを作成する」にある、PCの「HTMLを出力する 」で、サーチアルコルモジュール用のテンプレートである`ecm_alcor_search_1.html` を選択して、HTMLを出力してください。PC/SP共通利用が可能です。  
+    ※例えば、8つのサーチアルコルを置きたいなら、同じ数8つのアルコル作成が必要です。
+
+    <Space />
+
+2. 表示したい要素・レイアウトに応じたHTMLを選択する
+
+    <Space />
+
+    本ページのレイアウトから、表示したい要素・レイアウトのソースコードをコピーし、PC/SPページのHTMLの必要な場所に貼り付けてください。  
+    （PC/SP共通利用が可能です）必要に応じて、`class="d-grid d-grid-gap-16 d-grid-col-1 md-d-grid-col-3"` 部分、カラム数を指定するclass部分を書き換えます。
+
+    <Space />
+
+    <Note type='info'>
+      グリッドシステムについては[グリッド](/ecm/docs/css/grid/)を参照
+    </Note>
+
+    <Space />
+
+3. アルコルの出力HTMLパスと、表示したいテキスト・サーチ結果URL用のHTMLソースコードを追加する
+
+    <Space />
+
+    2.で貼り付けたHTMLの `<!--#include virtual="★★作成したsearchalcor01アルコルのパス★★"-->` 部分を  
+    includeのパス部分を、出力したHTMLのインクルードパス `/itemlist/20xxxx/****.html` と置き換えてください。  
+
+    <Space />
+
+    次に `<!--★★searchalcor01 keywordとsearch-urlとdescriptionを設定★★-->` 部分を  
+    下記のHTMLをコピーし、必要な内容に編集したもので置き換えてください。
+
+    <Space />
+
+<Code content={`
+<div data-key="keyword">★★虫眼鏡横テキスト★★</div> 
+<div data-key="search-url">https://search.rakuten.co.jp/search/mall★★サーチ結果URL★★</div>
+<div data-key="description">★★説明文テキスト（不要な場合はdivごと削除）★★</div>
+`} />
+
+<Space />
+
+`data-alcor-extra-data="searchalcor01"` と `data-alcor-data="searchalcor01"` はセットになります。値`"searchalcor01"`は任意です。 2つ以上サーチアルコルを並べる際は、適宜増やしてください。
+
+## レイアウト
+
+### カラムレイアウト枠無し
+
+旧ecm_search_alcor.html テンプレート利用のもの
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html adHighlight={true} content={soloEllipseHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html adHighlight={true} device='lg' content={soloEllipseHtml} />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={integrationEllipseHtml} />
+  </Tabs.Panel>
+</Tabs>
+
+### SPリスト・PCカラムレイアウト
+
+旧ecm_search_alcor_v2.htmlテンプレート利用のもの
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html adHighlight={true} content={soloListHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html adHighlight={true} device='lg' content={soloListHtml} />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={integrationListHtml} />
+  </Tabs.Panel>
+</Tabs>
+
+### カラムレイアウト・テキストあり
+
+旧ecm_search_alcor_text_with_padding_v3.htmlテンプレート利用のもの
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html adHighlight={true} content={soloDefaultWithTextHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html adHighlight={true} device='lg' content={soloDefaultWithTextHtml} />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={integrationDefaultWithTextHtml} />
+  </Tabs.Panel>
+</Tabs>
+
+### リストレイアウト・テキストあり
+
+旧ecm_search_alcor_sidelist_v3.htmlテンプレート利用のもの
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html adHighlight={true} content={soloListWithTextHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html adHighlight={true} device='lg' content={soloListWithTextHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={integrationListWithTextHtml} />
+  </Tabs.Panel>
+</Tabs>
+
+### リストレイアウト２・テキストあり
+
+旧ecm_search_alcor_toplist_v3.htmlテンプレート利用のもの
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html adHighlight={true} content={soloListTopTitleWithTextHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html adHighlight={true} device='lg' content={soloListTopTitleWithTextHtml} />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={integrationListTopTitleWithTextHtml} />
+  </Tabs.Panel>
+</Tabs>

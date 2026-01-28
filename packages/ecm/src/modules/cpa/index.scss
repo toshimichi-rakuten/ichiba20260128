@@ -1,0 +1,144 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+.ecm-cpa-image {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+
+  @include screen('md', 'up') {
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.ecm-cpa-link:hover {
+  @include screen('md', 'up') {
+    text-decoration: none;
+  }
+}
+
+.ecm-cpa-name {
+  @include text-xs;
+  @include clamp(2);
+  @include colorize-link($color-gray-1);
+
+  margin-top: $space-8;
+
+  height: calc(2em * $base-line-height);
+
+  // HACK: with 2em and text-xs, the third line slightly shows in Safari.
+  @supports (hanging-punctuation: first) and (font: -apple-system-body) and (-webkit-appearance: none) {
+    height: calc(1.925em * $base-line-height);
+  }
+
+  @include screen('md', 'up') {
+    @include text-sm;
+    height: calc(2em * $base-line-height);
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.ecm-cpa-price-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  margin: $space-8 0 0;
+}
+
+.ecm-cpa-price {
+  @include text-lg;
+  @include colorize-link($color-crimson);
+  @include font-roboto(500);
+
+  flex: 0 0 auto;
+  display: flex;
+  align-items: baseline;
+  margin-right: 6px;
+  font-weight: 500;
+  line-height: 1;
+  word-break: break-all;
+
+  @include screen('md', 'up') {
+    @include text-2xl;
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.ecm-cpa-price-unit {
+  @include text-sm;
+
+  font-weight: bold;
+}
+
+.ecm-cpa-freeshipping {
+  @include text-sm;
+  @include colorize-link($color-crimson);
+
+  font-weight: bold;
+
+  @include screen('md', 'up') {
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.ecm-cpa-review {
+  margin-top: $space-8;
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 1;
+
+  @include screen('md', 'up') {
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.ecm-cpa-review-rate {
+  @include text-12px;
+
+  color: #f2ab00;
+}
+
+.ecm-cpa-review-amount {
+  @include text-12px;
+
+  color: $color-gray-2;
+  margin-left: $space-4;
+}
+
+.ecm-cpa-horizontal {
+  @include screen('md', 'down') {
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: $space-16;
+    border-bottom: 1px solid $color-gray-5;
+
+    .ecm-cpa-image {
+      flex: 0 0 auto;
+      width: calc((100vw - 164px) / 12 * 4 + 36px);
+      margin-right: $space-12;
+    }
+  }
+}

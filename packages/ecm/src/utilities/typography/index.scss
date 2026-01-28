@@ -1,0 +1,208 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+@include util-all('text-10px') {
+  @include text-10px;
+}
+@include util-all('text-11px') {
+  @include text-11px;
+}
+@include util-all('text-12px') {
+  @include text-12px;
+}
+@include util-all('text-xs') {
+  @include text-xs;
+}
+@include util-all('text-sm') {
+  @include text-sm;
+}
+@include util-all('text-base') {
+  @include text-base;
+}
+@include util-all('text-lg') {
+  @include text-lg;
+}
+@include util-all('text-xl') {
+  @include text-xl;
+}
+@include util-all('text-2xl') {
+  @include text-2xl;
+}
+@include util-all('text-3xl') {
+  @include text-3xl;
+}
+@include util-all('text-4xl') {
+  @include text-4xl;
+}
+@include util-all('text-5xl') {
+  @include text-5xl;
+}
+@include util-all('text-6xl') {
+  @include text-6xl;
+}
+@include util-all('text-7xl') {
+  @include text-7xl;
+}
+@include util-all('font-weight-300') {
+  font-weight: 300;
+}
+@include util-all('font-weight-400') {
+  font-weight: 400;
+}
+@include util-all('font-weight-600') {
+  font-weight: 600;
+}
+@include util-all('font-weight-700') {
+  font-weight: 700;
+}
+@include util-all('font-weight-800') {
+  font-weight: 800;
+}
+@include util-all('font-weight-900') {
+  font-weight: 900;
+}
+@include util-all('font-weight-bold') {
+  font-weight: bold;
+}
+@include util-all('font-weight-bolder') {
+  font-weight: bolder;
+}
+@include util-all('font-weight-lighter') {
+  font-weight: lighter;
+}
+@include util-all('font-style-italic') {
+  font-style: italic;
+}
+@include util-all('font-style-normal') {
+  font-style: normal;
+}
+@include util-all('text-center') {
+  text-align: center;
+}
+@include util-all('text-left') {
+  text-align: left;
+}
+@include util-all('text-right') {
+  text-align: right;
+}
+@include util-all('line-height-1') {
+  line-height: 1;
+}
+@include util-all('line-height-1-third') {
+  line-height: 1.3;
+}
+@include util-all('line-height-1-half') {
+  line-height: 1.5;
+}
+@include util-all('line-height-2') {
+  line-height: 2;
+}
+@include util-all('font-roboto') {
+  font-family: Roboto;
+}
+@include util-all('font-yakuhan') {
+  font-family: YakuHanJPs;
+}
+
+@include util-all('text-10px', true) {
+  @include text-10px_important;
+}
+@include util-all('text-11px', true) {
+  @include text-11px_important;
+}
+@include util-all('text-12px', true) {
+  @include text-12px_important;
+}
+@include util-all('text-xs', true) {
+  @include text-xs_important;
+}
+@include util-all('text-sm', true) {
+  @include text-sm_important;
+}
+@include util-all('text-base', true) {
+  @include text-base_important;
+}
+@include util-all('text-lg', true) {
+  @include text-lg_important;
+}
+@include util-all('text-xl', true) {
+  @include text-xl_important;
+}
+@include util-all('text-2xl', true) {
+  @include text-2xl_important;
+}
+@include util-all('text-3xl', true) {
+  @include text-3xl_important;
+}
+@include util-all('text-4xl', true) {
+  @include text-4xl_important;
+}
+@include util-all('text-5xl', true) {
+  @include text-5xl_important;
+}
+@include util-all('text-6xl', true) {
+  @include text-6xl_important;
+}
+@include util-all('text-7xl', true) {
+  @include text-7xl_important;
+}
+@include util-all('font-weight-300', true) {
+  font-weight: 300 !important;
+}
+@include util-all('font-weight-400', true) {
+  font-weight: 400 !important;
+}
+@include util-all('font-weight-600', true) {
+  font-weight: 600 !important;
+}
+@include util-all('font-weight-700', true) {
+  font-weight: 700 !important;
+}
+@include util-all('font-weight-800', true) {
+  font-weight: 800 !important;
+}
+@include util-all('font-weight-900', true) {
+  font-weight: 900 !important;
+}
+@include util-all('font-weight-bold', true) {
+  font-weight: bold !important;
+}
+@include util-all('font-weight-bolder', true) {
+  font-weight: bolder !important;
+}
+@include util-all('font-weight-lighter', true) {
+  font-weight: lighter !important;
+}
+@include util-all('font-style-italic', true) {
+  font-style: italic !important;
+}
+@include util-all('font-style-normal', true) {
+  font-style: normal !important;
+}
+@include util-all('text-center', true) {
+  text-align: center !important;
+}
+@include util-all('text-left', true) {
+  text-align: left !important;
+}
+@include util-all('text-right', true) {
+  text-align: right !important;
+}
+@include util-all('line-height-1', true) {
+  line-height: 1 !important;
+}
+@include util-all('line-height-1-third', true) {
+  line-height: 1.3 !important;
+}
+@include util-all('line-height-1-half', true) {
+  line-height: 1.5 !important;
+}
+@include util-all('line-height-2', true) {
+  line-height: 2 !important;
+}
+@include util-all('font-roboto', true) {
+  font-family: Roboto !important;
+}
+@include util-all('font-yakuhan', true) {
+  font-family: YakuHanJPs !important;
+}

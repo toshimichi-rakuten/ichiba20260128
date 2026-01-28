@@ -1,0 +1,47 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import { SP2columnPC4column } from 'ecm/src/modules/alcor-deal-digitalcode/integration'
+import { staticSP2columnPC4column } from 'ecm/src/modules/alcor-deal-digitalcode/static'
+
+export const meta = {
+  title: 'アルコル（DEALデジタルコード版）',
+  description: '商品リスト作成ツール アルコルで利用できるHTMLテンプレート',
+  url: '/deal/docs/ad/alcor-deal-digitalcode',
+  tags: ['alcor', 'alcor-deal', 'アルコル', 'item'],
+}
+
+# アルコル（DEALデジタルコード版）
+
+本テンプレートは、スーパーDEALのデジタルコード販売ページで使用されています。POSAかごへ遷移するためのFORMが組み込まれているため、デジタルコード以外の商品にはご利用いただけません。
+
+## SP2カラム、PC4カラム
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html
+      scm={true}
+      content={ staticSP2columnPC4column }
+    />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='lg'>
+    <Html
+      scm={true}
+      device='lg'
+      content={ staticSP2columnPC4column }
+    />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={ SP2columnPC4column }/>
+  </Tabs.Panel>
+</Tabs>

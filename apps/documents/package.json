@@ -1,0 +1,41 @@
+{
+  "name": "documents",
+  "private": true,
+  "type": "module",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "next dev --port 3003",
+    "build": "next build",
+    "start": "npx http-server ./out",
+    "lint:js": "eslint \"src/**/*.{ts,tsx,js,jsx}\" --fix --cache",
+    "lint:css": "stylelint \"src/**/*.{scss}\" --fix --cache --allow-empty-input",
+    "format": "prettier \"src/**/*.{scss,ts,tsx,js,jsx}\" --write --cache"
+  },
+  "dependencies": {
+    "@fontsource/jetbrains-mono": "^5.2.8",
+    "@fontsource/noto-sans-jp": "^5.2.8",
+    "@mantine/core": "^5.10.5",
+    "@mdx-js/loader": "^2.3.0",
+    "@mdx-js/react": "^2.3.0",
+    "@next/mdx": "^12.3.4",
+    "@uidotdev/usehooks": "^2.4.1",
+    "canvas-confetti": "^1.9.3",
+    "ecm": "workspace:*",
+    "fet": "workspace:*",
+    "module-navi": "workspace:*",
+    "next": "14.0.1",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-frame-component": "5.2.4",
+    "scm": "workspace:*",
+    "virtua": "^0.33.2"
+  },
+  "devDependencies": {
+    "@types/mdx": "^2.0.9",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "^5",
+    "webpack": "5.74.0"
+  }
+}

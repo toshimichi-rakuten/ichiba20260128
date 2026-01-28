@@ -1,0 +1,157 @@
+import Html from 'src/components/Html'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'ecm/src/modules/campaign-details/default.html'
+import entryshopHtml from 'ecm/src/modules/campaign-details/entry-shop.html'
+import memberrankHtml from 'ecm/src/modules/campaign-details/member-rank.html'
+import couponHtml from 'ecm/src/modules/campaign-details/coupon.html'
+import prizeHtml from 'ecm/src/modules/campaign-details/prize.html'
+
+export const meta = {
+  title: 'キャンペーン詳細・ルール',
+  description: '項目名・リンクテキスト・リンク先が設定されている',
+  url: '/ecm/docs/campaign/campaign-details',
+  tags: ['campaign', 'details', 'rules'],
+}
+
+# キャンペーン詳細・ルール
+
+本ページに掲載のモジュールは、[CSにて定義されているキャンペーンルールのテンプレート](https://confluence.rakuten-it.com/confluence/pages/viewpage.action?pageId=1829277744)（閲覧は社内環境限定）に基づいて、項目名・リンクテキスト・リンク先が設定されています。PC・SP共通です。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="sp">SP</Tabs.Tab>
+    <Tabs.Tab value="lg">PC</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html device='sp' content={defaultHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={defaultHtml} />
+  </Tabs.Panel>
+</Tabs>
+
+## 注意事項
+
+市場FAQへのリンクについては、SP用のURLを設定していますが、FAQ側でデバイスでのリダイレクト対応がされていますので、PCでクリックされた場合は、PC用のページへリダイレクトします。  
+リンクテキスト・リンク先はテンプレートで指定のものになるので原則編集しないでください。  
+内容は各企画により、入稿原稿に従って適宜記載・制作してください。  
+本ページに掲載されていないキャンペーンの種類の制作時には、項目のパターンが近いものを選択し編集してご利用ください。  
+キャンペーンルールのテンプレート（閲覧は社内環境限定）で指定されている、太字、下線などのテキストのあしらいは、SP/PCページにも反映してください。
+
+## ポイントキャンペーン
+
+### ポイントアップ（店舗負担）
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="sp">SP</Tabs.Tab>
+    <Tabs.Tab value="lg">PC</Tabs.Tab>
+    <Tabs.Tab value="code">コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html device='sp' content={defaultHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={defaultHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={defaultHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+### エントリーで全ショップ○倍
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="sp">SP</Tabs.Tab>
+    <Tabs.Tab value="lg">PC</Tabs.Tab>
+    <Tabs.Tab value="code">コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html device='sp' content={entryshopHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={entryshopHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={entryshopHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+### 会員ランク別
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="sp">SP</Tabs.Tab>
+    <Tabs.Tab value="lg">PC</Tabs.Tab>
+    <Tabs.Tab value="code">コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html device='sp' content={memberrankHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={memberrankHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={memberrankHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## クーポン
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="sp">SP</Tabs.Tab>
+    <Tabs.Tab value="lg">PC</Tabs.Tab>
+    <Tabs.Tab value="code">コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html device='sp' content={couponHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={couponHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={couponHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## 懸賞
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="sp">SP</Tabs.Tab>
+    <Tabs.Tab value="lg">PC</Tabs.Tab>
+    <Tabs.Tab value="code">コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html device='sp' content={prizeHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={prizeHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={prizeHtml}/>
+  </Tabs.Panel>
+</Tabs>

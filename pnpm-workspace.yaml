@@ -1,0 +1,7 @@
+packages:
+  - 'apps/**'
+  - 'packages/**'
+  - 'tools/**'
+  - '.junkins'
+  - "!**/.next/**"
+  - "!**/dist/**"

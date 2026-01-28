@@ -1,0 +1,72 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import filledHtml from 'ecm/src/modules/badge/filled.html'
+import outlinedHtml from 'ecm/src/modules/badge/outlined.html'
+
+export const meta = {
+  title: 'ラベル',
+  description: 'サービスなどをラベル（バッジ）のように表示',
+  url: '/ecm/docs/ui/badge',
+  tags: ['badge', 'アイコン', 'icon'],
+}
+
+# ラベル
+
+サービスなどをラベル（バッジ）のように表示するモジュールです。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={filledHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={filledHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={filledHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={outlinedHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={outlinedHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={outlinedHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## 使い方
+
+フォントサイズに対して適切な余白を指定されています。フォントサイズは変更せず利用することを推奨します。
+
+<Space />
+
+<Note type='info'>
+  横並び余白について変更する場合は[CSSユーティリティ](/ecm/docs/css/)の `d-flex-gap-{4-80}` で指定してください
+</Note>

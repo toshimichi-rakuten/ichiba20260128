@@ -1,0 +1,367 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`JSONToHTML > should initialized 1`] = `
+"<div data-module-name="ecm-json-to-html">
+    <div style="margin-bottom: 16px; font-weight: bold">Updated: 2025/01/01</div>
+    <div>
+    <div>All: 1 / 20</div>
+
+    <div style="padding-left: 32px; display: grid; grid-template-columns: 1fr; grid-gap: 16px">
+      
+    <div>spuBasePoint Rate: 1 / 16</div>
+    <div style="padding-left: 32px; display: grid; grid-template-columns: 1fr; grid-gap: 16px">  </div>
+
+    <div style="padding-left: 32px; display: grid; grid-template-columns: 1fr; grid-gap: 16px"> 
+    <div style="display: flex; align-items: center">
+      <img style="width: 50px; height: 50px; margin-right: 8px" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_normal.png">
+      <div>spuStandard_v16_1</div>
+    </div>
+  
+    <div style="display: flex; align-items: center">
+      <img style="width: 50px; height: 50px; margin-right: 8px" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_mobile_v2.png">
+      <div>spuMobile_v26</div>
+    </div>
+  
+    <div style="display: flex; align-items: center">
+      <img style="width: 50px; height: 50px; margin-right: 8px" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_mobile_carrier_billing.png">
+      <div>spuMobileBilling_v20</div>
+    </div>
+  
+    <div style="display: flex; align-items: center">
+      <img style="width: 50px; height: 50px; margin-right: 8px" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_hikari.png">
+      <div>spuHikari_v19</div>
+    </div>
+  
+    <div style="display: flex; align-items: center">
+      <img style="width: 50px; height: 50px; margin-right: 8px" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_card.png">
+      <div>rakutenCard_v22_1</div>
+    </div>
+  
+    <div style="display: flex; align-items: center">
+      <img style="width: 50px; height: 50px; margin-right: 8px" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_card.png">
+      <div>spuCard_v22_1</div>
+    </div>
+  
+    <div style="display: flex; align-items: center">
+      <img style="width: 50px; height: 50px; margin-right: 8px" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_card_premium.png">
+      <div>spuPremiumCard_v22_1</div>
+    </div>
+  
+    <div style="display: flex; align-items: center">
+      <img style="width: 50px; height: 50px; margin-right: 8px" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_bank.png">
+      <div>spuBank_v24_1</div>
+    </div>
+  
+    <div style="display: flex; align-items: center">
+      <img style="width: 50px; height: 50px; margin-right: 8px" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_securities.png">
+      <div>spuSecuritiesIt_v24</div>
+    </div>
+  
+    <div style="display: flex; align-items: center">
+      <img style="width: 50px; height: 50px; margin-right: 8px" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_securities_us.png">
+      <div>spuSecuritiesUs_v24</div>
+    </div>
+  
+    <div style="display: flex; align-items: center">
+      <img style="width: 50px; height: 50px; margin-right: 8px" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_wallet_red.png">
+      <div>spuWallet_v25</div>
+    </div>
+  
+    <div style="display: flex; align-items: center">
+      <img style="width: 50px; height: 50px; margin-right: 8px" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_travel.png">
+      <div>spuTravel_v23</div>
+    </div>
+  
+    <div style="display: flex; align-items: center">
+      <img style="width: 50px; height: 50px; margin-right: 8px" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_app.png">
+      <div>spuApp_v23</div>
+    </div>
+  
+    <div style="display: flex; align-items: center">
+      <img style="width: 50px; height: 50px; margin-right: 8px" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_books.png">
+      <div>spuBooks_v26</div>
+    </div>
+  
+    <div style="display: flex; align-items: center">
+      <img style="width: 50px; height: 50px; margin-right: 8px" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_kobo.png">
+      <div>spuKobo_v26</div>
+    </div>
+  
+    <div style="display: flex; align-items: center">
+      <img style="width: 50px; height: 50px; margin-right: 8px" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_pasha.png">
+      <div>spuPasha_v23</div>
+    </div>
+  
+    <div style="display: flex; align-items: center">
+      <img style="width: 50px; height: 50px; margin-right: 8px" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_rba_app.png">
+      <div>spuRba_v23</div>
+    </div>
+  
+    <div style="display: flex; align-items: center">
+      <img style="width: 50px; height: 50px; margin-right: 8px" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_beauty.png">
+      <div>spuBeauty_v23</div>
+    </div>
+   </div>
+  
+    <div>bonusPoint Rate: 0 / 4</div>
+    <div style="padding-left: 32px; display: grid; grid-template-columns: 1fr; grid-gap: 16px"> 
+    <div>COUNTER</div>
+    <div>
+    <div>3</div>
+    <div></div>
+    <div></div>
+  </div>
+  
+    <div>COUNTER_TOTAL</div>
+    <div>
+    <div>3</div>
+    <div></div>
+    <div></div>
+  </div>
+  
+    <div>SHOP_LIST</div>
+    <div>
+    <div>286702</div>
+    <div>502941</div>
+    <div>505347</div>
+  </div>
+   </div>
+
+    <div style="padding-left: 32px; display: grid; grid-template-columns: 1fr; grid-gap: 16px"> 
+    <div style="display: flex; align-items: center">
+      <img style="width: 50px; height: 50px; margin-right: 8px" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/campaign_shop-hopping.png">
+      <div>kaimawari</div>
+    </div>
+  
+    <div style="display: flex; align-items: center">
+      <img style="width: 50px; height: 50px; margin-right: 8px" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/campaign_sports.png">
+      <div>sport_v2</div>
+    </div>
+  
+    <div style="display: flex; align-items: center">
+      <img style="width: 50px; height: 50px; margin-right: 8px" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/campaign_shop.png">
+      <div>shopx</div>
+    </div>
+   </div>
+  
+    </div>
+  </div>
+  
+  <template data-output="">
+    <div style="margin-bottom: 16px; font-weight: bold">Updated: ###lastUpdateDate###</div>
+    <div>###result###</div>
+  </template>
+
+  <template data-output-data="" data-type="html">
+    
+    
+  </template>
+
+  <template data-template="result">
+    <div>All: ###rate### / ###maxRate###</div>
+
+    <div style="padding-left: 32px; display: grid; grid-template-columns: 1fr; grid-gap: 16px">
+      ###displaySections###
+    </div>
+  </template>
+
+  <template data-template="result.displaySections" data-loop="true">
+    <div>###id### Rate: ###rate### / ###maxRate###</div>
+    <div style="padding-left: 32px; display: grid; grid-template-columns: 1fr; grid-gap: 16px"> ###status### </div>
+
+    <div style="padding-left: 32px; display: grid; grid-template-columns: 1fr; grid-gap: 16px"> ###campaigns### </div>
+  </template>
+
+  <template data-template="result.displaySections.campaigns" data-loop="true">
+    <div style="display: flex; align-items: center">
+      <img style="width: 50px; height: 50px; margin-right: 8px" src="###icon###">
+      <div>###id###</div>
+    </div>
+  </template>
+
+  <template data-template="result.displaySections.status" data-loop="true">
+    <div>###type###</div>
+    <div>###value###</div>
+  </template>
+
+  <template data-template="result.displaySections.status.value">
+    <div>###$0###</div>
+    <div>###$1###</div>
+    <div>###$2###</div>
+  </template>
+</div>
+"
+`;
+
+exports[`JSONToHTML Events > should listen for events 1`] = `
+"
+      <div id="j2h1" data-module-name="ecm-json-to-html" data-controlled="true">
+    <div style="margin-bottom: 16px; font-weight: bold;">Updated: 2025/01/01</div>
+    <div>
+        <div>All: 1 / 20</div>
+        <div style="padding-left: 32px; display: grid; grid-template-columns: 1fr; grid-gap: 16px;">
+          
+        <div>spuBasePoint Rate: 1 / 16</div>
+        <div style="padding-left: 32px; display: grid; grid-template-columns: 1fr; grid-gap: 16px">  </div>
+        <div style="padding-left: 32px; display: grid; grid-template-columns: 1fr; grid-gap: 16px"> 
+        <div style="display: flex; align-items: center">
+          <img style="width 50px; height: 50px; margin-right: 8px;" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_normal.png">
+          <div>spuStandard_v16_1</div>
+        </div>
+      
+        <div style="display: flex; align-items: center">
+          <img style="width 50px; height: 50px; margin-right: 8px;" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_mobile_v2.png">
+          <div>spuMobile_v26</div>
+        </div>
+      
+        <div style="display: flex; align-items: center">
+          <img style="width 50px; height: 50px; margin-right: 8px;" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_mobile_carrier_billing.png">
+          <div>spuMobileBilling_v20</div>
+        </div>
+      
+        <div style="display: flex; align-items: center">
+          <img style="width 50px; height: 50px; margin-right: 8px;" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_hikari.png">
+          <div>spuHikari_v19</div>
+        </div>
+      
+        <div style="display: flex; align-items: center">
+          <img style="width 50px; height: 50px; margin-right: 8px;" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_card.png">
+          <div>rakutenCard_v22_1</div>
+        </div>
+      
+        <div style="display: flex; align-items: center">
+          <img style="width 50px; height: 50px; margin-right: 8px;" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_card.png">
+          <div>spuCard_v22_1</div>
+        </div>
+      
+        <div style="display: flex; align-items: center">
+          <img style="width 50px; height: 50px; margin-right: 8px;" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_card_premium.png">
+          <div>spuPremiumCard_v22_1</div>
+        </div>
+      
+        <div style="display: flex; align-items: center">
+          <img style="width 50px; height: 50px; margin-right: 8px;" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_bank.png">
+          <div>spuBank_v24_1</div>
+        </div>
+      
+        <div style="display: flex; align-items: center">
+          <img style="width 50px; height: 50px; margin-right: 8px;" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_securities.png">
+          <div>spuSecuritiesIt_v24</div>
+        </div>
+      
+        <div style="display: flex; align-items: center">
+          <img style="width 50px; height: 50px; margin-right: 8px;" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_securities_us.png">
+          <div>spuSecuritiesUs_v24</div>
+        </div>
+      
+        <div style="display: flex; align-items: center">
+          <img style="width 50px; height: 50px; margin-right: 8px;" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_wallet_red.png">
+          <div>spuWallet_v25</div>
+        </div>
+      
+        <div style="display: flex; align-items: center">
+          <img style="width 50px; height: 50px; margin-right: 8px;" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_travel.png">
+          <div>spuTravel_v23</div>
+        </div>
+      
+        <div style="display: flex; align-items: center">
+          <img style="width 50px; height: 50px; margin-right: 8px;" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_app.png">
+          <div>spuApp_v23</div>
+        </div>
+      
+        <div style="display: flex; align-items: center">
+          <img style="width 50px; height: 50px; margin-right: 8px;" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_books.png">
+          <div>spuBooks_v26</div>
+        </div>
+      
+        <div style="display: flex; align-items: center">
+          <img style="width 50px; height: 50px; margin-right: 8px;" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_kobo.png">
+          <div>spuKobo_v26</div>
+        </div>
+      
+        <div style="display: flex; align-items: center">
+          <img style="width 50px; height: 50px; margin-right: 8px;" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_pasha.png">
+          <div>spuPasha_v23</div>
+        </div>
+      
+        <div style="display: flex; align-items: center">
+          <img style="width 50px; height: 50px; margin-right: 8px;" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_rba_app.png">
+          <div>spuRba_v23</div>
+        </div>
+      
+        <div style="display: flex; align-items: center">
+          <img style="width 50px; height: 50px; margin-right: 8px;" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/service_beauty.png">
+          <div>spuBeauty_v23</div>
+        </div>
+       </div>
+      
+        <div>bonusPoint Rate: 0 / 4</div>
+        <div style="padding-left: 32px; display: grid; grid-template-columns: 1fr; grid-gap: 16px"> 
+          <div>COUNTER</div>
+          <div>
+          <div>3</div>
+          <div></div>
+          <div></div>
+      </div>
+        
+          <div>COUNTER_TOTAL</div>
+          <div>
+          <div>3</div>
+          <div></div>
+          <div></div>
+      </div>
+        
+          <div>SHOP_LIST</div>
+          <div>
+          <div>286702</div>
+          <div>502941</div>
+          <div>505347</div>
+      </div>
+         </div>
+        <div style="padding-left: 32px; display: grid; grid-template-columns: 1fr; grid-gap: 16px"> 
+        <div style="display: flex; align-items: center">
+          <img style="width 50px; height: 50px; margin-right: 8px;" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/campaign_shop-hopping.png">
+          <div>kaimawari</div>
+        </div>
+      
+        <div style="display: flex; align-items: center">
+          <img style="width 50px; height: 50px; margin-right: 8px;" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/campaign_sports.png">
+          <div>sport_v2</div>
+        </div>
+      
+        <div style="display: flex; align-items: center">
+          <img style="width 50px; height: 50px; margin-right: 8px;" src="https://r.r10s.jp/com/inc/home/20080930/ris/img/spu_icon/campaign_shop.png">
+          <div>shopx</div>
+        </div>
+       </div>
+      
+        </div>
+      </div>
+  
+      <template data-output="true">
+    <div style="margin-bottom: 16px; font-weight: bold;">Updated: ###lastUpdateDate###</div>
+    <div>###result###</div>
+  </template><template data-template="result" data-loop="false">
+        <div>All: ###rate### / ###maxRate###</div>
+        <div style="padding-left: 32px; display: grid; grid-template-columns: 1fr; grid-gap: 16px;">
+          ###displaySections###
+        </div>
+      </template><template data-template="result.displaySections" data-loop="true">
+        <div>###id### Rate: ###rate### / ###maxRate###</div>
+        <div style="padding-left: 32px; display: grid; grid-template-columns: 1fr; grid-gap: 16px"> ###status### </div>
+        <div style="padding-left: 32px; display: grid; grid-template-columns: 1fr; grid-gap: 16px"> ###campaigns### </div>
+      </template><template data-template="result.displaySections.campaigns" data-loop="true">
+        <div style="display: flex; align-items: center">
+          <img style="width 50px; height: 50px; margin-right: 8px;" src="###icon###">
+          <div>###id###</div>
+        </div>
+      </template><template data-template="result.displaySections.status" data-loop="true">
+          <div>###type###</div>
+          <div>###value###</div>
+        </template><template data-template="result.displaySections.status.value" data-loop="false">
+          <div>###$0###</div>
+          <div>###$1###</div>
+          <div>###$2###</div>
+      </template></div>
+    "
+`;

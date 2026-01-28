@@ -1,0 +1,198 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'ecm/src/modules/floating/default.html'
+import closeHtml from 'ecm/src/modules/floating/close.html'
+import hiddenHtml from 'ecm/src/modules/floating/hidden.html'
+
+export const meta = {
+  title: 'フローティング',
+  description: '要素を画面に追従させる機能',
+  url: '/ecm/docs/js/floating',
+  tags: ['floating'],
+}
+
+# フローティング
+
+要素を画面に追従させる機能です。
+
+## 主な機能・特徴
+
+- 画面上の指定した位置に固定表示させることができます。
+- 閉じるボタンを設置して、非表示にすることができます。
+- スクロールに応じて表示・非表示とすることができます。表示位置の指定は、ページ上部からの距離または、要素の位置（id/class名）で指定することができます
+
+## 使い方
+
+### 位置の指定
+
+<Tabs keepMounted={false} defaultValue='demo' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='demo'>SP/PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='demo'>
+    <Html contentPadding={'0px'} device='lg' content={defaultHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={defaultHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+- `style="top: 16px; left: 16px"` によって、フローティングは常に画面の上の部分に浮かびます。
+
+<Space />
+
+<Note type='info'>
+  上記はサンプルとして `style="top: 16px; left: 16px"` を指定しておりますが、 ページのデザインなどに応じて、`top/left/bottom/right` のプロパティ値はカスタマイズして下さい
+</Note>
+
+### 閉じるボタン
+
+<Tabs keepMounted={false} defaultValue='demo' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='demo'>SP/PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='demo'>
+    <Html contentPadding={'0px'} device='lg' content={closeHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={closeHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+- 追従コンテンツのid 値と閉じるボタンの `aria-controls` の値を揃えます
+
+### スクロールに応じた表示・非表示
+
+<Tabs keepMounted={false} defaultValue='demo' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='demo'>SP/PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='demo'>
+    <Html contentPadding={'0px'} device='lg' content={hiddenHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={hiddenHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+`aria-hidden="true"` を指定  
+`data-show-at` の値に表示開始させたい要素のid（`#hogehoge`）またはclass（`.hogehoge`）を指定する、または、`data-show-threshold` の値にページ上部からの距離の数値（px単位不要）を指定します。
+
+## アトリビュート一覧
+
+<Tabs keepMounted={false} defaultValue='attribute' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="attribute">アトリビュート</Tabs.Tab>
+    <Tabs.Tab value="closeAttribute">閉じるボタンのアトリビュート</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value="attribute">
+    <table class="mdx-table">
+      <thead class="mdx-table-header">
+        <tr>
+          <th style={{minWidth: '240px', width: '240px'}}>アトリビュート</th>
+          <th style={{minWidth: '240px', width: '240px'}}>値</th>
+          <th style={{width: '100%'}}>メモ</th>
+        </tr>
+      </thead>
+      <tbody class="mdx-table-body">
+        <tr>
+          <td class="mdx-mono">`data-module-name`</td>
+          <td class="mdx-mono">"ecm-floating"</td>
+          <td>モジュール名</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`id`</td>
+          <td class="mdx-mono">string</td>
+          <td>モジュールのユニークID</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`data-show-at`</td>
+          <td class="mdx-mono">string</td>
+          <td>
+            <div>
+              指定されたセレクタの後に要素を表示する
+            </div>
+            <div style={{ marginTop: "16px"}}>
+              ※デフォルトで要素を非表示にした場合
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`data-show-threshold`</td>
+          <td class="mdx-mono">number</td>
+          <td>
+            <div>
+              表示されるスクロールの値
+            </div>
+            <div style={{ marginTop: "16px"}}>
+              ※デフォルトで要素を非表示にした場合
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`data-static`</td>
+          <td class="mdx-mono">
+            <div>
+              boolean
+            </div>
+            <div style={{ color: "#8f8f8f"}}>
+              デフォルト: false
+            </div>
+          </td>
+          <td>
+            要素を固定する（スティッキーを使用しない）かどうか<br />
+            `"true"` を設定した場合、要素が固定されてスクロールしてもスティッキーになりません
+          </td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`data-ignore-body-lock-scroll-event`</td>
+          <td class="mdx-mono">boolean</td>
+          <td>BodyLockのイベントを無視にする。</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`aria-hidden`</td>
+          <td class="mdx-mono">boolean</td>
+          <td>表示状況によって、自動的に `"true"/"false"` にセットされます</td>
+        </tr>
+      </tbody>
+    </table>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='closeAttribute'>
+    <table class="mdx-table">
+      <thead class="mdx-table-header">
+        <tr>
+          <th style={{minWidth: '240px', width: '240px'}}>アトリビュート</th>
+          <th style={{minWidth: '240px', width: '240px'}}>値</th>
+          <th style={{width: '100%'}}>メモ</th>
+        </tr>
+      </thead>
+      <tbody class="mdx-table-body">
+        <tr>
+          <td class="mdx-mono">`aria-controls`</td>
+          <td class="mdx-mono">string</td>
+          <td>`ecm-floating` 要素のユニークID（`id` の値）を設定</td>
+        </tr>
+      </tbody>
+    </table>
+  </Tabs.Panel>
+</Tabs>

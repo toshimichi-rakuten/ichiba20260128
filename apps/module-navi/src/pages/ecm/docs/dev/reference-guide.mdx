@@ -1,0 +1,1240 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+
+export const meta = {
+  title: 'リファレンスガイド',
+  description: 'マークダウン・ページ作成ガイド',
+  url: '/ecm/docs/dev/reference-guide',
+  tags: ['reference'],
+}
+
+# リファレンスガイド
+
+リファレンスは、**MDX**（Markdown上でJSXが使用出来る）をベースにして作成されております。  
+そのため、リファレンスの更新作業には、Markdown記法の知識があることが推奨されます。
+
+<Space />
+
+<Note type='info'>
+  [参考サイト](https://mdxjs.com/table-of-components/)
+</Note>
+
+## 作成ガイド
+
+リファレンスの作成は、本リファレンスガイドと既存のリファレンスファイルの中身を参考に、作成を進めてください。
+
+### リファレンスファイルの作業ディレクトリ
+
+`apps/module-navi/src/pages/`配下になります。（2023/12の時点）  
+該当のファイルを探して、修正してください。
+
+#### 新規ファイルを作成するとき
+
+1. ファイル名を決め、`*.mdx` ファイルを作成する
+
+    <Space />
+
+    `sample.mdx` のようにファイルを追加し、`apps/module-navi/src/pages/ecm/docs/〜` 配下の該当ディレクトリ先に格納します。
+
+    <Space />
+
+    例）
+
+    > `apps/module-navi/src/pages/ecm/docs/ui/sample.mdx`
+
+<Space />
+
+2. 作成したファイルを読み込む
+
+    <Space />
+
+    `apps/module-navi/src/toc.ts` ファイルで先ほど作成したファイルを読み込みます。  
+    読み込み方法はファイル内の他モジュールを参考にしてください。
+
+    <Space />
+
+    例）
+
+    > `import { meta as Sample } from 'src/pages/ecm/docs/ui/sample.mdx'`  
+    > 〜 省略 〜  
+    > `export const toc = [*, Sample, *]`
+
+### 必要なHTMLファイルの import
+
+リファレンスで読み込んで利用したいHTMLファイルは、下記のように `import` してください。  
+基本的に、`import` されたHTMLファイルは後述の「Code」「Html」コンポーネントで利用します。
+
+<Space />
+
+<Code content={`
+import defaultHtml from 'ecm/src/modules/floating/default.html'
+`} />
+
+### Meta情報の設定
+
+下記のようにMeta情報を設定してください。
+
+<Space />
+
+<Code language='javascript' content={`
+export const meta = {
+  title: 'タイトル',
+  description: 'テキストテキストテキストテキスト',
+  url: '/ecm/docs/〜',
+  tags: ['ワード', 'word'],
+}
+`} />
+
+#### 設定内容の詳細
+
+<table class="mdx-table">
+  <thead class="mdx-table-header">
+    <tr>
+      <th style={{minWidth: '210px', width: '210px'}}>キー（プロパティ名）</th>
+      <th style={{minWidth: '150px', width: '150px'}}>値</th>
+      <th style={{width: '100%'}}>メモ</th>
+    </tr>
+  </thead>
+  <tbody class="mdx-table-body">
+    <tr>
+      <td class="mdx-mono">`title`</td>
+      <td class="mdx-mono">string</td>
+      <td>
+        リファレンスのタイトルを設定してください<br />
+        ここで設定したタイトルが左サイドナビの項目名になります（基本的にはH1と同じ）
+      </td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`description`</td>
+      <td class="mdx-mono">string</td>
+      <td>
+        <div>
+          リファレンスについての説明文を設定してください<br />
+          ここで設定した説明文が検索したときの候補一覧のタイトル下に表示されるテキストになります。基本的にはH1の下にある文章からテキストを取得し、設定してください
+        </div>
+        <div style={{ marginTop: "16px"}}>
+          Sample）<br />
+          「企画ページの看板（画像・企画タイトル・リード文）のモジュールです。」 → 「企画ページの看板（画像・企画タイトル・リード文）」
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`url`</td>
+      <td class="mdx-mono">string</td>
+      <td>
+        <div>リファレンスのURLを設定してください（例、`/ecm/docs/ui/sample`）</div>
+        <div style={{ marginTop: "16px"}}>
+          **補足**<br />
+          リファレンスの開発において、`apps/module-navi/src/pages/` がページのディレクトリとして設定されています（`next.js` の設定）<br /><br />
+          そのため、`apps/module-navi/src/pages/ecm/docs/ui/sample.mdx` にファイルを作成した場合のURLは `localhost:3002/ecm/docs/ui/sample/` になります<br />
+          なので、`sample.mdx` のMeta情報の `url` として設定すべきものは、`/ecm/docs/ui/sample` となります
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`tags`</td>
+      <td class="mdx-mono">array</td>
+      <td>
+        検索したときにヒットさせたいワードを設定してください<br />
+        （`title` で設定されているワードと、`url` に含まれている英字は検索対象になるため、基本的に `tags`には設定不要です）
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+### アトリビュートの記述
+
+アトリビュートは、機能ごとにタブで分けて記載してください。  
+例えば、[アコーディオンメニュー](/ecm/docs/ui/accordion/#アトリビュート一覧)では、「アトリビュート」「トリガー アトリビュート」「コンテンツ アトリビュート」と3つのタブに分かれております。
+
+<Space />
+
+ただ、[上に戻る](/ecm/docs/ui/scroll-to-top/#アトリビュート一覧)のように複数に分ける必要がない場合、タブは使用せず直接テーブルコンポーネントを使用してください。
+
+<Space />
+
+<table class="mdx-table">
+  <thead class="mdx-table-header">
+    <tr>
+      <th style={{minWidth: '380px', width: '380px'}}>「アトリビュート」項目に設定する内容</th>
+      <th style={{minWidth: '380px', width: '380px'}}>「値」項目に設定する内容</th>
+      <th style={{width: '100%'}}>「メモ」項目に設定する内容</th>
+    </tr>
+  </thead>
+  <tbody class="mdx-table-body">
+    <tr>
+      <td class="mdx-mono">
+        <ul>
+          <li>
+          「id」のような属性名の前後を「\`」で囲む<br />
+          （例、`id`）
+          </li>
+          <li>
+            `td` 要素には英字の `font-family` を変更するため `class="mdx-mono"` のクラス名を指定<br />
+            （※「アトリビュート」項目以外でも必要に応じて使用してください）
+          </li>
+        </ul>
+      </td>
+      <td>
+        <div>挿入する値によって下記のように設定してください</div>
+        <div style={{ marginTop: "16px"}}>
+          固定値：挿入する値を「"」で囲む<br />
+          （例、"ecm-floating", " "）
+        </div>
+        <div>
+          変動値：挿入する値のデータ型を記入<br />
+          （データ型の種類、**string | number | boolean**）
+        </div>
+        <div style={{ marginTop: "16px"}}>
+          **重要**<br />
+          変動値について、JSで動的に付与される初期値（デフォルト）がある場合は記載してください。<br />
+          ※後述のフローティングの「アトリビュート一覧」、`data-static` を参考
+        </div>
+      </td>
+      <td>設定した値とアトリビュートがどういったものなのかを簡潔に説明してください</td>
+    </tr>
+  </tbody>
+</table>
+
+<Space />
+
+**Sample**（[フローティング](/ecm/docs/js/floating/#アトリビュート一覧)の「アトリビュート一覧」の記述）
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='code'  styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='code'>書き方</Tabs.Tab>
+    <Tabs.Tab value='demo'>結果</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='code'>
+    <Code content={`
+<Tabs keepMounted={false} defaultValue='attribute' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="attribute">アトリビュート</Tabs.Tab>
+    <Tabs.Tab value="closeAttribute">閉じるボタンのアトリビュート</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value="attribute">
+    <table class="mdx-table">
+      <thead class="mdx-table-header">
+        <tr>
+          <th style={{minWidth: '240px', width: '240px'}}>アトリビュート</th>
+          <th style={{minWidth: '240px', width: '240px'}}>値</th>
+          <th style={{width: '100%'}}>メモ</th>
+        </tr>
+      </thead>
+      <tbody class="mdx-table-body">
+        <tr>
+          <td class="mdx-mono">\`data-module-name\`</td>
+          <td class="mdx-mono">"ecm-floating"</td>
+          <td>モジュール名</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">\`id\`</td>
+          <td class="mdx-mono">string</td>
+          <td>モジュールのユニークID</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">\`data-show-at\`</td>
+          <td class="mdx-mono">string</td>
+          <td>
+            <div>
+              指定されたセレクタの後に要素を表示する
+            </div>
+            <div style={{ marginTop: "16px"}}>
+              ※デフォルトで要素を非表示にした場合
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">\`data-show-threshold\`</td>
+          <td class="mdx-mono">number</td>
+          <td>
+            <div>
+              表示されるスクロールの値
+            </div>
+            <div style={{ marginTop: "16px"}}>
+              ※デフォルトで要素を非表示にした場合
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">\`data-static\`</td>
+          <td class="mdx-mono">
+            <div>
+              boolean
+            </div>
+            <div style={{ color: "#8f8f8f"}}>
+              デフォルト: false
+            </div>
+          </td>
+          <td>
+            要素を固定する（スティッキーを使用しない）かどうか<br />
+            \`"true"\` を設定した場合、要素が固定されてスクロールしてもスティッキーになりません
+          </td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">\`data-pinned\`</td>
+          <td class="mdx-mono">boolean</td>
+          <td>スティッキーの状況によって、自動的に \`"true"/"false"\` にセットされます</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">\`aria-hidden\`</td>
+          <td class="mdx-mono">boolean</td>
+          <td>表示状況によって、自動的に \`"true"/"false"\` にセットされます</td>
+        </tr>
+      </tbody>
+    </table>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='closeAttribute'>
+    <table class="mdx-table">
+      <thead class="mdx-table-header">
+        <tr>
+          <th style={{minWidth: '240px', width: '240px'}}>アトリビュート</th>
+          <th style={{minWidth: '240px', width: '240px'}}>値</th>
+          <th style={{width: '100%'}}>メモ</th>
+        </tr>
+      </thead>
+      <tbody class="mdx-table-body">
+        <tr>
+          <td class="mdx-mono">\`aria-controls\`</td>
+          <td class="mdx-mono">string</td>
+          <td>\`ecm-floating\` 要素のID</td>
+        </tr>
+      </tbody>
+    </table>
+  </Tabs.Panel>
+</Tabs>
+    `}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='demo'>
+  <Tabs keepMounted={false} defaultValue='attribute' styles={{panel: { paddingTop: '24px' }}}>
+    <Tabs.List>
+      <Tabs.Tab value="attribute">アトリビュート</Tabs.Tab>
+      <Tabs.Tab value="closeAttribute">閉じるボタンのアトリビュート</Tabs.Tab>
+    </Tabs.List>
+
+    <Tabs.Panel value="attribute">
+      <table class="mdx-table">
+        <thead class="mdx-table-header">
+          <tr>
+            <th style={{minWidth: '240px', width: '240px'}}>アトリビュート</th>
+            <th style={{minWidth: '240px', width: '240px'}}>値</th>
+            <th style={{width: '100%'}}>メモ</th>
+          </tr>
+        </thead>
+        <tbody class="mdx-table-body">
+          <tr>
+            <td class="mdx-mono">`data-module-name`</td>
+            <td class="mdx-mono">"ecm-floating"</td>
+            <td>モジュール名</td>
+          </tr>
+          <tr>
+            <td class="mdx-mono">`id`</td>
+            <td class="mdx-mono">string</td>
+            <td>モジュールのユニークID</td>
+          </tr>
+          <tr>
+            <td class="mdx-mono">`data-show-at`</td>
+            <td class="mdx-mono">string</td>
+            <td>
+              <div>
+                指定されたセレクタの後に要素を表示する
+              </div>
+              <div style={{ marginTop: "16px"}}>
+                ※デフォルトで要素を非表示にした場合
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="mdx-mono">`data-show-threshold`</td>
+            <td class="mdx-mono">number</td>
+            <td>
+              <div>
+                表示されるスクロールの値
+              </div>
+              <div style={{ marginTop: "16px"}}>
+                ※デフォルトで要素を非表示にした場合
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="mdx-mono">`data-static`</td>
+            <td class="mdx-mono">
+              <div>
+                boolean
+              </div>
+              <div style={{ color: "#8f8f8f"}}>
+                デフォルト: false
+              </div>
+            </td>
+            <td>
+              要素を固定する（スティッキーを使用しない）かどうか<br />
+              `"true"` を設定した場合、要素が固定されてスクロールしてもスティッキーになりません
+            </td>
+          </tr>
+          <tr>
+            <td class="mdx-mono">`data-pinned`</td>
+            <td class="mdx-mono">boolean</td>
+            <td>スティッキーの状況によって、自動的に `"true"/"false"` にセットされます</td>
+          </tr>
+          <tr>
+            <td class="mdx-mono">`aria-hidden`</td>
+            <td class="mdx-mono">boolean</td>
+            <td>表示状況によって、自動的に `"true"/"false"` にセットされます</td>
+          </tr>
+        </tbody>
+      </table>
+    </Tabs.Panel>
+
+    <Tabs.Panel value='closeAttribute'>
+      <table class="mdx-table">
+        <thead class="mdx-table-header">
+          <tr>
+            <th style={{minWidth: '240px', width: '240px'}}>アトリビュート</th>
+            <th style={{minWidth: '240px', width: '240px'}}>値</th>
+            <th style={{width: '100%'}}>メモ</th>
+          </tr>
+        </thead>
+        <tbody class="mdx-table-body">
+          <tr>
+            <td class="mdx-mono">`aria-controls`</td>
+            <td class="mdx-mono">string</td>
+            <td>`ecm-floating` 要素のID</td>
+          </tr>
+        </tbody>
+      </table>
+    </Tabs.Panel>
+  </Tabs>
+  </Tabs.Panel>
+</Tabs>
+
+### apps/module-navi/src/page-files/ ディレクトリについて（※開発者向け）
+
+リファレンスの作成のためにカスタムReactコンポーネントが必要な場合は、`apps/module-navi/src/page-files`に配置してください。
+
+<Space />
+
+## コンポーネント（MDX）のチートシート
+
+`*.mdx` ファイルの上部で下記を `import` することにより、リファレンス内でレイアウトのためのコンポーネントが利用できます。
+
+- スペース（\<Space />）
+- カード（\<Note type='*'>〜\</Note>）
+- Code（\<Code />）
+- Html（\<Html />）
+- Blockquote（>）
+- タブ（\<Tabs>〜\</Tabs>）
+- テーブル（\<table>〜\</table>）
+
+<Space />
+
+<Code content={`
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+`}/>
+
+### スペース（＜Space /＞）
+
+テキストとコンポーネントの間や、コンポーネント同士の間にスペースを取りたい場合に利用します。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='code'  styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='code'>書き方</Tabs.Tab>
+    <Tabs.Tab value='demo'>結果</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='code'>
+    <Code content={`
+### 見出し
+
+テキストテキストテキストテキストテキストテキスト  
+テキストテキスト
+
+<Space />
+
+<Note type='default'>
+  Lorem ipsum dolor sit amet.
+</Note>
+
+<Space />
+
+<Note type='info'>
+  Lorem ipsum dolor sit amet.
+</Note>
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='demo' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='demo'>SP/PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='demo'>
+    <Html contentPadding={'0px'} device='lg' content={defaultHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={defaultHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+### 見出し
+    `}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='demo'>
+  ### 見出し
+
+  テキストテキストテキストテキストテキストテキスト  
+  テキストテキスト
+
+  <Space />
+
+  <Note type='default'>
+    Lorem ipsum dolor sit amet.
+  </Note>
+
+  <Space />
+
+  <Note type='info'>
+    Lorem ipsum dolor sit amet.
+  </Note>
+
+  <Space />
+
+  ＜Tabのコンポーネント（※見た目については省略）/＞
+
+  ### 見出し
+  </Tabs.Panel>
+</Tabs>
+
+### カード（＜Note type=’＊’＞〜＜/Note＞）
+
+カードのスタイルで強調したい情報がある場合に利用します。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='code'  styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='code'>書き方</Tabs.Tab>
+    <Tabs.Tab value='demo'>結果</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='code'>
+    <Code content={`
+<Note type='default'>
+  テキストテキストテキストテキストテキストテキスト  
+  テキストテキスト
+</Note>
+    `}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='demo'>
+  <Note type='default'>
+    テキストテキストテキストテキストテキストテキスト
+  </Note>
+  </Tabs.Panel>
+</Tabs>
+
+#### 使い方
+
+- カードの種類は4種類（default, info, warn, error）あるため目的に応じて使い分けてください
+- カード内にはリストは使用しないでください
+- カードで使用される文章は最大2行に収めてください
+- 基本的には左端のインデントは揃えてください（「書き方」を参考）
+
+<Space />
+
+<Note type='warn'>
+  行数が3つ以上になるときや、文章が長くなるときには使用しないでください。（代替としてはカードのコンポーネントをやめて、Markdownの「リスト」などを使用してください。）
+</Note>
+
+<Space />
+
+**良い例**
+
+<Note type='default'>
+  テキストテキストテキストテキストテキストテキスト
+</Note>
+
+<Space />
+
+**悪い例**
+
+<Note type='default'>
+  テキストテキストテキストテキストテキストテキスト  
+  テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト    
+  テキストテキストテキストテキストテキストテキスト
+</Note>
+
+#### パターン
+
+<Tabs keepMounted={false} defaultValue='default'  styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='default'>default</Tabs.Tab>
+    <Tabs.Tab value='info'>info</Tabs.Tab>
+    <Tabs.Tab value='warn'>warn</Tabs.Tab>
+    <Tabs.Tab value='error'>error</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='default'>
+    <Tabs keepMounted={false} defaultValue='demo' styles={{panel: { paddingTop: '24px' }}}>
+      <Tabs.List>
+        <Tabs.Tab value='code'>書き方</Tabs.Tab>
+        <Tabs.Tab value='demo'>結果</Tabs.Tab>
+      </Tabs.List>
+
+      <Tabs.Panel value='code'>
+        <Code content={`
+    <Note type='default'>
+      テキストテキストテキストテキストテキストテキスト
+    </Note>
+        `}/>
+      </Tabs.Panel>
+
+      <Tabs.Panel value='demo'>
+      <Note type='default'>
+        テキストテキストテキストテキストテキストテキスト
+      </Note>
+      </Tabs.Panel>
+    </Tabs>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='info'>
+    <Tabs keepMounted={false} defaultValue='demo' styles={{panel: { paddingTop: '24px' }}}>
+      <Tabs.List>
+        <Tabs.Tab value='code'>書き方</Tabs.Tab>
+        <Tabs.Tab value='demo'>結果</Tabs.Tab>
+      </Tabs.List>
+
+      <Tabs.Panel value='code'>
+        <Code content={`
+    <Note type='info'>
+      テキストテキストテキストテキストテキストテキスト
+    </Note>
+        `}/>
+      </Tabs.Panel>
+
+      <Tabs.Panel value='demo'>
+      <Note type='info'>
+        テキストテキストテキストテキストテキストテキスト
+      </Note>
+      </Tabs.Panel>
+    </Tabs>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='warn'>
+    <Tabs keepMounted={false} defaultValue='demo' styles={{panel: { paddingTop: '24px' }}}>
+      <Tabs.List>
+        <Tabs.Tab value='code'>書き方</Tabs.Tab>
+        <Tabs.Tab value='demo'>結果</Tabs.Tab>
+      </Tabs.List>
+
+      <Tabs.Panel value='code'>
+        <Code content={`
+    <Note type='warn'>
+      テキストテキストテキストテキストテキストテキスト
+    </Note>
+        `}/>
+      </Tabs.Panel>
+
+      <Tabs.Panel value='demo'>
+      <Note type='warn'>
+        テキストテキストテキストテキストテキストテキスト
+      </Note>
+      </Tabs.Panel>
+    </Tabs>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='error'>
+    <Tabs keepMounted={false} defaultValue='demo' styles={{panel: { paddingTop: '24px' }}}>
+      <Tabs.List>
+        <Tabs.Tab value='code'>書き方</Tabs.Tab>
+        <Tabs.Tab value='demo'>結果</Tabs.Tab>
+      </Tabs.List>
+
+      <Tabs.Panel value='code'>
+        <Code content={`
+    <Note type='error'>
+      テキストテキストテキストテキストテキストテキスト
+    </Note>
+        `}/>
+      </Tabs.Panel>
+
+      <Tabs.Panel value='demo'>
+      <Note type='error'>
+        テキストテキストテキストテキストテキストテキスト
+      </Note>
+      </Tabs.Panel>
+    </Tabs>
+  </Tabs.Panel>
+</Tabs>
+
+### Code（＜Code /＞）
+
+コードをコピーできる状態で表示したい場合に利用します。  
+Codeコンポーネントは `language` プロパティを持つので、表示したいコードの種類によって設定してください。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='code-default'  styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='code-default'>書き方（html）</Tabs.Tab>
+    <Tabs.Tab value='demo-default'>結果（html）</Tabs.Tab>
+    <Tabs.Tab value='code-other'>書き方（html以外の種類）</Tabs.Tab>
+    <Tabs.Tab value='demo-other'>結果（html以外の種類）</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='code-default'>
+<Code language='javascript' content={`
+<Code content={\`
+<div style="top: 16px; left: 16px" data-module-name="ecm-floating">
+  I am floating.
+</div>
+\`}/>
+`}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='demo-default'>
+    <Code content={`
+<div style="top: 16px; left: 16px" data-module-name="ecm-floating">
+  I am floating.
+</div>
+    `}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code-other'>
+<Code language='javascript' content={`
+<Code language='javascript' content={\`
+alert('Hello World');
+\`}/>
+`}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='demo-other'>
+    <Code language='javascript' content={`
+alert('Hello World');
+    `}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<table class="mdx-table">
+  <thead class="mdx-table-header">
+    <tr>
+      <th style={{minWidth: '200px', width: '200px'}}>キー（プロパティ名）</th>
+      <th style={{minWidth: '400px', width: '400px'}}>値</th>
+      <th style={{width: '100%'}}>メモ</th>
+    </tr>
+  </thead>
+  <tbody class="mdx-table-body">
+    <tr>
+      <td class="mdx-mono">`language`</td>
+      <td class="mdx-mono">
+        <div>'javascript' | 'js' | 'typescript' | 'ts' | 'html' | 'css'</div>
+        <div style={{ color: "#8f8f8f"}}>
+          デフォルト: 'html'
+        </div>
+      </td>
+      <td>Codeコンポーネントは `language` プロパティを持ち、テキストにカラーを付与します。デフォルトの値は `html` に設定されています</td>
+    </tr>
+  </tbody>
+</table>
+
+<Space />
+
+<Note type='info'>
+  コードの種類のデフォルトは、`html` に設定されているため、コードの種類が `html` のときは `language` プロパティを設定する必要はありません
+</Note>
+
+<Space />
+
+<Note type='info'>
+  コードを直接記述せずに `<Code content={defaultHtml}/>` のように、`import` しているHTMLファイルを読み込むこともできます  
+  既存リファレンスのつくりを参考にしてください
+</Note>
+
+### Html（＜Html /＞）
+
+HTMLのコードをレンダリングした状態で表示したい場合に利用します。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='code'  styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='code'>書き方</Tabs.Tab>
+    <Tabs.Tab value='demo'>結果</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='code'>
+<Code content={`
+<Html content={\`
+<div>
+  <p style="color: red; font-weight: bold;">Hello World</p>
+</div>
+\`}/>
+`}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='demo'>
+  <Html content={`
+  <div>
+    <p style="color: red; font-weight: bold;">Hello World</p>
+  </div>
+  `}/>
+  `}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Note type='info'>
+  コードを直接記述せずに `<Html content={defaultHtml}/>` のように、`import` しているHTMLファイルを読み込むこともできます  
+  既存リファレンスのつくりを参考に使用してください
+</Note>
+
+### Blockquote（\＞）
+
+コードと違い、直接コピーする必要がないコードや情報などを表示したい場合に利用します。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='code'  styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='code'>書き方</Tabs.Tab>
+    <Tabs.Tab value='demo'>結果</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='code'>
+<Code content={`
+\> \`https://event.rakuten.co.jp/campaign/newcampaign/\` → \`event_campaign_newcampaign\`  
+\> テキストテキスト
+`}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='demo'>
+  > `https://event.rakuten.co.jp/campaign/newcampaign/\` → `event_campaign_newcampaign\`  
+  > テキストテキスト
+  </Tabs.Panel>
+</Tabs>
+
+### タブ（＜Tabs＞〜＜/Tabs＞）
+
+タブでコンテンツを表示したい場合に利用します。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='code'  styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='code'>書き方</Tabs.Tab>
+    <Tabs.Tab value='demo'>結果</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='code'>
+    <Code content={`
+<Tabs defaultValue="gallery">
+  <Tabs.List>
+    <Tabs.Tab value="gallery">
+      Gallery
+    </Tabs.Tab>
+    <Tabs.Tab value="messages">
+      Messages
+    </Tabs.Tab>
+    <Tabs.Tab value="settings">
+      Settings
+    </Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value="gallery">
+    Gallery tab content
+  </Tabs.Panel>
+
+  <Tabs.Panel value="messages">
+    Messages tab content
+  </Tabs.Panel>
+
+  <Tabs.Panel value="settings">
+    Settings tab content
+  </Tabs.Panel>
+</Tabs>
+    `}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='demo'>
+  <Tabs defaultValue="gallery">
+    <Tabs.List>
+      <Tabs.Tab value="gallery">
+        Gallery
+      </Tabs.Tab>
+      <Tabs.Tab value="messages">
+        Messages
+      </Tabs.Tab>
+      <Tabs.Tab value="settings">
+        Settings
+      </Tabs.Tab>
+    </Tabs.List>
+
+    <Tabs.Panel value="gallery">
+      Gallery tab content
+    </Tabs.Panel>
+
+    <Tabs.Panel value="messages">
+      Messages tab content
+    </Tabs.Panel>
+
+    <Tabs.Panel value="settings">
+      Settings tab content
+    </Tabs.Panel>
+  </Tabs>
+  </Tabs.Panel>
+</Tabs>
+
+#### 使い方
+
+- `Tabs.Tab` の `value` の値と、`Tabs.Panel` の `value` の値を揃えると、タブとコンテンツが紐づきます
+- 最初に開きたいタブは `defaultValue` に設定されている `value` 値のタブになります
+
+<Space />
+
+<Note type='info'>
+  タブコンポーネントは、**Code**と**Html**コンポーネントと併用して使用するケースが多いと思います  
+  既存リファレンスのつくりを参考にしてください
+</Note>
+
+<Space />
+
+<Note type='warn'>
+  リファレンスガイド上のタブコンポーネントには見栄えのため、`` の属性を使用しておりますが、通常のリファレンス制作においては使用しないでください
+</Note>
+
+### テーブル（＜table＞〜＜/table＞）
+
+テーブルの見た目で情報を整理して表示したい場合に利用します。（主に「アトリビュート」を説明するとき）  
+コンポーネントは `native html table` と同じような記法になります。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='code'  styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='code'>書き方</Tabs.Tab>
+    <Tabs.Tab value='demo'>結果</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='code'>
+    <Code content={`
+<table class="mdx-table">
+  <thead class="mdx-table-header">
+    <tr>
+      <th style={{minWidth: '240px', width: '240px'}}>項目名</th>
+      <th style={{minWidth: '240px', width: '240px'}}>項目名</th>
+      <th style={{width: '100%'}}>項目名</th>
+    </tr>
+  </thead>
+  <tbody class="mdx-table-body">
+    <tr>
+      <td class="mdx-mono">text</td>
+      <td class="mdx-mono">texttexttexttexttexttext</td>
+      <td>
+        セルの中身セルの中身セルの中身セルの中身セルの中身セルの中身セルの中身<br />
+        セルの中身セルの中身セルの中身セルの中身セルの中身セルの中身セルの中身
+      </td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">texttexttext</td>
+      <td class="mdx-mono">セルの中身セルの中身セルの中身</td>
+      <td>texttexttext</td>
+    </tr>
+  </tbody>
+</table>
+    `}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='demo'>
+  <table class="mdx-table">
+    <thead class="mdx-table-header">
+      <tr>
+        <th style={{minWidth: '240px', width: '240px'}}>項目名</th>
+        <th style={{minWidth: '240px', width: '240px'}}>項目名</th>
+        <th style={{width: '100%'}}>項目名</th>
+      </tr>
+    </thead>
+    <tbody class="mdx-table-body">
+      <tr>
+        <td class="mdx-mono">text</td>
+        <td class="mdx-mono">texttexttexttexttexttext</td>
+        <td>
+          セルの中身セルの中身セルの中身セルの中身セルの中身セルの中身セルの中身<br />
+          セルの中身セルの中身セルの中身セルの中身セルの中身セルの中身セルの中身
+        </td>
+      </tr>
+      <tr>
+        <td class="mdx-mono">texttexttext</td>
+        <td class="mdx-mono">セルの中身セルの中身セルの中身</td>
+        <td>texttexttext</td>
+      </tr>
+    </tbody>
+  </table>
+  </Tabs.Panel>
+</Tabs>
+
+#### 使い方
+
+- 各テーブルセルの長さは `thead` 要素内の `th` 要素に対して指定してください
+- テーブルコンポーネント内の改行では、Markdown記法の改行と違い、`<br />` タグを使用してください
+- テーブルコンポーネント内において `div` 要素など、通常のHTML要素を使用することもできます
+- 英字の場合は、`class="mdx-mono"` を使用してください
+- テーブルのスタイルのカスタマイズは、`style` 属性で指定するか、`apps/module-navi/src/pages/mdx.scss` にファイルに記載されているクラスを使用することもできます（追加も可能）
+- テーブル内では、簡潔な説明になるように文章を作成して、「。」は使用しないことを推奨します
+
+<Space />
+
+<Note type='info'>
+  テーブルセルの横幅などは見やすさを優先し、各リファレンスでカスタマイズしてください（設定するアトリビュートが長い場合や、テーブルの列数が多い場合など）  
+  リファレンスの最小コンテンツ幅が `1024px` になるため、`1024px` でのある程度の見やすさを担保してください（`width` と合わせて `minWidth` も設定するとセル幅が固定となります）
+</Note>
+
+## Markdownのチートシート
+
+よく利用されるであろうものを抜粋しております。また、リファレンス内での**使い方**も一部説明しております。
+
+### 見出し
+
+<Tabs keepMounted={false} defaultValue='code'  styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='code'>書き方</Tabs.Tab>
+    <Tabs.Tab value='demo'>結果</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='code'>
+    <Code content={`
+# H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6
+    `}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='demo'>
+  # H1
+  ## H2
+  ### H3
+  #### H4
+  ##### H5
+  ###### H6
+  </Tabs.Panel>
+</Tabs>
+
+### 改行
+
+改行したい箇所の文末に、半角スペースを2つ使用します。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='code'  styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='code'>書き方</Tabs.Tab>
+    <Tabs.Tab value='demo'>結果</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='code'>
+    <Code content={`
+ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストここで改行する  
+2行目の始まりダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
+    `}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='demo'>
+  ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストここで改行する  
+  2行目の始まりダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+**NG例)**
+
+<Tabs keepMounted={false} defaultValue='demo'  styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='code'>書き方</Tabs.Tab>
+    <Tabs.Tab value='demo'>結果</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='code'>
+    <Code content={`
+ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストここで改行する
+2行目の始まりダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
+    `}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='demo'>
+  ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストここで改行する
+  2行目の始まりダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Note type='info'>
+  NG例のようにエディター上で改行がされていても実際に改行はされないため、注意してください
+</Note>
+
+### リンク
+
+<Tabs keepMounted={false} defaultValue='code'  styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='code'>書き方</Tabs.Tab>
+    <Tabs.Tab value='demo'>結果</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='code'>
+    <Code content={`
+Link is [Link](https://www.rakuten.co.jp/).
+    `}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='demo'>
+  Link is [Link](https://www.rakuten.co.jp/).
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Note type='info'>
+  他のリファレンスへリンクを設定するときは、`/ecm/docs/〜` のようになります。
+</Note>
+
+### コードなどを強調（挿入）
+
+<Tabs keepMounted={false} defaultValue='code'  styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='code'>書き方</Tabs.Tab>
+    <Tabs.Tab value='demo'>結果</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='code'>
+    <Code content={`
+\`data-module-name\` 要素のようにコードなどを挿入する  
+テキストテキスト \`code\` テキストテキスト  
+テキストテキスト、\`code\` テキストテキスト  
+テキストテキスト。\`code\`、テキストテキスト  
+テキストテキスト（\`code\`）テキストテキスト  
+    `}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='demo'>
+  `data-module-name` 要素のようにコードなどを挿入する  
+  テキストテキスト `code` テキストテキスト  
+  テキストテキスト、`code` テキストテキスト  
+  テキストテキスト。`code`、テキストテキスト  
+  テキストテキスト（`code`）テキストテキスト  
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Note type='info'>
+  文章の中で使用するときは、前後に句読点や括弧がある場合以外は「``」の前後に半角スペースを入れるのを推奨します。（見やすさのため）  
+</Note>
+
+### 太字
+
+強調したい単語の前後を `**` で囲ってください。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='code'  styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='code'>書き方</Tabs.Tab>
+    <Tabs.Tab value='demo'>結果</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='code'>
+    <Code content={`
+テキストテキストテキスト**強調**テキストテキストテキスト
+    `}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='demo'>
+  テキストテキストテキスト**強調**テキストテキストテキスト
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Note type='info'>
+  文章の中の一部や、リストのうちのひとつなど、特定のワードに対して使用してください
+</Note>
+
+### リスト
+
+<Tabs keepMounted={false} defaultValue='code'  styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='code'>書き方</Tabs.Tab>
+    <Tabs.Tab value='demo'>結果</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='code'>
+    <Code content={`
+- リストリストリストリストリストリストリストリスト
+- リストリストリストリストリストリストリストリストリストリスト
+- リストリストリストリストリストリストリストリストリストリストリストリスト
+  - リストリストリスト
+  - リストリストリスト
+- リストリストリストリストリストリストリストリストリストリストリストリスト
+  リストリストリスト
+    `}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='demo'>
+  - リストリストリストリストリストリストリストリスト
+  - リストリストリストリストリストリストリストリストリストリスト
+  - リストリストリストリストリストリストリストリストリストリストリストリスト
+    - リストリストリスト
+    - リストリストリスト
+  - リストリストリストリストリストリストリストリストリストリストリストリスト  
+    リストリストリスト
+  </Tabs.Panel>
+</Tabs>
+
+### 番号付きリスト
+
+<Tabs keepMounted={false} defaultValue='code'  styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='code'>書き方</Tabs.Tab>
+    <Tabs.Tab value='demo'>結果</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='code'>
+    <Code content={`
+1. 番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付きリスト
+2. 番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付き
+3. 番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付き
+4. 番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付き  
+   番号付きリスト番号付きリスト番号付きリスト
+    `}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='demo'>
+  1. 番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付きリスト
+  2. 番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付き
+  3. 番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付き
+  4. 番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付き
+  </Tabs.Panel>
+</Tabs>

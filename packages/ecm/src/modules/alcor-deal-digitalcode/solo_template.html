@@ -1,0 +1,42 @@
+<div class="ecm-alcor ecm-deal-alcor">
+  <form
+    action="https://digitalcode.step.rakuten.co.jp/step/itemToCart/"
+    method="post"
+  >
+    <input
+      type="hidden"
+      name="itemId"
+      value="###itemid###"
+    />
+    <input
+      type="hidden"
+      name="shopId"
+      value="###shopid###"
+    />
+    <button
+      class="ecm-deal-alcor-digitalcode-button"
+      type="submit"
+    >
+      <div class="ecm-deal-alcor-image-block">
+        <div class="ecm-deal-alcor-obi"><span>###deal-point-rate-base###</span>%ポイントバック</div>
+        <img
+          class="w-full h-full aspect-ratio-1x1 object-contain"
+          src="https://r.r10s.jp/com/img/home/t.gif?resize=340:340"
+          data-lazy-loading="###image-url###"
+          alt="###itemname###"
+        />
+        <span
+          class="ecm-deal-alcor-out-of-stock"
+          data-stock="###stock-flg###"
+        ></span>
+      </div>
+      <div class="ecm-alcor-body">
+        <p class="ecm-alcor-name clamp-2">###itemname###</p>
+        <p class="ecm-alcor-price">
+          <span class="ecm-alcor-price-num">###kakaku###</span>
+        </p>
+        <p class="ecm-deal-alcor-enddate">ポイントバック終了日：###deal-end-date###</p>
+      </div>
+    </button>
+  </form>
+</div>

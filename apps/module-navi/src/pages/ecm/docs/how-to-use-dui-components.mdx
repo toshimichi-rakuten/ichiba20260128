@@ -1,0 +1,46 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+
+export const meta = {
+  title: 'DUIコンポーネントを使用する場合',
+  description: '新モジュールに対応した共通ヘッダーと共通フッターの移行方法',
+  url: '/ecm/docs/how-to-use-dui-components',
+  tags: ['update', 'dui', 'include'],
+}
+
+# DUIコンポーネントを使用する場合
+DUIコンポーネントを使用する場合は、アウトラインファイル内の共通ヘッダーと共通フッターを更新する必要があります。  
+新モジュールに対応したDUIを使用しているイベントページ用の共通ヘッダーとフッターのインクルードファイルをアウトラインに適用してください。
+
+## DUIコンポーネントを使用しているイベントページ一覧
+
+[DUIコンポーネントを使用しているイベントページについて](https://confluence.rakuten-it.com/confluence/pages/viewpage.action?pageId=2492449499)
+
+## 対応背景
+DUIコンポーネントを使用しているイベントページについて、アウトラインをそのまま利用すると以下の問題が起こる可能性があります。
+
+1. **ヘッダーの重複**  
+   媒体側で独自でDUIのバンドルファイルを運用している場合、バンドルファイルが重複して読み込まれます。  
+   これにより、ヘッダーが2つ表示されるなどの問題が発生します。  
+   これはアウトラインに利用されている共通ヘッダーのインクルード内ですでにイベント共通用のDUIバンドルが読み込まれているためです。
+
+<Space />
+
+2. **予測不能なバグ**  
+   バンドルの重複読み込みにより、予測不能なバグが発生する可能性があります。
+
+## 更新方法
+DUIバンドルが含まれていない共通ヘッダーと共通フッターのインクルードに差し替えてください。  
+また、媒体側で管理しているDUIバンドルのファイルの移行をお願いします。
+1. **DUIバンドルを含まないヘッダーに差し替える**  
+　　以下のページのASIS TOBEを確認し、アウトラインファイルの書き換えをお願いいたします。  
+   [DUIコンポーネントを使用しているイベントページ用 Common Header & Footer ファイル](https://confluence.rakuten-it.com/confluence/pages/viewpage.action?pageId=5458699165)
+
+<Space />
+
+2. **媒体側で管理しているDUIバンドルを移行する**  
+   媒体で管理しているバンドルファイルについては新モジュールのアウトラインでも引き続き運用してください。
+
+

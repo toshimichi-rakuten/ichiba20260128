@@ -1,0 +1,39 @@
+.scm-ad-name-100183door {
+  @include text-12px;
+
+  font-weight: bold;
+
+  @include screen('md', 'up') {
+    @include text-sm;
+  }
+}
+
+.scm-ad-price-100183door {
+  display: block;
+  margin-top: $space-8;
+
+  @include screen('md', 'up') {
+    margin-top: 6px;
+  }
+}
+
+.scm-ad-price-num-100183door {
+  font-size: 18px;
+  margin-right: 0;
+
+  @include screen('md', 'up') {
+    font-size: 20px;
+  }
+}
+
+.scm-ad-price-unit-100183door {
+  @include text-12px;
+
+  @include screen('md', 'up') {
+    @include text-xs;
+  }
+}
+
+.scm-ad-body-100183door {
+  padding: $space-8;
+}

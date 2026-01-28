@@ -1,0 +1,30 @@
+@import 'ecm/src/_scss/variables';
+@import 'ecm/src/_scss/mixins';
+
+.scm-keyword {
+  @include vw-text-sm;
+  @include colorize-link($color-gray-1 !important);
+
+  align-items: center;
+  background-color: $color-gray-5;
+  border-radius: 9999px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  padding: $space-12 14px;
+
+  @include screen('md', 'up') {
+    @include text-base;
+
+    min-height: 48px;
+    padding: 2px 18px;
+  }
+
+  &.scm-keyword-shadowed {
+    box-shadow: 0 3px 15px 0 rgb(0 0 0 / 20%);
+  }
+
+  &.scm-keyword-bordered {
+    border: 1px solid $color-gray-2;
+  }
+}

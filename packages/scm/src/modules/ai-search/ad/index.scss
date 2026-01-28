@@ -1,0 +1,147 @@
+@import 'ecm/src/_scss/variables';
+@import 'ecm/src/_scss/mixins';
+
+.scm-ai-search-ad {
+  background-color: $color-white;
+  display: flex;
+  flex-direction: column;
+}
+
+.scm-ai-search-ad-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.scm-ai-search-ad-image-link {
+  display: block;
+
+  @include screen('md', 'up') {
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.scm-ai-search-ad-item-link {
+  display: block;
+
+  @include screen('md', 'up') {
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.8;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.scm-ai-search-ad-name {
+  @include text-sm;
+  @include colorize-link($color-gray-1 !important);
+  @include clamp(2);
+
+  display: block;
+  margin-top: $space-12;
+  // 1行,2行でも高さが変わらないように設定
+  height: calc(2em * $base-line-height);
+}
+
+.scm-ai-search-ad-price {
+  @include font-roboto(500);
+  @include text-lg;
+
+  align-items: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 1;
+  color: $color-crimson;
+  white-space: nowrap;
+  margin-top: $space-8;
+
+  @include screen('md', 'up') {
+    @include text-2xl;
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.scm-ai-search-ad-price-num {
+  color: $color-crimson;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: flex-end;
+}
+
+.scm-ai-search-ad-free-shipping {
+  font-size: 14px;
+
+  @include screen('md', 'up') {
+    font-size: 16px;
+  }
+}
+
+.scm-ai-search-ad-review {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: $space-8;
+  white-space: nowrap;
+  flex-wrap: wrap;
+
+  i {
+    color: #f2ab00;
+    @include text-sm;
+  }
+
+  @include screen('md', 'up') {
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.scm-ai-search-ad-review-ave {
+  @include text-12px;
+
+  color: #f2ab00;
+}
+
+.scm-ai-search-ad-review-num {
+  @include text-12px;
+
+  color: $color-gray-2;
+  margin-left: 4px;
+}
+
+.scm-ai-search-ad-tag-container {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.scm-ai-search-ad-tag {
+  font-weight: bold;
+  font-size: 11px;
+  color: #fff;
+  background-color: #bf0000;
+  padding: 4px 6px;
+  border-radius: 2px;
+}
+
+.scm-ai-search-point {
+  @include text-sm;
+
+  color: $color-crimson;
+  margin-top: $space-8;
+}

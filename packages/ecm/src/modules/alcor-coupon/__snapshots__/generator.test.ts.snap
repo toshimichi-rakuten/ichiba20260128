@@ -1,0 +1,638 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Coupon Alcor Generator > type: coupon 1`] = `
+"<div data-module-name="ecm-json-to-html">
+  <template data-output><div class="d-grid d-grid-col-1 md-d-grid-col-3 d-grid-gap-12 md-d-grid-gap-24">###coupons###</div>
+</template>
+
+  <template
+    data-output-data
+    data-type="html"
+  >
+    <!--#include virtual="★"-->
+  </template>
+
+  <template
+    data-template="coupons"
+    data-loop="true"
+    >###shops###</template
+  >
+
+  <template
+    data-template="coupons.shops"
+    data-loop="true"
+    ><a
+  class="ecm-coupon-alcor mx-auto"
+  href="###couponGetUrl###"
+>
+  <div class="ecm-coupon-alcor-body">
+    <img
+      class="ecm-coupon-alcor-image"
+      src="https://r.r10s.jp/com/img/home/t.gif?fitin=152:152"
+      data-lazy-loading="###couponImage###?fitin=304:304"
+      alt="###couponName###"
+      width="76"
+      height="76"
+    />
+    <div class="ecm-coupon-alcor-conditions">
+      <p class="ecm-coupon-alcor-discount">###discountFactor###</p>
+      <p class="ecm-coupon-alcor-expiration">有効期間：###couponEndDate###</p>
+      <p class="ecm-coupon-alcor-shop">
+        <i
+          class="ecm-icon-shop-outlined ecm-coupon-alcor-shop-icon"
+          aria-hidden="true"
+        ></i
+        >###shopName###
+      </p>
+    </div>
+  </div>
+  <p class="ecm-coupon-alcor-foot">
+    <i
+      class="ecm-icon-coupon-filled ecm-coupon-alcor-foot-icon"
+      aria-hidden="true"
+    ></i
+    >クーポンを獲得する
+  </p>
+</a>
+
+  </template>
+
+  
+</div>
+"
+`;
+
+exports[`Coupon Alcor Generator > type: coupon with item 1`] = `
+"<div data-module-name="ecm-json-to-html">
+  <template data-output><div class="d-flex-col d-flex-gap-36 md-d-flex-gap-48">###coupons###</div>
+</template>
+
+  <template
+    data-output-data
+    data-type="html"
+  >
+    <!--#include virtual="★"-->
+  </template>
+
+  <template
+    data-template="coupons"
+    data-loop="true"
+    >###shops###</template
+  >
+
+  <template
+    data-template="coupons.shops"
+    data-loop="true"
+    ><a
+  class="ecm-coupon-alcor mx-auto"
+  href="###couponGetUrl###"
+>
+  <div class="ecm-coupon-alcor-body">
+    <img
+      class="ecm-coupon-alcor-image"
+      src="https://r.r10s.jp/com/img/home/t.gif?fitin=152:152"
+      data-lazy-loading="###couponImage###?fitin=304:304"
+      alt="###couponName###"
+      width="76"
+      height="76"
+    />
+    <div class="ecm-coupon-alcor-conditions">
+      <p class="ecm-coupon-alcor-discount">###discountFactor###</p>
+      <p class="ecm-coupon-alcor-expiration">有効期間：###couponEndDate###</p>
+      <p class="ecm-coupon-alcor-shop">
+        <i
+          class="ecm-icon-shop-outlined ecm-coupon-alcor-shop-icon"
+          aria-hidden="true"
+        ></i
+        >###shopName###
+      </p>
+    </div>
+  </div>
+  <p class="ecm-coupon-alcor-foot">
+    <i
+      class="ecm-icon-coupon-filled ecm-coupon-alcor-foot-icon"
+      aria-hidden="true"
+    ></i
+    >クーポンを獲得する
+  </p>
+</a>
+
+<div
+  class="mt-40 d-grid d-grid-col-2 md-d-grid-col-4 d-grid-gap-x-16 d-grid-gap-y-32 md-d-grid-gap-x-24 md-d-grid-gap-y-80"
+  >###items###</div
+>
+
+  </template>
+
+  <template
+  data-template="coupons.shops.items"
+  data-loop="true"
+>
+  <div
+  class="ecm-alcor"
+  aria-hidden="true"
+>
+  <a
+    class="ecm-alcor-image-link"
+    href="###itemUrl###"
+  >
+    <img
+      class="w-full h-full aspect-ratio-1x1 object-contain"
+      src="https://r.r10s.jp/com/img/home/t.gif?fitin=343:343"
+      data-lazy-loading="###imageUrl###?fitin=686:686"
+      alt=""
+    />
+  </a>
+  <div class="ecm-alcor-body">
+    <a
+      class="ecm-alcor-name clamp-2"
+      href="###itemUrl###"
+      >###itemName###</a
+    >
+    <a
+      class="ecm-alcor-price"
+      href="###itemUrl###"
+    >
+      <p class="ecm-alcor-price-num text-lg">###kakaku###</p>
+    </a>
+  </div>
+</div>
+
+</template>
+
+</div>
+"
+`;
+
+exports[`Coupon Alcor Generator > type: coupon with item with view more (Responsive) 1`] = `
+"<div data-module-name="ecm-json-to-html">
+  <template data-output><div class="d-flex-col d-flex-gap-36 md-d-flex-gap-48">###coupons###</div>
+</template>
+
+  <template
+    data-output-data
+    data-type="html"
+  >
+    <!--#include virtual="★"-->
+  </template>
+
+  <template
+    data-template="coupons"
+    data-loop="true"
+    >###shops###</template
+  >
+
+  <template
+    data-template="coupons.shops"
+    data-loop="true"
+    ><a
+  class="ecm-coupon-alcor mx-auto"
+  href="###couponGetUrl###"
+>
+  <div class="ecm-coupon-alcor-body">
+    <img
+      class="ecm-coupon-alcor-image"
+      src="https://r.r10s.jp/com/img/home/t.gif?fitin=152:152"
+      data-lazy-loading="###couponImage###?fitin=304:304"
+      alt="###couponName###"
+      width="76"
+      height="76"
+    />
+    <div class="ecm-coupon-alcor-conditions">
+      <p class="ecm-coupon-alcor-discount">###discountFactor###</p>
+      <p class="ecm-coupon-alcor-expiration">有効期間：###couponEndDate###</p>
+      <p class="ecm-coupon-alcor-shop">
+        <i
+          class="ecm-icon-shop-outlined ecm-coupon-alcor-shop-icon"
+          aria-hidden="true"
+        ></i
+        >###shopName###
+      </p>
+    </div>
+  </div>
+  <p class="ecm-coupon-alcor-foot">
+    <i
+      class="ecm-icon-coupon-filled ecm-coupon-alcor-foot-icon"
+      aria-hidden="true"
+    ></i
+    >クーポンを獲得する
+  </p>
+</a>
+
+<div
+  id="raCouponViewMore1-###shopId###-###couponCd###"
+  class="mt-40 d-grid d-grid-col-2 md-d-grid-col-4 d-grid-gap-x-16 d-grid-gap-y-32 md-d-grid-gap-x-24 md-d-grid-gap-y-80"
+  data-module-name="ecm-view-more"
+  data-session="false"
+  data-visible="2"
+  data-md-visible="4"
+  >###items###</div
+>
+<button
+  class="ecm-view-more-button mx-auto mt-28 md-mt-40"
+  data-control-type="open"
+  aria-controls="raCouponViewMore1-###shopId###-###couponCd###"
+  aria-expanded="false"
+>
+  もっと見る
+  <i
+    class="ecm-icon-chevron-down"
+    aria-hidden="true"
+  ></i>
+</button>
+
+  </template>
+
+  <template
+  data-template="coupons.shops.items"
+  data-loop="true"
+>
+  <div class="ecm-view-more-item" aria-hidden="true">
+<div
+  class="ecm-alcor"
+  aria-hidden="true"
+>
+  <a
+    class="ecm-alcor-image-link"
+    href="###itemUrl###"
+  >
+    <img
+      class="w-full h-full aspect-ratio-1x1 object-contain"
+      src="https://r.r10s.jp/com/img/home/t.gif?fitin=343:343"
+      data-lazy-loading="###imageUrl###?fitin=686:686"
+      alt=""
+    />
+  </a>
+  <div class="ecm-alcor-body">
+    <a
+      class="ecm-alcor-name clamp-2"
+      href="###itemUrl###"
+      >###itemName###</a
+    >
+    <a
+      class="ecm-alcor-price"
+      href="###itemUrl###"
+    >
+      <p class="ecm-alcor-price-num text-lg">###kakaku###</p>
+    </a>
+  </div>
+</div>
+</div>
+</template>
+
+</div>
+"
+`;
+
+exports[`Coupon Alcor Generator > type: coupon with item with view more 1`] = `
+"<div data-module-name="ecm-json-to-html">
+  <template data-output><div class="d-flex-col d-flex-gap-36 md-d-flex-gap-48">###coupons###</div>
+</template>
+
+  <template
+    data-output-data
+    data-type="html"
+  >
+    <!--#include virtual="★"-->
+  </template>
+
+  <template
+    data-template="coupons"
+    data-loop="true"
+    >###shops###</template
+  >
+
+  <template
+    data-template="coupons.shops"
+    data-loop="true"
+    ><a
+  class="ecm-coupon-alcor mx-auto"
+  href="###couponGetUrl###"
+>
+  <div class="ecm-coupon-alcor-body">
+    <img
+      class="ecm-coupon-alcor-image"
+      src="https://r.r10s.jp/com/img/home/t.gif?fitin=152:152"
+      data-lazy-loading="###couponImage###?fitin=304:304"
+      alt="###couponName###"
+      width="76"
+      height="76"
+    />
+    <div class="ecm-coupon-alcor-conditions">
+      <p class="ecm-coupon-alcor-discount">###discountFactor###</p>
+      <p class="ecm-coupon-alcor-expiration">有効期間：###couponEndDate###</p>
+      <p class="ecm-coupon-alcor-shop">
+        <i
+          class="ecm-icon-shop-outlined ecm-coupon-alcor-shop-icon"
+          aria-hidden="true"
+        ></i
+        >###shopName###
+      </p>
+    </div>
+  </div>
+  <p class="ecm-coupon-alcor-foot">
+    <i
+      class="ecm-icon-coupon-filled ecm-coupon-alcor-foot-icon"
+      aria-hidden="true"
+    ></i
+    >クーポンを獲得する
+  </p>
+</a>
+
+<div
+  id="raCouponViewMore1-###shopId###-###couponCd###"
+  class="mt-40 d-grid d-grid-col-2 md-d-grid-col-4 d-grid-gap-x-16 d-grid-gap-y-32 md-d-grid-gap-x-24 md-d-grid-gap-y-80"
+  data-module-name="ecm-view-more"
+  data-session="false"
+  data-visible="4"
+  >###items###</div
+>
+<button
+  class="ecm-view-more-button mx-auto mt-28 md-mt-40"
+  data-control-type="open"
+  aria-controls="raCouponViewMore1-###shopId###-###couponCd###"
+  aria-expanded="false"
+>
+  もっと見る
+  <i
+    class="ecm-icon-chevron-down"
+    aria-hidden="true"
+  ></i>
+</button>
+
+  </template>
+
+  <template
+  data-template="coupons.shops.items"
+  data-loop="true"
+>
+  <div class="ecm-view-more-item" aria-hidden="true">
+<div
+  class="ecm-alcor"
+  aria-hidden="true"
+>
+  <a
+    class="ecm-alcor-image-link"
+    href="###itemUrl###"
+  >
+    <img
+      class="w-full h-full aspect-ratio-1x1 object-contain"
+      src="https://r.r10s.jp/com/img/home/t.gif?fitin=343:343"
+      data-lazy-loading="###imageUrl###?fitin=686:686"
+      alt=""
+    />
+  </a>
+  <div class="ecm-alcor-body">
+    <a
+      class="ecm-alcor-name clamp-2"
+      href="###itemUrl###"
+      >###itemName###</a
+    >
+    <a
+      class="ecm-alcor-price"
+      href="###itemUrl###"
+    >
+      <p class="ecm-alcor-price-num text-lg">###kakaku###</p>
+    </a>
+  </div>
+</div>
+</div>
+</template>
+
+</div>
+"
+`;
+
+exports[`Coupon Alcor Generator > type: item 1`] = `
+"<div data-module-name="ecm-json-to-html">
+  <template data-output><div
+  class="md-mt-40 d-grid d-grid-col-2 md-d-grid-col-4 d-grid-gap-x-16 d-grid-gap-y-32 md-d-grid-gap-x-24 md-d-grid-gap-y-80"
+  >###coupons###</div
+>
+</template>
+
+  <template
+    data-output-data
+    data-type="html"
+  >
+    <!--#include virtual="★"-->
+  </template>
+
+  <template
+    data-template="coupons"
+    data-loop="true"
+    >###shops###</template
+  >
+
+  <template
+    data-template="coupons.shops"
+    data-loop="true"
+    >###items###
+  </template>
+
+  <template
+  data-template="coupons.shops.items"
+  data-loop="true"
+>
+  <div
+  class="ecm-alcor"
+  aria-hidden="true"
+>
+  <a
+    class="ecm-alcor-image-link"
+    href="###itemUrl###"
+  >
+    <img
+      class="w-full h-full aspect-ratio-1x1 object-contain"
+      src="https://r.r10s.jp/com/img/home/t.gif?fitin=343:343"
+      data-lazy-loading="###imageUrl###?fitin=686:686"
+      alt=""
+    />
+  </a>
+  <div class="ecm-alcor-body">
+    <a
+      class="ecm-alcor-name clamp-2"
+      href="###itemUrl###"
+      >###itemName###</a
+    >
+    <a
+      class="ecm-alcor-price"
+      href="###itemUrl###"
+    >
+      <p class="ecm-alcor-price-num text-lg">###kakaku###</p>
+    </a>
+  </div>
+</div>
+
+</template>
+
+</div>
+"
+`;
+
+exports[`Coupon Alcor Generator > type: item with view more (Responsive) 1`] = `
+"<div data-module-name="ecm-json-to-html">
+  <template data-output><div
+  id="raCouponViewMore1"
+  class="md-mt-40 d-grid d-grid-col-2 md-d-grid-col-4 d-grid-gap-x-16 d-grid-gap-y-32 md-d-grid-gap-x-24 md-d-grid-gap-y-80"
+  data-module-name="ecm-view-more"
+  data-session="false"
+  data-visible="2"
+  data-md-visible="4"
+  >###coupons###</div
+>
+<button
+  class="ecm-view-more-button mx-auto mt-28 md-mt-40"
+  data-control-type="open"
+  aria-controls="raCouponViewMore1"
+  aria-expanded="false"
+  >もっと見る
+  <i
+    class="ecm-icon-chevron-down"
+    aria-hidden="true"
+  ></i>
+</button>
+</template>
+
+  <template
+    data-output-data
+    data-type="html"
+  >
+    <!--#include virtual="★"-->
+  </template>
+
+  <template
+    data-template="coupons"
+    data-loop="true"
+    >###shops###</template
+  >
+
+  <template
+    data-template="coupons.shops"
+    data-loop="true"
+    >###items###
+  </template>
+
+  <template
+  data-template="coupons.shops.items"
+  data-loop="true"
+>
+  <div class="ecm-view-more-item" aria-hidden="true">
+<div
+  class="ecm-alcor"
+  aria-hidden="true"
+>
+  <a
+    class="ecm-alcor-image-link"
+    href="###itemUrl###"
+  >
+    <img
+      class="w-full h-full aspect-ratio-1x1 object-contain"
+      src="https://r.r10s.jp/com/img/home/t.gif?fitin=343:343"
+      data-lazy-loading="###imageUrl###?fitin=686:686"
+      alt=""
+    />
+  </a>
+  <div class="ecm-alcor-body">
+    <a
+      class="ecm-alcor-name clamp-2"
+      href="###itemUrl###"
+      >###itemName###</a
+    >
+    <a
+      class="ecm-alcor-price"
+      href="###itemUrl###"
+    >
+      <p class="ecm-alcor-price-num text-lg">###kakaku###</p>
+    </a>
+  </div>
+</div>
+</div>
+</template>
+
+</div>
+"
+`;
+
+exports[`Coupon Alcor Generator > type: item with view more 1`] = `
+"<div data-module-name="ecm-json-to-html">
+  <template data-output><div
+  id="raCouponViewMore1"
+  class="md-mt-40 d-grid d-grid-col-2 md-d-grid-col-4 d-grid-gap-x-16 d-grid-gap-y-32 md-d-grid-gap-x-24 md-d-grid-gap-y-80"
+  data-module-name="ecm-view-more"
+  data-session="false"
+  data-visible="4"
+  >###coupons###</div
+>
+<button
+  class="ecm-view-more-button mx-auto mt-28 md-mt-40"
+  data-control-type="open"
+  aria-controls="raCouponViewMore1"
+  aria-expanded="false"
+  >もっと見る
+  <i
+    class="ecm-icon-chevron-down"
+    aria-hidden="true"
+  ></i>
+</button>
+</template>
+
+  <template
+    data-output-data
+    data-type="html"
+  >
+    <!--#include virtual="★"-->
+  </template>
+
+  <template
+    data-template="coupons"
+    data-loop="true"
+    >###shops###</template
+  >
+
+  <template
+    data-template="coupons.shops"
+    data-loop="true"
+    >###items###
+  </template>
+
+  <template
+  data-template="coupons.shops.items"
+  data-loop="true"
+>
+  <div class="ecm-view-more-item" aria-hidden="true">
+<div
+  class="ecm-alcor"
+  aria-hidden="true"
+>
+  <a
+    class="ecm-alcor-image-link"
+    href="###itemUrl###"
+  >
+    <img
+      class="w-full h-full aspect-ratio-1x1 object-contain"
+      src="https://r.r10s.jp/com/img/home/t.gif?fitin=343:343"
+      data-lazy-loading="###imageUrl###?fitin=686:686"
+      alt=""
+    />
+  </a>
+  <div class="ecm-alcor-body">
+    <a
+      class="ecm-alcor-name clamp-2"
+      href="###itemUrl###"
+      >###itemName###</a
+    >
+    <a
+      class="ecm-alcor-price"
+      href="###itemUrl###"
+    >
+      <p class="ecm-alcor-price-num text-lg">###kakaku###</p>
+    </a>
+  </div>
+</div>
+</div>
+</template>
+
+</div>
+"
+`;

@@ -1,0 +1,84 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+@include util-all('bordered') {
+  border: 1px solid rgb(0 0 0 / 8%);
+}
+@include util-all('bordered-t') {
+  border-top: 1px solid rgb(0 0 0 / 8%);
+}
+@include util-all('bordered-b') {
+  border-bottom: 1px solid rgb(0 0 0 / 8%);
+}
+@include util-all('bordered-l') {
+  border-left: 1px solid rgb(0 0 0 / 8%);
+}
+@include util-all('bordered-r') {
+  border-right: 1px solid rgb(0 0 0 / 8%);
+}
+@include util-all('divided-y') {
+  & > * + * {
+    border-top: 1px solid rgb(0 0 0 / 8%);
+  }
+}
+@include util-all('divided-x') {
+  & > * + * {
+    border-right: 1px solid rgb(0 0 0 / 8%);
+  }
+}
+@include util-all('bordered-none') {
+  border: none;
+}
+@include util-all('bordered-t-none') {
+  border-top: none;
+}
+@include util-all('bordered-b-none') {
+  border-bottom: none;
+}
+@include util-all('bordered-l-none') {
+  border-left: none;
+}
+@include util-all('bordered-r-none') {
+  border-right: none;
+}
+
+@include util-all('bordered', true) {
+  border: 1px solid rgb(0 0 0 / 8%) !important;
+}
+@include util-all('bordered-t', true) {
+  border-top: 1px solid rgb(0 0 0 / 8%) !important;
+}
+@include util-all('bordered-b', true) {
+  border-bottom: 1px solid rgb(0 0 0 / 8%) !important;
+}
+@include util-all('bordered-l', true) {
+  border-left: 1px solid rgb(0 0 0 / 8%) !important;
+}
+@include util-all('bordered-r', true) {
+  border-right: 1px solid rgb(0 0 0 / 8%) !important;
+}
+@include util-all('divided-y', true) {
+  & > * + * {
+    border-top: 1px solid rgb(0 0 0 / 8%) !important;
+  }
+}
+@include util-all('divided-x', true) {
+  & > * + * {
+    border-right: 1px solid rgb(0 0 0 / 8%) !important;
+  }
+}
+@include util-all('bordered-none', true) {
+  border: none !important;
+}
+@include util-all('bordered-t-none', true) {
+  border-top: none !important;
+}
+@include util-all('bordered-b-none', true) {
+  border-bottom: none !important;
+}
+@include util-all('bordered-l-none', true) {
+  border-left: none !important;
+}
+@include util-all('bordered-r-none', true) {
+  border-right: none !important;
+}

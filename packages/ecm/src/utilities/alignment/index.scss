@@ -1,0 +1,268 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+@include util-all('justify-start') {
+  justify-content: flex-start;
+}
+@include util-all('justify-end') {
+  justify-content: flex-end;
+}
+@include util-all('justify-center') {
+  justify-content: center;
+}
+@include util-all('justify-between') {
+  justify-content: space-between;
+}
+@include util-all('justify-around') {
+  justify-content: space-around;
+}
+@include util-all('justify-evenly') {
+  justify-content: space-evenly;
+}
+@include util-all('items-start') {
+  align-items: flex-start;
+}
+@include util-all('items-end') {
+  align-items: flex-end;
+}
+@include util-all('items-center') {
+  align-items: center;
+}
+@include util-all('items-baseline') {
+  align-items: baseline;
+}
+@include util-all('items-stretch') {
+  align-items: stretch;
+}
+@include util-all('content-center') {
+  align-content: center;
+}
+@include util-all('content-start') {
+  align-content: flex-start;
+}
+@include util-all('content-end') {
+  align-content: flex-end;
+}
+@include util-all('content-between') {
+  align-content: space-between;
+}
+@include util-all('content-around') {
+  align-content: space-around;
+}
+@include util-all('content-evenly') {
+  align-content: space-evenly;
+}
+@include util-all('justify-items-start') {
+  justify-items: start;
+}
+@include util-all('justify-items-end') {
+  justify-items: end;
+}
+@include util-all('justify-items-center') {
+  justify-items: center;
+}
+@include util-all('justify-items-stretch') {
+  justify-items: stretch;
+}
+@include util-all('justify-self-auto') {
+  justify-self: auto;
+}
+@include util-all('place-content-center') {
+  place-content: center;
+}
+@include util-all('place-content-start') {
+  place-content: start;
+}
+@include util-all('place-content-end') {
+  place-content: end;
+}
+@include util-all('place-content-between') {
+  place-content: space-between;
+}
+@include util-all('place-content-around') {
+  place-content: space-around;
+}
+@include util-all('place-content-evenly') {
+  place-content: space-evenly;
+}
+@include util-all('place-content-baseline') {
+  place-content: baseline;
+}
+@include util-all('place-content-stretch') {
+  place-content: stretch;
+}
+@include util-all('justify-self-start') {
+  justify-self: start;
+}
+@include util-all('justify-self-end') {
+  justify-self: end;
+}
+@include util-all('justify-self-center') {
+  justify-self: center;
+}
+@include util-all('justify-self-stretch') {
+  justify-self: stretch;
+}
+@include util-all('place-items-start') {
+  place-items: start;
+}
+@include util-all('place-items-end') {
+  place-items: end;
+}
+@include util-all('place-items-center') {
+  place-items: center;
+}
+@include util-all('place-items-baseline') {
+  place-items: baseline;
+}
+@include util-all('place-items-stretch') {
+  place-items: stretch;
+}
+@include util-all('place-self-auto') {
+  place-self: auto;
+}
+@include util-all('place-self-start') {
+  place-self: start;
+}
+@include util-all('place-self-end') {
+  place-self: end;
+}
+@include util-all('place-self-center') {
+  place-self: center;
+}
+@include util-all('place-self-stretch') {
+  place-self: stretch;
+}
+
+@include util-all('justify-start', true) {
+  justify-content: flex-start !important;
+}
+@include util-all('justify-end', true) {
+  justify-content: flex-end !important;
+}
+@include util-all('justify-center', true) {
+  justify-content: center !important;
+}
+@include util-all('justify-between', true) {
+  justify-content: space-between !important;
+}
+@include util-all('justify-around', true) {
+  justify-content: space-around !important;
+}
+@include util-all('justify-evenly', true) {
+  justify-content: space-evenly !important;
+}
+@include util-all('items-start', true) {
+  align-items: flex-start !important;
+}
+@include util-all('items-end', true) {
+  align-items: flex-end !important;
+}
+@include util-all('items-center', true) {
+  align-items: center !important;
+}
+@include util-all('items-baseline', true) {
+  align-items: baseline !important;
+}
+@include util-all('items-stretch', true) {
+  align-items: stretch !important;
+}
+@include util-all('content-center', true) {
+  align-content: center !important;
+}
+@include util-all('content-start', true) {
+  align-content: flex-start !important;
+}
+@include util-all('content-end', true) {
+  align-content: flex-end !important;
+}
+@include util-all('content-between', true) {
+  align-content: space-between !important;
+}
+@include util-all('content-around', true) {
+  align-content: space-around !important;
+}
+@include util-all('content-evenly', true) {
+  align-content: space-evenly !important;
+}
+@include util-all('justify-items-start', true) {
+  justify-items: start !important;
+}
+@include util-all('justify-items-end', true) {
+  justify-items: end !important;
+}
+@include util-all('justify-items-center', true) {
+  justify-items: center !important;
+}
+@include util-all('justify-items-stretch', true) {
+  justify-items: stretch !important;
+}
+@include util-all('justify-self-auto', true) {
+  justify-self: auto !important;
+}
+@include util-all('place-content-center', true) {
+  place-content: center !important;
+}
+@include util-all('place-content-start', true) {
+  place-content: start !important;
+}
+@include util-all('place-content-end', true) {
+  place-content: end !important;
+}
+@include util-all('place-content-between', true) {
+  place-content: space-between !important;
+}
+@include util-all('place-content-around', true) {
+  place-content: space-around !important;
+}
+@include util-all('place-content-evenly', true) {
+  place-content: space-evenly !important;
+}
+@include util-all('place-content-baseline', true) {
+  place-content: baseline !important;
+}
+@include util-all('place-content-stretch', true) {
+  place-content: stretch !important;
+}
+@include util-all('justify-self-start', true) {
+  justify-self: start !important;
+}
+@include util-all('justify-self-end', true) {
+  justify-self: end !important;
+}
+@include util-all('justify-self-center', true) {
+  justify-self: center !important;
+}
+@include util-all('justify-self-stretch', true) {
+  justify-self: stretch !important;
+}
+@include util-all('place-items-start', true) {
+  place-items: start !important;
+}
+@include util-all('place-items-end', true) {
+  place-items: end !important;
+}
+@include util-all('place-items-center', true) {
+  place-items: center !important;
+}
+@include util-all('place-items-baseline', true) {
+  place-items: baseline !important;
+}
+@include util-all('place-items-stretch', true) {
+  place-items: stretch !important;
+}
+@include util-all('place-self-auto', true) {
+  place-self: auto !important;
+}
+@include util-all('place-self-start', true) {
+  place-self: start !important;
+}
+@include util-all('place-self-end', true) {
+  place-self: end !important;
+}
+@include util-all('place-self-center', true) {
+  place-self: center !important;
+}
+@include util-all('place-self-stretch', true) {
+  place-self: stretch !important;
+}

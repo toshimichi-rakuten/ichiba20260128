@@ -1,0 +1,196 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+@include util-all('h-auto') {
+  height: auto;
+}
+@include util-all('h-full') {
+  height: 100%;
+}
+@include util-all('h-min-content') {
+  height: min-content;
+}
+@include util-all('h-max-content') {
+  height: max-content;
+}
+@include util-all('h-fit-content') {
+  height: fit-content;
+}
+@include util-all('h-unset') {
+  height: unset;
+}
+@include util-all('min-h-full') {
+  min-height: 100%;
+}
+@include util-all('min-h-min-content') {
+  min-height: min-content;
+}
+@include util-all('min-h-max-content') {
+  min-height: max-content;
+}
+@include util-all('min-h-fit-content') {
+  min-height: fit-content;
+}
+@include util-all('min-h-unset') {
+  min-height: unset;
+}
+@include util-all('max-h-full') {
+  max-height: 100%;
+}
+@include util-all('max-h-min-content') {
+  max-height: min-content;
+}
+@include util-all('max-h-max-content') {
+  max-height: max-content;
+}
+@include util-all('max-h-fit-content') {
+  max-height: fit-content;
+}
+@include util-all('max-h-unset') {
+  max-height: unset;
+}
+@include util-all('w-auto') {
+  width: auto;
+}
+@include util-all('w-full') {
+  width: 100%;
+}
+@include util-all('w-min-content') {
+  width: min-content;
+}
+@include util-all('w-max-content') {
+  width: max-content;
+}
+@include util-all('w-fit-content') {
+  width: fit-content;
+}
+@include util-all('w-unset') {
+  width: unset;
+}
+@include util-all('min-w-full') {
+  min-width: 100%;
+}
+@include util-all('min-w-min-content') {
+  min-width: min-content;
+}
+@include util-all('min-w-max-content') {
+  min-width: max-content;
+}
+@include util-all('min-w-fit-content') {
+  min-width: fit-content;
+}
+@include util-all('min-w-unset') {
+  min-width: unset;
+}
+@include util-all('max-w-full') {
+  max-width: 100%;
+}
+@include util-all('max-w-min-content') {
+  max-width: min-content;
+}
+@include util-all('max-w-max-content') {
+  max-width: max-content;
+}
+@include util-all('max-w-fit-content') {
+  max-width: fit-content;
+}
+@include util-all('max-w-unset') {
+  max-width: unset;
+}
+
+@include util-all('h-auto', true) {
+  height: auto !important;
+}
+@include util-all('h-full', true) {
+  height: 100% !important;
+}
+@include util-all('h-min-content', true) {
+  height: min-content !important;
+}
+@include util-all('h-max-content', true) {
+  height: max-content !important;
+}
+@include util-all('h-fit-content', true) {
+  height: fit-content !important;
+}
+@include util-all('h-unset', true) {
+  height: unset !important;
+}
+@include util-all('min-h-full', true) {
+  min-height: 100% !important;
+}
+@include util-all('min-h-min-content', true) {
+  min-height: min-content !important;
+}
+@include util-all('min-h-max-content', true) {
+  min-height: max-content !important;
+}
+@include util-all('min-h-fit-content', true) {
+  min-height: fit-content !important;
+}
+@include util-all('min-h-unset', true) {
+  min-height: unset !important;
+}
+@include util-all('max-h-full', true) {
+  max-height: 100% !important;
+}
+@include util-all('max-h-min-content', true) {
+  max-height: min-content !important;
+}
+@include util-all('max-h-max-content', true) {
+  max-height: max-content !important;
+}
+@include util-all('max-h-fit-content', true) {
+  max-height: fit-content !important;
+}
+@include util-all('max-h-unset', true) {
+  max-height: unset !important;
+}
+@include util-all('w-auto', true) {
+  width: auto !important;
+}
+@include util-all('w-full', true) {
+  width: 100% !important;
+}
+@include util-all('w-min-content', true) {
+  width: min-content !important;
+}
+@include util-all('w-max-content', true) {
+  width: max-content !important;
+}
+@include util-all('w-fit-content', true) {
+  width: fit-content !important;
+}
+@include util-all('w-unset', true) {
+  width: unset !important;
+}
+@include util-all('min-w-full', true) {
+  min-width: 100% !important;
+}
+@include util-all('min-w-min-content', true) {
+  min-width: min-content !important;
+}
+@include util-all('min-w-max-content', true) {
+  min-width: max-content !important;
+}
+@include util-all('min-w-fit-content', true) {
+  min-width: fit-content !important;
+}
+@include util-all('min-w-unset', true) {
+  min-width: unset !important;
+}
+@include util-all('max-w-full', true) {
+  max-width: 100% !important;
+}
+@include util-all('max-w-min-content', true) {
+  max-width: min-content !important;
+}
+@include util-all('max-w-max-content', true) {
+  max-width: max-content !important;
+}
+@include util-all('max-w-fit-content', true) {
+  max-width: fit-content !important;
+}
+@include util-all('max-w-unset', true) {
+  max-width: unset !important;
+}

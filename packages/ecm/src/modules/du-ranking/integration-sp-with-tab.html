@@ -1,0 +1,194 @@
+<!-- ランキングパーツ↓ -->
+<div
+  id="rnkProduct"
+  class="ecm-du-ranking ecm-du-ranking-sp"
+  data-ratevent="appear"
+  data-ratid="rk_appear_sp"
+>
+  <div
+    id="rnkDailyConfig"
+    autoresize="1"
+    omitname="100"
+    limititem="15"
+    ajaxtimer="8"
+    slidespeed="300"
+    flickmove="20"
+    svrgrp="1"
+    sidparam="0"
+    dispmode="A"
+    disptab="1"
+    imagesize="128"
+    lazyloadoffset="700"
+    maxitem="3"
+    sid="rk_sp_default"
+  ></div>
+  <div
+    id="rnkDailyGenreConfig"
+    limititem="15"
+    slidespeed="300"
+    flickmove="15"
+  ></div>
+  <script
+    id="rnkDailyItem"
+    style="display: none"
+    class="ecm-du-ranking-prototype"
+    type="text/template"
+  >
+    <li class="ecm-du-ranking-item-container">
+      <div class="ecm-du-ranking-item">
+        <a class="ecm-du-ranking-item-link" href="#ITEMURL#">
+          <div class="ecm-du-ranking-item-image">#ITEMIMGELE#</div>
+            <div class="ecm-du-ranking-item-rank">#ITEMRNK#<div class="ecm-du-ranking-item-rank-text">位</div></div>
+            <p class="ecm-du-ranking-item-name">#ITEMNAME#</p>
+            <p class="ecm-du-ranking-item-price">#ITEMPRICE#</p>
+            <div class="ecm-du-ranking-item-review">
+              <div class="ecm-du-ranking-item-review-star">#ITEMREVIEW#</div>
+          </div>
+        </a>
+      </div>
+    </li>
+  </script>
+  <script
+    id="rnkGenreTab"
+    style="display: none"
+    class="ecm-du-ranking-prototype"
+    type="text/template"
+  >
+    <li id="#GENRELINKEVENT#" class="rnkGenreLink"><span>#ITEMNAME#</span></li>
+  </script>
+  <ul
+    id="rnkDailyGenreList"
+    style="display: none"
+  >
+    <li
+      use_varnish="true"
+      gid="216129"
+      ge="9"
+      du="7"
+      offset="30"
+      linkname="アクセサリー"
+      unqid="rk_sp_xmas2023_01"
+      event_rnk_id="xmas2023"
+    >
+      アクセサリー
+    </li>
+    <li
+      use_varnish="true"
+      gid="216131"
+      ge="9"
+      du="7"
+      offset="30"
+      linkname="バッグ・ブランド"
+      unqid="rk_sp_xmas2023_02"
+      event_rnk_id="xmas2023"
+    >
+      バッグ・ブランド
+    </li>
+    <li
+      use_varnish="true"
+      gid="551167"
+      ge="9"
+      du="7"
+      offset="30"
+      linkname="スイーツ・お菓子"
+      unqid="rk_sp_xmas2023_03"
+      event_rnk_id="xmas2023"
+    >
+      スイーツ・お菓子
+    </li>
+    <li
+      use_varnish="true"
+      gid="100227"
+      ge="9"
+      du="7"
+      offset="30"
+      linkname="グルメ"
+      unqid="rk_sp_xmas2023_04"
+      event_rnk_id="xmas2023"
+    >
+      グルメ
+    </li>
+    <li
+      use_varnish="true"
+      gid="566382"
+      ge="9"
+      du="7"
+      offset="30"
+      linkname="おもちゃ"
+      unqid="rk_sp_xmas2023_05"
+      event_rnk_id="xmas2023"
+    >
+      おもちゃ
+    </li>
+    <li
+      use_varnish="true"
+      gid="100804"
+      ge="9"
+      du="7"
+      offset="30"
+      linkname="インテリア"
+      unqid="rk_sp_xmas2023_06"
+      event_rnk_id="xmas2023"
+    >
+      インテリア
+    </li>
+    <li
+      use_varnish="true"
+      gid="213795"
+      ge="9"
+      du="7"
+      offset="30"
+      linkname="パーティー・イベント用品"
+      unqid="rk_sp_xmas2023_07"
+      event_rnk_id="xmas2023"
+    >
+      パーティー・イベント用品
+    </li>
+    <li
+      use_varnish="true"
+      gid="100939"
+      ge="9"
+      du="7"
+      offset="30"
+      linkname="美容・コスメ・香水"
+      unqid="rk_sp_xmas2023_08"
+      event_rnk_id="xmas2023"
+    >
+      美容・コスメ・香水
+    </li>
+  </ul>
+
+  <div id="rnkDailyExistItemDisplay">
+    <div class="ecm-du-ranking-header">
+      <h3 class="ecm-du-ranking-header-title">リアルタイムランキング</h3>
+      <p class="ecm-du-ranking-header-link">
+        <span id="rnkDailyUpdateDateParts"></span>
+      </p>
+    </div>
+
+    <div id="rnkRankingColumn">
+      <div
+        id="rnkDailyGenreItemsDisplay"
+        class="ecm-du-ranking-tab-display"
+        data-nosave="1"
+        data-noloop="0"
+        data-noscrollbar="1"
+      ></div>
+      <div id="rnkTabSet">
+        <div
+          id="rnkTabItemdiv_#GENRELINKEVENT#"
+          class="ecm-du-ranking-tab-item"
+        >
+          <div
+            id="rnkDailyItemsDisplay_#GENRELINKEVENT#"
+            class="ecm-du-ranking-item-display"
+            data-nosave="1"
+            data-noloop="0"
+            data-noscrollbar="1"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ランキングパーツ↑ -->

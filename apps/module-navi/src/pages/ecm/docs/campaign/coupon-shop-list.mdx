@@ -1,0 +1,376 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultLinkHtml from 'ecm/src/modules/coupon-shop-list/default_link.html'
+import defaultGridHtml from 'ecm/src/modules/coupon-shop-list/default_grid.html'
+import genreAccordionHtml from 'ecm/src/modules/coupon-shop-list/genre_accordion.html'
+import genreGridHtml from 'ecm/src/modules/coupon-shop-list/genre_grid.html'
+import tabLinkHtml from 'ecm/src/modules/coupon-shop-list/tab_link.html'
+import tabGridHtml from 'ecm/src/modules/coupon-shop-list/tab_grid.html'
+import tabGenreAccordionHtml from 'ecm/src/modules/coupon-shop-list/tab_genre_accordion.html'
+import tabGenreGridHtml from 'ecm/src/modules/coupon-shop-list/tab_genre_grid.html'
+import filterHtml from 'ecm/src/modules/coupon-shop-list/filter.html'
+
+import {
+  createStaticDefaultLinkHtml,
+  createStaticDefaultGridHtml,
+  createStaticGenreAccordionHtml,
+  createStaticGenreGridHtml,
+  createStaticTabLinkHtml,
+  createStaticTabGridHtml,
+  createStaticTabGenreAccordionHtml,
+  createStaticTabGenreGridHtml,
+  createStaticFilterHtml,
+} from 'ecm/src/modules/coupon-shop-list/static'
+
+import { addBasePath } from 'src/utils'
+
+export const meta = {
+  title: 'クーポン対象ショップリスト',
+  description: 'クーポン企画、対象ショップ一覧表示用モジュール',
+  url: '/ecm/docs/campaign/coupon-shop-list',
+  tags: ['coupon-shop-list'],
+}
+
+# クーポン対象ショップリスト
+
+クーポン企画、対象ショップ一覧表示用モジュールです。EMPからダウンロードされたショップリストjsonファイルを利用し、表示させます。  
+jsonファイルのダウンロードやページチェック関しては、こちらの[コンフル](https://confluence.rakuten-it.com/confluence/pages/viewpage.action?pageId=3263443032)（閲覧は社内環境限定）を参照の上ご利用ください。
+
+<Space />
+
+<Note type="info">
+  20250217リリースにて、shopurlの末尾にスラッシュ（/）が予めHTMLに付与されるように修正されました。今後、新規にページを作成する際や既存ページを更新する際には、媒体側にて末尾にスラッシュ（/）を記載しないようお願いします。
+</Note>
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="sp">SP</Tabs.Tab>
+    <Tabs.Tab value="lg">PC</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html device='sp' content={createStaticDefaultLinkHtml(addBasePath('/_assets/testdata'))} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value="lg">
+    <Html device='lg' content={createStaticDefaultGridHtml(addBasePath('/_assets/testdata'))}/>
+  </Tabs.Panel>
+</Tabs>
+
+## 使い方
+
+1. EMPよりダウンロードしたショップリストjsonファイルを適宜リネイム  
+   （EMPからダウンロードした時点で日本語キャンペーンクーポン名になっている場合、Webサイトで参照できる英数字文字列に変更してください。）
+2. ショップリストjsonファイルを企画サイトのディレクトリ内に配置  
+   事故防止の観点からショップリストjsonファイルの上書き更新での運用は禁止です。  
+   Jsonファイル用のディレクトリをつくり日付などでどのクーポン企画のものか分かるように配置してください。  
+   例）新生活特集の場合`/season/newlife/couponshoplist/YYYYMMDD/`など
+3. モジュールソースコードをコピー＆ペースト
+4. モジュールソースコードの中の、ショップリストjsonファイルのパス部分★★★coupons.json★★★を2.のパスに編集
+5. （タブ切り替えタイプの場合）4.をそれぞれのタブに対して行い、タブの表示テキスト部分を編集
+6. （ジャンルごと表示タイプの場合）ジャンルリストバージョン（`data-coupon-genre`）を確認（の上必要あれば変更）
+
+必要な編集箇所は、各タイプで詳細を確認して対応してください。
+
+### ショップをジャンルごとに並べて表示させる場合
+
+ジャンルありタイプを利用してください。  
+ショップリストを第一階層ジャンルごとに並べて表示することが可能です。  
+ソースコード内でジャンルのバージョン指定（`data-coupon-genre`）をしています。通常時は編集しませんが、第一階層ジャンル変更実施前後に制作される場合は注意してください。  
+ジャンルのバージョン記載を誤ると、一部ショップが表示されない場合などがあります。  
+ジャンルリストバージョン、ページチェックに関してはこちらの[コンフル](https://confluence.rakuten-it.com/confluence/pages/viewpage.action?pageId=3263443032)（閲覧は社内環境限定）を参照の上ご利用ください。
+
+### 複数種類のクーポンごとに対象ショップ一覧を表示させる場合
+
+タブ切り替えタイプを利用してください。  
+同一ページ内に、例えば100円OFFクーポン・500円OFFクーポンなど複数クーポンを掲載していて、それぞれ対象ショップが異なる場合100円OFFクーポン・500円OFFクーポンなど、クーポン種類ごと（ショップリストjsonファイルごと）にタブの切り替え表示になります。  
+1つのタブに対し、1つのショップリストjsonファイルを読み込み表示させます。
+
+### 注意事項
+
+- 本モジュールは1ページに1か所のみ利用可能です。
+- ショップの表示順は、A～／あいうえお順となります。ジャンルの表示順は元データにより固定されています。
+- SPはモーダル表示となります。モーダルを開くリンク部分のデザインは各企画で設定可能です。
+- ショップリストjsonファイルのダウンロードや、ジャンルリストバージョン、ページチェックに関してはこちらの[コンフル](https://confluence.rakuten-it.com/confluence/pages/viewpage.action?pageId=3263443032
+)（閲覧は社内環境限定）を参照の上ご利用ください。
+
+## レイアウト
+
+### タブなし・ジャンルなし
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="sp">SP</Tabs.Tab>
+    <Tabs.Tab value="code">コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html device='sp' content={createStaticDefaultLinkHtml(addBasePath('/_assets/testdata'))} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value="code">
+    <Code content={defaultLinkHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='lg' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="lg">PC</Tabs.Tab>
+    <Tabs.Tab value="code">コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={createStaticDefaultGridHtml(addBasePath('/_assets/testdata'))} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value="code">
+    <Code content={defaultGridHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+### タブなし・ジャンルあり
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="sp">SP</Tabs.Tab>
+    <Tabs.Tab value="code">コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html device='sp' content={createStaticGenreAccordionHtml(addBasePath('/_assets/testdata'))} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value="code">
+    <Code content={genreAccordionHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='lg' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="lg">PC</Tabs.Tab>
+    <Tabs.Tab value="code">コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={createStaticGenreGridHtml(addBasePath('/_assets/testdata'))} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value="code">
+    <Code content={genreGridHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+### タブあり・ジャンルなし
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="sp">SP</Tabs.Tab>
+    <Tabs.Tab value="code">コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html device='sp' content={createStaticTabLinkHtml(addBasePath('/_assets/testdata'))} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value="code">
+    <Code content={tabLinkHtml} />
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='lg' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="lg">PC</Tabs.Tab>
+    <Tabs.Tab value="code">コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={createStaticTabGridHtml(addBasePath('/_assets/testdata'))} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value="code">
+    <Code content={tabGridHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Note type='info'>
+  タブの指定・幅、スクロールについては、[タブ](/ecm/docs/ui/tab/)の使い方を確認してください。  
+  SP表示でタブが横スクロールする場合は、右端のタブが見切れるように各タブの幅指定をします。
+</Note>
+
+### タブあり・ジャンルあり
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="sp">SP</Tabs.Tab>
+    <Tabs.Tab value="code">コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html device='sp' content={createStaticTabGenreAccordionHtml(addBasePath('/_assets/testdata'))} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value="code">
+    <Code content={tabGenreAccordionHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='lg' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="lg">PC</Tabs.Tab>
+    <Tabs.Tab value="code">コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={createStaticTabGenreGridHtml(addBasePath('/_assets/testdata'))} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value="code">
+    <Code content={tabGenreGridHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Note type='info'>
+  タブの指定・幅、スクロールについては、[タブ](/ecm/docs/ui/tab/)の使い方を確認してください。  
+  SP表示でタブが横スクロールする場合は、右端のタブが見切れるように各タブの幅指定をします。
+</Note>
+
+## アトリビュート
+
+<Tabs keepMounted={false} defaultValue='rootAttribute' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="rootAttribute">ルートアトリビュート</Tabs.Tab>
+    <Tabs.Tab value="dataAttribute">データーアトリビュート</Tabs.Tab>
+    <Tabs.Tab value="containerAttribute">コンテナーアトリビュート</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value="rootAttribute">
+    <table class='mdx-table'>
+      <thead class='mdx-table-header'>
+        <tr>
+          <th style={{ minWidth: '240px', width: '240px' }}>アトリビュート</th>
+          <th style={{ minWidth: '280px', width: '280px' }}>値</th>
+          <th style={{ width: '100%' }}>メモ</th>
+        </tr>
+      </thead>
+      <tbody class='mdx-table-body'>
+        <tr>
+          <td class='mdx-mono'>`data-module-name`</td>
+          <td class='mdx-mono'>ecm-coupon-shop-list</td>
+          <td>モジュール名</td>
+        </tr>
+        <tr>
+          <td class='mdx-mono'>`data-coupon-genre`</td>
+          <td class='mdx-mono'>string</td>
+          <td>ジャンルJSONバージョン</td>
+        </tr>
+      </tbody>
+    </table>
+  </Tabs.Panel>
+  <Tabs.Panel value="dataAttribute">
+    <table class='mdx-table'>
+      <thead class='mdx-table-header'>
+        <tr>
+          <th style={{ minWidth: '240px', width: '240px' }}>アトリビュート</th>
+          <th style={{ minWidth: '280px', width: '280px' }}>値</th>
+          <th style={{ width: '100%' }}>メモ</th>
+        </tr>
+      </thead>
+      <tbody class='mdx-table-body'>
+        <tr>
+          <td class='mdx-mono'>`data-coupon-shop-list-data`</td>
+          <td class='mdx-mono'>"" | string</td>
+          <td>データーカテゴリー名。（例："150_off_coupon"）`data-coupon-shop-list-item-container`と合わせてください。</td>
+        </tr>
+        <tr>
+          <td class='mdx-mono'>`data-coupons-json-url`</td>
+          <td class='mdx-mono'>string</td>
+          <td>クーポンJSON URL</td>
+        </tr>
+        <tr>
+          <td class='mdx-mono'>`id`</td>
+          <td class='mdx-mono'>string</td>
+          <td>要素ID。コンテナーに連携するために必要。</td>
+        </tr>
+      </tbody>
+    </table>
+  </Tabs.Panel>
+  <Tabs.Panel value="containerAttribute">
+    <table class='mdx-table'>
+      <thead class='mdx-table-header'>
+        <tr>
+          <th style={{ minWidth: '240px', width: '240px' }}>アトリビュート</th>
+          <th style={{ minWidth: '280px', width: '280px' }}>値</th>
+          <th style={{ width: '100%' }}>メモ</th>
+        </tr>
+      </thead>
+      <tbody class='mdx-table-body'>
+        <tr>
+          <td class='mdx-mono'>`data-coupon-shop-list-item-container`</td>
+          <td class='mdx-mono'>'' | string</td>
+          <td>表示するカテゴリー名。`data-coupon-shop-list-data`と合わせてください。</td>
+        </tr>
+        <tr>
+          <td class='mdx-mono'>`data-sort`</td>
+          <td class='mdx-mono'>string</td>
+          <td>sortに使用するクーポンのデーター。"shop_name_kana"など。セットされていない場合はパラパラで表示されます。</td>
+        </tr>
+        <tr>
+          <td class='mdx-mono'>`data-sort-type`</td>
+          <td class='mdx-mono'>desc | asc | ''</td>
+          <td>順番</td>
+        </tr>
+        <tr>
+          <td class='mdx-mono'>`data-filter`</td>
+          <td class='mdx-mono'>number (`genre_id`)</td>
+          <td>ジャンルIDで絞り込み。</td>
+        </tr>
+      </tbody>
+    </table>
+  </Tabs.Panel>
+</Tabs>
+
+## Advanced
+
+特定のジャンルで絞り込み表示をすることが可能です
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='lg' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="lg">PC</Tabs.Tab>
+    <Tabs.Tab value="code">コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={createStaticFilterHtml(addBasePath('/_assets/testdata'))} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value="code">
+    <Code content={filterHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+データを試作したい場合は、下記を参考にしてください。
+
+<Space />
+
+<Code content={createStaticDefaultLinkHtml(addBasePath('/_assets/testdata'))}/>

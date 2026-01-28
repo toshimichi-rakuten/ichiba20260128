@@ -1,0 +1,51 @@
+<div style="height: 100px"></div>
+
+<div class="d-inline-flex">
+  <div style="width: 30px"></div>
+  <div style="width: 30px"></div>
+  <div style="width: 30px"></div>
+  <div
+    style="height: 50px; border: 1px solid red"
+    class="d-inline-flex d-flex-col items-center justify-center"
+    aria-controls="hover1"
+    aria-expanded="false"
+    aria-haspopup="true"
+  >
+    <span>コンテンツ1</span>
+    <i
+      class="ecm-icon-chevron-down"
+      aria-hidden="true"
+    ></i>
+  </div>
+</div>
+
+<div>
+  When it's hard to use relative position to attach the hover to it's trigger, we can do it in JS with `data-attach`
+  prop.
+</div>
+
+<div>
+  `hover` element will be placed in the bottom left of the trigger by default. This can be adjust with
+  `data-attach-offset-left` and `data-attach-offset-top`.
+</div>
+
+<div style="height: 100px"></div>
+
+<ul
+  id="hover1"
+  style="background-color: white; position: absolute; border: 1px solid red; width: 170px"
+  class="py-16 px-8 text-center"
+  data-module-name="ecm-hover"
+  data-attach="true"
+  data-attach-offset-left="0"
+  data-attach-offset-top="0"
+  aria-hidden="true"
+>
+  <li>メニュー項目1-1</li>
+  <li>メニュー項目1-2</li>
+  <li>メニュー項目1-3</li>
+  <li>メニュー項目1-4</li>
+  <li>メニュー項目1-5</li>
+  <li>メニュー項目1-6</li>
+  <li>メニュー項目1-7</li>
+</ul>

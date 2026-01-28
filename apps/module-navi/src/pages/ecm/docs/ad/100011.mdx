@@ -1,0 +1,76 @@
+import Html from 'src/components/Html'
+import Code from 'src/components/Code'
+import Note from 'src/components/Note'
+import Table, { ClassTable, AttributeTable } from 'src/components/Table'
+import { Tabs } from '@mantine/core'
+import Space from 'src/components/Space'
+import ad100011Sp2ColumnPc3ColumnHtml from 'ecm/src/modules/ad/100011/pc-3column.html'
+import ad100011integrationSp2ColumnPc3ColumnHtml from 'ecm/src/modules/ad/100011/integration_pc-3column.html'
+
+export const meta = {
+  title: '原稿タイプID100011 商品',
+  description: '画像(比率1:1)＋商品名＋価格＋店舗名',
+  url: '/ecm/docs/ad/100011',
+  tags: ['商品', 'ad', '広告'],
+  finder_tags: [
+    'category_item',
+    'image_1x1',
+    'text_item_name',
+    'text_shop_name',
+    'price_value',
+    'layout_sp_col2',
+    'layout_pc_col3',
+    'layout_pc_col4',
+    'layout_pc_sp',
+  ],
+}
+
+# 原稿タイプID100011 商品
+
+画像(比率1:1)＋商品名＋価格＋店舗名  
+画像入稿サイズ：480×480px
+
+<Space />
+
+★部分へアドプラッツからダウンロードした配信タグを貼り付けてください。
+
+<Space />
+
+classの変更のみでレイアウト変更できるものについては、class部分のみ掲載しています。  
+上部のソースコードをコピー＆ペーストの後、 `rad-table-body` のclass部分をコピー＆ペーストで編集してください。
+
+## SP2カラム/PC3カラム
+
+<Tabs
+  keepMounted={false}
+  defaultValue='sp'
+  styles={{ panel: { paddingTop: '16px' } }}
+>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel value='sp'>
+    <Html
+      adHighlight={true}
+      content={ad100011Sp2ColumnPc3ColumnHtml}
+    />
+  </Tabs.Panel>
+  <Tabs.Panel value='lg'>
+    <Html
+      adHighlight={true}
+      device='lg'
+      content={ad100011Sp2ColumnPc3ColumnHtml}
+    />
+  </Tabs.Panel>
+  <Tabs.Panel value='code'>
+    <Code content={ad100011integrationSp2ColumnPc3ColumnHtml} />
+  </Tabs.Panel>
+</Tabs>
+
+## SP2カラム/PC4カラム
+
+<Code
+  content={`class="rad-table-body d-grid d-grid-col-2 md-d-grid-col-4 d-grid-gap-x-12 d-grid-gap-y-28 md-d-grid-gap-x-24 md-d-grid-gap-y-32"`}
+/>

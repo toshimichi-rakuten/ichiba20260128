@@ -1,0 +1,277 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import aboveHtml from 'ecm/src/modules/floating-toggle-navi/above.html'
+import aboveDemoHtml from 'ecm/src/modules/floating-toggle-navi/above_demo.html'
+import rightHtml from 'ecm/src/modules/floating-toggle-navi/right.html'
+import rightDemoHtml from 'ecm/src/modules/floating-toggle-navi/right_demo.html'
+import iconAbove from 'ecm/src/modules/floating-toggle-navi/icon-above.html'
+import iconAboveDemo from 'ecm/src/modules/floating-toggle-navi/icon-above_demo.html'
+import iconRight from 'ecm/src/modules/floating-toggle-navi/icon-right.html'
+import iconRightDemo from 'ecm/src/modules/floating-toggle-navi/icon-right_demo.html'
+import iconAboveMenu from 'ecm/src/modules/floating-toggle-navi/icon-above-menu.html'
+import iconAboveMenuDemo from 'ecm/src/modules/floating-toggle-navi/icon-above-menu_demo.html'
+import iconRightMenu from 'ecm/src/modules/floating-toggle-navi/icon-right-menu.html'
+import iconRightMenuDemo from 'ecm/src/modules/floating-toggle-navi/icon-right-menu_demo.html'
+import buttonAbove from 'ecm/src/modules/floating-toggle-navi/button-above.html'
+import buttonAboveDemo from 'ecm/src/modules/floating-toggle-navi/button-above_demo.html'
+import buttonRight from 'ecm/src/modules/floating-toggle-navi/button-right.html'
+import buttonRightDemo from 'ecm/src/modules/floating-toggle-navi/button-right_demo.html'
+import scrollAbove from 'ecm/src/modules/floating-toggle-navi/scroll-above.html'
+import scrollAboveDemo from 'ecm/src/modules/floating-toggle-navi/scroll-above_demo.html'
+import scrollRight from 'ecm/src/modules/floating-toggle-navi/scroll-right.html'
+import scrollRightDemo from 'ecm/src/modules/floating-toggle-navi/scroll-right_demo.html'
+import scrollAboveIcon from 'ecm/src/modules/floating-toggle-navi/scroll-above-icon.html'
+import scrollAboveIconDemo from 'ecm/src/modules/floating-toggle-navi/scroll-above-icon_demo.html'
+import scrollRightIcon from 'ecm/src/modules/floating-toggle-navi/scroll-right-icon.html'
+import scrollRightIconDemo from 'ecm/src/modules/floating-toggle-navi/scroll-right-icon_demo.html'
+
+export const meta = {
+  title: 'ハンバーガーメニュー',
+  description: '上部に固定表示されるハンバーガーメニューつきのナビゲーション',
+  url: '/ecm/docs/ui/floating-toggle-navi',
+  tags: ['floating', 'toggle', 'navi'],
+}
+
+# ハンバーガーメニュー
+
+上部に固定表示されるハンバーガーメニューつきのナビゲーションです。SP用です。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp-above' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp-above'>イメージ</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp-above'>
+    <Html device='sp' content={aboveDemoHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## 使い方
+
+このハンバーガーメニューのタグ（HTML）が記述された位置にスクロールが到達したときに、表示開始され、ページ上部にフローティングします。  
+各パターンでソースコード編集方法ご確認ください。
+
+1. 横並びメニューのパターンを決める
+    - 割り付け・テキストのみ
+    - 割り付け・アイコンあり
+    - 割り付け・テキストボタンタイプ
+    - スクロール・テキストのみ
+    - スクロール・アイコンあり
+    - オプション    
+2. ハンバーガーメニューの開き方（上から開く／右から開く）を決める
+    - 上から開く
+    - 右から開く
+
+<Space />
+
+<Note type='info'>
+  表示開始位置などフローティングについては[フローティング](/ecm/docs/js/floating/)を参照  
+  上から開く設定詳細については[シート](/ecm/docs/ui/sheet/)を参照  
+  右から開く設定詳細については[サイドバー](/ecm/docs/ui/sidebar/)を参照
+</Note>
+
+### 表示開始位置の設定
+
+`aria-hidden="true"` を指定  
+`data-show-at` の値に表示開始させたい要素のid（#hogehoge）またはclass（.hogehoge）を指定する、または、`data-show-threshold` の値にページ上部からの距離の数値（px単位不要）を指定します。  
+※上記ソースコードは、`data-show-threshold` プロパティで実装
+
+<Space />
+
+<Note type='info'>
+  詳細設定については[フローティング](/ecm/docs/js/floating/)を参照
+</Note>
+
+### メニュー内の設定
+
+ハンバーガーメニューを開いたときは、下記div要素内に、画像など任意のコンテンツを追加することができます。  
+
+<Space />
+
+**上から開く場合**  
+`<div class="ecm-sheet-content-body">〜</div>`
+
+<Space />
+
+**右から開く場合**  
+`<div class="ecm-sidebar-content">〜</div>`
+
+<Space />
+
+<Note type='info'>
+  既存のメニュー内リンクリストの詳細設定については[アコーディオン](/ecm/docs/ui/accordion/)を参照
+</Note>
+
+## パターン
+
+### 割り付け・テキストのみ
+
+<Tabs keepMounted={false} defaultValue='sp-above' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp-above'>上から</Tabs.Tab>
+    <Tabs.Tab value='code-above'>上から＞コード</Tabs.Tab>
+    <Tabs.Tab value='sp-right'>右から</Tabs.Tab>
+    <Tabs.Tab value='code-right'>右から＞コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp-above'>
+    <Html device='sp' content={aboveDemoHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code-above'>
+    <Code content={aboveHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='sp-right'>
+    <Html device='sp' content={rightDemoHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code-right'>
+    <Code content={rightHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+### 割り付け・アイコンあり
+
+<Tabs keepMounted={false} defaultValue='sp-above' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp-above'>上から</Tabs.Tab>
+    <Tabs.Tab value='code-above'>上から＞コード</Tabs.Tab>
+    <Tabs.Tab value='sp-right'>右から</Tabs.Tab>
+    <Tabs.Tab value='code-right'>右から＞コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp-above'>
+    <Html device='sp' content={iconAboveDemo}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code-above'>
+    <Code content={iconAbove}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='sp-right'>
+    <Html device='sp' content={iconRightDemo}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code-right'>
+    <Code content={iconRight}/>
+  </Tabs.Panel>
+</Tabs>
+
+### テキストボタンタイプ
+
+<Tabs keepMounted={false} defaultValue='sp-above' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp-above'>上から</Tabs.Tab>
+    <Tabs.Tab value='code-above'>上から＞コード</Tabs.Tab>
+    <Tabs.Tab value='sp-right'>右から</Tabs.Tab>
+    <Tabs.Tab value='code-right'>右から＞コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp-above'>
+    <Html device='sp' content={buttonAboveDemo}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code-above'>
+    <Code content={buttonAbove}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='sp-right'>
+    <Html device='sp' content={buttonRightDemo}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code-right'>
+    <Code content={buttonRight}/>
+  </Tabs.Panel>
+</Tabs>
+
+### スクロール・テキストのみ
+
+<Tabs keepMounted={false} defaultValue='sp-above' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp-above'>上から</Tabs.Tab>
+    <Tabs.Tab value='code-above'>上から＞コード</Tabs.Tab>
+    <Tabs.Tab value='sp-right'>右から</Tabs.Tab>
+    <Tabs.Tab value='code-right'>右から＞コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp-above'>
+    <Html device='sp' content={scrollAboveDemo}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code-above'>
+    <Code content={scrollAbove}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='sp-right'>
+    <Html device='sp' content={scrollRightDemo}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code-right'>
+    <Code content={scrollRight}/>
+  </Tabs.Panel>
+</Tabs>
+
+### スクロール・アイコンあり
+
+<Tabs keepMounted={false} defaultValue='sp-above' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp-above'>上から</Tabs.Tab>
+    <Tabs.Tab value='code-above'>上から＞コード</Tabs.Tab>
+    <Tabs.Tab value='sp-right'>右から</Tabs.Tab>
+    <Tabs.Tab value='code-right'>右から＞コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp-above'>
+    <Html device='sp' content={scrollAboveIconDemo}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code-above'>
+    <Code content={scrollAboveIcon}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='sp-right'>
+    <Html device='sp' content={scrollRightIconDemo}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code-right'>
+    <Code content={scrollRightIcon}/>
+  </Tabs.Panel>
+</Tabs>
+
+### オプション
+
+ハンバーガーメニューのアイコン下にテキストを入れることができます。  
+`<span class="text-10px mt-4">テキスト</span>` に任意のテキストを入れてください。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp-above' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp-above'>上から</Tabs.Tab>
+    <Tabs.Tab value='code-above'>上から＞コード</Tabs.Tab>
+    <Tabs.Tab value='sp-right'>右から</Tabs.Tab>
+    <Tabs.Tab value='code-right'>右から＞コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp-above'>
+    <Html device='sp' content={iconAboveMenuDemo}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code-above'>
+    <Code content={iconAboveMenu}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='sp-right'>
+    <Html device='sp' content={iconRightMenuDemo}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code-right'>
+    <Code content={iconRightMenu}/>
+  </Tabs.Panel>
+</Tabs>

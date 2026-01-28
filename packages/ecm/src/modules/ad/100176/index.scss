@@ -1,0 +1,42 @@
+.md-ecm-ad-image-block-100176 {
+  @include screen('md', 'up') {
+    margin: 0 auto;
+    width: 167px;
+  }
+}
+
+.ecm-ad-image-block-100176 {
+  position: relative;
+
+  @media (hover: hover) {
+    &:hover {
+      opacity: 1;
+
+      img {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.ecm-ad-image-label-container-100176 {
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.ecm-ad-image-label-100176 {
+  @include text-10px;
+
+  background-color: $color-gray-1;
+  color: $color-white;
+  margin: $space-4 $space-4 0 0;
+  padding: 0 $space-4;
+
+  &:empty {
+    display: none;
+  }
+}

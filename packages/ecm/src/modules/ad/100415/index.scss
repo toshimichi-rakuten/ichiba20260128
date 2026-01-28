@@ -1,0 +1,18 @@
+.ecm-ad-logo-100415 {
+  width: calc((100% - 8px) / 2);
+  max-width: 220px;
+}
+
+.ecm-ad-image-block-100415 {
+  @include screen('md', 'up') {
+    width: calc((100% - 16px) / 2);
+  }
+}
+
+.ecm-ad-shop-100415 {
+  font-size: 14px;
+
+  @include screen('md', 'up') {
+    font-size: 18px;
+  }
+}

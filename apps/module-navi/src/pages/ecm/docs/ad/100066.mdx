@@ -1,0 +1,76 @@
+
+import Html from 'src/components/Html'
+import Code from 'src/components/Code'
+import Note from 'src/components/Note'
+import Table, { ClassTable, AttributeTable } from 'src/components/Table'
+import { Tabs } from '@mantine/core'
+import Space from 'src/components/Space'
+import ad100066listHtml from 'ecm/src/modules/ad/100066/list.html'
+import ad100066columnHtml from 'ecm/src/modules/ad/100066/column.html'
+import ad100066integrationListHtml from 'ecm/src/modules/ad/100066/integration_list.html'
+import ad100066integrationColumnHtml from 'ecm/src/modules/ad/100066/integration_column.html'
+
+export const meta = {
+  title: '原稿タイプID100066 ランキング形式',
+  description: '',
+  url: '/ecm/docs/ad/100066',
+  tags: ['商品', 'ad', '原稿タイプ', 'ranking'],
+  finder_tags: [
+    'category_ranking',
+    'image_3x2',
+    'text_item_name',
+    'text_item_desc',
+    'text_shop_name',
+    'price_value',
+    'icon_free_delivery',
+    'layout_sp_list',
+    'layout_sp_col1',
+    'layout_sp_col2',
+    'layout_sp_only',
+    'layout_others'
+  ],
+}
+
+# 原稿タイプID100066 ランキング形式
+SP only  
+商品画像入稿サイズ：720×480px  
+見出し画像入稿サイズ：750×80px  
+
+<Space />
+★部分へアドプラッツからダウンロードした配信タグを貼り付けてください。
+
+## リスト
+
+<Tabs keepMounted={false} defaultValue='demo'  styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='demo'>デモ</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='demo'>
+    <Html adHighlight={true} content={ad100066listHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={ad100066integrationListHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## カラム
+
+<Tabs keepMounted={false} defaultValue='demo'  styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='demo'>デモ</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='demo'>
+    <Html adHighlight={true} content={ad100066columnHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={ad100066integrationColumnHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+

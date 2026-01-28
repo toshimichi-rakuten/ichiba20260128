@@ -1,0 +1,215 @@
+@import 'ecm/src/_scss/variables';
+@import 'ecm/src/_scss/mixins';
+
+.scm-gs-intro {
+  // For ".screen-reader-text" Style.
+  position: relative;
+
+  &.scm-gs-intro-gray {
+    background-color: $color-gray-5;
+  }
+}
+
+.scm-gs-intro-main {
+  align-items: center;
+  box-sizing: border-box;
+  color: $color-gray-1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: fit-content;
+
+  @include screen('md', 'down') {
+    display: none;
+  }
+}
+
+.scm-gs-intro-body {
+  background-color: $color-gray-5;
+  box-sizing: border-box;
+  padding: $space-24;
+
+  @include screen('md', 'up') {
+    border-radius: 8px;
+    padding: $space-48;
+  }
+
+  &.scm-gs-intro-body-filter {
+    padding: $space-32 46px $space-40;
+    @include screen('xs', 'down') {
+      padding: $space-32 $space-40 $space-40;
+    }
+    @include screen('md', 'up') {
+      padding: 37px 46px $space-36;
+    }
+  }
+}
+
+.scm-gs-intro-headline {
+  @include vw-text-2xl;
+
+  margin-bottom: 14px;
+  text-align: center;
+
+  @include screen('md', 'up') {
+    font-size: 42px;
+    margin-bottom: $space-24;
+  }
+}
+
+.scm-gs-intro-body-text {
+  @include vw-text-base;
+
+  color: $color-gray-1;
+  font-weight: bold;
+  margin-bottom: $space-16;
+  text-align: center;
+
+  @include screen('md', 'up') {
+    @include text-xl;
+
+    margin-bottom: $space-24;
+  }
+
+  &.scm-gs-intro-body-text-filter {
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      width: 2px;
+      height: 100%;
+      bottom: 0;
+      background-color: $color-black;
+      position: relative;
+      top: 6px;
+    }
+
+    &::before {
+      transform: rotate(-30deg);
+    }
+
+    &::after {
+      transform: rotate(30deg);
+    }
+
+    font-weight: 400;
+    display: inline-grid;
+    place-content: center;
+    place-items: center;
+    grid-template-columns: 1fr auto 1fr;
+    column-gap: 0;
+    align-items: center;
+    @include screen('md', 'up') {
+      font-size: 26px;
+      grid-template-columns: 60px auto 60px;
+      margin-bottom: $space-32;
+    }
+  }
+}
+
+.scm-gs-intro-body-text-image {
+  height: auto;
+  width: 100%;
+
+  @include screen('md', 'up') {
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.scm-gs-intro-filter-container {
+  @include screen('md', 'up') {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $space-28;
+    font-size: 18px;
+  }
+}
+
+.scm-gs-intro-filter {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include screen('md', 'up') {
+    max-width: 359px;
+    height: 56px;
+  }
+}
+
+.scm-gs-intro-filter-select {
+  width: 100%;
+  height: 100%;
+  background-color: $color-white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-weight: bold;
+  padding-left: $space-16;
+  padding-right: $space-28;
+  appearance: none;
+  position: relative;
+  outline: none;
+  color: $color-black;
+}
+
+.scm-gs-intro-filter-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.scm-gs-intro-button {
+  width: 100%;
+  display: block;
+  padding: $space-24 0;
+  background: $color-gray-4;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  position: relative;
+
+  @include screen('md', 'up') {
+    @include text-xl;
+
+    width: 361px;
+    padding: 26px 0;
+    margin: 46px auto 0 !important;
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.scm-gs-intro-button-icon {
+  @include text-base;
+
+  display: block;
+  height: 1.2em;
+  width: 1.2em;
+  line-height: 1.2em;
+  border-radius: 50%;
+  background-color: $color-white;
+  position: absolute;
+  right: 16px;
+  top: calc(50% - 0.6em);
+
+  @include screen('md', 'up') {
+    @include text-lg;
+
+    height: 24px;
+    width: 24px;
+  }
+}

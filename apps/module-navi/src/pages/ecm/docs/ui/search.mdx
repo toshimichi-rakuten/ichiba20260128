@@ -1,0 +1,126 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'ecm/src/modules/search/default.html'
+import selectionHtml from 'ecm/src/modules/search/selection.html'
+import selectionKeywordHtml from 'ecm/src/modules/search/selection-keyword.html'
+import selectionKeywordListHtml from 'ecm/src/modules/search/selection-keyword-list.html'
+
+export const meta = {
+  title: '検索',
+  description: '楽天市場の検索結果ページへ遷移する検索フォーム',
+  url: '/ecm/docs/ui/search',
+  tags: ['search'],
+}
+
+# 検索
+
+楽天市場の検索結果ページへ遷移する検索フォームです。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={defaultHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={defaultHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={defaultHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## 使い方
+
+必要なパラメーターを `<form>` タグの中へ `<input type="hidden"～` の記載で追加してください。
+
+- ジャンル ID を入れる場合；`<input type="hidden" name="g" value="★ジャンルIDを入れる★">`
+- タグ ID を入れる場合；`<input type="hidden" name="tg" value="★タグIDを入れる★">`
+- マーケティングキーワードを入れる場合；`<input type="hidden" name="mk" value="★JINGIで発行されたキーワードを入れる★">`
+- l-id を入れる場合；`<input type="hidden" name="l-id" value="★付けたいl-idの値を入れる★">`
+
+### 注意事項
+
+- 必要なパラメーターは必ずディレクターに確認をして設定してください。
+- セレクトオプションを利用する場合、セレクトオプションの `name` の値は、`sitem` 以外（`g、tg` など）でご利用ください。
+- ひとつのフォーム内で複数の（`name="sitem"`）を設定することはできません。
+- パラメーターについて詳細は[マニュアル](https://confluence.rakuten-it.com/confluence/display/JISRCH/3.URL+Spec)（閲覧は社内環境限定）参照
+
+## パターン
+
+### セレクトオプション付き
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value="code">コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={selectionHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={selectionHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={selectionHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+### セレクトオプション付き・検索キーワード付き
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value="code">コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={selectionKeywordHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={selectionKeywordHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={selectionKeywordHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+### セレクトオプション付き・検索キーワード付き（SP・リスト）
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value="code">コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={selectionKeywordListHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={selectionKeywordListHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={selectionKeywordListHtml}/>
+  </Tabs.Panel>
+</Tabs>

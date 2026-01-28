@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="utf-8">
+  <title>Font unicode-range subsetting</title>
+  <link href="RakutenSansJP2_W-Medium.css" rel="stylesheet">
+  <style>
+    .sample {
+      font-weight: normal;
+      font-style: normal;
+      font-size: 25px;
+      line-height: 200%;
+      font-style: normal;
+      padding: 1em 0;
+      font-family: 'RakutenSansJP2_W-Medium';
+      text-spacing-trim: space-all;
+    }
+    [contenteditable="true"] {
+      padding: 10px;
+      outline: 1px dashed #CCC;
+    }
+    [contenteditable="true"]:hover {
+      outline: 1px dashed #0090D2;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <h1>Font unicode-range subsetting</h1>
+    <h2>RakutenSansJP2_W-Medium</h2>
+    <div></div>
+    <p class="sample" contenteditable="true">
+    Text here ... (Editable)
+    </p>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // すべてのスライダーを取得
+      const sliders = document.querySelectorAll('input[type="range"]');
+      const text = document.querySelector('p.sample[contenteditable="true"]');
+      // スライダーの初期値に基づいてフォント設定を更新
+      updateFontVariation();
+      // 各スライダーにイベントリスナーを追加
+      sliders.forEach((slider) => {
+        slider.addEventListener("input", updateFontVariation);
+      });
+      function updateFontVariation() {
+        // すべてのスライダーの値を取得して設定を作成
+        const settings = Array.from(sliders)
+        .map((slider) => {
+          const axis = slider.dataset.attribute; // data-attributeの値を取得
+          const value = slider.value; // スライダーの現在の値を取得
+          return `'${axis}' ${value}`; // '軸名' 値 の形式で返す
+        })
+        .join(", "); // コンマで連結
+        // テキスト要素のフォント設定を更新
+        text.style.fontVariationSettings = settings;
+      }
+    });
+  </script>
+</body>
+</html>
+    

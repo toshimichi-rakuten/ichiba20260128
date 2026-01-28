@@ -1,0 +1,59 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import SvgIconGrid from 'src/page-files/brand-icon/brand-icon-grid'
+
+export const meta = {
+  title: 'サービス・SNSアイコン',
+  description: 'サービスロゴやSNSアイコンを表示',
+  url: '/ecm/docs/icon/brand-icon',
+  tags: ['service', 'sns', 'icon'],
+}
+
+# サービス・SNSアイコン
+
+サービスロゴやSNSアイコンを表示させるモジュールです。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='logo' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='logo'>ロゴ</Tabs.Tab>
+    <Tabs.Tab value='sns'>SNS</Tabs.Tab>
+    <Tabs.Tab value='ichiba'>市場</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='logo'>
+    <SvgIconGrid type="logo" />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='sns'>
+    <SvgIconGrid type="sns" />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='ichiba'>
+    <SvgIconGrid type="ichiba" />
+  </Tabs.Panel>
+</Tabs>
+
+## 使い方
+
+1. 一覧から利用するイメージを探す、クリックするとソースコードをコピーできます。
+
+    <Space />
+
+    <Code content={`
+      <img src="https://r.r10s.jp/com/js/c/ecm/assets/svg/logo-r-symbol.svg" />
+    `}/>
+
+    <Space />
+
+2. ページ側CSSやimgの`width`と`height`でサイズを調整してください。
+
+    <Space />
+
+    <Code content={`
+      <img src="https://r.r10s.jp/com/js/c/ecm/assets/svg/logo-r-symbol.svg" width="100px" height="100px" />
+    `}/>

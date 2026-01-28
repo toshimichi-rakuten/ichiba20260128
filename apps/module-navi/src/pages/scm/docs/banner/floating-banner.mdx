@@ -1,0 +1,59 @@
+
+import Demo from 'src/components/Demo'
+import Code from 'src/components/Code'
+import Html from 'src/components/Html'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultDemoHtml from 'scm/src/modules/floating-banner/single_demo.html'
+import defaultHtml from 'scm/src/modules/floating-banner/single.html'
+import multipleDemoHtml from 'scm/src/modules/floating-banner/multiple_demo.html'
+import multipleHtml from 'scm/src/modules/floating-banner/multiple.html'
+
+export const meta = {
+  title: 'フローティングボトムバナー',
+  url: '/scm/docs/banner/floating-banner',
+  tags: ['banner', 'floating', 'bottom'],
+  enabled: true
+}
+
+# フローティングボトムバナー
+
+SPはありません
+
+## 単体
+
+<Tabs keepMounted={false} defaultValue='lg' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='lg'>LG</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='lg'>
+    <Html scm={true} device='lg' content={defaultDemoHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={defaultHtml} />
+  </Tabs.Panel>
+</Tabs>
+
+<Space h="lg" />
+
+## 複数
+
+<Tabs keepMounted={false} defaultValue='lg' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='lg'>LG</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='lg'>
+    <Html scm={true} device='lg' content={multipleDemoHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={multipleHtml} />
+  </Tabs.Panel>
+</Tabs>
+
+

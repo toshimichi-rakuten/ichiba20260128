@@ -1,0 +1,77 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'ecm/src/modules/lazy-image/index.html'
+
+export const meta = {
+  title: 'レイジーローディング',
+  description: '画像の遅延読み込みを行う',
+  url: '/ecm/docs/js/lazy-loading',
+  tags: ['image', 'lazy', 'loading'],
+}
+
+# レイジーローディング
+
+画像の遅延読み込みを行うモジュールです。モジュールでは、必要な箇所にはあらかじめレイジーローディングが設定されていますが、提供しているモジュール以外の場所でも設定して利用できます。
+
+<Space />
+<Note type='info'>
+ファーストビューに見える画像にはレイジーローディングをかけないでください
+</Note>
+
+## 主な機能・特徴
+
+- imgタグの遅延読み込みができます。
+- 表示される直前（スクロールして表示や、スライドして表示、ポップアップを表示など画面に表示されるタイミング）に画像を読み込んで表示するため、ページ訪問時のページ容量を削減できます。
+
+## 使い方
+
+1. 元の画像の`src` を `data-lazy-loading` に置き換え、元のsrcには仮の画像 `https://r.r10s.jp/com/img/home/t.gif`（1x1のgif画像）を設定してください。
+
+    <Space />
+
+    <Code content={`
+    <img src="super-large-heavy-picture.png" alt="">
+    ↓
+   <img data-lazy-loading="super-large-heavy-picture.png" src="https://r.r10s.jp/com/img/home/t.gif" width="1920" height="1080" alt="">
+    `}/>
+
+    <Space />
+
+2. `t.gif` に、元画像と同じサイズになるようにリサイズ用パラメーター `?resize=横:縦` を設定してください。`t.gif` に元画像のサイズを設定しておくことで、レイジーローディング読み込み前後でレイアウトが崩れる・アンカーがずれるのを防ぎます。
+
+    <Space />
+
+    <Code content={`
+    <img data-lazy-loading="super-large-heavy-picture.png" src="https://r.r10s.jp/com/img/home/t.gif" width="1920" height="1080" alt="">
+    ↓
+   <img data-lazy-loading="super-large-heavy-picture.png" src="https://r.r10s.jp/com/img/home/t.gif?resize=1920:1080" width="1920" height="1080" alt="">
+    `}/>
+
+    <Space />
+
+    ※`r.r10s.jp` サーバーから配信されている画像ファイルは、リサイズパラメーターを使って画像の大きさを変更できます。
+
+## 注意事項
+
+### ページ上部では使用を避ける
+
+看板画像などページの上部（ファーストビュー）など、ユーザーがページを訪問した時にすぐ表示する場所にはレイジーローディングは不要です。仮に設定した場合、モジュールのJavaScriptが実行されてから画像が表示されるため、画像が遅れて表示されます。
+
+### PITARIなど非同期のパーツ内では使用を避ける
+
+レイジーローディングは、ページを表示した時にページにある画像に対して動作するように作成されています。そのため、PITARIで追加したコンテンツや、ページを表示した後にHTMLに追加される画像に対してはそのままでは動作しません。もしJavaScriptパーツと併用して画像がうまく表示されない場合は利用を避けて下さい。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='code' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+  
+  <Tabs.Panel value='code'>
+    <Code content={defaultHtml}/>
+  </Tabs.Panel>
+</Tabs>

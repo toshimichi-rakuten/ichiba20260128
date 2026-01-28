@@ -1,0 +1,26 @@
+
+import Demo from 'src/components/Demo'
+import Code from 'src/components/Code'
+import Html from 'src/components/Html'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'scm/src/modules/gs-intro/default.html'
+import grayHtml from 'scm/src/modules/gs-intro/gray.html'
+
+export const meta = {
+  title: 'ギフトサーチ導線',
+  url: '/scm/docs/other/gs-intro',
+  tags: ['gift', 'banner', 'バナー'],
+}
+
+# ギフトサーチ導線
+
+<Demo scm={true} content={defaultHtml} breakpoints={['sp', 'md', 'lg']} />
+
+<Space h='lg' />
+
+## 背景ベタ（PC）
+
+<Demo scm={true} content={grayHtml} breakpoints={['sp', 'md', 'lg']} />
+
+

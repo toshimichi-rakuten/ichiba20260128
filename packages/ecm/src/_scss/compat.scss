@@ -1,0 +1,61 @@
+// Workarounds/backward compatibility supports for things that are not easily fixable.
+
+.ecm-wrap {
+  // Default that is a11y friendly.
+  font-size: 16px;
+  line-height: 1.3;
+
+  // Ad titles tends to have long text. Also default on previous ECM.
+  // https://gitpub.rakuten-it.com/projects/IER/repos/module-file-builder/browse/src/modules/foundation/setup_sp.scss
+  * {
+    overflow-wrap: break-word;
+    word-break: break-all;
+  }
+
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+
+  &.ecm-wrap-1024 {
+    min-width: 1024px;
+  }
+}
+
+// Add style to the copyright text include file in the footer (© Rakuten Group, Inc.)
+.ecm-compat-sp-footer {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 16px;
+
+  font {
+    color: #666 !important;
+    font-size: 13px !important;
+    line-height: 13px !important;
+  }
+}
+
+// Do not squish footer when browser is resized on PC.
+.ecm-compat-pc-footer {
+  min-width: 1024px;
+}
+
+.ecm-compat-close-notice {
+  line-height: 1;
+  text-align: center;
+  font-weight: bold;
+}
+
+// Add red underline to common header
+#riCmnHdr {
+  @media screen and (max-width: 767px) {
+    border-bottom: 3px solid #bf0000;
+  }
+}
+
+[irc='CommonFooterMall'] {
+  [class^='item-container-'] {
+    box-sizing: content-box;
+  }
+}

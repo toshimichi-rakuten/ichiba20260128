@@ -1,0 +1,8 @@
+.ecm-ad-image-block-100162 {
+  width: 234px;
+  margin: 0 auto;
+
+  @include screen('md', 'down') {
+    width: 100%;
+  }
+}

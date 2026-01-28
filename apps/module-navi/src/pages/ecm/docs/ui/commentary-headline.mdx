@@ -1,0 +1,63 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'ecm/src/modules/commentary/headline.html'
+
+export const meta = {
+  title: '見出し',
+  description: 'ページ内のコンテンツ用見出しテキスト',
+  url: '/ecm/docs/ui/commentary-headline',
+  tags: ['commentary', 'headline'],
+}
+
+# 見出し
+
+ページ内のコンテンツ用見出しテキストのモジュールです。
+
+## 下線付き
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP／PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={defaultHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={defaultHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## 下線なし
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP／PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={`
+<h2 class="text-center text-4xl">コンテンツ見出し</h2>
+`}
+/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={`
+<h2 class="text-center text-4xl">コンテンツ見出し</h2>
+`}
+/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+- テキストサイズの変更は、[ユーティリティクラス](/ecm/docs/css/list/)が利用できます。
+- 見出しレベルはh2で提供していますが、ページの構成に合わせて見出しレベル（h1～h6）へ設定を変更してご利用ください。
+- 下線なしの場合は、`ecm-content-headline` クラスを削除してください。

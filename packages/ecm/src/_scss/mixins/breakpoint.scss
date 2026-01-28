@@ -1,0 +1,84 @@
+@import '../variables';
+
+// Check breakpoint.dev.scss and breakpoint.stories on how to use.
+
+/* stylelint-disable */
+@mixin screen($size, $type) {
+  $min-width: map-get($screen-breakpoints, $size);
+
+  @if ($type == 'up') {
+    @media screen and (min-width: $min-width) {
+      @content;
+    }
+  } @else if ($type == 'down') {
+    $max-width: map-get($screen-breakpoints, $size) - 1px;
+    @media screen and (max-width: $max-width) {
+      @content;
+    }
+  } @else if ($type == 'only') {
+    $next-size: next($size);
+    $max-width: map-get($screen-breakpoints, $next-size) - 1px;
+    @media screen and (min-width: $min-width) and (max-width: $max-width) {
+      @content;
+    }
+  }
+}
+
+@function next($size) {
+  $keys: map-keys($screen-breakpoints);
+  $index: index($keys, $size);
+
+  @if $index == length($keys) {
+    @error "No next breakpoint found for #{$size}.";
+  }
+
+  @return nth($keys, $index + 1);
+}
+
+/* stylelint-enable */
+
+// since we cannot add !important to @content,
+// $bang only adds ! in the name.
+@mixin util-all($class, $bang: false) {
+  @if $bang == true {
+    .#{$class}\! {
+      @content;
+    }
+  } @else {
+    .#{$class} {
+      @content;
+    }
+  }
+}
+
+@mixin util-md($class, $bang: false) {
+  @if $bang == true {
+    .md-#{$class}\! {
+      @include screen('md', 'up') {
+        @content;
+      }
+    }
+  } @else {
+    .md-#{$class} {
+      @include screen('md', 'up') {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin util-lg($class, $bang: false) {
+  @if $bang == true {
+    .lg-#{$class}\! {
+      @include screen('lg', 'up') {
+        @content;
+      }
+    }
+  } @else {
+    .lg-#{$class} {
+      @include screen('lg', 'up') {
+        @content;
+      }
+    }
+  }
+}

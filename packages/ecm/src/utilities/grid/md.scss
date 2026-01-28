@@ -1,0 +1,84 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+$max-columns: 12;
+
+@include util-md('d-inline-grid') {
+  display: inline-grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+@include util-md('d-grid') {
+  display: grid;
+  // default 1
+  grid-template-columns: minmax(0, 1fr);
+}
+@for $i from 1 through $max-columns {
+  @include util-md('d-grid-col-#{$i}') {
+    grid-template-columns: repeat($i, minmax(0, 1fr));
+  }
+}
+@for $i from 1 through $space-max-level {
+  @include util-md('d-grid-gap-#{$i * $space-unit}') {
+    gap: #{$i * $space-unit}px;
+  }
+
+  @include util-md('d-grid-gap-x-#{$i * $space-unit}') {
+    column-gap: #{$i * $space-unit}px;
+  }
+
+  @include util-md('d-grid-gap-y-#{$i * $space-unit}') {
+    row-gap: #{$i * $space-unit}px;
+  }
+}
+@include util-md('d-grid-flow-row') {
+  grid-auto-flow: row;
+}
+@include util-md('d-grid-flow-col') {
+  grid-auto-flow: column;
+}
+@include util-md('d-grid-flow-row-dense') {
+  grid-auto-flow: row dense;
+}
+@include util-md('d-grid-flow-col-dense') {
+  grid-auto-flow: column dense;
+}
+
+@include util-md('d-inline-grid', true) {
+  display: inline-grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+}
+@include util-md('d-grid', true) {
+  display: grid !important;
+  // default 1
+  grid-template-columns: minmax(0, 1fr) !important;
+}
+@for $i from 1 through $max-columns {
+  @include util-md('d-grid-col-#{$i}', true) {
+    grid-template-columns: repeat($i, minmax(0, 1fr)) !important;
+  }
+}
+@for $i from 1 through $space-max-level {
+  @include util-md('d-grid-gap-#{$i * $space-unit}', true) {
+    gap: #{$i * $space-unit}px !important;
+  }
+
+  @include util-md('d-grid-gap-x-#{$i * $space-unit}', true) {
+    column-gap: #{$i * $space-unit}px !important;
+  }
+
+  @include util-md('d-grid-gap-y-#{$i * $space-unit}', true) {
+    row-gap: #{$i * $space-unit}px !important;
+  }
+}
+@include util-md('d-grid-flow-row', true) {
+  grid-auto-flow: row !important;
+}
+@include util-md('d-grid-flow-col', true) {
+  grid-auto-flow: column !important;
+}
+@include util-md('d-grid-flow-row-dense', true) {
+  grid-auto-flow: row dense !important;
+}
+@include util-md('d-grid-flow-col-dense', true) {
+  grid-auto-flow: column dense !important;
+}

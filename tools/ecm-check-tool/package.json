@@ -1,0 +1,18 @@
+{
+  "name": "ecm-check-tool",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "dev": "vite --port 4001",
+    "build": "tsc && vite build",
+    "lint:js": "eslint \"src/**/*.{ts,tsx,js,jsx}\" --fix --cache",
+    "lint:css": "stylelint \"src/**/*.{scss}\" --fix --cache --allow-empty-input",
+    "format": "prettier \"src/**/*.{scss,ts,tsx,js,jsx}\" --write --cache"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0"
+  }
+}

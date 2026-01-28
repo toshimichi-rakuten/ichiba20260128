@@ -1,0 +1,53 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import { addBasePath } from 'src/utils'
+
+import defaultHtml from 'ecm/src/modules/room-recommend/default.html'
+
+export const meta = {
+  title: 'ROOMからのおすすめ',
+  url: '/ecm/docs/ichiba-js/room-recommend',
+  tags: ['room-recommend', 'ROOM'],
+}
+
+# ROOMからのおすすめ
+
+ROOMからのおすすめ（room-recommend）パーツモジュールです。パーツに関する情報は、[ROOMからのおすすめ](https://confluence.rakuten-it.com/confluence/pages/viewpage.action?pageId=4643553612)（閲覧は社内環境限定）をご参照ください。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={defaultHtml.replace("https://r.r10s.jp/com/room/ichiba_app/first.json", addBasePath("/_assets/testdata/room.json"))} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={defaultHtml.replace("https://r.r10s.jp/com/room/ichiba_app/first.json", addBasePath("/_assets/testdata/room.json"))} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={defaultHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Note type='info'>
+  スライダーの設定については、[スライダー](/ecm/docs/ui/slider/)を参照してください。
+</Note>
+
+## 使い方
+
+1. 商品リスト作成ツールAlcorトップより ROOM一覧のHTMLを作成するを選択ください。（使用希望の際は、ROOM担当者までご連絡ください。）
+2. 出力フォーマットをHTMLとJSONで選ぶことができますが、どちらを選択いただいても問題ありません。
+3. 上記ソースコードをコピー・貼り付け後、`data-json-url=""`の値を アルコルから出力されたHTMLまたはJSONのパスへ置き換えてください。
+ 

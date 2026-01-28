@@ -1,0 +1,53 @@
+
+import Html from 'src/components/Html'
+import Code from 'src/components/Code'
+import Note from 'src/components/Note'
+import Table, { ClassTable, AttributeTable } from 'src/components/Table'
+import { Tabs } from '@mantine/core'
+import Space from 'src/components/Space'
+import Link from 'next/link'
+import adGenericBannerHtml from 'ecm/src/modules/ad/generic-banner/default.html'
+import adGenericBannerIntegrationHtml from 'ecm/src/modules/ad/generic-banner/integration.html'
+
+export const meta = {
+  title: '原稿タイプID 汎用バナー商品',
+  description: '',
+  url: '/ecm/docs/ad/generic-banner',
+  tags: ['商品', 'ad', '広告'],
+  finder_tags: [
+    'category_banner',
+    'image_3x2',
+    'text_item_name',
+    'price_value',
+    'layout_sp_col2',
+    'layout_pc_col3',
+    'layout_pc_col4',
+    'layout_pc_sp'
+  ],
+}
+
+# 原稿タイプID 汎用バナー商品
+
+
+カラム数やアイテム間のスペースのレイアウトは、<Link href="/docs/css-utils/grid/">グリッド</Link>を参照してください。
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='pc'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html adHighlight={true} content={adGenericBannerHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='pc'>
+    <Html adHighlight={true} device='lg' content={adGenericBannerHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={adGenericBannerIntegrationHtml}/>
+  </Tabs.Panel>
+</Tabs>
+

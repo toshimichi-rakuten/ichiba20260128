@@ -1,0 +1,8 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+[data-module-name='ecm-toggle'] {
+  &[aria-hidden='true'] {
+    display: none;
+  }
+}

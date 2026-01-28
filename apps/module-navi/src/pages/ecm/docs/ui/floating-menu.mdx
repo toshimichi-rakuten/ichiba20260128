@@ -1,0 +1,63 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'ecm/src/modules/floating-menu/default.html'
+import defaultDemoHtml from 'ecm/src/modules/floating-menu/default_demo.html'
+
+export const meta = {
+  title: 'フローティング・ナビ（右）',
+  description: 'ページ右側にフローティングする、ページ内のアンカーナビ（エレベーターメニュー）',
+  url: '/ecm/docs/ui/floating-menu',
+  tags: ['floating', 'フローティング', 'menu', 'メニュー', 'フローティングメニュー'],
+}
+
+# フローティング・ナビ（右）
+
+ページ右側にフローティングする、ページ内のアンカーナビ（エレベーターメニュー）です。  
+アンカー先に指定したid要素に到達すると、ナビが `active` 表示となります。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html device='sp' content={defaultDemoHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='pc' content={defaultDemoHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={defaultHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+
+## 使い方
+
+### 表示開始位置の設定
+
+`aria-hidden="true"` を指定  
+`data-show-at` の値に表示開始させたい要素のid（#hogehoge）またはclass（.hogehoge）を指定する、または、`data-show-threshold` の値にページ上部からの距離の数値（px単位不要）を指定します。  
+※上記ソースコードは、`data-show-threshold` プロパティで実装
+
+<Space />
+
+<Note type='info'>
+  詳細設定については[フローティング](/ecm/docs/js/floating/)を参照
+</Note>
+
+### 注意事項
+
+- メニューの数が多いときなど、画面高さによってナビゲーションが見切れてしまう場合に、アンカー遷移やアクティブ表示が正しく機能しない場合があります。各閲覧環境ですべてのナビゲーションが表示される状態で利用するようにしてください。
+- PCウィンドウ幅がコンテンツエリア（1280px）より狭い場合は非表示になります。SP利用が可能なように、768px未満では表示されます。
+- フローティングナビがメインコンテンツに被っても良い場合は`md-d-flex` を追加ください。  
+例）`ecm-floating-menu md-d-flex d-flex-gap-4`

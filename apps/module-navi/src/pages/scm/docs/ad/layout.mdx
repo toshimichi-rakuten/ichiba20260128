@@ -1,0 +1,83 @@
+
+import Demo from 'src/components/Demo'
+import Html from 'src/components/Html'
+import Code from 'src/components/Code'
+import Note from 'src/components/Note'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import ad100183doorsoloHtml from 'scm/src/modules/ad/100183door/solo.html'
+
+export const meta = {
+  title: '広告のレイアウトについて',
+  url: '/scm/docs/ad/layout',
+  tags: ['商品', 'ad', '原稿タイプ'],
+}
+
+# 広告のレイアウトについて
+
+広告のモジュールのレイアウト（カラム数・スペース）は、親要素を追加して調整する必要があります。  
+詳しくは[グリッド](/scm/docs/css/grid/)を確認してください。  
+
+例）`d-grid-col-4`こちらのクラスで**4**列でセットされています。コードを確認してください。  
+
+<Tabs keepMounted={false} defaultValue='demo' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='demo'>デモ</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='demo'>
+    <Html scm={true} device='md' full={true} content={`
+      <div class="d-grid d-grid-gap-16 d-grid-col-4">
+        ${ad100183doorsoloHtml}
+        ${ad100183doorsoloHtml}
+        ${ad100183doorsoloHtml}
+        ${ad100183doorsoloHtml}
+        ${ad100183doorsoloHtml}
+        ${ad100183doorsoloHtml}
+        ${ad100183doorsoloHtml}
+        ${ad100183doorsoloHtml}
+      </div>
+    `}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={`
+      <div class="d-grid d-grid-gap-16 d-grid-col-4">
+      ${ad100183doorsoloHtml}${ad100183doorsoloHtml}${ad100183doorsoloHtml}${ad100183doorsoloHtml}${ad100183doorsoloHtml}${ad100183doorsoloHtml}${ad100183doorsoloHtml}${ad100183doorsoloHtml}</div>
+    `}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+例）`d-grid-col-6`こちらのクラスで**6**列でセットされています。コードを確認してください。
+
+<Tabs keepMounted={false} defaultValue='demo' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='demo'>デモ</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='demo'>
+    <Html scm={true} device='md' content={`
+      <div class="d-grid d-grid-gap-16 d-grid-col-6">
+        ${ad100183doorsoloHtml}
+        ${ad100183doorsoloHtml}
+        ${ad100183doorsoloHtml}
+        ${ad100183doorsoloHtml}
+        ${ad100183doorsoloHtml}
+        ${ad100183doorsoloHtml}
+      </div>
+    `}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={`
+      <div class="d-grid d-grid-gap-16 d-grid-col-6">
+      ${ad100183doorsoloHtml}${ad100183doorsoloHtml}${ad100183doorsoloHtml}${ad100183doorsoloHtml}${ad100183doorsoloHtml}${ad100183doorsoloHtml}</div>
+    `}/>
+  </Tabs.Panel>
+</Tabs>
+
+

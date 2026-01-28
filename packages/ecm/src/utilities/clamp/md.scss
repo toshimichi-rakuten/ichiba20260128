@@ -1,0 +1,18 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+@include util-md('clamp-1') {
+  @include clamp(1);
+}
+@include util-md('clamp-2') {
+  @include clamp(2);
+}
+@include util-md('clamp-3') {
+  @include clamp(3);
+}
+@include util-md('clamp-4') {
+  @include clamp(4);
+}
+@include util-md('clamp-5') {
+  @include clamp(5);
+}

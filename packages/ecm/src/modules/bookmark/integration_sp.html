@@ -1,0 +1,50 @@
+<div class="ecm-du-slider-sp ecm-bookmark">
+  <script
+    id="prototypeBookmarkItem"
+    style="display: none"
+    class="ecm-du-slider-prototype"
+    type="text/template"
+  >
+    <li class="ecm-du-slider-item">
+      <a class="ecm-du-slider-link" href="#ITEMURL#">
+        <div class="ecm-du-slider-img">#ITEMIMGELE#</div>
+        <p class="ecm-du-slider-name">#ITEMNAME#</p>
+        <p class="ecm-du-slider-price">#ITEMPRICE#円#TILDE#</p>
+      </a>
+    </li>
+  </script>
+  <div
+    id="bookmarkConfig"
+    noready="1"
+    limititem="15"
+    ajaxtimer="8"
+    slidespeed="300"
+    flickmove="15"
+    disablebutton="1"
+    omitname="100"
+    imagesize="272x272"
+    sid=""
+    jsonurl="https://g01.api.bookmark.rakuten.co.jp/?param2=20"
+  ></div>
+  <div
+    id="bookmarkExistItemDisplay"
+    style="display: none"
+  >
+    <div class="ecm-du-slider-header">
+      <h3 class="ecm-du-slider-header-title">お気に入り商品</h3>
+      <a
+        class="ecm-du-slider-header-link"
+        href="https://my.bookmark.rakuten.co.jp/item"
+      >
+        <span>もっと見る</span>
+      </a>
+    </div>
+    <div
+      id="bookmarkItemsDisplay"
+      class="ecm-du-slider-items ecm-bookmark-track"
+      data-nosave="1"
+      data-noloop="1"
+      data-noscrollbar="1"
+    ></div>
+  </div>
+</div>

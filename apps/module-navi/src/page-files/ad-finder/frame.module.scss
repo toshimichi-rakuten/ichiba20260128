@@ -1,0 +1,11 @@
+.iframe-layout {
+  box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iframe {
+  border: none;
+  background-color: white;
+}

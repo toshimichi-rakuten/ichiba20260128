@@ -1,0 +1,238 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+
+import pcFourHtml from 'ecm/src/modules/cpa/static/pc-four.html'
+import pcFourFreeShippingHtml from 'ecm/src/modules/cpa/static/pc-four-free-shipping.html'
+import spHorizontalHtml from 'ecm/src/modules/cpa/static/sp-horizontal.html'
+import spHorizontalFreeShippingHtml from 'ecm/src/modules/cpa/static/sp-horizontal-free-shipping.html'
+import sliderHtml from 'ecm/src/modules/cpa/static/slider.html'
+import sliderFreeShippingHtml from 'ecm/src/modules/cpa/static/slider-free-shipping.html'
+
+import integrationFour from 'ecm/src/modules/cpa/integration/integration-pc-four.html'
+import integrationFourFreeShipping from 'ecm/src/modules/cpa/integration/integration-pc-four-free-shipping.html'
+import integrationSpHorizontal from 'ecm/src/modules/cpa/integration/integration-sp-horizontal.html'
+import integrationSpHorizontalFreeShipping from 'ecm/src/modules/cpa/integration/integration-sp-horizontal-free-shipping.html'
+import integrationSlider from 'ecm/src/modules/cpa/integration/integration-slider.html'
+import integrationSliderFreeShipping from 'ecm/src/modules/cpa/integration/integration-slider-free-shipping.html'
+
+export const meta = {
+  title: 'CPA',
+  description: 'CPA広告で利用するテンプレートソースコード',
+  url: '/ecm/docs/ad/cpa',
+  tags: ['商品', 'ad'],
+}
+
+# CPA
+
+CPA広告で利用するテンプレートソースコードを提供しています。[詳細マニュアル](https://confluence.rakuten-it.com/confluence/pages/viewpage.action?pageId=1550949560)（閲覧は社内環境限定）を確認のうえ、利用してください。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html adHighlight={true} content={pcFourFreeShippingHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html adHighlight={true} device='lg' content={pcFourFreeShippingHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={integrationFourFreeShipping}/>
+  </Tabs.Panel>
+</Tabs>
+
+## 使い方
+
+①レイアウト、送料無料ありなしを選びます。class名の数字を変更することでカラム数を変更することもできます。
+
+②PC/SP別々に発行したタグを、PC/SPそれぞれのHTMLへ貼り付けたソースコード内、`url="☆☆☆ここにAdminderのタグ（URL）を設定☆☆☆` 部分を編集して設定ください。
+
+<p style={{color: '#d70000'}}>PC/SPで共通のタグは利用不可です。</p>
+
+## レイアウト
+
+### SP2カラム/PC3～5カラム
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html adHighlight={true} content={pcFourHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html adHighlight={true} device='lg' content={pcFourHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={integrationFour}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+PCカラム数を変更する場合は、以下の部分の数字を書き換えてください。`3〜5` カラムの調整ができます。
+
+<Space />
+
+> class="rad-table-body d-grid d-grid-col-2 d-grid-gap-12 md-d-grid-col-**4** d-grid-gap-24"
+
+### SP2カラム/PC3～5カラム（送料無料）
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html adHighlight={true} content={pcFourFreeShippingHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html adHighlight={true} device='lg' content={pcFourFreeShippingHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={integrationFourFreeShipping}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+PCカラム数を変更する場合は、以下の部分の数字を書き換えてください。`3〜5` カラムの調整ができます。
+
+<Space />
+
+> class="rad-table-body d-grid d-grid-col-2 d-grid-gap-12 md-d-grid-col-**4** d-grid-gap-24"
+
+### SPリスト/PC3～5カラム
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html adHighlight={true} content={spHorizontalHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html adHighlight={true} device='lg' content={spHorizontalHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={integrationSpHorizontal}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+PCカラム数を変更する場合は、以下の部分の数字を書き換えてください。`3〜5` カラムの調整ができます。
+
+<Space />
+
+> class="rad-table-body d-grid d-grid-col-1 d-grid-gap-16 md-d-grid-col-**4** md-d-grid-gap-24"
+
+### SPリスト/PC3～5カラム（送料無料）
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html adHighlight={true} content={spHorizontalFreeShippingHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html adHighlight={true} device='lg' content={spHorizontalFreeShippingHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={integrationSpHorizontalFreeShipping}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+PCカラム数を変更する場合は、以下の部分の数字を書き換えてください。`3〜5` カラムの調整ができます。
+
+<Space />
+
+> class="rad-table-body d-grid d-grid-col-1 d-grid-gap-16 md-d-grid-col-**4** md-d-grid-gap-24"
+
+### SP/PCスライダー
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={sliderHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={sliderHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={integrationSlider}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Note type='info'>
+  スライダーの設定については、[スライダー](/ecm/docs/ui/slider/)を参照して、設定を変更してください
+</Note>
+
+### SP/PCスライダー（送料無料）
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={sliderFreeShippingHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={sliderFreeShippingHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={integrationSliderFreeShipping}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Note type='info'>
+  スライダーの設定については、[スライダー](/ecm/docs/ui/slider/)を参照して、設定を変更してください
+</Note>

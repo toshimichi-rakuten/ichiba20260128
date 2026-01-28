@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: rakuten-sans-sb-GIT_BRANCH_NAME
+spec:
+  ports:
+    - name: http-rakuten-sans-sb-GIT_BRANCH_NAME
+      port: 80
+      targetPort: 8080
+  selector:
+    app: rakuten-sans-sb-GIT_BRANCH_NAME

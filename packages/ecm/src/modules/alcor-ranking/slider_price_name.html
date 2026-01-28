@@ -1,0 +1,90 @@
+<div
+  data-module-name="ecm-alcor"
+  data-alcor-type="ranking"
+>
+  <template data-alcor-output>
+    <div class="ecm-ranking-alcor-updatedate">
+      <span
+        data-alcor-item="1"
+        data-key="updatedate"
+      ></span>
+      <span
+        class="ml-4"
+        data-alcor-item="1"
+        data-key="updatetime"
+      ></span
+      >更新
+    </div>
+
+    <div
+      class="ecm-slider-container"
+      data-module-name="ecm-slider"
+      data-loop="true"
+      data-centered-slides="false"
+      data-initial-slide="0"
+      data-slides-per-group="1"
+      data-slides-per-view="2.5"
+      data-space-between="12"
+      data-md-slides-per-group="5"
+      data-md-slides-per-view="5"
+      data-md-space-between="24"
+    >
+      <div class="ecm-slider">
+        <div
+          class="ecm-slider-track"
+          data-alcor-item-container
+        ></div>
+      </div>
+
+      <div class="ecm-slider-prev d-none md-d-flex">
+        <i
+          class="ecm-icon-chevron-left"
+          aria-hidden="true"
+        ></i>
+      </div>
+
+      <div class="ecm-slider-next d-none md-d-flex">
+        <i
+          class="ecm-icon-chevron-right"
+          aria-hidden="true"
+        ></i>
+      </div>
+    </div>
+  </template>
+
+  <template data-alcor-data>
+    <!-- Alcor Template -->
+    <!--#include virtual="★"-->
+    <!-- Alcor Template -->
+  </template>
+
+  <template data-alcor-item-template>
+    <div class="ecm-slider-slide">
+      <div class="ecm-ranking-alcor">
+        <a
+          class="ecm-ranking-alcor-link"
+          href="###itemurl###"
+        >
+          <img
+            class="ecm-ranking-alcor-image"
+            src="https://r.r10s.jp/com/img/home/t.gif?resize=340:340"
+            data-lazy-loading="###imageurl###?_ex=340:340"
+            alt=""
+          />
+        </a>
+        <div class="ecm-ranking-alcor-text-box">
+          <p class="ecm-ranking-alcor-rank"><span class="ecm-ranking-alcor-rank-num">###rank###</span>位</p>
+          <a
+            class="ecm-ranking-alcor-text-link"
+            href="###itemurl###"
+          >
+            <!-- templateに商品名が含まれない場合は削除 -->
+            <p class="ecm-ranking-alcor-name">###itemname###</p>
+            <!-- / templateに商品名が含まれない場合は削除 -->
+            <p class="ecm-ranking-alcor-price">###kakaku###</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </template>
+</div>

@@ -1,0 +1,25 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-prettier"],
+  "plugins": ["stylelint-scss", "stylelint-prettier"],
+  "rules": {
+    "prettier/prettier": true,
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": true,
+    "font-family-no-missing-generic-family-keyword": null,
+    "import-notation": null,
+    "declaration-block-no-redundant-longhand-properties": null,
+    "selector-class-pattern": [
+      "^([a-z][a-z0-9]*)(-?-[a-z0-9]+)*$",
+      {
+        "message": "Expected class selector to be kebab-case"
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.scss", "**/*.scss"],
+      "customSyntax": "postcss-scss"
+    }
+  ],
+  "ignoreFiles": []
+}

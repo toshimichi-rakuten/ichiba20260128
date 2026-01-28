@@ -1,0 +1,24 @@
+<div data-module-name="ecm-json-to-html">
+  <template data-output>%OUTPUT%</template>
+
+  <template
+    data-output-data
+    data-type="html"
+  >
+    <!--#include virtual="★"-->
+  </template>
+
+  <template
+    data-template="coupons"
+    data-loop="true"
+    >###shops###</template
+  >
+
+  <template
+    data-template="coupons.shops"
+    data-loop="true"
+    >%SHOP_TEMPLATE%
+  </template>
+
+  %COUPONLIST_ITEM_TEMPLATE%
+</div>

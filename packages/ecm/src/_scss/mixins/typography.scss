@@ -1,0 +1,153 @@
+@import '../variables';
+
+@mixin colorize-link($color) {
+  text-decoration: none;
+  color: $color;
+
+  &:visited {
+    color: $color;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: $color;
+
+      @include screen('md', 'up') {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &:active {
+    color: $color;
+  }
+}
+
+@mixin font-default {
+  font-family: 'HiraKakuProN-W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, sans-serif;
+  line-height: $base-line-height;
+}
+
+@mixin font-yakuhan($weight) {
+  font-family: YakuHanJPs;
+  font-weight: $weight;
+}
+
+@mixin font-roboto($weight) {
+  font-family: Roboto;
+  font-weight: $weight;
+}
+
+/* stylelint-disable */
+@mixin text-10px {
+  font-size: #{map-get($font-sizes, 10px)}px;
+}
+
+@mixin text-11px {
+  font-size: #{map-get($font-sizes, 11px)}px;
+}
+
+@mixin text-12px {
+  font-size: #{map-get($font-sizes, 12px)}px;
+}
+
+@mixin text-xs {
+  font-size: #{map-get($font-sizes, xs)}px;
+}
+
+@mixin text-sm {
+  font-size: #{map-get($font-sizes, sm)}px;
+}
+
+@mixin text-base {
+  font-size: #{map-get($font-sizes, base)}px;
+}
+
+@mixin text-lg {
+  font-size: #{map-get($font-sizes, lg)}px;
+}
+
+@mixin text-xl {
+  font-size: #{map-get($font-sizes, xl)}px;
+}
+
+@mixin text-2xl {
+  font-size: #{map-get($font-sizes, 2xl)}px;
+}
+
+@mixin text-3xl {
+  font-size: #{map-get($font-sizes, 3xl)}px;
+}
+
+@mixin text-4xl {
+  font-size: #{map-get($font-sizes, 4xl)}px;
+}
+
+@mixin text-5xl {
+  font-size: #{map-get($font-sizes, 5xl)}px;
+}
+
+@mixin text-6xl {
+  font-size: #{map-get($font-sizes, 6xl)}px;
+}
+
+@mixin text-7xl {
+  font-size: #{map-get($font-sizes, 7xl)}px;
+}
+
+@mixin text-10px_important {
+  font-size: #{map-get($font-sizes, 10px)}px !important;
+}
+
+@mixin text-11px_important {
+  font-size: #{map-get($font-sizes, 11px)}px !important;
+}
+
+@mixin text-12px_important {
+  font-size: #{map-get($font-sizes, 12px)}px !important;
+}
+
+@mixin text-xs_important {
+  font-size: #{map-get($font-sizes, xs)}px !important;
+}
+
+@mixin text-sm_important {
+  font-size: #{map-get($font-sizes, sm)}px !important;
+}
+
+@mixin text-base_important {
+  font-size: #{map-get($font-sizes, base)}px !important;
+}
+
+@mixin text-lg_important {
+  font-size: #{map-get($font-sizes, lg)}px !important;
+}
+
+@mixin text-xl_important {
+  font-size: #{map-get($font-sizes, xl)}px !important;
+}
+
+@mixin text-2xl_important {
+  font-size: #{map-get($font-sizes, 2xl)}px !important;
+}
+
+@mixin text-3xl_important {
+  font-size: #{map-get($font-sizes, 3xl)}px !important;
+}
+
+@mixin text-4xl_important {
+  font-size: #{map-get($font-sizes, 4xl)}px !important;
+}
+
+@mixin text-5xl_important {
+  font-size: #{map-get($font-sizes, 5xl)}px !important;
+}
+
+@mixin text-6xl_important {
+  font-size: #{map-get($font-sizes, 6xl)}px !important;
+}
+
+@mixin text-7xl_important {
+  font-size: #{map-get($font-sizes, 7xl)}px !important;
+}
+/* stylelint-enable */

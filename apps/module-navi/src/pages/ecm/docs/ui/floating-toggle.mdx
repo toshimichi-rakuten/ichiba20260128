@@ -1,0 +1,104 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'ecm/src/modules/floating-toggle/default.html'
+
+export const meta = {
+  title: 'フローティング・バナー（右トグル）',
+  description: 'ページ右下にフローティング',
+  url: '/ecm/docs/ui/floating-toggle',
+  tags: ['floating', 'toggle'],
+}
+
+# フローティング・バナー（右トグル）
+
+ページ右下にフローティングします。ページ閲覧の邪魔をしないよう閉じた状態で、タップするとスライドして開きバナーを表示します。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html device='sp' content={defaultHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={defaultHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={defaultHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Note type='info'>
+  バナー画像の、横：縦サイズ比率は、3:1です。  
+  バナー下のテキストは12文字まで表示です。（12文字に収まらない場合は、12文字目以降が省略されます。）
+</Note>
+
+## 使い方
+
+### 表示開始位置の設定
+
+`aria-hidden="true"` を指定  
+`data-show-at` の値に表示開始させたい要素のid（#hogehoge）またはclass（.hogehoge）を指定する、または、`data-show-threshold` の値にページ上部からの距離の数値（px単位不要）を指定します。  
+※上記ソースコードは、`data-show-threshold` プロパティで実装
+
+<Space />
+
+<Note type='info'>
+  詳細設定については[フローティング](/ecm/docs/js/floating/)を参照
+</Note>
+
+## アトリビュート一覧
+
+<Note type='info'>
+  タップしてスライドを開く動作の基本的なアトリビュートについては、[トグル](/ecm/docs/js/toggle/)を参照  
+  フローティング・バナー（右トグル）のモジュールでは下記の設定をカスタマイズして下さい
+</Note>
+
+<Space />
+
+<table class="mdx-table">
+  <thead class="mdx-table-header">
+    <tr>
+      <th style={{minWidth: '220px', width: '220px'}}>アトリビュート</th>
+      <th style={{minWidth: '220px', width: '220px'}}>値</th>
+      <th style={{width: '100%'}}>メモ</th>
+    </tr>
+  </thead>
+  <tbody class="mdx-table-body">
+    <tr>
+      <td class="mdx-mono">`aria-hidden`</td>
+      <td class="mdx-mono">
+        <div>
+          boolean
+        </div>
+        <div style={{ color: "#8f8f8f"}}>
+          デフォルト: true
+        </div>
+      </td>
+      <td>
+        <div>
+          要素が表示されているかどうか
+        </div>
+        <div style={{ marginTop: "16px"}}>
+          ※`data-module-name="ecm-toggle"` 要素へ付与する
+        </div>
+        <div style={{ marginTop: "8px"}}>
+          ※このアトリビュートは、`ecm-toggle` 要素の可視性状態に合わせてJSで操作されます<br />
+          デフォルト（最初のページロード）で要素を非表示にするため、予め `aria-hidden="true"` を設定してください
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,37 @@
+.scm-ad-100195 {
+  position: relative;
+}
+
+.scm-ad-item-100195 {
+  display: block;
+
+  @include screen('md', 'up') {
+    grid-row: 1 / span 3;
+    grid-column: span 1;
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.scm-ad-name-100195 {
+  font-weight: bold;
+}
+
+.scm-ad-shop-100195 {
+  @extend .scm-ad-shop;
+
+  @include screen('md', 'up') {
+    i {
+      font-size: 16px;
+    }
+
+    span {
+      @include font-default;
+      @include text-xs;
+    }
+  }
+}

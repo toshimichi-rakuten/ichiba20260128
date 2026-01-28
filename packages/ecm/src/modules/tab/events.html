@@ -1,0 +1,134 @@
+<div class="d-grid d-grid-col-5 d-grid-gap-8 mb-32">
+  <button id="test-tab-1">Custom1</button>
+  <button id="test-tab-2">Custom2</button>
+  <button id="test-tab-3">Custom3</button>
+  <button id="test-tab-4">Custom4</button>
+  <button id="test-tab-5">Custom5</button>
+</div>
+
+<div
+  data-module-name="ecm-tab"
+  data-role="tablist"
+  data-default-open="tabUnstyledPanel1"
+  data-session="false"
+>
+  <div>
+    <button
+      id="tabUnstyledTab1"
+      data-tab
+      aria-controls="tabUnstyledPanel1"
+      aria-selected="false"
+      role="tab"
+    >
+      <span>Tab 1</span>
+    </button>
+    <button
+      id="tabUnstyledTab2"
+      data-tab
+      aria-controls="tabUnstyledPanel2"
+      aria-selected="false"
+      role="tab"
+    >
+      <span>Tab 2</span>
+    </button>
+    <button
+      id="tabUnstyledTab3"
+      data-tab
+      aria-controls="tabUnstyledPanel3"
+      aria-selected="false"
+      role="tab"
+    >
+      <span>Tab 3</span>
+    </button>
+    <button
+      id="tabUnstyledTab4"
+      data-tab
+      aria-controls="tabUnstyledPanel4"
+      aria-selected="false"
+      role="tab"
+    >
+      <span>Tab 4</span>
+    </button>
+    <button
+      id="tabUnstyledTab5"
+      data-tab
+      aria-controls="tabUnstyledPanel5"
+      aria-selected="false"
+      role="tab"
+    >
+      <span>Tab 5</span>
+    </button>
+  </div>
+
+  <div
+    id="tabUnstyledPanel1"
+    data-tabpanel
+    aria-hidden="true"
+    aria-labelledby="tabUnstyledTab1"
+    role="tabpanel"
+  >
+    Tab 1 Panel
+  </div>
+  <div
+    id="tabUnstyledPanel2"
+    data-tabpanel
+    aria-hidden="true"
+    aria-labelledby="tabUnstyledTab2"
+    role="tabpanel"
+  >
+    Tab 2 Panel
+  </div>
+  <div
+    id="tabUnstyledPanel3"
+    data-tabpanel
+    aria-hidden="true"
+    aria-labelledby="tabUnstyledTab3"
+    role="tabpanel"
+  >
+    Tab 3 Panel
+  </div>
+  <div
+    id="tabUnstyledPanel4"
+    data-tabpanel
+    aria-hidden="true"
+    aria-labelledby="tabUnstyledTab4"
+    role="tabpanel"
+  >
+    Tab 4 Panel
+  </div>
+  <div
+    id="tabUnstyledPanel5"
+    data-tabpanel
+    aria-hidden="true"
+    aria-labelledby="tabUnstyledTab5"
+    role="tabpanel"
+  >
+    Tab 5 Panel
+  </div>
+</div>
+
+<script>
+  ;(function () {
+    let tab = document.querySelector('[data-module-name="ecm-tab"]')
+
+    let tabIds = [
+      ['test-tab-1', 'tabUnstyledPanel1'],
+      ['test-tab-2', 'tabUnstyledPanel2'],
+      ['test-tab-3', 'tabUnstyledPanel3'],
+      ['test-tab-4', 'tabUnstyledPanel4'],
+      ['test-tab-5', 'tabUnstyledPanel5'],
+    ]
+
+    for (let [tabId, panelId] of tabIds) {
+      let button = document.getElementById(tabId)
+
+      button.addEventListener('click', () => {
+        let event = new CustomEvent('ecmTabSet', {
+          detail: panelId,
+        })
+
+        tab.dispatchEvent(event)
+      })
+    }
+  })()
+</script>

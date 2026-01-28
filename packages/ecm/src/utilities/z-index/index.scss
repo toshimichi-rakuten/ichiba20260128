@@ -1,0 +1,76 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+@include util-all('z-auto') {
+  z-index: auto;
+}
+@include util-all('z-0') {
+  z-index: 0;
+}
+@include util-all('z-1') {
+  z-index: 1;
+}
+@include util-all('z-2') {
+  z-index: 2;
+}
+@include util-all('z-3') {
+  z-index: 3;
+}
+@include util-all('z-4') {
+  z-index: 4;
+}
+@include util-all('z-5') {
+  z-index: 5;
+}
+@include util-all('z-n1') {
+  z-index: -1;
+}
+@include util-all('z-n2') {
+  z-index: -2;
+}
+@include util-all('z-n3') {
+  z-index: -3;
+}
+@include util-all('z-n4') {
+  z-index: -4;
+}
+@include util-all('z-n5') {
+  z-index: -5;
+}
+
+@include util-all('z-auto', true) {
+  z-index: auto !important;
+}
+@include util-all('z-0', true) {
+  z-index: 0 !important;
+}
+@include util-all('z-1', true) {
+  z-index: 1 !important;
+}
+@include util-all('z-2', true) {
+  z-index: 2 !important;
+}
+@include util-all('z-3', true) {
+  z-index: 3 !important;
+}
+@include util-all('z-4', true) {
+  z-index: 4 !important;
+}
+@include util-all('z-5', true) {
+  z-index: 5 !important;
+}
+@include util-all('z-n1', true) {
+  z-index: -1 !important;
+}
+@include util-all('z-n2', true) {
+  z-index: -2 !important;
+}
+@include util-all('z-n3', true) {
+  z-index: -3 !important;
+}
+@include util-all('z-n4', true) {
+  z-index: -4 !important;
+}
+@include util-all('z-n5', true) {
+  z-index: -5 !important;
+}

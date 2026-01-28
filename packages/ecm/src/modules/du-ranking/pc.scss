@@ -1,0 +1,322 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+.ecm-du-ranking-pc {
+  // 1024px - (32px x 2)
+  width: 960px;
+
+  .ecm-du-ranking-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $space-16;
+  }
+
+  .ecm-du-ranking-header-title {
+    @include text-lg;
+  }
+
+  .ecm-du-ranking-header-link {
+    @include text-sm;
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .ecm-du-ranking-tab {
+    @include text-11px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 114px;
+    height: 48px;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .ecm-du-ranking-tab-unlink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    box-sizing: border-box;
+    margin-top: -2px;
+    color: $color-crimson;
+    font-weight: 700;
+    border-top: 2px solid $color-crimson;
+  }
+
+  .ecm-rank-tab-set {
+    display: grid !important;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+  }
+
+  .ecm-rank-tab-item-div {
+    grid-column: 1;
+    grid-row: 1;
+    position: relative;
+    height: auto !important;
+  }
+
+  .ecm-du-ranking {
+    margin: 0 auto;
+    max-width: 960px;
+
+    .ecm-icon-chevron-right,
+    .ecm-icon-chevron-left {
+      @include text-xl;
+
+      color: $color-9c9c9c;
+      font-weight: 700;
+    }
+  }
+
+  .ecm-rank-link-prev {
+    left: -26px;
+  }
+
+  .ecm-rank-link-next {
+    right: -26px;
+  }
+
+  .ecm-rank-link-prev,
+  .ecm-rank-link-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: calc(50% - 16px);
+    z-index: 10;
+    width: 32px;
+    height: 32px;
+    background-color: $color-white;
+    box-shadow: 0 1.25px 6px rgba(0 0 0 / 20%);
+    border-radius: 100%;
+    cursor: pointer;
+    color: #9c9c9c;
+
+    @media (hover: hover) {
+      &:hover {
+        filter: contrast(0.86);
+        text-decoration: none;
+      }
+    }
+  }
+
+  .ecm-rank-link-prev-btn,
+  .ecm-rank-link-next-btn {
+    font-size: 22px;
+    display: flex;
+
+    .ecm-icon-chevron-left,
+    .ecm-icon-chevron-right {
+      font-weight: 700;
+    }
+  }
+
+  .ecm-rank-tab-prev-btn,
+  .ecm-rank-tab-next-btn {
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    width: 22px;
+    height: 22px;
+    margin-top: -11px;
+    color: transparent;
+  }
+
+  .ecm-rank-tab-prev-btn {
+    left: -10px;
+  }
+
+  .ecm-rank-tab-next-btn {
+    right: -10px;
+  }
+
+  .ecm-rank-tab-prev-btn-link,
+  .ecm-rank-tab-next-btn-link {
+    width: 22px;
+    height: 22px;
+    display: block;
+
+    .ecm-icon-chevron-right,
+    .ecm-icon-chevron-left {
+      font-weight: 700;
+      font-size: 22px;
+      color: $color-9c9c9c;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: none;
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .ecm-rank-wrap {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+
+    > div {
+      position: static !important;
+      grid-column: 1;
+      grid-row: 1;
+      display: flex;
+      width: 100%;
+    }
+  }
+
+  .ecm-du-ranking-genre-tab {
+    position: relative;
+    height: 48px;
+    border-top: 1px solid $color-gray-4;
+  }
+
+  .ecm-du-ranking-genre-tab-display {
+    @include text-12px;
+
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+    width: 798px;
+
+    @media (772px <= width <= 885px) {
+      width: 684px;
+    }
+
+    @media (678px <= width <= 771px) {
+      width: 570px;
+    }
+  }
+
+  .ecm-du-ranking-item-container {
+    width: calc((100vw - 164px) / 12 * 4 + 48px);
+  }
+
+  .ecm-du-ranking-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+    z-index: 1;
+    width: 140px !important;
+    margin-right: $space-24;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .ecm-du-ranking-item-image {
+    position: relative;
+    flex: 0 0 auto;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      padding-top: 100%;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: block;
+      max-width: 100% !important;
+      max-height: 100% !important;
+      margin: auto;
+
+      @media (hover: hover) {
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  .ecm-du-ranking-item-link:hover {
+    text-decoration: none;
+  }
+
+  .ecm-du-ranking-item-rank {
+    @include text-2xl;
+    @include font-roboto(500);
+
+    display: flex;
+    align-items: baseline;
+    margin-top: $space-8;
+    line-height: 1;
+    color: $color-gray-1;
+
+    .ecm-du-ranking-item-link:hover & {
+      text-decoration: none;
+    }
+  }
+
+  .ecm-du-ranking-item-rank-text {
+    @include text-sm;
+
+    line-height: 1;
+    color: $color-gray-1;
+    font-weight: 700;
+  }
+
+  .ecm-du-ranking-item-name {
+    @include text-12px;
+    @include clamp(2);
+
+    margin-top: $space-8;
+    color: $color-gray-1;
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .ecm-du-ranking-item-price {
+    @include text-base;
+    @include font-roboto(500);
+
+    flex: 0 0 auto;
+    margin: $space-8 0 0;
+    color: $color-crimson;
+    line-height: 1;
+  }
+
+  .ecm-du-ranking-item-review {
+    display: flex;
+    align-items: center;
+    margin-top: $space-8;
+    height: 13px;
+  }
+
+  .ecm-du-ranking-item-review-star {
+    display: flex;
+  }
+
+  .ecm-du-ranking-item-review-count {
+    @include text-10px;
+
+    margin-left: $space-4;
+
+    a {
+      color: $color-gray-1;
+    }
+  }
+}

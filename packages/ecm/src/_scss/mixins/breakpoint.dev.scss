@@ -1,0 +1,127 @@
+@import './breakpoint.scss';
+
+.xs-up {
+  width: 150px;
+  height: 30px;
+  background-color: gray;
+  @include screen('xs', 'up') {
+    background-color: rebeccapurple;
+  }
+}
+
+.sm-up {
+  width: 150px;
+  height: 30px;
+  background-color: gray;
+  @include screen('sm', 'up') {
+    background-color: rebeccapurple;
+  }
+}
+
+.md-up {
+  width: 150px;
+  height: 30px;
+  background-color: gray;
+  @include screen('md', 'up') {
+    background-color: rebeccapurple;
+  }
+}
+
+.lg-up {
+  width: 150px;
+  height: 30px;
+  background-color: gray;
+  @include screen('lg', 'up') {
+    background-color: rebeccapurple;
+  }
+}
+
+.xl-up {
+  width: 150px;
+  height: 30px;
+  background-color: gray;
+  @include screen('xl', 'up') {
+    background-color: rebeccapurple;
+  }
+}
+
+.xs-down {
+  width: 150px;
+  height: 30px;
+  background-color: gray;
+  @include screen('xs', 'down') {
+    background-color: rebeccapurple;
+  }
+}
+
+.sm-down {
+  width: 150px;
+  height: 30px;
+  background-color: gray;
+  @include screen('sm', 'down') {
+    background-color: rebeccapurple;
+  }
+}
+
+.md-down {
+  width: 150px;
+  height: 30px;
+  background-color: gray;
+  @include screen('md', 'down') {
+    background-color: rebeccapurple;
+  }
+}
+
+.lg-down {
+  width: 150px;
+  height: 30px;
+  background-color: gray;
+  @include screen('lg', 'down') {
+    background-color: rebeccapurple;
+  }
+}
+
+.xl-down {
+  width: 150px;
+  height: 30px;
+  background-color: gray;
+  @include screen('xl', 'down') {
+    background-color: rebeccapurple;
+  }
+}
+
+.xs-only {
+  width: 150px;
+  height: 30px;
+  background-color: gray;
+  @include screen('xs', 'only') {
+    background-color: rebeccapurple;
+  }
+}
+
+.sm-only {
+  width: 150px;
+  height: 30px;
+  background-color: gray;
+  @include screen('sm', 'only') {
+    background-color: rebeccapurple;
+  }
+}
+
+.md-only {
+  width: 150px;
+  height: 30px;
+  background-color: gray;
+  @include screen('md', 'only') {
+    background-color: rebeccapurple;
+  }
+}
+
+.lg-only {
+  width: 150px;
+  height: 30px;
+  background-color: gray;
+  @include screen('lg', 'only') {
+    background-color: rebeccapurple;
+  }
+}

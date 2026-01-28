@@ -1,0 +1,52 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+@include util-lg('object-contain') {
+  object-fit: contain;
+}
+@include util-lg('object-cover') {
+  object-fit: cover;
+}
+@include util-lg('object-fill') {
+  object-fit: fill;
+}
+@include util-lg('object-none') {
+  object-fit: none;
+}
+@include util-lg('object-scale-down') {
+  object-fit: scale-down;
+}
+@include util-lg('aspect-ratio-1x1') {
+  aspect-ratio: 1/1;
+}
+@include util-lg('aspect-ratio-4x3') {
+  aspect-ratio: 4/3;
+}
+@include util-lg('aspect-ratio-16x9') {
+  aspect-ratio: 16/9;
+}
+
+@include util-lg('object-contain', true) {
+  object-fit: contain !important;
+}
+@include util-lg('object-cover', true) {
+  object-fit: cover !important;
+}
+@include util-lg('object-fill', true) {
+  object-fit: fill !important;
+}
+@include util-lg('object-none', true) {
+  object-fit: none !important;
+}
+@include util-lg('object-scale-down', true) {
+  object-fit: scale-down !important;
+}
+@include util-lg('aspect-ratio-1x1', true) {
+  aspect-ratio: 1/1 !important;
+}
+@include util-lg('aspect-ratio-4x3', true) {
+  aspect-ratio: 4/3 !important;
+}
+@include util-lg('aspect-ratio-16x9', true) {
+  aspect-ratio: 16/9 !important;
+}

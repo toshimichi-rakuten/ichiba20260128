@@ -1,0 +1,254 @@
+import Html from 'module-navi/src/components/Html'
+import { Tabs } from '@mantine/core'
+import { BigSpace, Space } from 'src/components/Space'
+import { Confetti } from 'src/components/Confetti'
+
+import campaignDetailsHtml from 'ecm/src/modules/campaign-details/default.html'
+import couponHtml from 'ecm/src/modules/smart-coupon/slider.html'
+import searchHtml from 'ecm/src/modules/search/selection-keyword.html'
+
+import composabilityHtml from 'src/page-files/ecm-renewal-project/composability.html'
+import responsiveHtml from 'src/page-files/ecm-renewal-project/responsive.html'
+import keyboardHtml from 'src/page-files/ecm-renewal-project/keyboard.html'
+import radHtml from 'ecm/src/modules/ad/100038/pc-2column.html'
+
+import {
+  soloEllipseHtml,
+} from 'ecm/src/modules/alcor-search/static'
+
+import {
+  StaticTabGenreAccordionHtml,
+} from 'ecm/src/modules/coupon-shop-list/static'
+
+import okurimonoHtml from 'scm/src/modules/okurimono/default.html'
+import footerHtml from 'scm/src/modules/footer/default.html'
+import columnHtml from 'scm/src/modules/content-card/guide.html'
+import scmAdHtml from 'scm/src/modules/ad/100208/solo.html'
+
+# ECM Renewal Project
+
+<p style={{fontSize: '24px', fontWeight: 'bold'}}>May 27, 2024</p>
+<p style={{fontSize: '24px', fontWeight: 'bold'}}>Ito Takumi</p>
+
+<BigSpace />
+
+## 目次
+
+- ECM/SCMの紹介
+- 改善点
+- タイムライン
+- インパクト
+
+<BigSpace />
+
+## What is ECM?
+
+ECM （Event Common Module）は楽天市場のイベントページで使われるアウトラインHTMLとパーツになります。
+
+<Space />
+<img style={{maxWidth: '80%', marginLeft: 'auto', marginRight: 'auto', display: 'block'}} src="/_assets/images/1.png" />
+<Space />
+
+基本的にはイベントページの作成・管理の工数をへらす為に存在しています。  
+<Space />
+今回はECMの三番目のメージャーバージョンになります。
+
+<BigSpace />
+
+<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: '16px'}}>
+  <Html scm={true} device='sp' content={radHtml} />
+  <Html scm={true} device='sp' content={campaignDetailsHtml} />
+  <Html scm={true} device='sp' content={couponHtml} />
+  <Html scm={true} device='sp' content={searchHtml} />
+</div>
+
+<BigSpace />
+
+## SCM (New)
+
+SCM (Seasonal Common Module) はシーズナルにカスタマイズされたモジュールになります。
+
+<Space />
+
+<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: '16px'}}>
+  <Html scm={true} device='sp' content={scmAdHtml} />
+  <Html scm={true} device='sp' content={okurimonoHtml} />
+  <Html scm={true} device='sp' content={footerHtml} />
+  <Html scm={true} device='sp' content={columnHtml} />
+</div>
+
+<BigSpace />
+
+## What changed?
+
+### 「コンポーザビリティ」の改善
+
+レゴの様にパーツを組み立てる事が出来ます。  
+
+<Space />
+<img style={{maxWidth: '80%', marginLeft: 'auto', marginRight: 'auto', display: 'block'}} src="/_assets/images/2.png" />
+<Space />
+
+今回のレニューアルは新しモジュールの開発は予定しなかったのですが、  
+旧ECMには無かったアコーディオンメニューやサイドバーは個別に使用出来るようになりました。
+
+<Space />
+<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: '16px'}}>
+  <Html device='sp' content={`
+<div class="font-weight-bold mb-16">シート + タブ + アコーディオンメニュー</div>
+${StaticTabGenreAccordionHtml}
+`} />
+  <Html device='sp' content={composabilityHtml} />
+</div>
+
+<BigSpace />
+
+### レスポンシブデサイン
+
+PC/SP共有出来るモジュールが増えます。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='tablet'>Tablet</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={responsiveHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='tablet'>
+    <Html device='md' content={responsiveHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={responsiveHtml} />
+  </Tabs.Panel>
+</Tabs>
+
+<BigSpace />
+
+### クオリティの改善
+
+<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: '16px'}}>
+  <Html device='sp' content={`
+<div class="font-weight-bold mb-16">アニメーションの追加</div>
+${soloEllipseHtml}
+`} />
+  <Html device='sp' content={`
+<div class="font-weight-bold mb-16">キーボードショートカット</div>
+  ${keyboardHtml}`} />
+</div>
+
+<BigSpace />
+
+**[レファレンスの改善](http://module-navi-master-80-cwd-sidekick.jpe1-caas1-dev1.caas.jpe1a.r-local.net/ecm/docs)**
+- モジュールデモ
+- ナビゲーションUX
+- [AD Finder](http://module-navi-master-80-cwd-sidekick.jpe1-caas1-dev1.caas.jpe1a.r-local.net/ecm/docs/ad-finder/)
+
+<BigSpace />
+
+### 開発環境の改善
+
+- [Storybook](https://ecm-sb-master-80-cwd-sidekick.jpe1-caas1-dev1.caas.jpe1a.r-local.net/?path=/story/modules-accordion--default)の導入
+  - ユーザーがコピペするコードと常に一致する様に工夫をしています。
+- OneCloudの導入
+  - プレビューURLの自動作成。
+
+<BigSpace />
+
+### Timeline
+
+<Space />
+<img style={{maxWidth: '400px', display: 'block', marginLeft: '32px'}} src="/_assets/images/Timeline.png" />
+<Space />
+
+<BigSpace />
+
+### Impact (旧ECM+SCM)
+
+**シーズナル新テンプレートを使用しての総合評価**   
+平均評価　4.50/5（使いやすかった）
+
+<Space />
+ 
+**シーズナル新テンプレートを使用しての工数評価**  
+平均評価　4.50/5（工数が改善された）
+
+<Space />
+
+**ディレクター工数**  
+TOP/下層テンプレ,下層ベタページ共にWF作成からチェックに至るまで大幅な工数の改善ができた。  
+
+<Space />
+
+**WF作成、デザインチェック、コーディングチェック**  
+各パートで平均30％程度の工数削減
+
+<Space />
+
+**チーム内チェックFB件数**   
+50％以上削減
+
+<Space />
+ 
+**良かった点として以下が評価のポイント**  
+WF作成が楽になった/デザイナー  
+コーダーとのコミュニケーションがスムーズになった/チェックが楽になった/ミスが少なくなった
+
+<Space />
+ 
+**SCM利用有無に関連する各特集制作FB数の比較**  
+バレンタイン特集 2023 / 2024  
+34件/9件 (YOY -73.53%)
+
+<Space />
+ 
+**ホワイトデー特集2023/2024**  
+27件/3件(YOY -88.89%)
+
+<Space />
+ 
+**社内デザイナー（年越し特集2023）**  
+デザイナー工数
+TOPデザインのみ：50％～60％の工数削減
+
+<Space />
+ 
+**良かった点として以下が評価のポイント**  
+作業時間の短縮になった/WFやUI面にかかわる修正が減った
+
+<Space />
+ 
+**外部制作会社（お歳暮特集2023）**  
+SCMの導入によりMEM側のCSS記述量を大幅に減少  
+38KB　→　24KB
+
+<Space />
+ 
+**1stアップまでの工数の削減**   
+TOP：32h　→　30h（-2h）  
+下層：28h　→　22h（-6h）  
+導入初期（お歳暮2023）時の結果の為、慣れやフローの定着、バージョンアップにより更にスピードと質を改善できる
+
+<Space />
+ 
+**特集内ワンソース率**  
+SCM導入により半分以上のレスポンシブ対応が実現。  
+TOP：58％ 下層テンプレ：50％
+
+<BigSpace />
+
+以上になります。  
+ご視聴ありがとうとございました。  
+
+<Space />
+<Confetti />
+
+<BigSpace />
+<span style={{fontSize: '14px', fontWeight: 'bold'}}>CONFIDENTIAL</span>
+

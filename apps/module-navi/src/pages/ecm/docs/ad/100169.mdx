@@ -1,0 +1,63 @@
+
+import Html from 'src/components/Html'
+import Code from 'src/components/Code'
+import Note from 'src/components/Note'
+import Table, { ClassTable, AttributeTable } from 'src/components/Table'
+import { Tabs } from '@mantine/core'
+import Space from 'src/components/Space'
+import ad100169Sp2ColumnPc4ColumnHtml from 'ecm/src/modules/ad/100169/default.html'
+import ad100169integrationSp2ColumnPc2ColumnHtml from 'ecm/src/modules/ad/100169/integration.html'
+
+export const meta = {
+  title: '原稿タイプID100169 縦長商品画像',
+  description: '送料無料あり 画像＋商品名＋割引率＋元値＋価格＋ショップ名',
+  url: '/ecm/docs/ad/100169',
+  tags: ['商品', 'ad', '原稿タイプ', '縦長商品画像'],
+  finder_tags: [
+    'category_vertical',
+    'image_3x4',
+    'text_item_name',
+    'price_value',
+    'price_original_value',
+    'icon_free_delivery',
+    'icon_point_multiplier',
+    'icon_gift',
+    'icon_coupon',
+    'layout_sp_col2',
+    'layout_pc_col4',
+    'layout_pc_sp',
+    'price_discount'
+  ],
+  responsive: true,
+}
+
+# 原稿タイプID100169 縦長商品画像
+送料無料あり 画像＋商品名＋割引率＋元値＋価格＋ショップ名  
+画像入稿サイズ：480×640px  
+
+<Space />
+★部分へアドプラッツからダウンロードした配信タグを貼り付けてください。
+
+## SP2カラム/PC4カラム
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html adHighlight={true} content={ad100169Sp2ColumnPc4ColumnHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html adHighlight={true} device='lg' content={ad100169Sp2ColumnPc4ColumnHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={ad100169integrationSp2ColumnPc2ColumnHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+

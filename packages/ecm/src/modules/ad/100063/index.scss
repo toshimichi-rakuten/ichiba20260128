@@ -1,0 +1,17 @@
+.ecm-ad-image-block-100063 {
+  width: 130px;
+  margin-right: $space-16;
+  flex-shrink: 0;
+}
+
+.ecm-ad-shop-name-100063 {
+  color: $color-gray-1;
+  display: flex;
+  font-weight: bold;
+
+  i {
+    @include text-lg;
+
+    margin-right: $space-4;
+  }
+}

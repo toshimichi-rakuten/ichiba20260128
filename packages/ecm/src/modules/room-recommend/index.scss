@@ -1,0 +1,83 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+.ecm-room-recommend-header {
+  @include text-base;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  @include screen('md', 'up') {
+    @include text-12px;
+
+    justify-content: space-between;
+  }
+}
+
+.ecm-room-recommend-header-text {
+  @include text-base;
+
+  @include screen('md', 'up') {
+    @include text-lg;
+  }
+}
+
+.ecm-room-recommend {
+  padding: $space-24 0;
+  border-top: 1px solid #ebebeb;
+
+  @include screen('md', 'up') {
+    padding: $space-40 0;
+  }
+}
+
+.ecm-room-recommend-item-link:hover {
+  @include screen('md', 'up') {
+    opacity: 0.8;
+    text-decoration: none;
+
+    .ecm-room-recommend-comment:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.ecm-room-recommend-comment-body {
+  @include text-12px;
+  @include colorize-link($color-gray-1);
+
+  padding: $space-8 $space-16;
+  background-color: $color-gray-6;
+}
+
+.ecm-room-recommend-comment {
+  @include clamp(5);
+
+  line-height: 1.5;
+  height: calc((12px * 1.5) * 5);
+}
+
+.ecm-room-recommend-user-link {
+  @include colorize-link($color-gray-1);
+
+  display: flex;
+  align-items: center;
+  margin-top: 1px;
+  background-color: $color-gray-6;
+}
+
+.ecm-room-recommend-user-image {
+  position: relative;
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  margin: $space-8;
+}
+
+.ecm-room-recommend-user-name {
+  @include text-12px;
+
+  flex: 1 1 auto;
+  padding-right: $space-8;
+}

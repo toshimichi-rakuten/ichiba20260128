@@ -1,0 +1,49 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'ecm/src/modules/pill/default.html'
+
+export const meta = {
+  title: 'ピル型リンク',
+  description: 'テキストリンクをリンクがピル（薬のカプセル）のようなUI',
+  url: '/ecm/docs/ui/pill',
+  tags: ['pill'],
+}
+
+# ピル型リンク
+
+テキストリンクをリンクがピル（薬のカプセル）のようなUIにするモジュールです。検索キーワードのリストなどに利用します。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={defaultHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={defaultHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={defaultHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## 使い方
+
+フォントサイズに対して適切な余白を指定したパターンが用意されています。上記コードの4パターンの大きさから選んで利用してください。
+
+<Space />
+
+<Note type='info'>
+  横並び余白について変更する場合は[CSSユーティリティ](/ecm/docs/css/)の `d-flex-gap-{4-80}` で指定してください
+</Note>

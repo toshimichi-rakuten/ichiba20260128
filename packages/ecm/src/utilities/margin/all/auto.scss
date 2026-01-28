@@ -1,0 +1,46 @@
+$directions: (
+  'ml': 'left',
+  'mr': 'right',
+  'mt': 'top',
+  'mb': 'bottom',
+);
+
+@include util-all('m-0') {
+  margin: 0;
+}
+@include util-all('m-auto') {
+  margin: auto;
+}
+@include util-all('mx-auto') {
+  margin-left: auto;
+  margin-right: auto;
+}
+@include util-all('my-auto') {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+@each $key, $value in $directions {
+  @include util-all('#{$key}-auto') {
+    margin-#{$value}: auto;
+  }
+}
+
+@include util-all('m-0', true) {
+  margin: 0 !important;
+}
+@include util-all('m-auto', true) {
+  margin: auto !important;
+}
+@include util-all('mx-auto', true) {
+  margin-left: auto !important;
+  margin-right: auto;
+}
+@include util-all('my-auto', true) {
+  margin-top: auto !important;
+  margin-bottom: auto;
+}
+@each $key, $value in $directions {
+  @include util-all('#{$key}-auto', true) {
+    margin-#{$value}: auto !important;
+  }
+}

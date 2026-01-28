@@ -1,0 +1,1204 @@
+{
+  "data": [
+    {
+      "shop_id": "192065",
+      "shop_url": "vanilla",
+      "shop_name": "横浜チョコレートのバニラビーンズ",
+      "shop_name_kana": "よこはまちょこれーとのばにらびーんず",
+      "genre_name": "スイーツ・お菓子",
+      "genre_id": "551167",
+      "subgenre_name": "洋菓子",
+      "subgenre_id": "100283"
+    },
+    {
+      "shop_id": "192548",
+      "shop_url": "e-unagi",
+      "shop_name": "うなぎ専門店　浜名湖山吹",
+      "shop_name_kana": "うなぎせんもんてん　はまなこやまぶき",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "192960",
+      "shop_url": "kamasho",
+      "shop_name": "釜庄 楽天市場店",
+      "shop_name_kana": "かましょうらくてんいちばてん",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "193316",
+      "shop_url": "matsuo",
+      "shop_name": "北海道名物松尾ジンギスカン通販",
+      "shop_name_kana": "ほっかいどうめいぶつまつおじんぎすかんつうはん",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "惣菜",
+      "subgenre_id": "100268"
+    },
+    {
+      "shop_id": "193818",
+      "shop_url": "kanihachidai",
+      "shop_name": "にしとも・かに市場",
+      "shop_name_kana": "にしともかにいちば",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "194013",
+      "shop_url": "yamaya",
+      "shop_name": "博多の味やまや 楽天市場店",
+      "shop_name_kana": "はかたのあじやまやらくてんいちばてん",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "195541",
+      "shop_url": "wakamaru",
+      "shop_name": "馬刺し専門　若丸",
+      "shop_name_kana": "ばさしせんもん　わかまる",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "精肉・肉加工品",
+      "subgenre_id": "100228"
+    },
+    {
+      "shop_id": "195745",
+      "shop_url": "masuyone",
+      "shop_name": "越前かに問屋「ますよね」",
+      "shop_name_kana": "えちぜんかにどんやますよね",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "196054",
+      "shop_url": "nikunohiguchi",
+      "shop_name": "昭和31年創業 飛騨牛 肉のひぐち",
+      "shop_name_kana": "しょうわ31ねんそうぎょうひだぎゅうにくのひぐち",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "精肉・肉加工品",
+      "subgenre_id": "100228"
+    },
+    {
+      "shop_id": "196556",
+      "shop_url": "sakemuseum",
+      "shop_name": "日本酒博物館",
+      "shop_name_kana": "にほんしゅはくぶつかん",
+      "genre_name": "日本酒・焼酎",
+      "genre_id": "510901",
+      "subgenre_name": "日本酒",
+      "subgenre_id": "100337"
+    },
+    {
+      "shop_id": "197469",
+      "shop_url": "sobanosato",
+      "shop_name": "越前そばの里",
+      "shop_name_kana": "えちぜんそばのさと",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "麺類",
+      "subgenre_id": "100256"
+    },
+    {
+      "shop_id": "198862",
+      "shop_url": "rebun",
+      "shop_name": "島の人",
+      "shop_name_kana": "しまのひと",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "202445",
+      "shop_url": "hanamidori",
+      "shop_name": "博多華味鳥",
+      "shop_name_kana": "はかたはなみどり",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "精肉・肉加工品",
+      "subgenre_id": "100228"
+    },
+    {
+      "shop_id": "204128",
+      "shop_url": "oimoya",
+      "shop_name": "おいもや",
+      "shop_name_kana": "おいもや",
+      "genre_name": "スイーツ・お菓子",
+      "genre_id": "551167",
+      "subgenre_name": "洋菓子",
+      "subgenre_id": "100283"
+    },
+    {
+      "shop_id": "205214",
+      "shop_url": "onomichi",
+      "shop_name": "おのみち発　北前船の贈り物",
+      "shop_name_kana": "おのみちはつきたまえふねのおくりもの",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "205909",
+      "shop_url": "umisachi",
+      "shop_name": "マルトモ海幸倶楽部",
+      "shop_name_kana": "まるともうみさちくらぶ",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "208340",
+      "shop_url": "kanikoubou",
+      "shop_name": "海鮮蟹工房",
+      "shop_name_kana": "かいせんかにこうぼう",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "215565",
+      "shop_url": "sobaburumai",
+      "shop_name": "信州発　そばぶるまい　楽天市場店",
+      "shop_name_kana": "しんしゅうはつそばぶるまいらくてんいちばてん",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "麺類",
+      "subgenre_id": "100256"
+    },
+    {
+      "shop_id": "215699",
+      "shop_url": "eel-tanaka",
+      "shop_name": "浜名湖　うなぎのたなか",
+      "shop_name_kana": "はまなこうなぎのたなか",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "216344",
+      "shop_url": "sagatofu",
+      "shop_name": "豆腐の佐嘉平川屋",
+      "shop_name_kana": "とうふのさがひらかわや",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "惣菜",
+      "subgenre_id": "100268"
+    },
+    {
+      "shop_id": "216707",
+      "shop_url": "tenshi-okurimono",
+      "shop_name": "パティスリー天使のおくりもの",
+      "shop_name_kana": "ぱてぃすりーてんしのおくりもの",
+      "genre_name": "スイーツ・お菓子",
+      "genre_id": "551167",
+      "subgenre_name": "洋菓子",
+      "subgenre_id": "100283"
+    },
+    {
+      "shop_id": "217476",
+      "shop_url": "muranoeki",
+      "shop_name": "伊豆『村の駅』食のテーマパーク",
+      "shop_name_kana": "いずむらのえきしょくのてーまぱーく",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "惣菜",
+      "subgenre_id": "100268"
+    },
+    {
+      "shop_id": "220872",
+      "shop_url": "motunabe",
+      "shop_name": "博多もつ鍋 炭火ホルモン焼 黄金屋",
+      "shop_name_kana": "はかたもつなべすみびほるもんやきこがねや",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "精肉・肉加工品",
+      "subgenre_id": "100228"
+    },
+    {
+      "shop_id": "223181",
+      "shop_url": "wataei",
+      "shop_name": "越後の老舗白玉屋　わたえい",
+      "shop_name_kana": "えちごのしにせしらたまやわたえい",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "惣菜",
+      "subgenre_id": "100268"
+    },
+    {
+      "shop_id": "223253",
+      "shop_url": "dategyu",
+      "shop_name": "伊達の牛たん本舗",
+      "shop_name_kana": "だてのぎゅうたんほんぽ",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "精肉・肉加工品",
+      "subgenre_id": "100228"
+    },
+    {
+      "shop_id": "224412",
+      "shop_url": "kiraku-senzaki",
+      "shop_name": "山口ふぐ本舗きらく",
+      "shop_name_kana": "やまぐちふぐほんぽきらく",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "224876",
+      "shop_url": "rikyu-gyutan",
+      "shop_name": "牛たん利久楽天市場店",
+      "shop_name_kana": "ぎゅうたんりきゅうらくてんいちばてん",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "精肉・肉加工品",
+      "subgenre_id": "100228"
+    },
+    {
+      "shop_id": "225067",
+      "shop_url": "yakiniku-yamato",
+      "shop_name": "松阪牛ギフト専門店　松阪牛やまと",
+      "shop_name_kana": "まつざかぎゅうぎふとせんもんてんまつざかぎゅうやまと",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "精肉・肉加工品",
+      "subgenre_id": "100228"
+    },
+    {
+      "shop_id": "226915",
+      "shop_url": "sfd-ymt",
+      "shop_name": "海の幸なのにＹＡＭＡＴＯ",
+      "shop_name_kana": "うみのさちなのにYAMATO",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "227190",
+      "shop_url": "ichijyo",
+      "shop_name": "まぐろ処　一条",
+      "shop_name_kana": "まぐろどころいちじょう",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "228039",
+      "shop_url": "yakunosoba",
+      "shop_name": "夜久野そば本舗",
+      "shop_name_kana": "やくのそばほんぽ",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "麺類",
+      "subgenre_id": "100256"
+    },
+    {
+      "shop_id": "229576",
+      "shop_url": "hanaechizen",
+      "shop_name": "創作和洋菓子　花えちぜん",
+      "shop_name_kana": "そうさくわようがしはなえちぜん",
+      "genre_name": "スイーツ・お菓子",
+      "genre_id": "551167",
+      "subgenre_name": "洋菓子",
+      "subgenre_id": "100283"
+    },
+    {
+      "shop_id": "230302",
+      "shop_url": "bekkoya",
+      "shop_name": "鹿児島 さつま揚げ専門店 べっ甲屋",
+      "shop_name_kana": "かごしまさつまあげせんもんてんべっこうや",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "230377",
+      "shop_url": "motonland",
+      "shop_name": "カナダビーフ館",
+      "shop_name_kana": "かなだびーふかん",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "精肉・肉加工品",
+      "subgenre_id": "100228"
+    },
+    {
+      "shop_id": "231334",
+      "shop_url": "konpirayahanbai",
+      "shop_name": "さぬきうどんの老舗「こんぴらや」",
+      "shop_name_kana": "さぬきうどんのしにせこんぴらや",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "麺類",
+      "subgenre_id": "100256"
+    },
+    {
+      "shop_id": "239056",
+      "shop_url": "auc-sekitora",
+      "shop_name": "ふぐの本場下関　関とら",
+      "shop_name_kana": "ふぐのほんばしものせきせきとら",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "240428",
+      "shop_url": "ojisalmon",
+      "shop_name": "王子サーモン楽天市場店",
+      "shop_name_kana": "おうじさーもんらくてんいちばてん",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "241623",
+      "shop_url": "tosachinmi",
+      "shop_name": "珍味堂　ひろめ店",
+      "shop_name_kana": "ちんみどうひろめてん",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "惣菜",
+      "subgenre_id": "100268"
+    },
+    {
+      "shop_id": "242981",
+      "shop_url": "gakouin",
+      "shop_name": "西京焼専門店　京都 雅幸胤",
+      "shop_name_kana": "さいきょうやきせんもんてんきょうとがこういん",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "惣菜",
+      "subgenre_id": "100268"
+    },
+    {
+      "shop_id": "246824",
+      "shop_url": "auc-yokasakana",
+      "shop_name": "海と山の旬鮮産直よか魚ドットコム",
+      "shop_name_kana": "うみとやまのしゅんせんさんちょくよかさかなどっとこむ",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "247517",
+      "shop_url": "maruyasuisan",
+      "shop_name": "カニ缶詰の OH！GLE（オーグル）",
+      "shop_name_kana": "かにかんづめのOHGLEおーぐる",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "250846",
+      "shop_url": "kuishinboucom-r",
+      "shop_name": "くいしんぼうグルメ便",
+      "shop_name_kana": "くいしんぼうぐるめびん",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "野菜・きのこ",
+      "subgenre_id": "200990"
+    },
+    {
+      "shop_id": "251044",
+      "shop_url": "kurekino",
+      "shop_name": "榑木野　楽天市場店",
+      "shop_name_kana": "くれきのらくてんいちばてん",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "麺類",
+      "subgenre_id": "100256"
+    },
+    {
+      "shop_id": "253600",
+      "shop_url": "madame1214",
+      "shop_name": "マダムシンコ",
+      "shop_name_kana": "まだむしんこ",
+      "genre_name": "スイーツ・お菓子",
+      "genre_id": "551167",
+      "subgenre_name": "洋菓子",
+      "subgenre_id": "100283"
+    },
+    {
+      "shop_id": "259167",
+      "shop_url": "yobuko-manbou",
+      "shop_name": "呼子萬坊　楽天市場店",
+      "shop_name_kana": "よぶこまんぼうらくてんいちばてん",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "260338",
+      "shop_url": "shokufukutei",
+      "shop_name": "ホルモン・もつ鍋 神戸 食福亭味革",
+      "shop_name_kana": "ほるもんもつなべこうべしょくふくていみかく",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "精肉・肉加工品",
+      "subgenre_id": "100228"
+    },
+    {
+      "shop_id": "261085",
+      "shop_url": "1129saisonb",
+      "shop_name": "高級和牛専門店　セゾンブシェ",
+      "shop_name_kana": "こうきゅうわぎゅうせんもんてんせぞんぶしぇ",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "精肉・肉加工品",
+      "subgenre_id": "100228"
+    },
+    {
+      "shop_id": "263955",
+      "shop_url": "buono-buono",
+      "shop_name": "北海道産直グルメ　ぼーの",
+      "shop_name_kana": "ほっかいどうさんちょくぐるめぼーの",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "惣菜",
+      "subgenre_id": "100268"
+    },
+    {
+      "shop_id": "264275",
+      "shop_url": "kitauroko",
+      "shop_name": "カニのキタウロコ",
+      "shop_name_kana": "かにのきたうろこ",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "264787",
+      "shop_url": "ogurayayamamoto",
+      "shop_name": "えびすめの小倉屋山本",
+      "shop_name_kana": "えびすめのおぐらややまもと",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "惣菜",
+      "subgenre_id": "100268"
+    },
+    {
+      "shop_id": "269065",
+      "shop_url": "kouragumi",
+      "shop_name": "越前かに職人甲羅組（DENSHOKU）",
+      "shop_name_kana": "えちぜんかにしょくにんこうらぐみDENSHOKU",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "269414",
+      "shop_url": "sanchokudayori",
+      "shop_name": "産直だより",
+      "shop_name_kana": "さんちょくだより",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "フルーツ・果物",
+      "subgenre_id": "100246"
+    },
+    {
+      "shop_id": "271398",
+      "shop_url": "morigen",
+      "shop_name": "食の達人森源商店",
+      "shop_name_kana": "しょくのたつじんもりげんしょうてん",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "272132",
+      "shop_url": "soup-stock-tokyo",
+      "shop_name": "Soup Stock Tokyo公式 楽天市場店",
+      "shop_name_kana": "SoupStockTokyoこうしきらくてんいちばてん",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "惣菜",
+      "subgenre_id": "100268"
+    },
+    {
+      "shop_id": "272862",
+      "shop_url": "gyo-za83",
+      "shop_name": "餃子専門店イチロー",
+      "shop_name_kana": "きょうざせんもんてんいちろー",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "惣菜",
+      "subgenre_id": "100268"
+    },
+    {
+      "shop_id": "274113",
+      "shop_url": "esan-konbu",
+      "shop_name": "函館えさん昆布の会",
+      "shop_name_kana": "はこだてえさんこんぶのかい",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "277256",
+      "shop_url": "ikorofood",
+      "shop_name": "北海道美食生活",
+      "shop_name_kana": "ほっかいどうびしょくせいかつ",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "野菜・きのこ",
+      "subgenre_id": "200990"
+    },
+    {
+      "shop_id": "277707",
+      "shop_url": "amaminosato",
+      "shop_name": "奄美の里",
+      "shop_name_kana": "あまみのさと",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "惣菜",
+      "subgenre_id": "100268"
+    },
+    {
+      "shop_id": "279181",
+      "shop_url": "kanidokoro",
+      "shop_name": "海鮮かに処",
+      "shop_name_kana": "かいせんかにどころ",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "283270",
+      "shop_url": "ehakutsuru",
+      "shop_name": "白鶴オンラインショップ楽天市場店",
+      "shop_name_kana": "はくつるおんらいんしょっぷらくてんいちばてん",
+      "genre_name": "日本酒・焼酎",
+      "genre_id": "510901",
+      "subgenre_name": "日本酒",
+      "subgenre_id": "100337"
+    },
+    {
+      "shop_id": "294073",
+      "shop_url": "agurinosho",
+      "shop_name": "あぐりの匠　楽天市場店",
+      "shop_name_kana": "あぐりのしょうらくてんいちばてん",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "乾物",
+      "subgenre_id": "410901"
+    },
+    {
+      "shop_id": "295961",
+      "shop_url": "liquor-boss",
+      "shop_name": "リカーBOSS 楽天市場店",
+      "shop_name_kana": "りかーBOSSらくてんいちばてん",
+      "genre_name": "ビール・洋酒",
+      "genre_id": "510915",
+      "subgenre_name": "ビール・発泡酒",
+      "subgenre_id": "100324"
+    },
+    {
+      "shop_id": "296343",
+      "shop_url": "shinjushoku",
+      "shop_name": "信寿食　楽天市場店",
+      "shop_name_kana": "しんじゅしょくらくてんいちばてん",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "麺類",
+      "subgenre_id": "100256"
+    },
+    {
+      "shop_id": "297369",
+      "shop_url": "kuramoto-suisan",
+      "shop_name": "瀬戸内漁師の海鮮問屋",
+      "shop_name_kana": "せとうちりょうしのかいせんどんや",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "297866",
+      "shop_url": "ritafoods",
+      "shop_name": "熊本の馬刺し専門店　利他フーズ",
+      "shop_name_kana": "くまもとのばさしせんもんてんりたふーず",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "精肉・肉加工品",
+      "subgenre_id": "100228"
+    },
+    {
+      "shop_id": "302881",
+      "shop_url": "chokyuan",
+      "shop_name": "紀州の梅酒・日本酒の通販 長久庵",
+      "shop_name_kana": "きしゅうのうめしゅにほんしゅのつうはんちょうきゅうあん",
+      "genre_name": "日本酒・焼酎",
+      "genre_id": "510901",
+      "subgenre_name": "梅酒",
+      "subgenre_id": "510903"
+    },
+    {
+      "shop_id": "303370",
+      "shop_url": "enetkome",
+      "shop_name": "食福堂",
+      "shop_name_kana": "しょくふくどう",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "米・雑穀",
+      "subgenre_id": "110472"
+    },
+    {
+      "shop_id": "305839",
+      "shop_url": "daigounagi",
+      "shop_name": "いいものだけを　大五うなぎ工房",
+      "shop_name_kana": "いいものだけをだいごうなぎこうぼう",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "306220",
+      "shop_url": "marucyou",
+      "shop_name": "肉の丸長楽天市場店",
+      "shop_name_kana": "にくのまるちょうらくてんいちばてん",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "精肉・肉加工品",
+      "subgenre_id": "100228"
+    },
+    {
+      "shop_id": "307712",
+      "shop_url": "umamido",
+      "shop_name": "辛子明太子専門店 博多 うまみ堂",
+      "shop_name_kana": "からしめんたいこせんもんてんはかたうまみどう",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "312198",
+      "shop_url": "nikunoito",
+      "shop_name": "肉のいとう　楽天市場店",
+      "shop_name_kana": "にくのいとうらくてんいちばてん",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "精肉・肉加工品",
+      "subgenre_id": "100228"
+    },
+    {
+      "shop_id": "312223",
+      "shop_url": "jyounetu-bokujyou",
+      "shop_name": "カミチク ファーマーズマーケット",
+      "shop_name_kana": "かみちくふぁーまーずまーけっと",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "精肉・肉加工品",
+      "subgenre_id": "100228"
+    },
+    {
+      "shop_id": "314342",
+      "shop_url": "r-concier",
+      "shop_name": "SAKE People",
+      "shop_name_kana": "SAKEPeople",
+      "genre_name": "ビール・洋酒",
+      "genre_id": "510915",
+      "subgenre_name": "ウイスキー",
+      "subgenre_id": "100330"
+    },
+    {
+      "shop_id": "322269",
+      "shop_url": "yoshinoya-shop",
+      "shop_name": "吉野家公式ショップ楽天市場店",
+      "shop_name_kana": "よしのやこうしきしょっぷらくてんいちばてん",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "惣菜",
+      "subgenre_id": "100268"
+    },
+    {
+      "shop_id": "331692",
+      "shop_url": "lindt-chocolate",
+      "shop_name": "リンツ チョコレート 楽天市場店",
+      "shop_name_kana": "りんつちょこれーとらくてんいちばてん",
+      "genre_name": "スイーツ・お菓子",
+      "genre_id": "551167",
+      "subgenre_name": "洋菓子",
+      "subgenre_id": "100283"
+    },
+    {
+      "shop_id": "335165",
+      "shop_url": "yamaguchi-kaikyo",
+      "shop_name": "やまぐち旬彩 海峡本舗",
+      "shop_name_kana": "やまぐちしゅんさいかいきょうほんぽ",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "336503",
+      "shop_url": "monmarche",
+      "shop_name": "野菜をMOTTO 楽天市場店",
+      "shop_name_kana": "やさいをMOTTOらくてんいちばてん",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "缶詰",
+      "subgenre_id": "507779"
+    },
+    {
+      "shop_id": "347132",
+      "shop_url": "kani-kani",
+      "shop_name": "カニパラダイス",
+      "shop_name_kana": "かにぱらだいす",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "348253",
+      "shop_url": "hokkaido-passion",
+      "shop_name": "HOKKAIDO-PASSION",
+      "shop_name_kana": "HOKKAIDOPASSION",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "チーズ・乳製品",
+      "subgenre_id": "100262"
+    },
+    {
+      "shop_id": "353594",
+      "shop_url": "zakobashop",
+      "shop_name": "ざこばの朝市オンラインショップ",
+      "shop_name_kana": "ざこばのあさいちおんらいんしょっぷ",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "356500",
+      "shop_url": "yaizunikko",
+      "shop_name": "海産物問屋焼津日宏",
+      "shop_name_kana": "かいさんぶつとんややいづにっこう",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "356965",
+      "shop_url": "soba-haneya",
+      "shop_name": "献上そば　羽根屋",
+      "shop_name_kana": "けんじょうそばはねや",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "麺類",
+      "subgenre_id": "100256"
+    },
+    {
+      "shop_id": "357996",
+      "shop_url": "dining-shioso",
+      "shop_name": "港ダイニングしおそう",
+      "shop_name_kana": "みなとだいにんぐしおそう",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "358734",
+      "shop_url": "ksfg-online",
+      "shop_name": "KSFG ONLINE SHOP",
+      "shop_name_kana": "KSFGONLINESHOP",
+      "genre_name": "スイーツ・お菓子",
+      "genre_id": "551167",
+      "subgenre_name": "洋菓子",
+      "subgenre_id": "100283"
+    },
+    {
+      "shop_id": "364764",
+      "shop_url": "nattokushop",
+      "shop_name": "ギフト百花",
+      "shop_name_kana": "ぎふとひゃっか",
+      "genre_name": "百貨店・総合通販・ギフト",
+      "genre_id": "100000",
+      "subgenre_name": "贈答品・ギフト",
+      "subgenre_id": "100003"
+    },
+    {
+      "shop_id": "370553",
+      "shop_url": "royalgreenlandjapan",
+      "shop_name": "ロイヤルグリーンランド",
+      "shop_name_kana": "ろいやるぐりーんらんど",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "370679",
+      "shop_url": "hanatareya",
+      "shop_name": "美酒蔵 はなたれ屋",
+      "shop_name_kana": "びしゅぐらはなたれや",
+      "genre_name": "日本酒・焼酎",
+      "genre_id": "510901",
+      "subgenre_name": "日本酒",
+      "subgenre_id": "100337"
+    },
+    {
+      "shop_id": "374870",
+      "shop_url": "agootoshi",
+      "shop_name": "【公式】博多あごおとし楽天市場店",
+      "shop_name_kana": "こうしきはかたあごおとしらくてんいちばてん",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "376767",
+      "shop_url": "hamachu",
+      "shop_name": "はまべじ",
+      "shop_name_kana": "はまべじ",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "野菜・きのこ",
+      "subgenre_id": "200990"
+    },
+    {
+      "shop_id": "378826",
+      "shop_url": "nexus29",
+      "shop_name": "肉の匠　中むら屋",
+      "shop_name_kana": "にくのたくみなかむらや",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "精肉・肉加工品",
+      "subgenre_id": "100228"
+    },
+    {
+      "shop_id": "386272",
+      "shop_url": "nabedeli",
+      "shop_name": "本格宅鍋「TAKUNABE」楽天市場店",
+      "shop_name_kana": "ほんかくたくなべTAKUNABEらくてんいちばてん",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "惣菜",
+      "subgenre_id": "100268"
+    },
+    {
+      "shop_id": "386363",
+      "shop_url": "fukusaya-kk",
+      "shop_name": "辛子めんたい福さ屋",
+      "shop_name_kana": "からしめんたいふくさや",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "388053",
+      "shop_url": "mogumogu-cbc",
+      "shop_name": "みんなのおつまみ Mogu！Mogu！",
+      "shop_name_kana": "みんなのおつまみMoguMogu",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "精肉・肉加工品",
+      "subgenre_id": "100228"
+    },
+    {
+      "shop_id": "389659",
+      "shop_url": "daesangjapan",
+      "shop_name": "デサンジャパン楽天市場店",
+      "shop_name_kana": "でさんじゃぱんらくてんいちばてん",
+      "genre_name": "水・ソフトドリンク",
+      "genre_id": "100316",
+      "subgenre_name": "お茶・紅茶",
+      "subgenre_id": "565598"
+    },
+    {
+      "shop_id": "389912",
+      "shop_url": "serge-gens-ec",
+      "shop_name": "Serge源’ｓ　楽天市場店",
+      "shop_name_kana": "Sergeげんsらくてんいちばてん",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "精肉・肉加工品",
+      "subgenre_id": "100228"
+    },
+    {
+      "shop_id": "393093",
+      "shop_url": "s-kodawari",
+      "shop_name": "食のこだわり総本舗　食彩館",
+      "shop_name_kana": "しょくのこだわりそうほんぽしょくさいかん",
+      "genre_name": "スイーツ・お菓子",
+      "genre_id": "551167",
+      "subgenre_name": "ナッツ",
+      "subgenre_id": "214193"
+    },
+    {
+      "shop_id": "393687",
+      "shop_url": "mitu-maru",
+      "shop_name": "三ッ丸",
+      "shop_name_kana": "みっまる",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "394364",
+      "shop_url": "toyosumizucho",
+      "shop_name": "豊洲マルシェ",
+      "shop_name_kana": "とよすまるしぇ",
+      "genre_name": "百貨店・総合通販・ギフト",
+      "genre_id": "100000",
+      "subgenre_name": "贈答品・ギフト",
+      "subgenre_id": "100003"
+    },
+    {
+      "shop_id": "394737",
+      "shop_url": "mizutaki-genkai",
+      "shop_name": "【水炊き、鶏料理、鍋】水たき玄海",
+      "shop_name_kana": "みずたきとりりょうりなべみずたきげんかい",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "惣菜",
+      "subgenre_id": "100268"
+    },
+    {
+      "shop_id": "396415",
+      "shop_url": "r-food",
+      "shop_name": "Premium Food Select",
+      "shop_name_kana": "PremiumFoodSelect",
+      "genre_name": "スイーツ・お菓子",
+      "genre_id": "551167",
+      "subgenre_name": "洋菓子",
+      "subgenre_id": "100283"
+    },
+    {
+      "shop_id": "397065",
+      "shop_url": "abechosyouten",
+      "shop_name": "南三陸ホテル観洋　楽天市場店",
+      "shop_name_kana": "みなみさんりくほてるかんようらくてんいちばてん",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "397364",
+      "shop_url": "orionbeer",
+      "shop_name": "オリオンビール楽天市場店",
+      "shop_name_kana": "おりおんびーるらくてんいちばてん",
+      "genre_name": "ビール・洋酒",
+      "genre_id": "510915",
+      "subgenre_name": "ビール・発泡酒",
+      "subgenre_id": "100324"
+    },
+    {
+      "shop_id": "397531",
+      "shop_url": "date",
+      "shop_name": "伊達のくら",
+      "shop_name_kana": "だてのくら",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "精肉・肉加工品",
+      "subgenre_id": "100228"
+    },
+    {
+      "shop_id": "400083",
+      "shop_url": "jawasuisan",
+      "shop_name": "ジャワ水産 楽天市場店",
+      "shop_name_kana": "じゃわすいさんらくてんいちばてん",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "400437",
+      "shop_url": "marukome-shop",
+      "shop_name": "マルコメオンラインショップ",
+      "shop_name_kana": "まるこめおんらいんしょっぷ",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "調味料",
+      "subgenre_id": "100300"
+    },
+    {
+      "shop_id": "400795",
+      "shop_url": "tokando",
+      "shop_name": "東甘堂　楽天市場店",
+      "shop_name_kana": "とうかんどうらくてんいちばてん",
+      "genre_name": "スイーツ・お菓子",
+      "genre_id": "551167",
+      "subgenre_name": "各種スイーツ・お菓子セット",
+      "subgenre_id": "568410"
+    },
+    {
+      "shop_id": "401294",
+      "shop_url": "kiwami-nodoguro",
+      "shop_name": "山陰浜田 極味 楽天市場店",
+      "shop_name_kana": "さんいんはまだきわみらくてんいちばてん",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "403819",
+      "shop_url": "sorekani",
+      "shop_name": "それでもカニを喰らう。",
+      "shop_name_kana": "それでもかにをくらう",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "403820",
+      "shop_url": "maguroittaku",
+      "shop_name": "清水・焼津 マグロ卸直営店 鮪一択",
+      "shop_name_kana": "しみずやいづまぐろおろしちょくえいてんまぐろいったく",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "405194",
+      "shop_url": "seamfood",
+      "shop_name": "ローアルコールショップ koyoi",
+      "shop_name_kana": "ろーあるこーるしょっぷkoyoi",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "漬物・梅干し・キムチ",
+      "subgenre_id": "100250"
+    },
+    {
+      "shop_id": "405240",
+      "shop_url": "fukiagetei",
+      "shop_name": "吹上亭・楽天市場店",
+      "shop_name_kana": "ふきあげていらくてんいちばてん",
+      "genre_name": "スイーツ・お菓子",
+      "genre_id": "551167",
+      "subgenre_name": "和菓子",
+      "subgenre_id": "509708"
+    },
+    {
+      "shop_id": "407058",
+      "shop_url": "apexfresh",
+      "shop_name": "00pexFresh",
+      "shop_name_kana": "00pexFresh",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "精肉・肉加工品",
+      "subgenre_id": "100228"
+    },
+    {
+      "shop_id": "407058",
+      "shop_url": "apexfresh",
+      "shop_name": "ApexFresh",
+      "shop_name_kana": "ApexFresh",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "精肉・肉加工品",
+      "subgenre_id": "100228"
+    },
+    {
+      "shop_id": "407283",
+      "shop_url": "mennomaruni",
+      "shop_name": "めんのマルニ　楽天市場店",
+      "shop_name_kana": "めんのまるにらくてんいちばてん",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "麺類",
+      "subgenre_id": "100256"
+    },
+    {
+      "shop_id": "407972",
+      "shop_url": "obamakaisanbutsu",
+      "shop_name": "小浜海産物 楽天市場店",
+      "shop_name_kana": "おばまかいさんぶつらくてんいちばてん",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "411108",
+      "shop_url": "yaojin",
+      "shop_name": "八百甚　楽天市場店",
+      "shop_name_kana": "やおじんらくてんいちばてん",
+      "genre_name": "スイーツ・お菓子",
+      "genre_id": "551167",
+      "subgenre_name": "洋菓子",
+      "subgenre_id": "100283"
+    },
+    {
+      "shop_id": "411404",
+      "shop_url": "hitotoki-r",
+      "shop_name": "お酒のひととき",
+      "shop_name_kana": "おさけのひととき",
+      "genre_name": "ビール・洋酒",
+      "genre_id": "510915",
+      "subgenre_name": "ワイン",
+      "subgenre_id": "100317"
+    },
+    {
+      "shop_id": "415639",
+      "shop_url": "tsukiji-uosei",
+      "shop_name": "築地魚星　楽天市場店",
+      "shop_name_kana": "つきじうおせいらくてんいちばてん",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "419790",
+      "shop_url": "ocean-hokkaido",
+      "shop_name": "OCEANHOKKAIDO楽天市場店",
+      "shop_name_kana": "OCEANHOKKAIDOらくてんいちばてん",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    },
+    {
+      "shop_id": "420830",
+      "shop_url": "bushuunagi",
+      "shop_name": "武州うなぎ　楽天市場店",
+      "shop_name_kana": "ぶしゅううなぎらくてんいちばてん",
+      "genre_name": "食品",
+      "genre_id": "100227",
+      "subgenre_name": "魚介類・水産加工品",
+      "subgenre_id": "100236"
+    }
+  ]
+}

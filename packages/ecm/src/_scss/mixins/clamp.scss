@@ -1,0 +1,10 @@
+@mixin clamp($value) {
+  -webkit-box-orient: vertical;
+  /* stylelint-disable */
+  display: -webkit-box;
+  /* stylelint-enable */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $value;
+  word-break: break-all;
+}

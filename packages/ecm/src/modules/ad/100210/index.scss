@@ -1,0 +1,17 @@
+.ecm-ad-logo-100210 {
+  width: 18%;
+  margin-right: $space-8;
+  flex-shrink: 0;
+
+  @include screen('md', 'down') {
+    width: 19%;
+    max-width: none;
+  }
+}
+
+.ecm-ad-shop-100210 {
+  @include text-12px;
+  @include colorize-link($color-gray-2);
+
+  flex-grow: 1;
+}

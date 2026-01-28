@@ -1,0 +1,59 @@
+<div
+  data-key="coupons"
+  data-type="array"
+>
+  {{#if coupons}} {{#each coupons}}
+  <div data-type="object">
+    <div data-key="couponName">{{couponName}}</div>
+    <div data-key="couponCaption">{{couponCaption}}</div>
+    <div data-key="couponCd">{{couponCd}}</div>
+    <div data-key="couponGetUrl">{{couponGetUrl}}</div>
+    <div data-key="discountFactor">{{discountFactor}}</div>
+    <div data-key="rankCond">{{rankCond}}</div>
+    <div data-key="couponStartDate">{{couponStartDate}}</div>
+    <div data-key="couponEndDate">{{couponEndDate}}</div>
+    <div data-key="couponImage">{{couponImage}}</div>
+    <div data-key="minPurchasePrice">{{minPurchasePrice}}</div>
+    <div data-key="minPurchaseNumber">{{minPurchaseNumber}}</div>
+    <div
+      data-key="shops"
+      data-type="array"
+    >
+      {{#if shops}} {{#each shops}}
+      <div data-type="object">
+        <div data-key="shopId">{{shopId}}</div>
+        <div data-key="shopName">{{shopName}}</div>
+        <div data-key="shopUrl">{{shopUrl}}</div>
+        <div data-key="couponName">{{../this.couponName}}</div>
+        <div data-key="couponCaption">{{../this.couponCaption}}</div>
+        <div data-key="couponCd">{{../this.couponCd}}</div>
+        <div data-key="couponGetUrl">{{../this.couponGetUrl}}</div>
+        <div data-key="discountFactor">{{../this.discountFactor}}</div>
+        <div data-key="rankCond">{{../this.rankCond}}</div>
+        <div data-key="couponStartDate">{{../this.couponStartDate}}</div>
+        <div data-key="couponEndDate">{{../this.couponEndDate}}</div>
+        <div data-key="couponImage">{{../this.couponImage}}</div>
+        <div data-key="minPurchasePrice">{{../this.minPurchasePrice}}</div>
+        <div data-key="minPurchaseNumber">{{../this.minPurchaseNumber}}</div>
+        <div
+          data-key="items"
+          data-type="array"
+        >
+          {{#if items}} {{#each items}}
+          <div data-type="object">
+            <div data-key="itemId">{{itemId}}</div>
+            <div data-key="itemName">{{itemName}}</div>
+            <div data-key="kakaku">{{kakaku}}</div>
+            <div data-key="itemUrl">{{itemUrl}}</div>
+            <div data-key="imageUrl">{{imageUrl}}</div>
+          </div>
+          {{/each}} {{/if}}
+        </div>
+      </div>
+      {{/each}} {{/if}}
+    </div>
+  </div>
+  {{/each}} {{/if}}
+</div>
+
+<div data-key="lastUpdate">{{lastUpdate}}</div>

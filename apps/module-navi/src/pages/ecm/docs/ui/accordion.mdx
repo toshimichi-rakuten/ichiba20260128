@@ -1,0 +1,254 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'ecm/src/modules/accordion/default.html'
+import multipleHtml from 'ecm/src/modules/accordion/multiple.html'
+import unstyledHtml from 'ecm/src/modules/accordion/unstyled.html'
+
+export const meta = {
+  title: 'アコーディオンメニュー',
+  description: 'メニューリストを閉じ開き表示',
+  url: '/ecm/docs/ui/accordion',
+  tags: ['アコーディオン', 'accordion', 'layout'],
+}
+
+# アコーディオンメニュー
+
+メニューリストを閉じ開き表示するモジュールです
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={multipleHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={multipleHtml} />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={multipleHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## 使い方
+
+- スタイルを自由に設定したい場合は、Unstyledパーツを使用してください。
+- デフォルトで開いた状態にしたい場合は、開かせたいトリガー要素で `aria-expanded="true"` に設定し、関連付けられているパネル要素を `aria-hidden="false"` に設定してください。
+- メニューの中に、リンクなしのもの（スタティック枠）子メニュー展開無しのリンクも入れることができます。サンプルコードを参考にしてください。
+
+## パターン
+
+### 単一展開
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={defaultHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={defaultHtml} />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={defaultHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+- 単一展開は、一つ開くと他のメニューが閉じるタイプです。`data-multiple="false"` にしてください。複数展開の場合は `data-multiple="true"` です。
+- 「スタティック枠」はリンク設定をしないもの、「リンク」は子メニュー展開せずリンクするものです。
+
+## Unstyled
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={unstyledHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={unstyledHtml} />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={unstyledHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Code language='js' content={`
+// Open
+accordion.dispatchEvent(new CustomEvent('ecmAccordionOpen', { detail: panelId }))
+// Close
+accordion.dispatchEvent(new CustomEvent('ecmAccordionClose', { detail: panelId }))
+// Toggle
+accordion.dispatchEvent(new CustomEvent('ecmAccordionToggle', { detail: panelId }))
+`}/>
+
+## アトリビュート一覧
+
+<Tabs keepMounted={false} defaultValue='attribute' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="attribute">アトリビュート</Tabs.Tab>
+    <Tabs.Tab value="trigger">トリガー アトリビュート</Tabs.Tab>
+    <Tabs.Tab value="panel">パネル アトリビュート</Tabs.Tab>
+  </Tabs.List>
+  
+  <Tabs.Panel value="attribute">
+    <table class="mdx-table">
+      <thead class="mdx-table-header">
+        <tr>
+          <th style={{minWidth: '240px', width: '240px'}}>アトリビュート</th>
+          <th style={{minWidth: '220px', width: '220px'}}>値</th>
+          <th style={{width: '100%'}}>メモ</th>
+        </tr>
+      </thead>
+      <tbody class="mdx-table-body">
+        <tr>
+          <td class="mdx-mono">`data-module-name`</td>
+          <td class="mdx-mono">"ecm-accordion"</td>
+          <td>モジュール名</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`data-multiple`</td>
+          <td class="mdx-mono">
+            <div>
+              boolean
+            </div>
+            <div style={{ color: "#8f8f8f"}}>
+              デフォルト: false
+            </div>
+          </td>
+          <td>複数展開かどうか</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`data-session`</td>
+          <td class="mdx-mono">
+            <div>
+              boolean
+            </div>
+            <div style={{ color: "#8f8f8f"}}>
+              デフォルト: true
+            </div>
+          </td>
+          <td>
+            <div>
+              ブラウザーのセッションにアクティブタブを保存するかどうか
+            </div>
+            <div style={{ marginTop: "16px"}}>
+              ※保存したくない場合は、`"false"`にセットしてください。
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </Tabs.Panel>
+
+  <Tabs.Panel value="trigger">
+    <table class="mdx-table">
+      <thead class="mdx-table-header">
+        <tr>
+          <th style={{minWidth: '240px', width: '240px'}}>アトリビュート</th>
+          <th style={{minWidth: '220px', width: '220px'}}>値</th>
+          <th style={{width: '100%'}}>メモ</th>
+        </tr>
+      </thead>
+      <tbody class="mdx-table-body">
+        <tr>
+          <td class="mdx-mono">`id`</td>
+          <td class="mdx-mono">string</td>
+          <td>
+            <div>
+              トリガーのユニークID
+            </div>
+            <div style={{ marginTop: "16px"}}>
+              ※紐付いているパネル要素（`data-accordion-panel`）の `aria-labelledby` の値と同じ
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`data-accordion-trigger`</td>
+          <td class="mdx-mono">""</td>
+          <td>JS用</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`aria-controls`</td>
+          <td class="mdx-mono">string</td>
+          <td>紐付けるパネル要素（`data-accordion-panel`）の `id` の値を設定</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`aria-expanded`</td>
+          <td class="mdx-mono">boolean</td>
+          <td>紐付けるパネルが展開されているかどうか</td>
+        </tr>
+      </tbody>
+    </table>
+  </Tabs.Panel>
+
+  <Tabs.Panel value="panel">
+    <table class="mdx-table">
+      <thead class="mdx-table-header">
+        <tr>
+          <th style={{minWidth: '240px', width: '240px'}}>アトリビュート</th>
+          <th style={{minWidth: '220px', width: '220px'}}>値</th>
+          <th style={{width: '100%'}}>メモ</th>
+        </tr>
+      </thead>
+      <tbody class="mdx-table-body">
+        <tr>
+          <td class="mdx-mono">`id`</td>
+          <td class="mdx-mono">string</td>
+          <td>
+            <div>
+              パネルのユニークID
+            </div>
+            <div style={{ marginTop: "16px"}}>
+              ※紐付いているトリガー要素（`data-accordion-trigger`）の `aria-controls` の値と同じ
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`role`</td>
+          <td class="mdx-mono">"region"</td>
+          <td>現在展開されているアコーディオンパネルを含むランドマーク領域を作成します。（`a11y`用）</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`data-accordion-panel`</td>
+          <td class="mdx-mono">""</td>
+          <td>JS用</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`aria-labelledby`</td>
+          <td class="mdx-mono">string</td>
+          <td>紐付いているトリガー要素（`data-accordion-trigger`） の `id` の値を設定（`a11y`用）</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`aria-hidden`</td>
+          <td class="mdx-mono">boolean</td>
+          <td>パネルが表示されているかどうか</td>
+        </tr>
+      </tbody>
+    </table>
+  </Tabs.Panel>
+</Tabs>

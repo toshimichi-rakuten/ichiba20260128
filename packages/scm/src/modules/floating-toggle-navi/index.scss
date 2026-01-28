@@ -1,0 +1,88 @@
+@import 'ecm/src/_scss/variables';
+@import 'ecm/src/_scss/mixins';
+
+$toggle-navi-height: 52px;
+$navi-button-width: 52px;
+
+.scm-floating-toggle-navi {
+  height: $toggle-navi-height;
+  box-sizing: border-box;
+  box-shadow: 0 3px 15px 0 rgb(0 0 0 / 20%);
+  padding-left: 0;
+
+  &.scm-floating-toggle-navi-bordered {
+    border-bottom: 2px solid $color-gray-1;
+  }
+}
+
+.scm-floating-toggle-navi-button {
+  background-color: $color-gray-1;
+  margin: 0;
+  width: $navi-button-width;
+
+  .ecm-icon-menu {
+    @include text-xl;
+
+    color: $color-white;
+  }
+}
+
+.scm-floating-toggle-navi-link {
+  @include colorize-link($color-gray-1 !important);
+  @include text-10px;
+
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  box-sizing: border-box;
+
+  &:not(:first-child) {
+    position: relative;
+    margin-left: 1px;
+
+    &::before {
+      content: '';
+      display: block;
+      background-color: $color-gray-5;
+      width: 1px;
+      height: 20px;
+      position: absolute;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      left: -1px;
+    }
+  }
+
+  &.scm-floating-toggle-navi-link-anchor {
+    @include text-12px;
+    @include font-default;
+
+    padding-top: $space-4;
+    padding-bottom: 2px;
+
+    .ecm-icon-chevron-down {
+      @include text-12px;
+    }
+  }
+
+  [class^='ecm-icon-'] {
+    @include text-base;
+  }
+}
+
+.scm-sheet-content-header {
+  display: grid;
+  grid-template-columns: 1fr 52px;
+  align-items: start;
+  padding: 0;
+}
+
+.scm-sheet-content-close {
+  height: 52px;
+  grid-column: unset;
+}

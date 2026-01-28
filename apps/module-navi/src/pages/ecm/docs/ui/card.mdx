@@ -1,0 +1,50 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'ecm/src/modules/card/default.html'
+import defaultDemoHtml from 'ecm/src/modules/card/default_demo.html'
+
+export const meta = {
+  title: 'カード',
+  description: 'コンテンツをカード型に並べる（枠線・背景色つき）ことができる',
+  url: '/ecm/docs/ui/card',
+  tags: ['card'],
+}
+
+# カード
+
+コンテンツをカード型に並べる（枠線・背景色つき）ことができるモジュールです。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={defaultDemoHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={defaultDemoHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={defaultHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## 使い方
+
+- グレーの枠線・白背景が設定されています。（上記プレビューのグレーの背景は含まれません。）変更する際は、CSSユーティリティクラスの追加で対応、または任意クラス名を追加し、その追加任意クラスに対して変更内容を指定してください。
+
+<Space />
+
+<Note type='info'>
+  余白、並び方については、[グリッドレイアウト](/ecm/docs/css/grid/)・[CSSユーティリティ](/ecm/docs/css/)を参照
+</Note>

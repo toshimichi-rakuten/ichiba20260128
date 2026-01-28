@@ -1,0 +1,26 @@
+
+import Demo from 'src/components/Demo'
+import Code from 'src/components/Code'
+import Html from 'src/components/Html'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'scm/src/modules/keyword/default.html'
+import referenceHtml from 'scm/src/modules/keyword/reference.html'
+
+export const meta = {
+  title: 'キーワードボタン',
+  url: '/scm/docs/other/keyword',
+  tags: ['keyword', 'button'],
+}
+
+# キーワードボタン
+
+<Demo scm={true} content={defaultHtml} breakpoints={['sp', 'md', 'lg']} />
+
+<Space h='lg' />
+
+## バリエーション一覧
+
+<Demo scm={true} content={referenceHtml} breakpoints={['sp', 'md', 'lg']} />
+
+

@@ -1,0 +1,143 @@
+import Html from 'src/components/Html'
+import Code from 'src/components/Code'
+import Note from 'src/components/Note'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import { PasswordView } from 'src/components/PasswordView'
+import staticBadgeSp1ColumnPcListHtml from 'ecm/src/modules/ad/100415/badge-sp-1column_pc-list.html'
+import staticTextSp1ColumnPcListHtml from 'ecm/src/modules/ad/100415/text-sp-1column_pc-list.html'
+import staticBadgeSp1ColumnPc2columnHtml from 'ecm/src/modules/ad/100415/badge-sp-1column_pc-2column.html'
+import staticTextSp1ColumnPc2columnHtml from 'ecm/src/modules/ad/100415/text-sp-1column_pc-2column.html'
+import integrationBadgeSp1ColumnPcListHtml from 'ecm/src/modules/ad/100415/integration_badge-sp-1column_pc-list.html'
+import integrationTextSp1ColumnPcListHtml from 'ecm/src/modules/ad/100415/integration_text-sp-1column_pc-list.html'
+import integrationBadgeSp1ColumnPc2columnHtml from 'ecm/src/modules/ad/100415/integration_badge-sp-1column_pc-2column.html'
+import integrationTextSp1ColumnPc2columnHtml from 'ecm/src/modules/ad/100415/integration_text-sp-1column_pc-2column.html'
+
+export const meta = {
+  title: '原稿タイプID：100415',
+  description: 'ロゴ有|バッジ（黒）、ロゴ有|テキスト',
+  url: '/deal/docs/ad/100415',
+  tags: ['商品', 'ad', '原稿タイプ'],
+}
+
+# 原稿タイプID：100415
+ロゴ有|バッジ、ロゴ有|テキスト
+<Space />
+
+★部分へアドプラッツからダウンロードした配信タグを貼り付けてください。
+
+## SP1カラム|ロゴ有|バッジ、PC1カラム|ロゴ有|バッジ
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html
+      scm={true}
+      content={staticBadgeSp1ColumnPcListHtml}
+    />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='lg'>
+    <Html
+      scm={true}
+      device='lg'
+      content={staticBadgeSp1ColumnPcListHtml}
+    />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={integrationBadgeSp1ColumnPcListHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## SP1カラム|ロゴ有|テキスト、PC1カラムリスト|ロゴ有|テキスト
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html
+      scm={true}
+      content={staticTextSp1ColumnPcListHtml}
+    />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='lg'>
+    <Html
+      scm={true}
+      device='lg'
+      content={staticTextSp1ColumnPcListHtml}
+    />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={integrationTextSp1ColumnPcListHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## SP1カラム|ロゴ有|バッジ、PC2カラム|ロゴ有|バッジ
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html
+      scm={true}
+      content={staticBadgeSp1ColumnPc2columnHtml}
+    />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='lg'>
+    <Html
+      scm={true}
+      device='lg'
+      content={staticBadgeSp1ColumnPc2columnHtml}
+    />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={integrationBadgeSp1ColumnPc2columnHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## SP1カラム|ロゴ有|テキスト、PC2カラム|ロゴ有|テキスト
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html
+      scm={true}
+      content={staticTextSp1ColumnPc2columnHtml}
+    />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='lg'>
+    <Html
+      scm={true}
+      device='lg'
+      content={staticTextSp1ColumnPc2columnHtml}
+    />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={integrationTextSp1ColumnPc2columnHtml}/>
+  </Tabs.Panel>
+</Tabs>

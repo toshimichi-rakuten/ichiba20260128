@@ -1,0 +1,63 @@
+
+import Demo from 'src/components/Demo'
+import Code from 'src/components/Code'
+import Html from 'src/components/Html'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'scm/src/modules/banner/default.html'
+
+export const meta = {
+  title: '横長バナー',
+  url: '/scm/docs/banner/banner',
+  tags: ['banner'],
+}
+
+# 横長バナー
+
+最大横幅が `616px` に設定されております。  
+そのため、画像サイズが `616px` より大きい場合は、`616px` に縮小。小さい場合は、`616px` に拡大されます。 
+
+<Space />
+
+<Demo scm={true} content={defaultHtml} breakpoints={['sp', 'md', 'lg']} />
+
+## 使い方
+
+- `img` 要素に画像の元サイズを設定してください（レイアウトシフト対策）
+- SP/PCで画像比率が異なる場合は、`source` 要素にも画像の元サイズを設定してください
+
+<Space />
+
+例）比率が異なる場合  
+画像の元サイズがSP（横600px, 縦210px）、PC（横1080px, 縦210px）
+
+<Code content={`
+<a href="" class="d-flex justify-center" data-link-name="">
+  <picture>
+    <source
+      srcset="https://placehold.co/1080x210.jpg"
+      media="(min-width: 1024px)"
+      width="1080"
+      height="210"
+    />
+    <img class="scm-banner-image scm-banner-image-w-616" src="https://placehold.co/600x210.jpg" width="600" height="210" />
+  </picture>
+</a>
+`}/>
+
+<Space />
+
+例）比率が同じ場合  
+画像の元サイズがSP（横608px, 縦456px）、PC（横1056px, 縦792px）※どちらも比率が4:3
+
+<Code content={`
+<a href="" class="d-flex justify-center" data-link-name="">
+  <picture>
+    <source
+      srcset="https://placehold.co/1056x792.jpg"
+      media="(min-width: 1024px)"
+    />
+    <img class="scm-banner-image scm-banner-image-w-616" src="https://placehold.co/608x456.jpg" width="608" height="456" />
+  </picture>
+</a>
+`}/>

@@ -1,0 +1,25 @@
+/** Utilities needs to be loaded after the index so it has stronger specificity. */
+@import '../utilities/accessibility.scss';
+@import '../utilities/clamp/index.scss';
+@import '../utilities/padding/index.scss';
+@import '../utilities/overflow/index.scss';
+@import '../utilities/display/index.scss';
+@import '../utilities/border/index.scss';
+@import '../utilities/size/index.scss';
+@import '../utilities/typography/index.scss';
+@import '../utilities/color/index.scss';
+@import '../utilities/margin/all/index.scss';
+@import '../utilities/grid/index.scss';
+@import '../utilities/flex/index.scss';
+@import '../utilities/alignment/index.scss';
+@import '../utilities/image/index.scss';
+@import '../utilities/hover/index.scss';
+@import '../utilities/radius/index.scss';
+@import '../utilities/text-decoration/index.scss';
+@import '../utilities/cursor/index.scss';
+@import '../utilities/overflow-wrap/index.scss';
+@import '../utilities/pointer-events/index.scss';
+@import '../utilities/user-select/index.scss';
+@import '../utilities/white-space/index.scss';
+@import '../utilities/word-break/index.scss';
+@import '../utilities/z-index/index.scss';

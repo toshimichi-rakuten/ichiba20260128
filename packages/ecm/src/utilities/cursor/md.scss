@@ -1,0 +1,34 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+@include util-md('cursor-wait') {
+  cursor: wait;
+}
+
+@include util-md('cursor-not-allowed') {
+  cursor: not-allowed;
+}
+
+@include util-md('cursor-auto') {
+  cursor: auto;
+}
+
+@include util-md('cursor-pointer') {
+  cursor: pointer;
+}
+
+@include util-md('cursor-wait', true) {
+  cursor: wait !important;
+}
+
+@include util-md('cursor-not-allowed', true) {
+  cursor: not-allowed !important;
+}
+
+@include util-md('cursor-auto', true) {
+  cursor: auto !important;
+}
+
+@include util-md('cursor-pointer', true) {
+  cursor: pointer !important;
+}

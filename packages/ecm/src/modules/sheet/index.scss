@@ -1,0 +1,200 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+$transition-ms: 280ms;
+
+.ecm-sheet-content {
+  width: 100%;
+  background-color: $color-white;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 80vh;
+  max-height: 80dvh;
+}
+
+.ecm-sheet-content-header {
+  padding: $space-16;
+  display: grid;
+  grid-template-columns: 30px 1fr 30px;
+  align-items: center;
+
+  &.ecm-sheet-content-header-bordered {
+    border-bottom: 1px solid rgb(0 0 0 / 8%);
+  }
+}
+
+.ecm-sheet-content-body {
+  overflow-y: scroll;
+}
+
+.ecm-sheet-content-close {
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  grid-column: 3/4;
+  text-align: right;
+
+  .ecm-icon-close {
+    @include text-xl;
+  }
+}
+
+.ecm-sheet-title {
+  @include text-base;
+
+  @include screen('md', 'up') {
+    @include text-2xl;
+  }
+
+  font-weight: 700;
+  text-align: center;
+  grid-column: 2/3;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.ecm-sheet-content-wrapper {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: transform $transition-ms ease;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  // Allows bg to be clicked while still being able to click the wrapper's child elements.
+  pointer-events: none;
+
+  & > * {
+    pointer-events: auto;
+  }
+}
+
+.ecm-sheet-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  transition: background-color $transition-ms ease;
+  background-color: rgb(0 0 0 / 0%);
+
+  &[data-opening='true'],
+  &[aria-expanded='true'] {
+    background-color: rgb(0 0 0 / 30%);
+  }
+
+  &[data-closing='true'] {
+    background-color: rgb(0 0 0 / 0%);
+  }
+}
+
+.ecm-sheet-close {
+  color: $color-white;
+  transition: transform $transition-ms ease;
+  z-index: 2;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: $space-12;
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+
+  .ecm-icon-close {
+    @include text-xl;
+
+    color: $color-white;
+  }
+
+  .ecm-icon-close + * {
+    margin-left: $space-4;
+  }
+}
+
+.ecm-sheet {
+  z-index: $z-sheet;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  &[aria-hidden='true']:not([data-opening='true']) {
+    @include inert;
+
+    display: block;
+  }
+
+  &[data-opening='true'],
+  &[aria-hidden='false'],
+  &[data-closing='true'] {
+    display: block;
+  }
+}
+
+.ecm-sheet-above {
+  .ecm-sheet-content-wrapper {
+    transform: translateY(-100%);
+  }
+}
+
+.ecm-sheet-below {
+  // ICW-15942: Must be after .ecm-sheet-below
+  .ecm-sheet-content-wrapper {
+    top: unset;
+    bottom: 0;
+    transform: translateY(100%);
+  }
+}
+
+.ecm-sheet-full-screen {
+  .ecm-sheet-content-wrapper {
+    top: 0;
+  }
+
+  .ecm-sheet-content {
+    height: 100vh;
+    height: 100dvh;
+    // remove default
+    max-height: 100vh;
+    max-height: 100dvh;
+  }
+}
+
+/* stylelint-disable-next-line no-duplicate-selectors */
+.ecm-sheet-above {
+  &[data-opening='true'],
+  &[aria-hidden='false'] {
+    .ecm-sheet-content-wrapper {
+      transform: translateY(0);
+    }
+  }
+
+  &[data-closing='true'] {
+    .ecm-sheet-content-wrapper {
+      transform: translateY(-100%);
+    }
+  }
+}
+
+/* stylelint-disable-next-line no-duplicate-selectors */
+.ecm-sheet-below {
+  &[data-opening='true'],
+  &[aria-hidden='false'] {
+    .ecm-sheet-content-wrapper {
+      transform: translateY(0);
+    }
+  }
+
+  &[data-closing='true'] {
+    .ecm-sheet-content-wrapper {
+      transform: translateY(100%);
+    }
+  }
+}

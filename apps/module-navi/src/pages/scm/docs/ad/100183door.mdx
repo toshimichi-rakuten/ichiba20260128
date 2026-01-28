@@ -1,0 +1,70 @@
+import Demo from 'src/components/Demo'
+import Html from 'src/components/Html'
+import Code from 'src/components/Code'
+import Note from 'src/components/Note'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import ad100183doorsoloHtml from 'scm/src/modules/ad/100183door/solo.html'
+import ad100183doorintegrationHtml from 'scm/src/modules/ad/100183door/integration.html'
+import ad100183doorreferenceHtml from 'scm/src/modules/ad/100183door/index.html'
+import ad100183doorreferenceCodeHtml from 'scm/src/modules/ad/100183door/index_code.html'
+
+export const meta = {
+  title: '広告扉用',
+  description: 'Basic:画像 + 商品名 + 値段 のみ',
+  url: '/scm/docs/ad/100183door',
+  tags: ['商品', 'ad', '原稿タイプ'],
+}
+
+# 広告扉用
+
+Basic:画像 + 商品名 + 値段 のみ
+
+<Space />
+
+<Tabs
+  keepMounted={false}
+  defaultValue='demo'
+  styles={{ panel: { paddingTop: '16px' } }}
+>
+  <Tabs.List>
+    <Tabs.Tab value='demo'>デモ</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel value='demo'>
+    <Html
+      scm={true}
+      content={ad100183doorsoloHtml}
+    />
+  </Tabs.Panel>
+  <Tabs.Panel value='code'>
+    <Code content={ad100183doorintegrationHtml} />
+  </Tabs.Panel>
+</Tabs>
+
+## バリエーション一覧
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='md'>MD</Tabs.Tab>
+    <Tabs.Tab value='lg'>LG</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html scm={true} content={ad100183doorreferenceHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='md'>
+    <Html scm={true} device='md' content={ad100183doorreferenceHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='lg'>
+    <Html scm={true} device='lg' content={ad100183doorreferenceHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={ad100183doorreferenceCodeHtml}/>
+  </Tabs.Panel>
+</Tabs>

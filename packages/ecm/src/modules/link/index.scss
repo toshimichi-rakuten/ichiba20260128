@@ -1,0 +1,21 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+.ecm-link {
+  @include colorize-link($color-link);
+}
+
+button.ecm-link {
+  border: 0;
+  background-color: transparent;
+}
+
+/** Better useability if it's standalone. */
+.ecm-link-color-gray-1 {
+  @include colorize-link($color-gray-1);
+}
+
+button.ecm-link-color-gray-1 {
+  border: 0;
+  background-color: transparent;
+}

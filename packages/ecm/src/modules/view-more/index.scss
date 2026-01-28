@@ -1,0 +1,50 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+.ecm-view-more-item {
+  &[aria-hidden='true'] {
+    display: none;
+  }
+}
+
+.ecm-view-more-button {
+  color: $color-link;
+  background: 0;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  &[aria-hidden='true'] {
+    display: none;
+  }
+
+  .ecm-icon-chevron-down {
+    margin-left: $space-4;
+  }
+}
+
+.ecm-view-less-button {
+  color: $color-link;
+  background: 0;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &[aria-hidden='true'] {
+    display: none;
+  }
+
+  .ecm-icon-chevron-up {
+    margin-left: $space-4;
+  }
+}

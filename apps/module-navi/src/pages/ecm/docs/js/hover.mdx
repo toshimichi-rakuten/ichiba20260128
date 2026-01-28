@@ -1,0 +1,239 @@
+import Html from 'src/components/Html'
+
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'ecm/src/modules/hover/default.html'
+import attachHtml from 'ecm/src/modules/hover/attach.html'
+
+export const meta = {
+  title: 'ホバー',
+  description: '要素がマウスオーバーされたときに別要素を表示する',
+  url: '/ecm/docs/js/hover',
+  tags: ['hover', 'tooltip', 'pop'],
+}
+
+# ホバー
+
+要素がマウスオーバーされたときに別要素を表示する機能です。PC想定。
+
+## 主な機能・特徴
+
+- 要素がマウスオーバーされたときに別の要素を表示させます。
+- アニメーション（transition）をつけることができます。（デフォルト表示速度を変更するにはCSSを合わせて変更が必要です）
+- アトリビュートを使って表示させる要素を、マウスオーバーされる要素の左下に表示させることができます。左右位置の指定もできます。
+
+## 使い方
+
+### デフォルト
+
+<Tabs keepMounted={false} defaultValue='lg' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={defaultHtml} />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={defaultHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+### アトリビュート利用での表示位置設定
+
+<Tabs keepMounted={false} defaultValue='lg' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={attachHtml} />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={attachHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+- マウスオーバーで表示されるコンテンツ（`ecm-hover` 要素）側へ `data-attach="true"` を指定してください。
+- 左右位置は `data-attach-offset-left` または `data-attach-offset-right` の値に数値を指定して調節できます。（px単位）
+
+## アトリビュート一覧
+
+<Tabs keepMounted={false} defaultValue='attribute' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="attribute">アトリビュート</Tabs.Tab>
+    <Tabs.Tab value="closeAttribute">トリガー アトリビュート</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value="attribute">
+    <table class="mdx-table">
+      <thead class="mdx-table-header">
+        <tr>
+          <th style={{minWidth: '250px', width: '250px'}}>アトリビュート</th>
+          <th style={{minWidth: '250px', width: '250px'}}>値</th>
+          <th style={{width: '100%'}}>メモ</th>
+        </tr>
+      </thead>
+      <tbody class="mdx-table-body">
+        <tr>
+          <td class="mdx-mono">`data-module-name`</td>
+          <td class="mdx-mono">"ecm-hover"</td>
+          <td>モジュール名</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`id`</td>
+          <td class="mdx-mono">string</td>
+          <td>モジュールのユニークID</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`data-transition`</td>
+          <td class="mdx-mono">
+            <div>
+              boolean
+            </div>
+            <div style={{ color: "#8f8f8f"}}>
+              デフォルト: true
+            </div>
+          </td>
+          <td>
+            アニメーションをするかどうか<br />
+            `"false"` を設定した場合、アニメーションがなくなります
+          </td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`data-transition-ms`</td>
+          <td class="mdx-mono">
+            <div>
+              number
+            </div>
+            <div style={{ color: "#8f8f8f"}}>
+              デフォルト: 280（単位はms）
+            </div>
+          </td>
+          <td>
+            <div>
+              アニメーションの待ち時間
+            </div>
+            <div style={{ marginTop: "16px"}}>
+              ※調整した場合、CSSも調整が必要
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`data-attach`</td>
+          <td class="mdx-mono">
+            <div>
+              boolean
+            </div>
+            <div style={{ color: "#8f8f8f"}}>
+              デフォルト: false
+            </div>
+          </td>
+          <td>
+            <div>
+              要素の表示位置をトリガー要素を基準にするかどうか<br />
+              `"true"` を設定した場合、要素の表示位置がトリガー要素（`aria-controls="モジュールのユニークID"`）の左下を基準に設定されます
+            </div>
+            <div style={{ marginTop: "16px"}}>
+              ※要素へ、`position: absolute;` スタイルの指定が必要
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`data-attach-offset-top`</td>
+          <td class="mdx-mono">
+            <div>
+              number
+            </div>
+            <div style={{ color: "#8f8f8f"}}>
+              デフォルト: 0（単位はpx）
+            </div>
+          </td>
+          <td>
+            <div>
+              トリガー要素の左下を基準にその位置からのtopオフセット（`-1` など負の数も可）
+            </div>
+            <div style={{ marginTop: "16px"}}>
+              ※`data-attach="true"` が設定されている場合
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`data-attach-offset-left`</td>
+          <td class="mdx-mono">
+            <div>
+              number
+            </div>
+            <div style={{ color: "#8f8f8f"}}>
+              デフォルト: 0（単位はpx）
+            </div>
+          </td>
+          <td>
+            <div>
+              トリガー要素の左下を基準にその位置からのleftオフセット（`-1` など負の数も可 ）
+            </div>
+            <div style={{ marginTop: "16px"}}>
+              ※`data-attach="true"` が設定されている場合
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`aria-hidden`</td>
+          <td class="mdx-mono">
+            <div>
+              boolean
+            </div>
+            <div style={{ color: "#8f8f8f"}}>
+              デフォルト: true
+            </div>
+          </td>
+          <td>要素が表示されているかどうか</td>
+        </tr>
+      </tbody>
+    </table>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='closeAttribute'>
+    <table class="mdx-table">
+      <thead class="mdx-table-header">
+        <tr>
+          <th style={{minWidth: '250px', width: '250px'}}>アトリビュート</th>
+          <th style={{minWidth: '250px', width: '250px'}}>値</th>
+          <th style={{width: '100%'}}>メモ</th>
+        </tr>
+      </thead>
+      <tbody class="mdx-table-body">
+        <tr>
+          <td class="mdx-mono">`aria-controls`</td>
+          <td class="mdx-mono">string</td>
+          <td>`ecm-hover` 要素のユニークID（`id` の値）を設定</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`aria-expanded`</td>
+          <td class="mdx-mono">
+            <div>
+              boolean
+            </div>
+            <div style={{ color: "#8f8f8f"}}>
+              デフォルト: false
+            </div>
+          </td>
+          <td>`ecm-hover` 要素が展開されているかどうか</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`aria-haspopup`</td>
+          <td class="mdx-mono">"true"</td>
+          <td>この要素にはメニューであるポップアップがあることを示します（`a11y`用）</td>
+        </tr>
+      </tbody>
+    </table>
+  </Tabs.Panel>
+</Tabs>

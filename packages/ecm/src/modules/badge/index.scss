@@ -1,0 +1,28 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+.ecm-badge {
+  @include text-12px;
+
+  display: inline-flex;
+  justify-content: center;
+  padding: 6px $space-8;
+  align-items: center;
+  background: rgb(0 0 0 / 8%);
+  font-weight: bold;
+
+  @include screen('md', 'up') {
+    @include text-sm;
+
+    padding: 5px $space-8;
+  }
+
+  &.ecm-badge-outline {
+    padding: 1.5px $space-4;
+    border-radius: 2px;
+    border: 1px solid $color-gray-1;
+    background: $color-white;
+  }
+
+  /** TODO: Sizes */
+}

@@ -1,0 +1,66 @@
+/** 
+* All styles should be imported here so that we can control their loading order. (it affects specificity)
+*/
+@import '../_css/reset.css';
+@import '../_css/base.css';
+@import '../_css/font.css';
+@import '../_scss/public_variables.scss';
+
+/** Compatibility support */
+@import '../_scss/compat.scss';
+
+/** Modules
+* If Module B is built on top of Module A, make sure Module A is imported first.
+*/
+
+/**
+* This is a forked version rex-icon 1.6. 
+* icons are Renamed from `rex-icon-*` to `ecm-icon-*` to prevent conflict from previous `rex-icon` versions.
+*/
+@import '../modules/icon/index.scss';
+@import '../modules/genre-icon/index.scss';
+@import '../modules/hover/index.scss';
+@import '../modules/toggle/index.scss';
+@import '../modules/badge/index.scss';
+@import '../modules/pill/index.scss';
+@import '../modules/button/index.scss';
+@import '../modules/coupon/index.scss';
+@import '../modules/card/index.scss';
+@import '../modules/shop/index.scss';
+@import '../modules/smart-coupon/index.scss';
+@import '../modules/container/index.scss';
+@import '../modules/reward-header/index.scss';
+@import '../modules/breadcrumb/index.scss';
+@import '../modules/search/index.scss';
+@import '../modules/modal/index.scss';
+@import '../modules/tab/index.scss';
+@import '../modules/accordion/index.scss';
+@import '../modules/campaign-details/index.scss';
+@import '../modules/scroll-to-top/index.scss';
+@import '../modules/smooth-scroll/index.scss';
+@import '../modules/view-more/index.scss';
+@import '../modules/floating/index.scss';
+@import '../modules/sidebar/index.scss';
+@import '../modules/sheet/index.scss';
+@import '../modules/floating-menu/index.scss';
+@import '../modules/floating-banner/index.scss';
+@import '../modules/floating-toggle/index.scss';
+@import '../modules/floating-navi/index.scss';
+@import '../modules/floating-toggle-navi/index.scss';
+@import '../modules/link/index.scss';
+@import '../modules/commentary/index.scss';
+@import '../modules/kanban/index.scss';
+@import '../modules/slider/index.scss';
+@import '../modules/room-recommend/index.scss';
+@import '../modules/ad/index.scss';
+@import '../modules/alcor/index.scss';
+@import '../modules/alcor-ranking/index.scss';
+@import '../modules/alcor-search/index.scss';
+@import '../modules/alcor-search-v2/index.scss';
+@import '../modules/alcor-deal/index.scss';
+@import '../modules/alcor-deal-digitalcode/index.scss';
+@import '../modules/cpa/index.scss';
+@import '../modules/du-slider/index.scss';
+@import '../modules/buy-again/index.scss';
+@import '../modules/du-ranking/index.scss';
+@import '../modules/alcor-coupon/index.scss';

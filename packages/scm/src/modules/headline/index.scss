@@ -1,0 +1,65 @@
+@import 'ecm/src/_scss/variables';
+@import 'ecm/src/_scss/mixins';
+@import '../../_scss/mixins/typography';
+
+.scm-headline {
+  @include vw-text-xl;
+
+  color: $color-gray-1;
+  font-weight: bold;
+  text-align: center;
+
+  @include screen('md', 'up') {
+    @include text-5xl;
+  }
+}
+
+.scm-sub-headline {
+  @include vw-text-base;
+
+  background-color: $color-gray-4;
+  border-radius: 8px;
+  color: $color-gray-1;
+  font-weight: bold;
+  text-align: center;
+  padding: $space-8 $space-12;
+  position: relative;
+
+  @include screen('md', 'up') {
+    @include text-4xl;
+
+    padding: $space-12 $space-32;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    height: 9px;
+    width: 16px;
+    background: $color-gray-4;
+    clip-path: path('M0,0v1c4.42,0,8,3.58,8,8c0-4.42,3.58-8,8-8V0H0z');
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    bottom: -8px;
+    left: 0;
+
+    @include screen('md', 'up') {
+      height: 23px;
+      width: 44px;
+      clip-path: path('M44,1V0H0v1c12.15,0,22,9.85,22,22C22,10.85,31.85,1,44,1z');
+      bottom: -22px;
+    }
+  }
+}
+
+.scm-headline-description {
+  @include vw-text-12px;
+
+  color: $color-gray-1;
+  text-align: center;
+
+  @include screen('md', 'up') {
+    @include text-base;
+  }
+}

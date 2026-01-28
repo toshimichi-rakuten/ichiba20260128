@@ -1,0 +1,150 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'ecm/src/modules/sidebar/default.html'
+import rightHtml from 'ecm/src/modules/sidebar/right.html'
+
+export const meta = {
+  title: 'サイドバー',
+  description: '左右からモーダルを表示',
+  url: '/ecm/docs/ui/sidebar',
+  tags: ['sidebar'],
+}
+
+# サイドバー
+
+左右からモーダルを表示させます。主にメニュー表示などに利用するモジュールです。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={defaultHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={defaultHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={defaultHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Note type='info'>
+  上記は左から開くパターンです。右から開くパターンへ変更可能です。
+</Note>
+
+## 使い方
+
+- サイドバーのタイプは右から、左からの2タイプあり、目的に応じて使用できます。
+- シートが開いているときに背景がスクロールしないように設定されています。スクロールするように変更するには、`data-body-lock="false"` とします。
+- シートを開いた位置からページ内を移動しないように設計されています。
+- シートを開くボタンはページ内の自由な場所に設定できます。
+- ボタンとサイドバーの紐付けは、ボタン要素の `aria-controls` の値と、シート要素（`data-module-name="ecm-toggle"`）のidの値を揃えてください。
+- ページ内に複数のサイドバーを設置する場合は、シート要素（`data-module-name="ecm-toggle"`）のidの値が重複しないように設定してください。
+- ページ表示時に開いた状態で動作させる場合は、シート要素に `data-default-open="true"` を追加します。
+
+## パターン
+
+### 右から開く
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={rightHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={rightHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={rightHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+- `class="ecm-sidebar ecm-sidebar-right"` とすると右から開きます。
+- `class="ecm-sidebar ecm-sidebar-left"` とすると左から開きます。
+
+## アトリビュート一覧
+
+<Note type='info'>
+  基本的なアトリビュートについては、[トグル](/ecm/docs/js/toggle/#アトリビュート一覧)を参照  
+  サイドバーのモジュールでは下記の設定をカスタマイズして下さい
+</Note>
+
+<Space />
+
+<table class="mdx-table">
+  <thead class="mdx-table-header">
+    <tr>
+      <th style={{minWidth: '250px', width: '250px'}}>アトリビュート</th>
+      <th style={{minWidth: '250px', width: '250px'}}>値</th>
+      <th style={{width: '100%'}}>メモ</th>
+    </tr>
+  </thead>
+  <tbody class="mdx-table-body">
+    <tr>
+      <td class="mdx-mono">`role`</td>
+      <td class="mdx-mono">"dialog"</td>
+      <td>
+        <div>
+          ダイアログコンテナとして機能する要素を識別します（`a11y`用）
+        </div>
+        <div style={{ marginTop: "16px"}}>
+          ※`data-module-name="ecm-toggle"` 要素へ付与する
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`aria-modal`</td>
+      <td class="mdx-mono">"true"</td>
+      <td>
+        <div>
+          表示される際に要素がモーダルであるかどうかを示します（`a11y`用）
+        </div>
+        <div style={{ marginTop: "16px"}}>
+          ※`data-module-name="ecm-toggle"` 要素へ付与する
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`data-body-lock`</td>
+      <td class="mdx-mono">
+        <div>
+          boolean
+        </div>
+        <div style={{ color: "#8f8f8f"}}>
+          デフォルト: false
+        </div>
+      </td>
+      <td>
+        <div>
+          シートの背景を固定するかどうか<br />
+          `"true"` を設定した場合、シートの背景が動きます
+        </div>
+        <div style={{ marginTop: "16px"}}>
+          ※`data-module-name="ecm-toggle"` 要素へ付与する
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

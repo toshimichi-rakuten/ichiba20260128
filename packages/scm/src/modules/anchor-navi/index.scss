@@ -1,0 +1,74 @@
+@import 'ecm/src/_scss/variables';
+@import 'ecm/src/_scss/mixins';
+
+.scm-anchor-navi {
+  box-sizing: border-box;
+  height: 100%;
+
+  &.scm-anchor-navi-bordered {
+    border-bottom: 2px solid $color-gray-1;
+  }
+
+  &.scm-anchor-navi-shadowed {
+    position: relative;
+
+    // 下方向にのみデザイン通りに綺麗に影を表示するため、擬似要素で再現しております。
+    // 他手法のbox-shadowプロパティの広がりをマイナスに指定すると横幅いっぱいに影がつかず、oveflow:hiddenを使用すると下方向の影分のpadding-bottomを指定する必要があり、次の要素との余白指定が直感的ではなくなってしまうため。
+    &::after {
+      background-color: transparent;
+      box-shadow: 0 3px 15px rgb(0 0 0 / 20%);
+      content: '';
+      height: 6px;
+      left: 0;
+      bottom: 0;
+      position: absolute;
+      width: 100%;
+    }
+  }
+}
+
+.scm-anchor-navi-list {
+  background-color: $color-white;
+  position: relative;
+  // For the overlap to be higher than the ".scm-anchor-navi-shadowed::after" element.
+  z-index: 1;
+}
+
+.scm-anchor-navi-item {
+  &:not(:first-child) {
+    position: relative;
+
+    &::before {
+      background-color: $color-gray-5;
+      content: '';
+      display: block;
+      position: absolute;
+      height: 20px;
+      margin-top: -10px;
+      top: 50%;
+      width: 1px;
+    }
+  }
+}
+
+.scm-anchor-navi-link {
+  @include font-default;
+  @include text-12px;
+  @include colorize-link($color-gray-1 !important);
+
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  height: 100%;
+  justify-content: space-between;
+  padding: $space-8 $space-8 2px $space-8;
+
+  span {
+    align-items: center;
+    display: inline-flex;
+    height: calc(2em * $base-line-height);
+    text-align: center;
+  }
+}

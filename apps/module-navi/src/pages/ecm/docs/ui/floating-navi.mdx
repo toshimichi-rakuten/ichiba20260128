@@ -1,0 +1,231 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'ecm/src/modules/floating-navi/default.html'
+import defaultDemoHtml from 'ecm/src/modules/floating-navi/default_demo.html'
+import hiddenHtml from 'ecm/src/modules/floating-navi/hidden.html'
+import hiddenDemoHtml from 'ecm/src/modules/floating-navi/hidden_demo.html'
+import staticHtml from 'ecm/src/modules/floating-navi/static.html'
+import staticDemoHtml from 'ecm/src/modules/floating-navi/static_demo.html'
+import chevronHtml from 'ecm/src/modules/floating-navi/chevron.html'
+import chevronDemoHtml from 'ecm/src/modules/floating-navi/chevron_demo.html'
+import dropdownHtml from 'ecm/src/modules/floating-navi/dropdown.html'
+import dropdownDemoHtml from 'ecm/src/modules/floating-navi/dropdown_demo.html'
+import menuHtml from 'ecm/src/modules/floating-navi/menu.html'
+import menuDemoHtml from 'ecm/src/modules/floating-navi/menu_demo.html'
+import imageHtml from 'ecm/src/modules/floating-navi/image.html'
+import imageDemoHtml from 'ecm/src/modules/floating-navi/image_demo.html'
+import linkHtml from 'ecm/src/modules/floating-navi/link.html'
+import linkDemoHtml from 'ecm/src/modules/floating-navi/link_demo.html'
+
+export const meta = {
+  title: 'フローティング・ナビ（ヘッダー）',
+  description: 'ページヘッダに固定するフローティングナビ',
+  url: '/ecm/docs/ui/floating-navi',
+  tags: ['floating', 'navi'],
+}
+
+# フローティング・ナビ（ヘッダー）
+
+ページヘッダに固定するフローティングナビのモジュールです。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html contentPadding={'0px'} device='sp' content={defaultDemoHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html contentPadding={'0px'} device='lg' content={defaultDemoHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={defaultHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Note type='info'>
+  ページヘッダに固定、スクロール先コンテンツ位置に到達すると、アクティブ表示になります。
+</Note>
+
+## 使い方
+
+### 各ナビゲーションの幅について
+
+各ナビゲーションの幅はテキスト量に依存します。そのため、幅を固定にしたいなどカスタマイズしたい場合はページごとに個別スタイルを適用させて調整してください。  
+また、全体のナビゲーションの幅が画面サイズ（全体のコンテンツ幅）よりも大きい場合は途中で見切れて横スクロールが発生し、小さい場合は中央寄せになります。  
+
+### 表示開始位置の設定
+
+`aria-hidden="true"` を指定  
+`data-show-at` の値に表示開始させたい要素のid（#hogehoge）またはclass（.hogehoge）を指定する、または、`data-show-threshold` の値にページ上部からの距離の数値（px単位不要）を指定します。  
+※下記サンプルは、`data-show-at` プロパティで実装
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html contentPadding={'0px'} device='sp' content={hiddenDemoHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html contentPadding={'0px'} device='lg' content={hiddenDemoHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={hiddenHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Note type='info'>
+  詳細設定については[フローティング](/ecm/docs/js/floating/)を参照
+</Note>
+
+## Chevron（v）つき
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html contentPadding={'0px'} device='sp' content={chevronDemoHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html contentPadding={'0px'} device='lg' content={chevronDemoHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={chevronHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## ヘッダ固定なし
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html contentPadding={'0px'} device='sp' content={staticDemoHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html contentPadding={'0px'} device='lg' content={staticDemoHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={staticHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## メニューありPC用
+
+<Tabs keepMounted={false} defaultValue='lg' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='lg'>
+    <Html contentPadding={'0px'} device='lg' content={dropdownDemoHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={dropdownHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Note type='info'>
+  メニュー項目の表示に関して詳細設定は[ホバー](/ecm/docs/ui/hover/)を参照
+</Note>
+
+## メニュー（大）ありPC用
+
+<Tabs keepMounted={false} defaultValue='lg' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='lg'>
+    <Html contentPadding={'0px'} device='lg' content={menuDemoHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={menuHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## 画像ありPC用
+
+<Tabs keepMounted={false} defaultValue='lg' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='lg'>
+    <Html contentPadding={'0px'} device='lg' content={imageDemoHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={imageHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## 別ページ移動
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html contentPadding={'0px'} device='sp' content={linkDemoHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html contentPadding={'0px'} device='lg' content={linkDemoHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={linkHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Note type='info'>
+  アンカーリンクではなく直接別ページに遷移するリンクを使用したい場合はこちらを使用して下さい。  
+  `ecm-floating-navi-item-active` を `ecm-floating-navi-item` と同じクラスの箇所に記述すると、太字と下線が付き強調されます。
+</Note>

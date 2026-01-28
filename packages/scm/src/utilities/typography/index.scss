@@ -1,0 +1,59 @@
+@import 'ecm/src/_scss/variables';
+@import 'ecm/src/_scss/mixins';
+@import '../../_scss/mixins/typography.scss';
+
+@include util-all('vw-text-10px') {
+  @include vw-text-10px;
+}
+
+@include util-all('vw-text-11px') {
+  @include vw-text-11px;
+}
+
+@include util-all('vw-text-12px') {
+  @include vw-text-12px;
+}
+
+@include util-all('vw-text-xs') {
+  @include vw-text-xs;
+}
+
+@include util-all('vw-text-sm') {
+  @include vw-text-sm;
+}
+
+@include util-all('vw-text-base') {
+  @include vw-text-base;
+}
+
+@include util-all('vw-text-lg') {
+  @include vw-text-lg;
+}
+
+@include util-all('vw-text-xl') {
+  @include vw-text-xl;
+}
+
+@include util-all('vw-text-2xl') {
+  @include vw-text-2xl;
+}
+
+@include util-all('vw-text-3xl') {
+  @include vw-text-3xl;
+}
+
+@include util-all('vw-text-4xl') {
+  @include vw-text-5xl;
+}
+
+@include util-all('vw-text-5xl') {
+  @include vw-text-5xl;
+}
+
+@include util-all('vw-text-6xl') {
+  @include vw-text-6xl;
+}
+
+@include util-all('vw-text-7xl') {
+  @include vw-text-7xl;
+}

@@ -1,0 +1,135 @@
+.scm-ad-header-100536 {
+  @include colorize-link($color-gray-1 !important);
+
+  background-color: #d1d1d1;
+  padding: $space-8;
+  display: flex;
+
+  @include screen('md', 'up') {
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.scm-ad-logo-100536 {
+  flex-shrink: 0;
+  width: 40px;
+
+  @include screen('md', 'up') {
+    width: 56px;
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.scm-ad-shop-name-100536 {
+  @include font-default;
+  @include text-sm;
+
+  align-items: center;
+  display: flex;
+  font-weight: bold;
+  margin-left: $space-8;
+  width: 100%;
+
+  @include screen('md', 'up') {
+    @include text-base;
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.scm-ad-body-100536 {
+  padding: $space-16;
+}
+
+.scm-ad-rank-100536 {
+  @include font-default;
+  @include text-sm;
+
+  color: $color-gray-1;
+  flex-shrink: 0;
+  font-weight: bold;
+
+  &.scm-ad-rank-lg-100536 {
+    @include text-base;
+  }
+}
+
+.scm-ad-rank-num-100536 {
+  @include font-roboto(500);
+  @include text-2xl;
+
+  line-height: 1;
+  margin-right: 2px;
+
+  &.scm-ad-rank-num-text-lg-100536 {
+    @include text-3xl;
+  }
+}
+
+.scm-ad-name-100536 {
+  @include font-default;
+  @include text-12px;
+  @include colorize-link($color-gray-1 !important);
+
+  font-weight: bold;
+  margin-left: $space-8;
+
+  &.scm-ad-name-text-lg-100536 {
+    @include text-sm;
+  }
+
+  @include screen('md', 'up') {
+    @include text-sm;
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &.scm-ad-name-text-lg-100536 {
+      @include text-base;
+    }
+  }
+}
+
+.scm-ad-note-100536 {
+  @include font-default;
+  @include text-12px;
+  @include colorize-link($color-gray-2 !important);
+
+  display: block;
+
+  @include screen('md', 'up') {
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.scm-ad-price-num-100536 {
+  @include screen('md', 'up') {
+    font-size: 20px;
+  }
+}
+
+.scm-ad-price-unit-100536 {
+  @include screen('md', 'up') {
+    @include text-xs;
+  }
+}

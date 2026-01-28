@@ -1,0 +1,224 @@
+import Demo from 'src/components/Demo'
+import Html from 'src/components/Html'
+import Code from 'src/components/Code'
+import Note from 'src/components/Note'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+
+export const meta = {
+  title: 'ギフトサーチを転用',
+  description: '',
+  url: '/scm/docs/ad/giftsearch-static',
+  tags: ['商品', 'ad', 'giftsearch'],
+}
+
+# ギフトサーチ転用
+
+このモジュールはギフトサーチを転用し、他のページに設置する際に使用できます。
+
+
+## バンドルの読み込み
+
+ギフトサーチをページに導入する為には、バンドルの読み込みが必要です。  
+`head`タグにギフトサーチバンドルを読み込んでください。
+
+<Space />
+
+**SP**
+<Code content={`
+<!-- ==================== ページCSS ==================== -->
+<script defer="" src="https://r.r10s.jp/evt/event/season/_cmn/js/giftsearch/_sp/js/index.min.js?v=202505301400"></script>
+<link href="https://r.r10s.jp/evt/event/season/_cmn/js/giftsearch/_sp/css/index.min.css?v=202505301400" rel="stylesheet">
+<!-- ==================== /ページCSS ==================== -->
+`}/>
+
+<Space />
+
+**PC**
+<Code content={`
+<!-- ==================== ページCSS ==================== -->
+<script defer="" src="https://r.r10s.jp/evt/event/season/_cmn/js/giftsearch/_pc/js/index.min.js?v=202505301400"></script>
+<link href="https://r.r10s.jp/evt/event/season/_cmn/js/giftsearch/_pc/css/index.min.css?v=202505301400" rel="stylesheet">
+<!-- ==================== /ページCSS ==================== -->
+`}/>
+
+<Space />
+
+<Note>
+CSSとJSは一緒で大丈夫です
+</Note>
+
+<Space />
+
+## 表示の設定
+
+`giftsearch`要素に`data-default-filters`をセット
+
+### 「●●●円以下のアイテムは表示」にしておく
+
+<Code content={`
+<div
+  data-omiyage="true"
+  data-default-filters='[{"key": "price", "type": "number", "values": ["~2999"]}]'
+>
+</div>
+`}/>
+
+<Space />
+
+価格を変更する場合は`2999`を調整してください
+
+### 「●●●~●●●円のアイテムは表示」にしておく
+
+<Code content={`
+<div
+  data-omiyage="true"
+  data-default-filters='[{"key": "price", "type": "number", "values": ["3000~4999"]}]'
+>
+</div>
+`}/>
+
+<Space />
+
+`3000`と`4999`を調整してください
+
+### 「●●●円以上のアイテムは表示」にしておく
+
+<Code content={`
+<div
+  data-omiyage="true"
+  data-default-filters='[{"key": "price", "type": "number", "values": ["5000~"]}]'
+>
+</div>
+`}/>
+
+<Space />
+
+`5000`を調整してください
+
+### アドバンス
+
+`data-default-filters`は基本的に`JSON Array`なので、複数項目・値の設定も可能です
+
+<Space />
+
+<Code copy={false} language="javascript"  content={`
+[
+  {"key": "people", "type": "text", "values": ["people1to2,people2to3"]},
+  {"key": "price", "type": "number", "values": ["4000~"]},
+  {"key": "tokuten", "type": "text", "values": ["gift_coupon", "point_2x", "point_3x", "point_5x"]},
+  {"key": "genre", "type": "text", "values": ["food_jelly"]}
+]
+`} />
+
+<Space />
+
+JSONでは配列・オブジェクトの最後の要素の後にカンマを付けられないため、配列全体および各values配列の末尾にカンマを付けないよう注意してください。JSON形式に誤りがある場合はエラーになります。
+
+<Space />
+
+<Code content={`
+<div
+  data-omiyage="true"
+  data-default-filters='[{"key": "people", "type": "text", "values": ["people1to2,people2to3"]}, {"key": "price", "type": "number", "values": ["4000~"]}, {"key": "tokuten", "type": "text", "values": ["gift_coupon", "point_2x", "point_3x", "point_5x"]}, {"key": "genre", "type": "text", "values": ["food_jelly"]}]'
+>
+</div>
+`} />
+
+## 並び順の調整
+
+`giftsearch`要素に`data-default-sort`をセット
+
+### 安い順に並び替えておく
+
+<Code content={`
+<div
+  data-omiyage="true"
+  data-default-sort='{"property": "price", "order": "asc"}'
+>
+</div>
+`}/>
+
+
+### 高い順に並び替えておく
+
+<Code content={`
+<div
+  data-omiyage="true"
+  data-default-sort='{"property": "price", "order": "desc"}'
+>
+</div>
+`}/>
+
+
+## 対象ショップを限定する
+
+`giftsearch`要素に`data-item-filter-data-url`と`data-item-filter-property`をセット
+
+<Space />
+
+<Code content={`
+<div
+  data-omiyage="true"
+  data-item-filter-data-url="/keirou/2024/_cmn/_inc/shoplist/search/shoplist_coupon_shop_8_filter.json"
+  data-item-filter-property="shop"
+>
+</div>
+`}/>
+
+<Space />
+
+こちらのJSONファイルの作成も必要になります  
+`https://event.rakuten.co.jp/keirou/2024/_cmn/_inc/shoplist/search/shoplist_coupon_shop_8_filter.json`
+
+## UIの設定
+
+アイテムテンプレート調整
+
+### ピンどめアイコンを非表示にする
+
+`data-omiyage-pin="true"`の要素をアイテムテンプレートから削除
+
+<Space />
+
+<Code highlighted={[18,19,20,21]} copy={false} content={`
+<template data-omiyage-item-template="true"
+  ><div class="gs-item scm-ad scm-ad-shadowed">
+    <a class="gs-item__link" href="#imageUrl#"
+      ><div class="gs-item__image-wrapper">
+        <img src="https://r.r10s.jp/com/img/home/t.gif" data-omiyage-lazy-image="#imageSrc#" alt="#imageAlt#" class="gs-item__image" />
+      </div>
+      <p class="gs-item__name">#title#</p>
+      <div class="gs-item__price-block">
+        <p class="gs-item__price-amount ru-ff-roboto">#price#<span class="gs-item__price-unit">#priceLabel#</span></p>
+        <p class="gs-item__price-shipping">#icon1#</p>
+      </div>
+      <div class="gs-item__icon-block">
+        <p class="gs-item__icon gs-item__icon--red gs-item__icon--#tokuten1#"></p>
+        <p class="gs-item__icon gs-item__icon--red gs-item__icon--#tokuten2#"></p>
+        <p class="gs-item__icon gs-item__icon--red gs-item__icon--#tokuten3#"></p>
+        <p class="gs-item__icon gs-item__icon--red gs-item__icon--#tokuten4#"></p></div
+    ></a>
+    <div 
+      class="gs-item__pin"
+      data-omiyage-pin="true"
+    >....</div>
+</div></template>
+`} />
+
+### 絞り込みメニューを非表示にする
+
+`giftsearch`のHTMLは下記の構成で作られています。  
+絞り込みメニューを非表示にしたい場合、`gs-filter`の要素を削除してください
+
+<Space />
+
+<Code highlighted={[3]} copy={false} content={`
+<div data-omiyage="true">
+  <div class="gs-wrapper">
+    <div class="gs-filter">..</div>
+    <div class="gs-loading-wrapper">..</div>
+    <template data-omiyage-item-template="true">..</template>
+  </div>
+</div>
+`}/>

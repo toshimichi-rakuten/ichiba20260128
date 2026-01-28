@@ -1,0 +1,223 @@
+@import 'ecm/src/_scss/variables';
+@import 'ecm/src/_scss/mixins';
+
+.scm-content-card {
+  @include colorize-link($color-gray-1 !important);
+
+  background-color: $color-white;
+  display: block;
+  position: relative;
+
+  &.scm-content-card-bg-gray-6 {
+    background-color: $color-gray-6;
+  }
+
+  &.scm-content-card-bg-gray-4 {
+    background-color: $color-gray-4;
+  }
+
+  &.scm-content-card-shadowed {
+    box-shadow: 0 3px 15px rgb(0 0 0 / 20%);
+  }
+
+  &.scm-content-card-bordered {
+    border: 1px solid $color-gray-2;
+  }
+
+  &.scm-content-card-bordered-1 {
+    border: 1px solid $color-gray-1;
+  }
+
+  &.scm-content-card-rounded {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  @include screen('md', 'up') {
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.8;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.scm-content-card-triangle {
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 10px 10px;
+  border-color: transparent transparent $color-gray-1 transparent;
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+
+  @include screen('md', 'up') {
+    border-width: 0 0 14px 14px;
+    bottom: 8px;
+    right: 8px;
+  }
+}
+
+.scm-content-card-image {
+  aspect-ratio: 1 / 1;
+  display: block;
+  width: 100%;
+
+  &.scm-content-card-image-w-110 {
+    flex-shrink: 0;
+    // Ratio calculation with image size as 80px.
+    width: 23.32%;
+
+    @include screen('md', 'up') {
+      width: 110px;
+    }
+  }
+
+  &.scm-content-card-image-w-140 {
+    flex-shrink: 0;
+    // Ratio calculation with image size as 120px.
+    width: 34.98%;
+
+    @include screen('md', 'up') {
+      width: 140px;
+    }
+  }
+
+  &.scm-content-card-image-ratio-3x1 {
+    aspect-ratio: 3 / 1;
+  }
+}
+
+.scm-content-card-body {
+  padding: $space-8 $space-8 $space-16;
+  position: relative;
+
+  @include screen('md', 'up') {
+    padding: $space-16;
+  }
+
+  &.scm-content-card-body-horizontal {
+    flex-grow: 1;
+
+    @include screen('md', 'down') {
+      padding: $space-12;
+    }
+  }
+}
+
+.scm-content-card-title {
+  @include vw-text-base;
+
+  font-weight: bold;
+
+  @include screen('md', 'up') {
+    @include text-3xl;
+  }
+}
+
+.scm-content-card-description {
+  @include vw-text-12px;
+
+  margin-top: 2px;
+
+  @include screen('md', 'up') {
+    @include text-lg;
+  }
+}
+
+.scm-content-card-tag {
+  @include vw-text-11px;
+
+  background-color: $color-gray-1;
+  color: $color-white;
+  font-weight: bold;
+  width: fit-content;
+  border-radius: 2px;
+  padding: 2px 6px;
+  position: absolute;
+  top: -1.12em;
+
+  @include screen('md', 'up') {
+    @include text-base;
+
+    padding-top: 4px;
+    padding-bottom: 4px;
+    top: -20px;
+  }
+}
+
+.scm-contents-intro-tag {
+  @include font-default;
+  @include text-11px;
+
+  background-color: $color-gray-1;
+  color: $color-white;
+  font-weight: bold;
+  border-radius: 2px;
+  padding: 2px 6px;
+  position: absolute;
+  top: -1.12em;
+
+  @include screen('md', 'up') {
+    @include text-base;
+
+    padding-top: 4px;
+    padding-bottom: 4px;
+    top: -20px;
+  }
+}
+
+.scm-content-card-guide-header {
+  position: relative;
+
+  &.scm-content-card-guide-header-bg-gray {
+    background-color: $color-gray-2;
+  }
+}
+
+.scm-content-card-guide-title {
+  @include vw-text-sm;
+
+  bottom: 8px;
+  color: $color-white;
+  font-weight: bold;
+  left: 0;
+  padding: 0 $space-16;
+  position: absolute;
+
+  @include screen('md', 'up') {
+    @include text-lg;
+
+    bottom: 12px;
+  }
+
+  &.scm-content-card-guide-title-static {
+    align-items: flex-end;
+    display: flex;
+    min-height: calc(2em * $base-line-height);
+    padding: $space-12;
+    position: static;
+
+    @include screen('md', 'up') {
+      padding: $space-16;
+    }
+  }
+}
+
+.scm-content-card-guide-description {
+  @include vw-text-12px;
+
+  box-sizing: border-box;
+  color: $color-gray-1;
+  padding: $space-8 $space-12;
+
+  @include screen('md', 'up') {
+    @include text-base;
+
+    min-height: 137px;
+    padding: $space-16;
+  }
+}

@@ -1,0 +1,116 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'ecm/src/modules/button/default.html'
+import leftHtml from 'ecm/src/modules/button/left-icon.html'
+import rightHtml from 'ecm/src/modules/button/right-icon.html'
+import bothHtml from 'ecm/src/modules/button/both-icon.html'
+
+export const meta = {
+  title: 'テキストボタン',
+  description: 'テキストボタン',
+  url: '/ecm/docs/ui/button',
+  tags: ['button', 'ボタン'],
+}
+
+# テキストボタン
+
+テキストボタン用のモジュールです。`button` タグと `a` タグのものを用意しています。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html device='sp' content={defaultHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={defaultHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={defaultHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## 使い方
+
+- ボタン全体の大きさ・アイコンの大きさはテキストの文字サイズによって定義されていますので、サイズを変更する場合は `ecm-button-size-xs` `ecm-button-size-sm` `ecm-button-size-lg` から大きさを選んで利用してください。
+- アイコンには、[UIアイコン（ReX）](/ecm/docs/icon/ui-icon/)を指定できます。左側、右側、両側にアイコンを配置できるので、各コードを参考に `<i aria-hidden="true" class="ecm-icon-*"></i>` のようにアイコン要素を追加してください。
+- `a` タグでリンク遷移する場合はLink、javascriptなどで動作をさせる場合は `button` を利用します。
+
+## パターン
+
+### 左アイコン
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html device='sp' content={leftHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={leftHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={leftHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+### 右アイコン
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html device='sp' content={rightHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={rightHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={rightHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+### 左右アイコン
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html device='sp' content={bothHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={bothHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={bothHtml}/>
+  </Tabs.Panel>
+</Tabs>

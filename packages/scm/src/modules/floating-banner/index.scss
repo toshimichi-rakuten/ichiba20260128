@@ -1,0 +1,43 @@
+@import 'ecm/src/_scss/variables';
+@import 'ecm/src/_scss/mixins';
+
+$min-width-banner: 936px;
+
+$max-width: 960px;
+$height: 60px;
+
+$height-slider: 84px;
+$max-width-slider: 960px;
+
+.scm-floating-banner {
+  background-color: $color-gray-6;
+  box-sizing: border-box;
+  padding: $space-8 $space-16;
+
+  &.scm-floating-banner-slider {
+    height: $height-slider;
+    max-width: $max-width-slider;
+    min-width: $min-width-banner;
+  }
+}
+
+.scm-floating-banner-single {
+  height: $height;
+  max-width: $max-width;
+  min-width: $min-width-banner;
+  padding: 0;
+}
+
+.scm-floating-banner-close {
+  background-color: $color-white;
+  box-shadow: 0 1.25px 6px rgb(0 0 0 / 25%);
+  cursor: pointer;
+  padding: 0;
+
+  .ecm-icon-close {
+    @include text-sm;
+
+    color: $color-gray-3;
+    font-weight: bold;
+  }
+}

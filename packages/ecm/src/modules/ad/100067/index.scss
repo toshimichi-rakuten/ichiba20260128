@@ -1,0 +1,14 @@
+@import '../../../_scss/variables';
+@import '../../../_scss/mixins';
+
+.ecm-ad-ranking-rank-100067 {
+  @include text-3xl;
+
+  span {
+    @include text-base;
+  }
+}
+
+.ecm-ad-ranking-crown-100067 {
+  font-size: 21px;
+}

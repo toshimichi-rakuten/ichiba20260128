@@ -1,0 +1,567 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+
+export const meta = {
+  title: '新モジュールへの移行方法',
+  description: 'モジュールの使い方、新モジュールへの移行方法を掲載',
+  url: '/ecm/docs/how-to-replace',
+  tags: ['update'],
+}
+
+# 新モジュールへの移行方法
+
+新モジュールへの移行方法を掲載しています。
+
+## 移行方法の流れ
+
+**作業準備**
+
+1. 更新箇所の確認
+2. 下記ツールなどを利用し、移行対象の旧モジュールパーツ利用箇所、新モジュールパーツを確認する  
+   [移行パーツ対照情報ツール](#移行パーツ対照情報ツール)
+
+<Space />
+
+**移行編集作業**
+
+1. 新アウトラインファイルのダウンロード  
+   本サイト左ナビゲーションの最新アウトラインファイルダウンロードボタンから、一式ダウンロードできます。
+
+<Space />
+
+2. インクルードパスを該当ページ指定のものへ書き換える  
+   [incパス指定表（閲覧は社内環境限定）](https://confluence.rakuten-it.com/confluence/pages/viewpage.action?pageId=4779738706)
+
+<Space />
+
+3. \<head\>内情報、読み込みCSS/JS情報を、元ページから移植する  
+   [参考：新旧アウトラインファイル\<head\>内の変更点](#新旧アウトラインファイルの変更点)
+
+<Space />
+
+4. 旧モジュール（旧ECM）を利用していない部分を、元ページから移植する  
+   新アウトラインファイルの枠組み構造が、旧アウトラインファイルとは異なる点をご留意ください。  
+   [参考：新旧アウトラインファイル枠組みの変更点](#新旧アウトラインファイルの変更点)
+
+<Space />
+
+5. 旧モジュールパーツ（旧ECM）を利用している部分は、新モジュールパーツに移行する  
+   [移行パーツ対照情報ツール](#移行パーツ対照情報ツール)・[代表的な新旧パーツ対照](#代表的な新旧パーツ対照)
+
+<Space />
+
+6. 新パーツに情報（コンテンツ内容・ページ個別指定のclassなど）を、元ページから移植する  
+   旧モジュール（旧ECM）利用のアルコルについては、新しいアルコルのパス※を記載します。  
+   ※旧モジュール（旧ECM）利用のアルコルはhtmlの記述の変更だけではなく、企画担当者側で、新テンプレートでのアルコルパスの新規発行が必要です。コーディング開始前に新テンプレートのアルコルパスの共有を受けてください。  
+   [モジュールリニューアルに伴うアルコル移行について（閲覧は社内限定）](https://confluence.rakuten-it.com/confluence/pages/viewpage.action?pageId=4739800285)
+
+   <Space />
+
+   rat-idの設定（data-ratevent="appear,click"など）は変更不要ですので、そのまま記載を移植してください。  
+
+   <Space />
+
+   モジュールではない原稿タイプHTMLの移行の際は下記を参考に記載をしてください。  
+   [カスタム表示原稿タイプの移行方法](#カスタム表示原稿タイプの移行方法)
+
+<Space />
+
+7. 各パーツのデザインや挙動が反映されるようにCSS/JSを編集する  
+   [コーディング注意点](#コーディング注意点)
+
+<Space />
+
+**更新作業**  
+他に更新作業がある場合は更新作業対応
+
+<Space />
+
+**ページチェック**  
+新規制作と同様のページチェックを行います。  
+[ページチェックシート・チェックツール](#ページチェック)
+
+<Space />
+
+**リリース作業**  
+通常と同様のリリース作業を行います。
+
+## 作業開始にあたり必要な情報・ツール
+
+<table class='mdx-table'>
+  <thead class='mdx-table-header'>
+    <tr>
+      <th style={{ minWidth: '380px', width: '380px' }}>情報</th>
+      <th style={{ minWidth: '190px', width: '190px' }}>情報提供元</th>
+      <th style={{ width: '100%' }}>備考</th>
+    </tr>
+  </thead>
+  <tbody class='mdx-table-body'>
+    <tr>
+      <td class='mdx-mono'>新モジュールリファレンス・アウトラインファイル</td>
+      <td class='mdx-mono'>FEチーム・編成管理G</td>
+      <td>本サイト</td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>アウトライン共通CSS/JSインクルードパス</td>
+      <td>
+        [incパス指定表（閲覧は社内環境限定）](https://confluence.rakuten-it.com/confluence/pages/viewpage.action?pageId=4779738706)
+      </td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>移行パーツ対照情報ツール</td>
+      <td class='mdx-mono'>FEチーム</td>
+      <td>[移行パーツ対照情報ツール](#移行パーツ対照情報ツール)</td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>チェックツール</td>
+      <td class='mdx-mono'>編成管理G</td>
+      <td>[ページチェックシート・チェックツール](#ページチェック)</td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>新アルコルHTMLパス</td>
+      <td class='mdx-mono'>企画担当者</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>更新作業内容 </td>
+      <td class='mdx-mono'>企画担当者</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+## 移行パーツ対照情報ツール
+
+利用方法  
+
+1. ブラウザで新規タブをブックマークします。適宜分かりやすい名前に編集します。
+2. 1．で設定したブックマークを右クリック＞編集、URL欄に下記スクリプトをコピーして貼り付けます。（改行を削除する必要はありません）
+3. 移行作業を行うページを開き、上記ブックマークを実行（クリック）。
+
+<Space />
+
+{/** Note: Ensure RegExp is escaped properly. It should be displayed like this: **/}
+{/** /r.r10s.jp\/com\/js\/c\/ecm_check_tool/ **/}
+
+<Code language='js' content={`
+javascript: (function () {
+  const scripts = [...document.getElementsByTagName('script')];
+  const ctMatcher = new RegExp(/r.r10s.jp\\/com\\/js\\/c\\/ecm_check_tool/);
+  const ctExists = scripts.find(s => s.src.match(ctMatcher));
+
+  if (!ctExists) {
+    const s = document.createElement('script');
+    s.setAttribute('src', 'https://r.r10s.jp/com/js/c/ecm_check_tool/ecm_check_tool.min.umd.js?v=' + Date.now());
+    document.body.appendChild(s);
+  }
+})();
+`}
+/>
+
+<Space />
+
+移行作業を行うページを開き、上記ブックマークを実行すると、旧モジュールパーツ利用箇所に対し、対応する新モジュールパーツ名とリファレンスへのリンクが表示されます。  
+Excelダウンロードボタンをクリックすると、ページ内で利用しているモジュールパーツの新旧対照リストがダウンロードできますので、合わせて確認してください。  
+アウトラインファイルに含まれる要素、カラムレイアウトの設定、CSSユーティリティに関しては、ページ上での表示はされず、Excel内のみで記載されます。  
+それぞれ該当する新パーツをリファレンスからコピーして利用してください。詳細の設定などは適宜リファレンスを参照して調整してください。
+
+<Space />
+
+2018年以前の過去モジュールを利用している場合やモジュールを利用していない場合は、対照情報が表示されません。新アウトラインファイルの利用によって、レイアウトが崩れる箇所については、利用できる同類の新パーツを選んで利用したり、適宜レイアウトを調整してください。  
+過去モジュールclass名例）riMb riCarouselなど　riから始まるキャメル式のもの
+
+## 新旧アウトラインファイルの変更点
+
+**\<head\>内の変更点**
+
+<Space />
+
+旧アウトライン
+<Code copy={false} content={`
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+`}/>
+
+<Space />
+
+新アウトライン
+<Code copy={false} content={`
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+`}/>
+
+<Space />
+
+新アウトラインファイルで変更反映済のため各自による編集は不要です。旧ページからコピーして移植する際はご注意ください。
+
+<Space />
+
+**枠組みの変更点**
+
+<Space />
+
+旧アウトライン  
+SP
+
+<Code copy={false} content={`
+<div class="rl-moduleWrap rl-moduleWrap–sp">
+  コンテンツ
+</div>
+`}/>
+
+<Space />
+
+PC
+
+<Code copy={false} content={`
+<div class="rl-moduleWrap rl-moduleWrap–pc">
+  幅100%コンテンツ
+  <div class="rl-width960">
+    コンテンツ
+  </div>
+</div>
+`}/>
+
+<Space />
+
+新アウトライン  
+SP・PC
+
+<Code copy={false} content={`
+<div class="ecm-wrap">
+  <!-- ==================== 幅100%の看板など ===================== -->
+  <div></div>
+  <!-- ==================== /幅100%の看板など ==================== -->
+  <!-- ==================== メインコンテンツ ==================== -->
+  <main class="ecm-container">
+    <section>
+      セクション
+    </section>
+  </main>
+</div>
+`}/>
+
+<Space />
+
+SP：`ecm-container`に、左右padding 16pxが設定されています。  
+PC：`ecm-container`に、padding 32pxが設定されており、コンテンツ幅960pxとなります。
+
+<Space />
+
+<Note type='warn'>\<div class="rl-moduleWrap、\<div class="rl-width960 は新アウトラインファイルでは利用不可</Note>
+
+<Space />
+
+<Note type='error'>.ecm-container の中に .ecm-containerを入れることは不可。レイアウトが崩れます。</Note>
+
+## 代表的な新旧パーツ対照
+
+<table class='mdx-table'>
+  <thead class='mdx-table-header'>
+    <tr>
+      <th style={{ minWidth: '160px', width: '160px' }}></th>
+      <th style={{ minWidth: '270px', width: '270px' }}>旧</th>
+      <th style={{ minWidth: '270px', width: '270px' }}>新</th>
+      <th style={{ width: '100%' }}>留意点</th>
+    </tr>
+  </thead>
+  <tbody class='mdx-table-body'>
+    <tr>
+      <td class='mdx-mono'>カラムレイアウト</td>
+      <td class='mdx-mono'>`rl-column`</td>
+      <td>[グリッド](/ecm/docs/css/grid/)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>PCコンテンツdiv</td>
+      <td class='mdx-mono'>`<div class="rl-width960">`</td>
+      <td>`<section class="ecm-container">`</td>
+      <td>`ecm-container`の中に、`ecm-container`を入れるのはNG（崩れる）</td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>アイコン類</td>
+      <td class='mdx-mono'>`ra-i-*` `ra-ui-*` `rex-icon` `ra-l-*`</td>
+      <td>
+        [サービス・SNSアイコン](/ecm/docs/icon/brand-icon/) [ジャンル アイコン](/ecm/docs/icon/genre-icon/) [UI アイコン
+        (ReX)](/ecm/docs/icon/ui-icon/)
+      </td>
+      <td>
+        古いデザインや、利用数が少ないものは移行対象からはずれています。 新しいデザインのものへ変更を推奨します。
+        引き続き旧デザインで利用を続ける場合は、ページ個別のCSSで指定記載してください。
+      </td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>ユーティリティ</td>
+      <td class='mdx-mono'>編成`ru-*`</td>
+      <td>[ユーティリティ](/ecm/docs/css/)</td>
+      <td>
+        例）PCだけ表示・SPだけ表示   
+        `<要素① class="d-none md-d-block">PCだけ</要素①>`  
+        `<要素② class="md-d-none">SPだけ</要素②>`
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## カスタム表示原稿タイプの移行方法
+
+モジュール原稿タイプの場合は、新リファレンスのソースコードを利用して移行してください。  
+この記載はモジュールを利用していない原稿タイプ利用の場合です。
+
+<Space />
+
+従来主にSP用で利用していた、  
+`<div class="radTableContainer"`、`<script class="prototypeAdItem" `、`<div class="radConfig"`、`<div class="radExistItemDisplay"`、`class="radItemsDisplay`  
+は利用できず、主にPC用で利用していた  
+`<div class="rad-table-existItemDisplay"`、`<script class="rad-table-proto"`、`<div class="rad-table-config"`、`<div class="rad-table-frame"`、`class="rad-table-body`  
+へ移行する必要があります。
+
+<Space />
+
+また、`<div class="rad-table-existItemDisplay"` に `data-module-name="ecm-dynamic-content"` を追加する必要があります。
+
+### 移行具体例参考
+
+1. `prototypeAdItem`クラスの中身を`★カスタムレイアウト★ `に移行  
+2. `radItemsDisplay`と一緒にいるクラスを`★カスタムコンテナークラス★ `移行  
+3. 原稿タイプの設定を移行（`url="★"`など）
+
+<Tabs keepMounted={false} defaultValue='old' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='old'>旧</Tabs.Tab>
+    <Tabs.Tab value='new'>新</Tabs.Tab>
+    <Tabs.Tab value='result'>結果</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='old'>
+    <Code copy={false} highlighted={[6,7,8,9,10,11,30]} content={`
+<div class="radTableContainer">
+  <div
+    style="display: none"
+    class="prototypeAdItem riCpcBlock"
+  >
+    <li class="adItem">
+      <a href="#TEXTURL1#">
+        <span class="adThumb">#IMAGE1#</span>
+        <p class="adItemname">#TEXT1L1#<br />#TEXT1L2#</p>
+      </a>
+    </li>
+  </div>
+  <div
+    class="radConfig"
+    url="★"
+    ★
+    ★
+    ★
+    ★
+    ★
+  ></div>
+  <div
+    style="display: none"
+    class="radExistItemDisplay smtTopContents"
+  >
+    <section class="topCntsTtlWrap boxPJAC riMaB10">
+      <h1>ピックアップアイテム</h1>
+    </section>
+    <div style="width: 100%; overflow: hidden">
+      <ul class="radItemsDisplay clfx"></ul>
+    </div>
+    <div class="underLine">&nbsp;</div>
+  </div>
+</div>
+`} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='new'>
+    <Code highlighted={[10, 26]} content={`
+<div
+  style="display: none"
+  class="rad-table-existItemDisplay"
+  data-module-name="ecm-dynamic-content"
+>
+  <script
+    class="rad-table-proto"
+    type="text/template"
+  >
+    <!-- ★カスタムレイアウト★ -->
+  </script>
+  <div
+    class="rad-table-config"
+    event_target="body"
+    noready="1"
+    event_name="rastaloadcomplete"
+    url="★"
+    ★
+    ★
+    ★
+    ★
+    ★
+  ></div>
+  <div class="rad-table-frame">
+    <div
+      class="rad-table-body ★カスタムコンテナークラス★" 
+    ></div>
+  </div>
+</div>
+    `} />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='result'>
+    <Code highlighted={[10,11,12,13,14,15,31]} content={`
+<div
+  style="display: none"
+  class="rad-table-existItemDisplay"
+  data-module-name="ecm-dynamic-content"
+>
+  <script
+    class="rad-table-proto"
+    type="text/template"
+  >
+      <li class="adItem">
+        <a href="#TEXTURL1#">
+          <span class="adThumb">#IMAGE1#</span>
+          <p class="adItemname">#TEXT1L1#<br>#TEXT1L2#</p>
+        </a>
+      </li>
+  </script>
+  <div
+    class="rad-table-config"
+    event_target="body"
+    noready="1"
+    event_name="rastaloadcomplete"
+    url="★"
+    ★
+    ★
+    ★
+    ★
+    ★
+  ></div>
+  <div class="rad-table-frame">
+    <div
+      class="rad-table-body clfx" 
+    ></div>
+  </div>
+</div>
+  `} />
+  </Tabs.Panel>
+</Tabs>
+
+## コーディング注意点
+
+1. 要素に複数の`data-module-name`を利用しないでください。 
+
+**NG例)**  
+
+<Code copy={false} content={`
+<div data-module-name="ecm-auto-parameter" data-module-name="ecm-accordion">
+  ...
+</div>
+`}/>
+
+<Space />
+
+**OK例**  
+<Code copy={false} content={`
+<div data-module-name="ecm-auto-parameter">
+  <div data-module-name="ecm-accordion">...</div>
+</div>
+`}/>
+
+<Space />
+
+2. モジュールパーツへのstyle指定について  
+   何か問題があった時に原因特定が困難になるため、  
+   デザインの上書きをされたい場合はモジュールで定義しているClassに直接指定するのではなく、ページ独自のカスタムCSSとclass用意して指定してください。
+
+<Space />
+
+**NG例)**  
+
+<Code copy={false} content={`
+<p class='ecm-module-class'>
+　NGな記述例
+</p>
+
+<style>
+.ecm-module-class {
+  color: red;
+}
+</style>
+`}/>
+
+<Space />
+
+**OK例) ページ独自のカスタムCSSがあればOK**  
+
+<Code copy={false} content={`
+<p class='ecm-module-class custom-module-class'>
+　OKな記述例
+</p>
+
+<style>
+.custom-module-class {
+  color: red;
+}
+</style>
+`}/>
+
+<Space />
+
+2. 旧モジュールのclassについて  
+   不要なClassが残っているとパフォーマンス面やCoverageで警告が出るので削除/書き換えすることを推奨します。  
+   過去のページから旧モジュールのCSSファイルを参照することは禁止です。（旧CSSはサポート終了後、状況が整ったら削除されます。）
+
+<Space />
+
+3. 原稿タイプパーツ・広告パーツについて  
+   カラム数によって、異なるフォントサイズが指定されています。カラム数のバリエーションはリファレンスの指示に従って利用してください。
+
+<Space />
+
+4. SPとPCの出し分けについて  
+   新モジュールはレスポンシブで設計されているので、カスタムCSSで調整する場合はメディアクエリを使うことを推奨します。
+
+## ページチェック
+
+移行作業チェック項目  
+新規作成時と同様[WEBチェックシート](https://confluence.rakuten-it.com/confluence/display/ICHIBACWD/Check_Sheets)によるチェックをお願いします。
+
+<Space />
+
+**コンテンツ情報が正しく移行されている**
+
+- head/meta/OGP情報 title/description、r_end/r_start　など
+- JSファイル読み込み（ページ個別のもの、PITARI用など）
+- ぱんくず・見出し構造
+- テキスト・リンク先
+- リンクパラメータ（オートパラメータなど）　ツール利用：[E-cab（閲覧は社内限定）](https://confluence.rakuten-it.com/confluence/pages/viewpage.action?pageId=2595618842)
+- RATの設定（data-ratId="" "click""appear"など）　ツール利用：[ratデバッガー（閲覧は社内限定）](https://confluence.rakuten-it.com/confluence/pages/viewpage.action?pageId=450379798)
+- 広告・CPA・アルコルなど
+- ショップリスト・クーポンコード・エントリーコードなど
+
+<Space />
+
+**コンテンツ挙動が正しい（as isと同等の動きをする）**
+
+- レイアウト崩れが発生していないか
+- ナビゲーションなどの動作
+- リンク遷移先
+- 検索フォームの動作
+- 出し分け挙動
+- クーポン獲得挙動・エントリー挙動
+- ブラウザ表示を拡大、縮小して崩れが発生しないか  
+など
+
+<Space />
+
+**モジュールに関する確認**
+
+- アウトラインincファイルパスは正しいか　[incパス指定表（閲覧は社内環境限定）](https://confluence.rakuten-it.com/confluence/pages/viewpage.action?pageId=4779738706)
+- 旧モジュールを読み込んでいないか
+
+<Space />
+
+**更新作業の確認**
+
+更新作業が正しく反映されているか

@@ -1,0 +1,46 @@
+
+import Html from 'src/components/Html'
+import Code from 'src/components/Code'
+import Note from 'src/components/Note'
+import Table, { ClassTable, AttributeTable } from 'src/components/Table'
+import { Tabs } from '@mantine/core'
+import Space from 'src/components/Space'
+import ad100098SoloHtml from 'ecm/src/modules/ad/100098/solo.html'
+import ad100098integrationHtml from 'ecm/src/modules/ad/100098/integration.html'
+
+export const meta = {
+  title: '原稿タイプID100098 看板',
+  description: '画像960x60',
+  url: '/ecm/docs/ad/100098',
+  tags: ['商品', 'ad', '広告'],
+  finder_tags: [
+    'category_kanban',
+    'image_others',
+    'text_item_name',
+    'layout_pc_only',
+    'layout_others'
+  ],
+}
+
+# 原稿タイプID100098 看板
+画像入稿サイズ：960×60px  
+
+<Space />
+★部分へアドプラッツからダウンロードした配信タグを貼り付けてください。
+<Space />
+
+<Tabs keepMounted={false} defaultValue='lg'  styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='lg'>
+    <Html adHighlight={true} device='lg' content={ad100098SoloHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={ad100098integrationHtml}/>
+  </Tabs.Panel>
+</Tabs>
+

@@ -1,0 +1,169 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Integration 1000348 > SP1columnPC1columnHtml 1`] = `
+"<!-- JSON-RASTA:100214--SPx1PCx1  -->
+<div
+  style="display: none"
+  class="rad-table-existItemDisplay"
+  data-module-name="ecm-dynamic-content"
+>
+  <script
+    class="rad-table-proto"
+    type="text/template"
+  >
+    <div
+      class="ecm-ad ecm-ad-card md-p-24!"
+      data-ad-id="100214"
+    >
+      <p class="ecm-ad-title-100214">#TEXT1L1#</p>
+      <a
+        class="ecm-ad-link ecm-ad-link-100214 mt-16"
+        href="#SHOPURL1#"
+      >
+        <div class="ecm-ad-image-block ecm-ad-image-block-100214 mr-8 md-mr-24">
+          <img
+            class="ecm-ad-image ecm-ad-logo-100214 ecm-ad-image-ratio-4x1"
+            src="https://r.r10s.jp/com/img/home/t.gif?resize=200:50"
+            data-lazy-loading="#IMAGESRC1#"
+            alt="#IMAGEALT1#"
+          />
+        </div>
+        <p class="ecm-ad-shop ecm-ad-shop-100214">
+          <span class="text-sm">#SHOP1#</span>
+        </p>
+      </a>
+      <p class="ecm-ad-shop-introduction-100214 mt-16">#TEXT2L1#</p>
+      <div class="d-grid d-grid-col-1 md-d-grid-col-2 d-grid-gap-y-24 md-d-grid-gap-x-24 mt-16">
+        <a
+          class="ecm-ad-link"
+          href="#TEXTURL3#"
+        >
+          <div class="ecm-ad-image-block">
+            <img
+              class="ecm-ad-image ecm-ad-image-ratio-3x2"
+              src="https://r.r10s.jp/com/img/home/t.gif?resize=720:480"
+              data-lazy-loading="#IMAGESRC2#"
+              alt="#IMAGEALT2#"
+            />
+          </div>
+          <div class="ecm-ad-body mt-12">
+            <p class="ecm-ad-name text-sm">#TEXT3L1#</p>
+            <div class="ecm-ad-price-container mt-8">
+              <p class="ecm-ad-price-amount text-2xl">#TEXT4L1#<span class="ecm-ad-price-unit text-sm">#TEXT4L2#</span></p>
+            </div>
+          </div>
+        </a>
+        <a
+          class="ecm-ad-link"
+          href="#TEXTURL5#"
+        >
+          <div class="ecm-ad-image-block">
+            <img
+              class="ecm-ad-image ecm-ad-image-ratio-3x2"
+              src="https://r.r10s.jp/com/img/home/t.gif?resize=720:480"
+              data-lazy-loading="#IMAGESRC3#"
+              alt="#IMAGEALT3#"
+            />
+          </div>
+          <div class="ecm-ad-body mt-12">
+            <p class="ecm-ad-name text-sm">#TEXT5L1#</p>
+            <div class="ecm-ad-price-container mt-8">
+              <p class="ecm-ad-price-amount">#TEXT6L1#<span class="ecm-ad-price-unit">#TEXT6L2#</span></p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </script>
+  <div
+    class="rad-table-config"
+    event_target="body"
+    noready="1"
+    event_name="rastaloadcomplete"
+    url="★"
+    ★
+    ★
+    ★
+    ★
+    ★
+  ></div>
+  <div class="rad-table-frame">
+    <div class="rad-table-body d-grid d-grid-col-1 d-grid-gap-y-16 md-d-grid-gap-y-24"></div>
+  </div>
+</div>
+<!-- JSON-RASTA:100214--SPx1PCx1  -->
+"
+`;
+
+exports[`Static 1000348 > SP1columnPC1columnHtml 1`] = `
+"
+    <div
+      class="d-grid d-grid-col-1 d-grid-gap-y-16 md-d-grid-gap-y-24"
+    >
+      <div
+  class="ecm-ad ecm-ad-card md-p-24!"
+  data-ad-id="100214"
+>
+  <p class="ecm-ad-title-100214">キャンペーンタイトル２０文字ここにはいり</p>
+  <a
+    class="ecm-ad-link ecm-ad-link-100214 mt-16"
+    href="#"
+  >
+    <div class="ecm-ad-image-block ecm-ad-image-block-100214 mr-8 md-mr-24">
+      <img
+        class="ecm-ad-image ecm-ad-logo-100214 ecm-ad-image-ratio-4x1"
+        src="https://r.r10s.jp/com/img/home/t.gif?resize=200:50"
+        data-lazy-loading="https://placehold.co/200x50?text=200x50"
+        alt=""
+      />
+    </div>
+    <p class="ecm-ad-shop ecm-ad-shop-100214">
+      <span class="text-sm">ショップ名６７８９０ショップ名６</span>
+    </p>
+  </a>
+  <p class="ecm-ad-shop-introduction-100214 mt-16">店舗紹介文８０文字ここにはいります。９０店舗紹介文６７８９０店舗紹介文６７８９０店舗紹介文６７８９０店舗紹介文６７８９０店舗紹介文６７８９０店舗紹介文６７８９０</p>
+  <div class="d-grid d-grid-col-1 md-d-grid-col-2 d-grid-gap-y-24 md-d-grid-gap-x-24 mt-16">
+    <a
+      class="ecm-ad-link"
+      href="#"
+    >
+      <div class="ecm-ad-image-block">
+        <img
+          class="ecm-ad-image ecm-ad-image-ratio-3x2"
+          src="https://r.r10s.jp/com/img/home/t.gif?resize=720:480"
+          data-lazy-loading="https://placehold.co/720x480?text=3x2"
+          alt=""
+        />
+      </div>
+      <div class="ecm-ad-body mt-12">
+        <p class="ecm-ad-name text-sm">商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０</p>
+        <div class="ecm-ad-price-container mt-8">
+          <p class="ecm-ad-price-amount text-2xl">999,999,999<span class="ecm-ad-price-unit text-sm">円</span></p>
+        </div>
+      </div>
+    </a>
+    <a
+      class="ecm-ad-link"
+      href="#"
+    >
+      <div class="ecm-ad-image-block">
+        <img
+          class="ecm-ad-image ecm-ad-image-ratio-3x2"
+          src="https://r.r10s.jp/com/img/home/t.gif?resize=720:480"
+          data-lazy-loading="https://placehold.co/720x480?text=3x2"
+          alt=""
+        />
+      </div>
+      <div class="ecm-ad-body mt-12">
+        <p class="ecm-ad-name text-sm">商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０</p>
+        <div class="ecm-ad-price-container mt-8">
+          <p class="ecm-ad-price-amount">999,999,999<span class="ecm-ad-price-unit">円</span></p>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+    </div>
+  "
+`;

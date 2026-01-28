@@ -1,0 +1,61 @@
+
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+
+import defaultHtml from 'ecm/src/modules/bookmark/default.html'
+import defaultSpHtml from 'ecm/src/modules/bookmark/default_sp.html'
+
+import integration from 'ecm/src/modules/bookmark/integration.html'
+import integration704 from 'ecm/src/modules/bookmark/integration704.html'
+import integrationSp from 'ecm/src/modules/bookmark/integration_sp.html'
+
+export const meta = {
+  title: 'お気に入り商品',
+  url: '/ecm/docs/ichiba-js/bookmark',
+  tags: ['お気に入り', 'bookmark'],
+}
+
+# お気に入り商品
+
+お気に入り商品（bookmark）パーツモジュールです。パーツに関する情報は、[お気に入り商品](https://confluence.rakuten-it.com/confluence/pages/viewpage.action?pageId=4643553657)（閲覧は社内環境限定）をご参照ください。
+
+<Space />
+
+<Note type='warn'>
+  スライダー機能はパーツ独自のもので、モジュールのスライダー機能の設定方法とは異なり、本ページでは正しく動作しません。実際のページで確認してください。
+</Note>
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='spcode'>SPコード</Tabs.Tab>
+    <Tabs.Tab value='pc704code'>PC704コード</Tabs.Tab>
+    <Tabs.Tab value='pccode'>PCコード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={defaultSpHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={defaultHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='spcode'>
+    <Code content={integrationSp}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='pc704code'>
+    <Code content={integration704}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='pccode'>
+    <Code content={integration}/>
+  </Tabs.Panel>
+</Tabs>

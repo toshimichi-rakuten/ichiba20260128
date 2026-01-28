@@ -1,0 +1,74 @@
+import Html from 'src/components/Html'
+import Code from 'src/components/Code'
+import Note from 'src/components/Note'
+import Table, { ClassTable, AttributeTable } from 'src/components/Table'
+import { Tabs } from '@mantine/core'
+import Space from 'src/components/Space'
+import ad100112Html from 'ecm/src/modules/ad/100112/pc-4column.html'
+import ad100112integrationHtml from 'ecm/src/modules/ad/100112/integration_pc-4column.html'
+
+export const meta = {
+  title: '原稿タイプID100112 バナー',
+  description: 'リンク無し画像(比率3:1)',
+  url: '/ecm/docs/ad/100112',
+  tags: ['商品', 'ad', '広告'],
+  finder_tags: [
+    'category_banner',
+    'image_3x2',
+    'text_item_name',
+    'layout_sp_col3',
+    'layout_pc_col4',
+    'layout_pc_col5',
+    'layout_pc_sp',
+  ],
+}
+
+# 原稿タイプID100112 バナー
+
+リンク無し画像(比率3:1)  
+画像入稿サイズ：360×120px
+
+<Space />
+
+★部分へアドプラッツからダウンロードした配信タグを貼り付けてください。
+
+<Space />
+
+classの変更のみでレイアウト変更できるものについては、class部分のみ掲載しています。  
+上部のソースコードをコピー＆ペーストの後、 `rad-table-body` のclass部分をコピー＆ペーストで編集してください。
+
+## SP3カラム/PC4カラム
+
+<Tabs
+  keepMounted={false}
+  defaultValue='sp'
+  styles={{ panel: { paddingTop: '16px' } }}
+>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='pc'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel value='sp'>
+    <Html
+      adHighlight={true}
+      content={ad100112Html}
+    />
+  </Tabs.Panel>
+  <Tabs.Panel value='pc'>
+    <Html
+      adHighlight={true}
+      device='lg'
+      content={ad100112Html}
+    />
+  </Tabs.Panel>
+  <Tabs.Panel value='code'>
+    <Code content={ad100112integrationHtml} />
+  </Tabs.Panel>
+</Tabs>
+
+## SP3カラム/PC5カラム
+
+<Code
+  content={`class="rad-table-body d-grid d-grid-col-3 md-d-grid-col-5 d-grid-gap-x-12 md-d-grid-gap-x-24 d-grid-gap-y-16 md-d-grid-gap-y-32"`}
+/>

@@ -1,0 +1,98 @@
+import Demo from 'src/components/Demo'
+import Html from 'src/components/Html'
+import Code from 'src/components/Code'
+import Note from 'src/components/Note'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import ad100195soloHtml from 'scm/src/modules/ad/100195/solo.html'
+import ad100195integrationHtml from 'scm/src/modules/ad/100195/integration.html'
+import ad100195integration2ColHtml from 'scm/src/modules/ad/100195/integration-2col.html'
+import ad100195integration3ColHtml from 'scm/src/modules/ad/100195/integration-3col.html'
+import ad100195referenceHtml from 'scm/src/modules/ad/100195/index.html'
+import ad100195referenceCodeHtml from 'scm/src/modules/ad/100195/index_code.html'
+
+export const meta = {
+  title: '原稿タイプID 100195 店舗',
+  description: 'ショップロゴ(720×110)＋画像(720×390)＋テキスト＋アピールアイコン＋39ショップアイコン＋店舗名',
+  url: '/scm/docs/ad/100195',
+  tags: ['商品', 'ad', '原稿タイプ'],
+}
+
+# 原稿タイプID 100195 店舗
+
+ショップロゴ(720×110)＋画像(720×390)＋テキスト＋アピールアイコン＋39ショップアイコン＋店舗名
+
+<Space />
+
+<Tabs
+  keepMounted={false}
+  defaultValue='sp'
+  styles={{ panel: { paddingTop: '16px' } }}
+>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='md'>MD</Tabs.Tab>
+    <Tabs.Tab value='lg'>LG</Tabs.Tab>
+    <Tabs.Tab value='code1'>コード（PC 1カラム用）</Tabs.Tab>
+    <Tabs.Tab value='code2'>コード（PC 2カラム用）</Tabs.Tab>
+    <Tabs.Tab value='code3'>コード（PC 3カラム用）</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel value='sp'>
+    <Html
+      scm={true}
+      content={ad100195soloHtml}
+    />
+  </Tabs.Panel>
+  <Tabs.Panel value='md'>
+    <Html
+      scm={true}
+      device='md'
+      content={ad100195soloHtml}
+    />
+  </Tabs.Panel>
+  <Tabs.Panel value='lg'>
+    <Html
+      scm={true}
+      device='lg'
+      content={ad100195soloHtml}
+    />
+  </Tabs.Panel>
+  <Tabs.Panel value='code1'>
+    <Code content={ad100195integrationHtml} />
+  </Tabs.Panel>
+  <Tabs.Panel value='code2'>
+    <Code content={ad100195integration2ColHtml} />
+  </Tabs.Panel>
+  <Tabs.Panel value='code3'>
+    <Code content={ad100195integration3ColHtml} />
+  </Tabs.Panel>
+</Tabs>
+
+## バリエーション一覧
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='md'>MD</Tabs.Tab>
+    <Tabs.Tab value='lg'>LG</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html scm={true} content={ad100195referenceHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='md'>
+    <Html scm={true} device='md' content={ad100195referenceHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='lg'>
+    <Html scm={true} device='lg' content={ad100195referenceHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={ad100195referenceCodeHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+

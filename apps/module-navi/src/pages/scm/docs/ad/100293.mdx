@@ -1,0 +1,105 @@
+import Demo from 'src/components/Demo'
+import Html from 'src/components/Html'
+import Code from 'src/components/Code'
+import Note from 'src/components/Note'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import ad100293Html from 'scm/src/modules/ad/100293/index.html'
+import ad100293ColumnHtml from 'scm/src/modules/ad/100293/column.html'
+import ad100293soloHtml from 'scm/src/modules/ad/100293/solo.html'
+import ad100293colorDemoHtml from 'scm/src/modules/ad/100293/color-demo.html'
+import ad100293integrationHtml from 'scm/src/modules/ad/100293/integration.html'
+
+export const meta = {
+  title: '原稿タイプID 100293 キーワード',
+  description: '説明文',
+  url: '/scm/docs/ad/100293',
+  tags: ['商品', 'ad', 'search', 'keyword'],
+}
+
+# 原稿タイプID 100293 キーワード
+
+説明文
+
+<Space />
+
+<Tabs
+  keepMounted={false}
+  defaultValue='demo'
+  styles={{ panel: { paddingTop: '16px' } }}
+>
+  <Tabs.List>
+    <Tabs.Tab value='demo'>デモ</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel value='demo'>
+    <Html
+      scm={true}
+      full={true}
+      content={ad100293soloHtml}
+    />
+  </Tabs.Panel>
+  <Tabs.Panel value='code'>
+    <Code content={ad100293integrationHtml} />
+  </Tabs.Panel>
+</Tabs>
+
+## バリエーション一覧
+
+<Demo
+  scm={true}
+  content={ad100293Html}
+  breakpoints={['sp', 'md', 'lg']}
+/>
+
+## グリッド
+
+<Demo
+  scm={true}
+  content={ad100293ColumnHtml}
+  breakpoints={['sp', 'md', 'lg']}
+/>
+
+## 色の調整
+
+背景とテキストカラーの調整は`scm-ad-100293`要素の`background-color`と`color`を調整してください。
+
+<Space />
+
+<Note
+  type='warn'
+  title='カラーについて'
+>
+  現在のECMでは、アンカーリンクに!importantが使用されているため、上書きするには!importantを使用する必要があります。
+</Note>
+
+<Space />
+
+三角の色の調整は`scm-ad-triangle-100293`要素の`border-right-color`と`border-bottom-color`を調整してください。
+
+<Space />
+
+<Tabs
+  keepMounted={false}
+  defaultValue='demo'
+  styles={{ panel: { paddingTop: '16px' } }}
+>
+  <Tabs.List>
+    <Tabs.Tab value='demo'>デモ</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel value='demo'>
+    <Html
+      scm={true}
+      content={ad100293colorDemoHtml}
+    />
+  </Tabs.Panel>
+  <Tabs.Panel value='code'>
+    <Code content={ad100293colorDemoHtml} />
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+本番ではカスタムクラスを利用してください。
+`class="scm-ad-100293 mothers-2023-scm-ad-100293"`

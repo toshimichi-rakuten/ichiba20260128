@@ -1,0 +1,121 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Integration 100061 > SP1columnPC2column 1`] = `
+"<!-- JSON-RASTA:100061--SPx1PCx2  -->
+<div
+  style="display: none"
+  class="rad-table-existItemDisplay"
+  data-module-name="ecm-dynamic-content"
+>
+  <script
+    class="rad-table-proto"
+    type="text/template"
+  >
+    <div
+      class="ecm-ad"
+      data-ad-id="100061"
+    >
+      <a
+        class="ecm-ad-link"
+        href="#TEXTURL1#"
+      >
+        <div class="ecm-ad-image-block">
+          <img
+            class="ecm-ad-image ecm-ad-image-ratio-16x9"
+            src="https://r.r10s.jp/com/img/home/t.gif?resize=720:405"
+            data-lazy-loading="#IMAGESRC1#"
+            alt="#IMAGEALT1#"
+          />
+        </div>
+        <div class="ecm-ad-body mt-12">
+          <p class="ecm-ad-copy">#TEXT1L1#</p>
+          <p class="ecm-ad-name text-sm mt-8">#TEXT2L1#</p>
+          <p class="ecm-ad-note mt-4">#TEXT3L1#</p>
+          <div class="ecm-ad-price-container mt-8">
+            <p class="ecm-ad-price-amount text-2xl">#TEXT4L1#<span class="ecm-ad-price-unit text-sm">#TEXT4L2#</span></p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </script>
+  <div
+    class="rad-table-config"
+    event_target="body"
+    noready="1"
+    event_name="rastaloadcomplete"
+    url="★"
+    ★
+    ★
+    ★
+    ★
+    ★
+  ></div>
+  <div class="rad-table-frame">
+    <div class="rad-table-body d-grid d-grid-col-1 md-d-grid-col-2 d-grid-gap-y-28 md-d-grid-gap-x-24 md-d-grid-gap-y-32"></div>
+  </div>
+</div>
+<!-- /JSON-RASTA:100061--SPx1PCx2  -->
+"
+`;
+
+exports[`Static 100061 > SP1columnPC2column 1`] = `
+"
+    <div
+      class="d-grid d-grid-col-1 md-d-grid-col-2 d-grid-gap-y-28 md-d-grid-gap-x-24 md-d-grid-gap-y-32"
+    >
+      <div
+  class="ecm-ad"
+  data-ad-id="100061"
+>
+  <a
+    class="ecm-ad-link"
+    href="#"
+  >
+    <div class="ecm-ad-image-block">
+      <img
+        class="ecm-ad-image ecm-ad-image-ratio-16x9"
+        src="https://r.r10s.jp/com/img/home/t.gif?resize=720:405"
+        data-lazy-loading="https://placehold.co/720x405?text=16x9"
+        alt=""
+      />
+    </div>
+    <div class="ecm-ad-body mt-12">
+      <p class="ecm-ad-copy">キャッチ５６７８９０キャッチ５６７８９０キャッチ５６７８</p>
+      <p class="ecm-ad-name text-sm mt-8">商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０</p>
+      <p class="ecm-ad-note mt-4">補足文４５６７８９０補足文４５６７８９０補足文４５６７８９０補足文４５６７８９０補足文４５６７８９０補足文４５６７８９０補足文４５６７８９０</p>
+      <div class="ecm-ad-price-container mt-8">
+        <p class="ecm-ad-price-amount text-2xl">999,999,999<span class="ecm-ad-price-unit text-sm">円</span></p>
+      </div>
+    </div>
+  </a>
+</div>
+<div
+  class="ecm-ad"
+  data-ad-id="100061"
+>
+  <a
+    class="ecm-ad-link"
+    href="#"
+  >
+    <div class="ecm-ad-image-block">
+      <img
+        class="ecm-ad-image ecm-ad-image-ratio-16x9"
+        src="https://r.r10s.jp/com/img/home/t.gif?resize=720:405"
+        data-lazy-loading="https://placehold.co/720x405?text=16x9"
+        alt=""
+      />
+    </div>
+    <div class="ecm-ad-body mt-12">
+      <p class="ecm-ad-copy">キャッチ５６７８９０キャッチ５６７８９０キャッチ５６７８</p>
+      <p class="ecm-ad-name text-sm mt-8">商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０</p>
+      <p class="ecm-ad-note mt-4">補足文４５６７８９０補足文４５６７８９０補足文４５６７８９０補足文４５６７８９０補足文４５６７８９０補足文４５６７８９０補足文４５６７８９０</p>
+      <div class="ecm-ad-price-container mt-8">
+        <p class="ecm-ad-price-amount text-2xl">999,999,999<span class="ecm-ad-price-unit text-sm">円</span></p>
+      </div>
+    </div>
+  </a>
+</div>
+
+    </div>
+  "
+`;

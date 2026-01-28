@@ -1,0 +1,925 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Integration 1000348 > SP1columnPC2column 1`] = `
+"<!-- JSON-RASTA:100048--SPx1PCx2  -->
+<div
+  style="display: none"
+  class="rad-table-existItemDisplay"
+  data-module-name="ecm-dynamic-content"
+>
+  <script
+    class="rad-table-proto"
+    type="text/template"
+  >
+    <div
+      class="ecm-ad"
+      data-ad-id="100048"
+    >
+      <a
+        class="ecm-ad-link"
+        href="#TEXTURL1#"
+      >
+        <div class="ecm-ad-image-block">
+          <img
+            class="ecm-ad-image ecm-ad-image-ratio-3x2"
+            src="https://r.r10s.jp/com/img/home/t.gif?resize=720:480"
+            data-lazy-loading="#IMAGESRC1#"
+            alt="#IMAGEALT1#"
+          />
+        </div>
+        <div class="ecm-ad-body mt-12">
+          <p class="ecm-ad-name text-sm">#TEXT1L1#</p>
+          <div class="ecm-ad-price-container">
+            <p class="ecm-ad-price-original mt-8 mr-8">#TEXT2L1##TEXT2L2#</p>
+            <p class="ecm-ad-price-amount text-2xl mt-8">#TEXT3L1#<span class="ecm-ad-price-unit text-sm">#TEXT3L2#</span></p>
+          </div>
+          <div class="ecm-ad-label-container">
+            <p class="ecm-ad-label ecm-ad-label-#ICONTXTCLASS1-1#">#ICONTXT1-1#</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </script>
+  <div
+    class="rad-table-config"
+    event_target="body"
+    noready="1"
+    event_name="rastaloadcomplete"
+    url="★"
+    ★
+    ★
+    ★
+    ★
+    ★
+  ></div>
+  <div class="rad-table-frame">
+    <div class="rad-table-body d-grid d-grid-col-1 md-d-grid-col-2 d-grid-gap-y-28 md-d-grid-gap-x-24 md-d-grid-gap-y-32"></div>
+  </div>
+</div>
+<!-- JSON-RASTA:100048--SPx1PCx2  -->
+"
+`;
+
+exports[`Integration 1000348 > SP1columnPC3column 1`] = `
+"<!-- JSON-RASTA:100048--SPx1PCx3  -->
+<div
+  style="display: none"
+  class="rad-table-existItemDisplay"
+  data-module-name="ecm-dynamic-content"
+>
+  <script
+    class="rad-table-proto"
+    type="text/template"
+  >
+    <div
+      class="ecm-ad"
+      data-ad-id="100048"
+    >
+      <a
+        class="ecm-ad-link"
+        href="#TEXTURL1#"
+      >
+        <div class="ecm-ad-image-block">
+          <img
+            class="ecm-ad-image ecm-ad-image-ratio-3x2"
+            src="https://r.r10s.jp/com/img/home/t.gif?resize=720:480"
+            data-lazy-loading="#IMAGESRC1#"
+            alt="#IMAGEALT1#"
+          />
+        </div>
+        <div class="ecm-ad-body mt-12">
+          <p class="ecm-ad-name text-sm">#TEXT1L1#</p>
+          <div class="ecm-ad-price-container">
+            <p class="ecm-ad-price-original mt-8 mr-8">#TEXT2L1##TEXT2L2#</p>
+            <p class="ecm-ad-price-amount text-2xl mt-8">#TEXT3L1#<span class="ecm-ad-price-unit text-sm">#TEXT3L2#</span></p>
+          </div>
+          <div class="ecm-ad-label-container">
+            <p class="ecm-ad-label ecm-ad-label-#ICONTXTCLASS1-1#">#ICONTXT1-1#</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </script>
+  <div
+    class="rad-table-config"
+    event_target="body"
+    noready="1"
+    event_name="rastaloadcomplete"
+    url="★"
+    ★
+    ★
+    ★
+    ★
+    ★
+  ></div>
+  <div class="rad-table-frame">
+    <div class="rad-table-body d-grid d-grid-col-1 md-d-grid-col-3 d-grid-gap-y-28 md-d-grid-gap-x-24 md-d-grid-gap-y-32"></div>
+  </div>
+</div>
+<!-- JSON-RASTA:100048--SPx1PCx3  -->
+"
+`;
+
+exports[`Integration 1000348 > SP1columnPC4column 1`] = `
+"<!-- JSON-RASTA:100048--SPx1PCx4  -->
+<div
+  style="display: none"
+  class="rad-table-existItemDisplay"
+  data-module-name="ecm-dynamic-content"
+>
+  <script
+    class="rad-table-proto"
+    type="text/template"
+  >
+    <div
+      class="ecm-ad"
+      data-ad-id="100048"
+    >
+      <a
+        class="ecm-ad-link"
+        href="#TEXTURL1#"
+      >
+        <div class="ecm-ad-image-block">
+          <img
+            class="ecm-ad-image ecm-ad-image-ratio-3x2"
+            src="https://r.r10s.jp/com/img/home/t.gif?resize=720:480"
+            data-lazy-loading="#IMAGESRC1#"
+            alt="#IMAGEALT1#"
+          />
+        </div>
+        <div class="ecm-ad-body mt-12">
+          <p class="ecm-ad-name text-sm">#TEXT1L1#</p>
+          <div class="ecm-ad-price-container">
+            <p class="ecm-ad-price-original mt-8 mr-8">#TEXT2L1##TEXT2L2#</p>
+            <p class="ecm-ad-price-amount text-2xl mt-8">#TEXT3L1#<span class="ecm-ad-price-unit text-sm">#TEXT3L2#</span></p>
+          </div>
+          <div class="ecm-ad-label-container">
+            <p class="ecm-ad-label ecm-ad-label-#ICONTXTCLASS1-1#">#ICONTXT1-1#</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </script>
+  <div
+    class="rad-table-config"
+    event_target="body"
+    noready="1"
+    event_name="rastaloadcomplete"
+    url="★"
+    ★
+    ★
+    ★
+    ★
+    ★
+  ></div>
+  <div class="rad-table-frame">
+    <div class="rad-table-body d-grid d-grid-col-1 md-d-grid-col-4 d-grid-gap-y-28 md-d-grid-gap-x-24 md-d-grid-gap-y-32"></div>
+  </div>
+</div>
+<!-- JSON-RASTA:100048--SPx1PCx4  -->
+"
+`;
+
+exports[`Integration 1000348 > SP2columnPC2column 1`] = `
+"<!-- JSON-RASTA:100048--SPx2PCx2  -->
+<div
+  style="display: none"
+  class="rad-table-existItemDisplay"
+  data-module-name="ecm-dynamic-content"
+>
+  <script
+    class="rad-table-proto"
+    type="text/template"
+  >
+    <div
+      class="ecm-ad"
+      data-ad-id="100048"
+    >
+      <a
+        class="ecm-ad-link"
+        href="#TEXTURL1#"
+      >
+        <div class="ecm-ad-image-block">
+          <img
+            class="ecm-ad-image ecm-ad-image-ratio-3x2"
+            src="https://r.r10s.jp/com/img/home/t.gif?resize=720:480"
+            data-lazy-loading="#IMAGESRC1#"
+            alt="#IMAGEALT1#"
+          />
+        </div>
+        <div class="ecm-ad-body mt-8 md-mt-12">
+          <p class="ecm-ad-name">#TEXT1L1#</p>
+          <div class="ecm-ad-price-container">
+            <p class="ecm-ad-price-original mt-8 mr-8">#TEXT2L1##TEXT2L2#</p>
+            <p class="ecm-ad-price-amount mt-8">#TEXT3L1#<span class="ecm-ad-price-unit">#TEXT3L2#</span></p>
+          </div>
+          <div class="ecm-ad-label-container">
+            <p class="ecm-ad-label ecm-ad-label-#ICONTXTCLASS1-1#">#ICONTXT1-1#</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </script>
+  <div
+    class="rad-table-config"
+    event_target="body"
+    noready="1"
+    event_name="rastaloadcomplete"
+    url="★"
+    ★
+    ★
+    ★
+    ★
+    ★
+  ></div>
+  <div class="rad-table-frame">
+    <div class="rad-table-body d-grid d-grid-col-2 d-grid-gap-x-12 d-grid-gap-y-16 md-d-grid-gap-x-24 md-d-grid-gap-y-32"></div>
+  </div>
+</div>
+<!-- JSON-RASTA:100048--SPx2PCx2  -->
+"
+`;
+
+exports[`Integration 1000348 > SP2columnPC3column 1`] = `
+"<!-- JSON-RASTA:100048--SPx2PCx3  -->
+<div
+  style="display: none"
+  class="rad-table-existItemDisplay"
+  data-module-name="ecm-dynamic-content"
+>
+  <script
+    class="rad-table-proto"
+    type="text/template"
+  >
+    <div
+      class="ecm-ad"
+      data-ad-id="100048"
+    >
+      <a
+        class="ecm-ad-link"
+        href="#TEXTURL1#"
+      >
+        <div class="ecm-ad-image-block">
+          <img
+            class="ecm-ad-image ecm-ad-image-ratio-3x2"
+            src="https://r.r10s.jp/com/img/home/t.gif?resize=720:480"
+            data-lazy-loading="#IMAGESRC1#"
+            alt="#IMAGEALT1#"
+          />
+        </div>
+        <div class="ecm-ad-body mt-8 md-mt-12">
+          <p class="ecm-ad-name">#TEXT1L1#</p>
+          <div class="ecm-ad-price-container">
+            <p class="ecm-ad-price-original mt-8 mr-8">#TEXT2L1##TEXT2L2#</p>
+            <p class="ecm-ad-price-amount mt-8">#TEXT3L1#<span class="ecm-ad-price-unit">#TEXT3L2#</span></p>
+          </div>
+          <div class="ecm-ad-label-container">
+            <p class="ecm-ad-label ecm-ad-label-#ICONTXTCLASS1-1#">#ICONTXT1-1#</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </script>
+  <div
+    class="rad-table-config"
+    event_target="body"
+    noready="1"
+    event_name="rastaloadcomplete"
+    url="★"
+    ★
+    ★
+    ★
+    ★
+    ★
+  ></div>
+  <div class="rad-table-frame">
+    <div class="rad-table-body d-grid d-grid-col-2 md-d-grid-col-3 d-grid-gap-x-12 d-grid-gap-y-16 md-d-grid-gap-x-24 md-d-grid-gap-y-32"></div>
+  </div>
+</div>
+<!-- JSON-RASTA:100048--SPx2PCx3  -->
+"
+`;
+
+exports[`Integration 1000348 > SP2columnPC4column 1`] = `
+"<!-- JSON-RASTA:100048--SPx2PCx4  -->
+<div
+  style="display: none"
+  class="rad-table-existItemDisplay"
+  data-module-name="ecm-dynamic-content"
+>
+  <script
+    class="rad-table-proto"
+    type="text/template"
+  >
+    <div
+      class="ecm-ad"
+      data-ad-id="100048"
+    >
+      <a
+        class="ecm-ad-link"
+        href="#TEXTURL1#"
+      >
+        <div class="ecm-ad-image-block">
+          <img
+            class="ecm-ad-image ecm-ad-image-ratio-3x2"
+            src="https://r.r10s.jp/com/img/home/t.gif?resize=720:480"
+            data-lazy-loading="#IMAGESRC1#"
+            alt="#IMAGEALT1#"
+          />
+        </div>
+        <div class="ecm-ad-body mt-8 md-mt-12">
+          <p class="ecm-ad-name">#TEXT1L1#</p>
+          <div class="ecm-ad-price-container">
+            <p class="ecm-ad-price-original mt-8 mr-8">#TEXT2L1##TEXT2L2#</p>
+            <p class="ecm-ad-price-amount mt-8">#TEXT3L1#<span class="ecm-ad-price-unit">#TEXT3L2#</span></p>
+          </div>
+          <div class="ecm-ad-label-container">
+            <p class="ecm-ad-label ecm-ad-label-#ICONTXTCLASS1-1#">#ICONTXT1-1#</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </script>
+  <div
+    class="rad-table-config"
+    event_target="body"
+    noready="1"
+    event_name="rastaloadcomplete"
+    url="★"
+    ★
+    ★
+    ★
+    ★
+    ★
+  ></div>
+  <div class="rad-table-frame">
+    <div class="rad-table-body d-grid d-grid-col-2 md-d-grid-col-4 d-grid-gap-x-12 d-grid-gap-y-16 md-d-grid-gap-x-24 md-d-grid-gap-y-32"></div>
+  </div>
+</div>
+<!-- JSON-RASTA:100048--SPx2PCx4  -->
+"
+`;
+
+exports[`Static 1000348 > SP1columnPC2column 1`] = `
+"
+    <div
+      class="d-grid d-grid-col-1 md-d-grid-col-2 d-grid-gap-y-28 md-d-grid-gap-x-24 md-d-grid-gap-y-32"
+    >
+      <div
+  class="ecm-ad"
+  data-ad-id="100048"
+>
+  <a
+    class="ecm-ad-link"
+    href="#"
+  >
+    <div class="ecm-ad-image-block">
+      <img
+        class="ecm-ad-image ecm-ad-image-ratio-3x2"
+        src="https://r.r10s.jp/com/img/home/t.gif?resize=720:480"
+        data-lazy-loading="https://placehold.co/720x480?text=3x2"
+        alt=""
+      />
+    </div>
+    <div class="ecm-ad-body mt-12">
+      <p class="ecm-ad-name text-sm">商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０</p>
+      <div class="ecm-ad-price-container">
+        <p class="ecm-ad-price-original mt-8 mr-8">9,999,999円</p>
+        <p class="ecm-ad-price-amount text-2xl mt-8">9,999,999<span class="ecm-ad-price-unit text-sm">円</span></p>
+      </div>
+      <div class="ecm-ad-label-container">
+        <p class="ecm-ad-label ecm-ad-label-price_half">半額以下</p>
+      </div>
+    </div>
+  </a>
+</div>
+<div
+  class="ecm-ad"
+  data-ad-id="100048"
+>
+  <a
+    class="ecm-ad-link"
+    href="#"
+  >
+    <div class="ecm-ad-image-block">
+      <img
+        class="ecm-ad-image ecm-ad-image-ratio-3x2"
+        src="https://r.r10s.jp/com/img/home/t.gif?resize=720:480"
+        data-lazy-loading="https://placehold.co/720x480?text=3x2"
+        alt=""
+      />
+    </div>
+    <div class="ecm-ad-body mt-12">
+      <p class="ecm-ad-name text-sm">商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０</p>
+      <div class="ecm-ad-price-container">
+        <p class="ecm-ad-price-original mt-8 mr-8">9,999,999円</p>
+        <p class="ecm-ad-price-amount text-2xl mt-8">9,999,999<span class="ecm-ad-price-unit text-sm">円</span></p>
+      </div>
+      <div class="ecm-ad-label-container">
+        <p class="ecm-ad-label ecm-ad-label-price_half">半額以下</p>
+      </div>
+    </div>
+  </a>
+</div>
+
+    </div>
+  "
+`;
+
+exports[`Static 1000348 > SP1columnPC3column 1`] = `
+"
+    <div
+      class="d-grid d-grid-col-1 md-d-grid-col-3 d-grid-gap-y-28 md-d-grid-gap-x-24 md-d-grid-gap-y-32"
+    >
+      <div
+  class="ecm-ad"
+  data-ad-id="100048"
+>
+  <a
+    class="ecm-ad-link"
+    href="#"
+  >
+    <div class="ecm-ad-image-block">
+      <img
+        class="ecm-ad-image ecm-ad-image-ratio-3x2"
+        src="https://r.r10s.jp/com/img/home/t.gif?resize=720:480"
+        data-lazy-loading="https://placehold.co/720x480?text=3x2"
+        alt=""
+      />
+    </div>
+    <div class="ecm-ad-body mt-12">
+      <p class="ecm-ad-name text-sm">商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０</p>
+      <div class="ecm-ad-price-container">
+        <p class="ecm-ad-price-original mt-8 mr-8">9,999,999円</p>
+        <p class="ecm-ad-price-amount text-2xl mt-8">9,999,999<span class="ecm-ad-price-unit text-sm">円</span></p>
+      </div>
+      <div class="ecm-ad-label-container">
+        <p class="ecm-ad-label ecm-ad-label-price_half">半額以下</p>
+      </div>
+    </div>
+  </a>
+</div>
+<div
+  class="ecm-ad"
+  data-ad-id="100048"
+>
+  <a
+    class="ecm-ad-link"
+    href="#"
+  >
+    <div class="ecm-ad-image-block">
+      <img
+        class="ecm-ad-image ecm-ad-image-ratio-3x2"
+        src="https://r.r10s.jp/com/img/home/t.gif?resize=720:480"
+        data-lazy-loading="https://placehold.co/720x480?text=3x2"
+        alt=""
+      />
+    </div>
+    <div class="ecm-ad-body mt-12">
+      <p class="ecm-ad-name text-sm">商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０</p>
+      <div class="ecm-ad-price-container">
+        <p class="ecm-ad-price-original mt-8 mr-8">9,999,999円</p>
+        <p class="ecm-ad-price-amount text-2xl mt-8">9,999,999<span class="ecm-ad-price-unit text-sm">円</span></p>
+      </div>
+      <div class="ecm-ad-label-container">
+        <p class="ecm-ad-label ecm-ad-label-price_half">半額以下</p>
+      </div>
+    </div>
+  </a>
+</div>
+<div
+  class="ecm-ad"
+  data-ad-id="100048"
+>
+  <a
+    class="ecm-ad-link"
+    href="#"
+  >
+    <div class="ecm-ad-image-block">
+      <img
+        class="ecm-ad-image ecm-ad-image-ratio-3x2"
+        src="https://r.r10s.jp/com/img/home/t.gif?resize=720:480"
+        data-lazy-loading="https://placehold.co/720x480?text=3x2"
+        alt=""
+      />
+    </div>
+    <div class="ecm-ad-body mt-12">
+      <p class="ecm-ad-name text-sm">商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０</p>
+      <div class="ecm-ad-price-container">
+        <p class="ecm-ad-price-original mt-8 mr-8">9,999,999円</p>
+        <p class="ecm-ad-price-amount text-2xl mt-8">9,999,999<span class="ecm-ad-price-unit text-sm">円</span></p>
+      </div>
+      <div class="ecm-ad-label-container">
+        <p class="ecm-ad-label ecm-ad-label-price_half">半額以下</p>
+      </div>
+    </div>
+  </a>
+</div>
+
+    </div>
+  "
+`;
+
+exports[`Static 1000348 > SP1columnPC4column 1`] = `
+"
+    <div
+      class="d-grid d-grid-col-1 md-d-grid-col-4 d-grid-gap-y-28 md-d-grid-gap-x-24 md-d-grid-gap-y-32"
+    >
+      <div
+  class="ecm-ad"
+  data-ad-id="100048"
+>
+  <a
+    class="ecm-ad-link"
+    href="#"
+  >
+    <div class="ecm-ad-image-block">
+      <img
+        class="ecm-ad-image ecm-ad-image-ratio-3x2"
+        src="https://r.r10s.jp/com/img/home/t.gif?resize=720:480"
+        data-lazy-loading="https://placehold.co/720x480?text=3x2"
+        alt=""
+      />
+    </div>
+    <div class="ecm-ad-body mt-12">
+      <p class="ecm-ad-name text-sm">商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０</p>
+      <div class="ecm-ad-price-container">
+        <p class="ecm-ad-price-original mt-8 mr-8">9,999,999円</p>
+        <p class="ecm-ad-price-amount text-2xl mt-8">9,999,999<span class="ecm-ad-price-unit text-sm">円</span></p>
+      </div>
+      <div class="ecm-ad-label-container">
+        <p class="ecm-ad-label ecm-ad-label-price_half">半額以下</p>
+      </div>
+    </div>
+  </a>
+</div>
+<div
+  class="ecm-ad"
+  data-ad-id="100048"
+>
+  <a
+    class="ecm-ad-link"
+    href="#"
+  >
+    <div class="ecm-ad-image-block">
+      <img
+        class="ecm-ad-image ecm-ad-image-ratio-3x2"
+        src="https://r.r10s.jp/com/img/home/t.gif?resize=720:480"
+        data-lazy-loading="https://placehold.co/720x480?text=3x2"
+        alt=""
+      />
+    </div>
+    <div class="ecm-ad-body mt-12">
+      <p class="ecm-ad-name text-sm">商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０</p>
+      <div class="ecm-ad-price-container">
+        <p class="ecm-ad-price-original mt-8 mr-8">9,999,999円</p>
+        <p class="ecm-ad-price-amount text-2xl mt-8">9,999,999<span class="ecm-ad-price-unit text-sm">円</span></p>
+      </div>
+      <div class="ecm-ad-label-container">
+        <p class="ecm-ad-label ecm-ad-label-price_half">半額以下</p>
+      </div>
+    </div>
+  </a>
+</div>
+<div
+  class="ecm-ad"
+  data-ad-id="100048"
+>
+  <a
+    class="ecm-ad-link"
+    href="#"
+  >
+    <div class="ecm-ad-image-block">
+      <img
+        class="ecm-ad-image ecm-ad-image-ratio-3x2"
+        src="https://r.r10s.jp/com/img/home/t.gif?resize=720:480"
+        data-lazy-loading="https://placehold.co/720x480?text=3x2"
+        alt=""
+      />
+    </div>
+    <div class="ecm-ad-body mt-12">
+      <p class="ecm-ad-name text-sm">商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０</p>
+      <div class="ecm-ad-price-container">
+        <p class="ecm-ad-price-original mt-8 mr-8">9,999,999円</p>
+        <p class="ecm-ad-price-amount text-2xl mt-8">9,999,999<span class="ecm-ad-price-unit text-sm">円</span></p>
+      </div>
+      <div class="ecm-ad-label-container">
+        <p class="ecm-ad-label ecm-ad-label-price_half">半額以下</p>
+      </div>
+    </div>
+  </a>
+</div>
+<div
+  class="ecm-ad"
+  data-ad-id="100048"
+>
+  <a
+    class="ecm-ad-link"
+    href="#"
+  >
+    <div class="ecm-ad-image-block">
+      <img
+        class="ecm-ad-image ecm-ad-image-ratio-3x2"
+        src="https://r.r10s.jp/com/img/home/t.gif?resize=720:480"
+        data-lazy-loading="https://placehold.co/720x480?text=3x2"
+        alt=""
+      />
+    </div>
+    <div class="ecm-ad-body mt-12">
+      <p class="ecm-ad-name text-sm">商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０</p>
+      <div class="ecm-ad-price-container">
+        <p class="ecm-ad-price-original mt-8 mr-8">9,999,999円</p>
+        <p class="ecm-ad-price-amount text-2xl mt-8">9,999,999<span class="ecm-ad-price-unit text-sm">円</span></p>
+      </div>
+      <div class="ecm-ad-label-container">
+        <p class="ecm-ad-label ecm-ad-label-price_half">半額以下</p>
+      </div>
+    </div>
+  </a>
+</div>
+
+    </div>
+  "
+`;
+
+exports[`Static 1000348 > SP2columnPC2column 1`] = `
+"
+    <div
+      class="d-grid d-grid-col-2 d-grid-gap-x-12 d-grid-gap-y-16 md-d-grid-gap-x-24 md-d-grid-gap-y-32"
+    >
+      <div
+  class="ecm-ad"
+  data-ad-id="100048"
+>
+  <a
+    class="ecm-ad-link"
+    href="#"
+  >
+    <div class="ecm-ad-image-block">
+      <img
+        class="ecm-ad-image ecm-ad-image-ratio-3x2"
+        src="https://r.r10s.jp/com/img/home/t.gif?resize=720:480"
+        data-lazy-loading="https://placehold.co/720x480?text=3x2"
+        alt=""
+      />
+    </div>
+    <div class="ecm-ad-body mt-8 md-mt-12">
+      <p class="ecm-ad-name">商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０</p>
+      <div class="ecm-ad-price-container">
+        <p class="ecm-ad-price-original mt-8 mr-8">9,999,999円</p>
+        <p class="ecm-ad-price-amount mt-8">9,999,999<span class="ecm-ad-price-unit">円</span></p>
+      </div>
+      <div class="ecm-ad-label-container">
+        <p class="ecm-ad-label ecm-ad-label-price_half">半額以下</p>
+      </div>
+    </div>
+  </a>
+</div>
+<div
+  class="ecm-ad"
+  data-ad-id="100048"
+>
+  <a
+    class="ecm-ad-link"
+    href="#"
+  >
+    <div class="ecm-ad-image-block">
+      <img
+        class="ecm-ad-image ecm-ad-image-ratio-3x2"
+        src="https://r.r10s.jp/com/img/home/t.gif?resize=720:480"
+        data-lazy-loading="https://placehold.co/720x480?text=3x2"
+        alt=""
+      />
+    </div>
+    <div class="ecm-ad-body mt-8 md-mt-12">
+      <p class="ecm-ad-name">商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０</p>
+      <div class="ecm-ad-price-container">
+        <p class="ecm-ad-price-original mt-8 mr-8">9,999,999円</p>
+        <p class="ecm-ad-price-amount mt-8">9,999,999<span class="ecm-ad-price-unit">円</span></p>
+      </div>
+      <div class="ecm-ad-label-container">
+        <p class="ecm-ad-label ecm-ad-label-price_half">半額以下</p>
+      </div>
+    </div>
+  </a>
+</div>
+
+    </div>
+  "
+`;
+
+exports[`Static 1000348 > SP2columnPC3column 1`] = `
+"
+    <div
+      class="d-grid d-grid-col-2 md-d-grid-col-3 d-grid-gap-x-12 d-grid-gap-y-16 md-d-grid-gap-x-24 md-d-grid-gap-y-32"
+    >
+      <div
+  class="ecm-ad"
+  data-ad-id="100048"
+>
+  <a
+    class="ecm-ad-link"
+    href="#"
+  >
+    <div class="ecm-ad-image-block">
+      <img
+        class="ecm-ad-image ecm-ad-image-ratio-3x2"
+        src="https://r.r10s.jp/com/img/home/t.gif?resize=720:480"
+        data-lazy-loading="https://placehold.co/720x480?text=3x2"
+        alt=""
+      />
+    </div>
+    <div class="ecm-ad-body mt-8 md-mt-12">
+      <p class="ecm-ad-name">商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０</p>
+      <div class="ecm-ad-price-container">
+        <p class="ecm-ad-price-original mt-8 mr-8">9,999,999円</p>
+        <p class="ecm-ad-price-amount mt-8">9,999,999<span class="ecm-ad-price-unit">円</span></p>
+      </div>
+      <div class="ecm-ad-label-container">
+        <p class="ecm-ad-label ecm-ad-label-price_half">半額以下</p>
+      </div>
+    </div>
+  </a>
+</div>
+<div
+  class="ecm-ad"
+  data-ad-id="100048"
+>
+  <a
+    class="ecm-ad-link"
+    href="#"
+  >
+    <div class="ecm-ad-image-block">
+      <img
+        class="ecm-ad-image ecm-ad-image-ratio-3x2"
+        src="https://r.r10s.jp/com/img/home/t.gif?resize=720:480"
+        data-lazy-loading="https://placehold.co/720x480?text=3x2"
+        alt=""
+      />
+    </div>
+    <div class="ecm-ad-body mt-8 md-mt-12">
+      <p class="ecm-ad-name">商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０</p>
+      <div class="ecm-ad-price-container">
+        <p class="ecm-ad-price-original mt-8 mr-8">9,999,999円</p>
+        <p class="ecm-ad-price-amount mt-8">9,999,999<span class="ecm-ad-price-unit">円</span></p>
+      </div>
+      <div class="ecm-ad-label-container">
+        <p class="ecm-ad-label ecm-ad-label-price_half">半額以下</p>
+      </div>
+    </div>
+  </a>
+</div>
+<div
+  class="ecm-ad"
+  data-ad-id="100048"
+>
+  <a
+    class="ecm-ad-link"
+    href="#"
+  >
+    <div class="ecm-ad-image-block">
+      <img
+        class="ecm-ad-image ecm-ad-image-ratio-3x2"
+        src="https://r.r10s.jp/com/img/home/t.gif?resize=720:480"
+        data-lazy-loading="https://placehold.co/720x480?text=3x2"
+        alt=""
+      />
+    </div>
+    <div class="ecm-ad-body mt-8 md-mt-12">
+      <p class="ecm-ad-name">商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０</p>
+      <div class="ecm-ad-price-container">
+        <p class="ecm-ad-price-original mt-8 mr-8">9,999,999円</p>
+        <p class="ecm-ad-price-amount mt-8">9,999,999<span class="ecm-ad-price-unit">円</span></p>
+      </div>
+      <div class="ecm-ad-label-container">
+        <p class="ecm-ad-label ecm-ad-label-price_half">半額以下</p>
+      </div>
+    </div>
+  </a>
+</div>
+
+    </div>
+  "
+`;
+
+exports[`Static 1000348 > SP2columnPC4column 1`] = `
+"
+    <div
+      class="d-grid d-grid-col-2 md-d-grid-col-4 d-grid-gap-x-12 d-grid-gap-y-16 md-d-grid-gap-x-24 md-d-grid-gap-y-32"
+    >
+      <div
+  class="ecm-ad"
+  data-ad-id="100048"
+>
+  <a
+    class="ecm-ad-link"
+    href="#"
+  >
+    <div class="ecm-ad-image-block">
+      <img
+        class="ecm-ad-image ecm-ad-image-ratio-3x2"
+        src="https://r.r10s.jp/com/img/home/t.gif?resize=720:480"
+        data-lazy-loading="https://placehold.co/720x480?text=3x2"
+        alt=""
+      />
+    </div>
+    <div class="ecm-ad-body mt-8 md-mt-12">
+      <p class="ecm-ad-name">商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０</p>
+      <div class="ecm-ad-price-container">
+        <p class="ecm-ad-price-original mt-8 mr-8">9,999,999円</p>
+        <p class="ecm-ad-price-amount mt-8">9,999,999<span class="ecm-ad-price-unit">円</span></p>
+      </div>
+      <div class="ecm-ad-label-container">
+        <p class="ecm-ad-label ecm-ad-label-price_half">半額以下</p>
+      </div>
+    </div>
+  </a>
+</div>
+<div
+  class="ecm-ad"
+  data-ad-id="100048"
+>
+  <a
+    class="ecm-ad-link"
+    href="#"
+  >
+    <div class="ecm-ad-image-block">
+      <img
+        class="ecm-ad-image ecm-ad-image-ratio-3x2"
+        src="https://r.r10s.jp/com/img/home/t.gif?resize=720:480"
+        data-lazy-loading="https://placehold.co/720x480?text=3x2"
+        alt=""
+      />
+    </div>
+    <div class="ecm-ad-body mt-8 md-mt-12">
+      <p class="ecm-ad-name">商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０</p>
+      <div class="ecm-ad-price-container">
+        <p class="ecm-ad-price-original mt-8 mr-8">9,999,999円</p>
+        <p class="ecm-ad-price-amount mt-8">9,999,999<span class="ecm-ad-price-unit">円</span></p>
+      </div>
+      <div class="ecm-ad-label-container">
+        <p class="ecm-ad-label ecm-ad-label-price_half">半額以下</p>
+      </div>
+    </div>
+  </a>
+</div>
+<div
+  class="ecm-ad"
+  data-ad-id="100048"
+>
+  <a
+    class="ecm-ad-link"
+    href="#"
+  >
+    <div class="ecm-ad-image-block">
+      <img
+        class="ecm-ad-image ecm-ad-image-ratio-3x2"
+        src="https://r.r10s.jp/com/img/home/t.gif?resize=720:480"
+        data-lazy-loading="https://placehold.co/720x480?text=3x2"
+        alt=""
+      />
+    </div>
+    <div class="ecm-ad-body mt-8 md-mt-12">
+      <p class="ecm-ad-name">商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０</p>
+      <div class="ecm-ad-price-container">
+        <p class="ecm-ad-price-original mt-8 mr-8">9,999,999円</p>
+        <p class="ecm-ad-price-amount mt-8">9,999,999<span class="ecm-ad-price-unit">円</span></p>
+      </div>
+      <div class="ecm-ad-label-container">
+        <p class="ecm-ad-label ecm-ad-label-price_half">半額以下</p>
+      </div>
+    </div>
+  </a>
+</div>
+<div
+  class="ecm-ad"
+  data-ad-id="100048"
+>
+  <a
+    class="ecm-ad-link"
+    href="#"
+  >
+    <div class="ecm-ad-image-block">
+      <img
+        class="ecm-ad-image ecm-ad-image-ratio-3x2"
+        src="https://r.r10s.jp/com/img/home/t.gif?resize=720:480"
+        data-lazy-loading="https://placehold.co/720x480?text=3x2"
+        alt=""
+      />
+    </div>
+    <div class="ecm-ad-body mt-8 md-mt-12">
+      <p class="ecm-ad-name">商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０</p>
+      <div class="ecm-ad-price-container">
+        <p class="ecm-ad-price-original mt-8 mr-8">9,999,999円</p>
+        <p class="ecm-ad-price-amount mt-8">9,999,999<span class="ecm-ad-price-unit">円</span></p>
+      </div>
+      <div class="ecm-ad-label-container">
+        <p class="ecm-ad-label ecm-ad-label-price_half">半額以下</p>
+      </div>
+    </div>
+  </a>
+</div>
+
+    </div>
+  "
+`;

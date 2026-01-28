@@ -1,0 +1,48 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+@include util-md('hover-opacity-80') {
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+@include util-md('hover-underline') {
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@include util-md('hover-decoration-none') {
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+@include util-md('hover-opacity-80', true) {
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+@include util-md('hover-underline', true) {
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@include util-md('hover-decoration-none', true) {
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

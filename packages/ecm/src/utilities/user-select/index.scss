@@ -1,0 +1,34 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+@include util-all('user-select-none') {
+  user-select: none;
+}
+
+@include util-all('user-select-text') {
+  user-select: text;
+}
+
+@include util-all('user-select-all') {
+  user-select: all;
+}
+
+@include util-all('user-select-auto') {
+  user-select: auto;
+}
+
+@include util-all('user-select-none', true) {
+  user-select: none !important;
+}
+
+@include util-all('user-select-text', true) {
+  user-select: text !important;
+}
+
+@include util-all('user-select-all', true) {
+  user-select: all !important;
+}
+
+@include util-all('user-select-auto', true) {
+  user-select: auto !important;
+}

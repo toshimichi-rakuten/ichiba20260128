@@ -1,0 +1,33 @@
+
+import Demo from 'src/components/Demo'
+import Code from 'src/components/Code'
+import Html from 'src/components/Html'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import sliderHtml from 'scm/src/modules/slider/default.html'
+import sliderRoundedHtml from 'scm/src/modules/slider/rounded.html'
+import viewMoreHtml from 'scm/src/modules/modal/static-button.html'
+
+export const meta = {
+  title: '看板下スライダーバナー + 全て見る',
+  url: '/scm/docs/kanban/slider',
+  tags: ['banner', 'slider', 'スライダー'],
+}
+
+# 看板下スライダーバナー + 全て見る
+
+<Demo scm={true} content={sliderHtml} breakpoints={['sp', 'md', 'lg']} />
+
+## 角丸バージョン
+
+<Demo scm={true} content={sliderRoundedHtml} breakpoints={['sp', 'md', 'lg']} />
+
+## 全て見る
+
+モーダルとセットになります。
+
+<Space />
+
+<Demo scm={true} content={viewMoreHtml} breakpoints={['sp', 'md', 'lg']} />
+
+

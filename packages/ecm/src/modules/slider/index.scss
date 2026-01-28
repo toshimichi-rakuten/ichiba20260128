@@ -1,0 +1,206 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+@import './swiper.scss';
+
+$ecm-slider-blur-radius: 6px;
+$ecm-slider-icon-size: $space-32;
+$ecm-slider-button-margin: 50px;
+
+.ecm-slider-container {
+  position: relative;
+  height: 100%;
+
+  // Use this if slider is inside ".ecm-container"
+  // cancels ".ecm-container" margin for sp and move it in the root of the slider.
+  &.ecm-slider-container-sp-overflow {
+    @include screen('md', 'down') {
+      margin-left: -16px;
+      margin-right: -16px;
+
+      .ecm-slider {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+    }
+  }
+
+  .ecm-slider {
+    height: 100%;
+  }
+
+  // https://jira.rakuten-it.com/jira/browse/ICW-17727
+  // We hide the element when JS is not yet instantiated.
+  &:not([data-initialized='true']) {
+    display: none;
+  }
+}
+
+.ecm-slider-slide {
+  @media (hover: hover) {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.ecm-slider-track {
+  &[style*='cursor: grab;'] {
+    .ecm-slider-slide:hover {
+      cursor: grab;
+    }
+  }
+
+  &[style*='cursor: grabbing;'] {
+    .ecm-slider-slide:hover {
+      cursor: grabbing;
+    }
+  }
+}
+
+.ecm-slider-prev,
+.ecm-slider-next {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: $ecm-slider-icon-size;
+  height: $ecm-slider-icon-size;
+  margin-top: calc(0px - (#{$ecm-slider-icon-size} / 2));
+  background-color: $color-white;
+  box-shadow: 0 1.25px $ecm-slider-blur-radius rgb(0 0 0 / 20%);
+  border-radius: 100%;
+
+  @media (hover: hover) {
+    &:hover {
+      filter: contrast(0.86);
+      text-decoration: none;
+    }
+  }
+
+  &.ecm-slider-prev-pagination,
+  &.ecm-slider-next-pagination {
+    background-color: $color-gray-2;
+    opacity: 0;
+    transition: opacity 0.7s;
+    margin-top: -$space-24;
+
+    @include screen('md', 'down') {
+      display: none;
+    }
+
+    .ecm-slider-container:hover & {
+      opacity: 1;
+    }
+  }
+
+  /* stylelint-disable */
+  &.ecm-slider-prev-pagination {
+    left: $ecm-slider-button-margin;
+  }
+
+  &.ecm-slider-next-pagination {
+    right: $ecm-slider-button-margin;
+  }
+
+  /* stylelint-enable */
+
+  &::after {
+    content: none;
+  }
+
+  &.ecm-slider-nav-disabled {
+    display: none;
+  }
+
+  .ecm-icon-chevron-left,
+  .ecm-icon-chevron-right {
+    @include text-xl;
+
+    color: $color-9c9c9c;
+    font-weight: 700;
+  }
+}
+
+.ecm-slider-prev-pagination .ecm-icon-chevron-left,
+.ecm-slider-next-pagination .ecm-icon-chevron-right {
+  @include text-lg;
+
+  opacity: 1;
+  color: $color-white;
+}
+
+.ecm-slider-prev-pagination .ecm-icon-chevron-left::before {
+  margin-right: 2px;
+}
+
+.ecm-slider-next-pagination .ecm-icon-chevron-right::before {
+  margin-left: 2px;
+}
+
+.ecm-slider-prev {
+  left: calc(0px - (#{$ecm-slider-icon-size} / 2));
+}
+
+.ecm-slider-next {
+  right: calc(0px - (#{$ecm-slider-icon-size} / 2));
+}
+
+// TODO This code should be on floating-banner ?
+.ecm-slider-floating-banner-prev,
+.ecm-slider-floating-banner-next {
+  background-color: $color-transparent;
+  box-shadow: unset;
+  border-radius: unset;
+
+  .ecm-icon-chevron-left,
+  .ecm-icon-chevron-right {
+    @include text-lg;
+
+    font-weight: 700;
+  }
+}
+
+.ecm-slider-floating-banner-prev {
+  left: -2px;
+}
+
+.ecm-slider-floating-banner-next {
+  right: -2px;
+}
+
+.ecm-slider-floating-banner-prev-white,
+.ecm-slider-floating-banner-next-white {
+  .ecm-icon-chevron-left,
+  .ecm-icon-chevron-right {
+    color: $color-white;
+  }
+}
+
+.ecm-slider-pagination {
+  margin-top: $space-16;
+  display: flex;
+  justify-content: center;
+}
+
+.ecm-slider-pagination-bullet {
+  border-radius: 100%;
+  background-color: $color-gray-4;
+  display: block;
+  width: 8px;
+  height: 8px;
+
+  &:not(:first-child) {
+    margin-left: $space-8;
+  }
+
+  &.ecm-slider-pagination-bullet-active {
+    background-color: $color-crimson;
+  }
+
+  [data-pagination-clickable='true'] & {
+    cursor: pointer;
+  }
+}

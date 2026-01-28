@@ -1,0 +1,70 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Alcor Deal Generator > should generate 1`] = `
+"<div
+  data-module-name="ecm-alcor"
+  data-alcor-type="deal"
+>
+  <template data-alcor-output>
+    <div class="ecm-deal-alcor-updatedate">
+      <span
+        data-alcor-item="1"
+        data-key="updatetime"
+      ></span>
+      時点の情報です。
+    </div>
+    <div
+      class="d-grid d-grid-col-1 md-d-grid-col-2 d-grid-gap-y-24 md-d-grid-gap-x-24 md-d-grid-gap-y-32"
+      data-alcor-item-container
+    ></div>
+  </template>
+
+  <template data-alcor-data>
+    <!-- Alcor Template -->
+    <!--#include virtual="★"-->
+    <!-- /Alcor template -->
+  </template>
+
+  <template data-alcor-item-template> <div class="ecm-alcor ecm-deal-alcor">
+  <a
+    class="ecm-deal-alcor-link"
+    href="###item-url###"
+  >
+    <div class="ecm-deal-alcor-image-block">
+      <div class="ecm-deal-alcor-badge">
+  <div class="font-roboto"
+    ><span class="text-lg md-text-3xl">###deal-point-rate-base###</span><span class="text-11px md-text-lg">%</span></div
+  >
+  <p class="text-10px md-text-12px">ポイント<br />バック</p>
+</div>
+
+      <img
+        class="w-full h-full aspect-ratio-1x1 object-contain"
+        src="https://r.r10s.jp/com/img/home/t.gif?resize=340:340"
+        data-lazy-loading="###image-url###?_ex=680:680"
+        alt=""
+      />
+      <span
+        class="ecm-deal-alcor-out-of-stock"
+        data-stock="###stock-flg###"
+      ></span>
+    </div>
+    <div class="ecm-alcor-body">
+      <p class="ecm-alcor-name clamp-2">###itemname###</p>
+      <p class="ecm-alcor-price">
+        <span class="ecm-alcor-price-num">###kakaku###</span>
+      </p>
+      <p class="ecm-deal-alcor-enddate">ポイントバック終了日：###deal-end-date###</p>
+
+    </div>
+  </a>
+  <div class="ecm-alcor-review ecm-deal-alcor-review">
+  <span>###review_star_avg###</span>
+  <span class="ecm-alcor-review-ave ml-4">###reviewave###</span>
+</div>
+ 
+</div>
+ </template>
+</div>
+"
+`;

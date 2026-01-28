@@ -1,0 +1,116 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'ecm/src/modules/floating-banner/default.html'
+import sliderDefaultHtml from 'ecm/src/modules/slider/floating-banner.html'
+import gridHtml from 'ecm/src/modules/floating-banner/grid.html'
+
+export const meta = {
+  title: 'フローティング・バナー（ボトム）',
+  description: 'バナーをページ下部にフローティング表示',
+  url: '/ecm/docs/ui/floating-banner',
+  tags: ['floating', 'banner'],
+}
+
+# フローティング・バナー（ボトム）
+
+バナーをページ下部にフローティング表示するモジュールです。PCぺージでの利用を想定しています。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='lg' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={sliderDefaultHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={sliderDefaultHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+- バナー画像の、横：縦サイズ比率は、3:1です
+- `ecm-floating-banner` に、`ecm-floating-banner-white` を追加するとベース色が白に変更できます。
+
+## 使い方
+
+### 表示開始位置の設定
+
+`aria-hidden="true"`を指定  
+`data-show-at`の値に表示開始させたい要素のid（#hogehoge）またはclass（.hogehoge）を指定する、または、`data-show-threshold`の値にページ上部からの距離の数値（px単位不要）を指定します。  
+※上記ソースコードは、`data-show-threshold`プロパティで実装
+
+<Space />
+
+<Note type='info'>
+  詳細設定については[フローティング](/ecm/docs/js/floating/)を参照
+</Note>
+
+### 画像枚数が少ない場合
+
+`data-slides-per-view="#"` と画像数を調整してください。`data-slides-per-view="#"` の `#` に設定されている数とイメージの数が同じ場合は、スライダーの「＜」と「＞」ボタンは非表示になり、スライダー表示にはなりません。  
+元の画像サイズをキープする場合は、`data-center-insufficient-slides="true"` を設定します。
+
+<Space />
+
+<Note type='info'>
+  詳細設定については[スライダー](/ecm/docs/ui/slider/)を参照
+</Note>
+
+### ベース色の変更
+
+`ecm-floating-banner` に、`ecm-floating-banner-white` を追加するとベース色が白に変更できます。
+
+## パターン
+
+### スライダーなし
+
+<Tabs keepMounted={false} defaultValue='lg' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={gridHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={gridHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+- バナー画像の、横：縦サイズ比率は、3:1です
+- `ecm-floating-banner` に、`ecm-floating-banner-white` を追加するとベース色が白に変更できます。
+
+### 画像1枚表示
+
+<Tabs keepMounted={false} defaultValue='lg' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={defaultHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={defaultHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+- 16:1（960px×60px）のバナー画像を1枚表示するパターンです。
+- `ecm-floating-banner` に、`ecm-floating-banner-white` を追加するとベース色が白に変更できます。

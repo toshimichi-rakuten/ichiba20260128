@@ -1,0 +1,67 @@
+<div class="ecm-du-slider-pc ecm-bookmark">
+  <div id="bookmarksWidget"></div>
+  <script
+    id="bookmarksWidgetTemplate"
+    type="text/template"
+  >
+    <div>
+      <div class="ecm-du-slider-header">
+        <h3 class="ecm-du-slider-header-title">お気に入り商品</h3>
+        <a
+          class="ecm-du-slider-header-link"
+          href="https://my.bookmark.rakuten.co.jp/item"
+        >
+          <span class="d-none md-d-block">お気に入り商品をすべて見る</span>
+          <span class="md-d-none">もっと見る</span>
+        </a>
+      </div>
+      <div id="bookmarksContainer">
+        <div
+          class="bookmarks-settings"
+          user-login="true"
+          item-name-max-length="100"
+          image-dimensions="280:280"
+          item-width="158"
+          max-items="10"
+          sid=""
+        >
+          <div class="bookmarks-settings-api"></div>
+        </div>
+
+        <div id="bookmarkItemTemplate">
+          <div class="ecm-du-slider-item">
+            <a class="ecm-du-slider-link" href="#HREF#">
+              <div class="ecm-du-slider-img-box">
+                <img
+                  class="ecm-du-slider-img"
+                  data-r-src="#IMG#"
+                  data-r-srcset="#IMGSET#"
+                  data-lazy-loading="#IMG#"
+                  src="https://r.r10s.jp/com/img/home/t.gif?resize=700:700"
+                  alt=""
+                />
+              </div>
+              <p class="ecm-du-slider-name">#TITLE#</p>
+              <p class="ecm-du-slider-price">#PRICE#円#TILDE#</p>
+            </a>
+          </div>
+        </div>
+        <div id="bookmarksSlideshow">
+          <div id="bookmarkSlideShowContainer" class="ecm-du-slider-container">
+            <div class="r-slideshow">
+                <div class="r-slideshow-body">
+                  <div class="r-slideshow-items ecm-du-slider-items" id="bookmarkItemsDisplay"></div>
+                </div>
+                <div id="bookmarkPrevButton" class="r-slideshow-scroll-button-prev ecm-du-slider-prev ecm-slider-prev d-flex">
+                  <i aria-hidden="true" class="ecm-icon-chevron-left"></i>
+                </div>
+                <div id="bookmarkNextButton" class="r-slideshow-scroll-button-next ecm-du-slider-next ecm-slider-next d-flex">
+                  <i aria-hidden="true" class="ecm-icon-chevron-right"></i>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </script>
+</div>

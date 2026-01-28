@@ -1,0 +1,54 @@
+import Html from 'src/components/Html'
+import Code from 'src/components/Code'
+import Note from 'src/components/Note'
+import Table, { ClassTable, AttributeTable } from 'src/components/Table'
+import { Tabs } from '@mantine/core'
+import Space from 'src/components/Space'
+import staticSP3columnPC5columnHtml from 'ecm/src/modules/ad/100057/default.html'
+import integrationSP3columnPC5columnHtml from 'ecm/src/modules/ad/100057/integration.html'
+
+export const meta = {
+  title: '原稿タイプID100057 商品',
+  description: '画像(比率1:1)＋商品名',
+  url: '/ecm/docs/ad/100057',
+  tags: ['商品', 'ad', '広告'],
+  finder_tags: [
+    'category_item',
+    'image_1x1',
+    'text_item_name',
+    'layout_sp_col3',
+    'layout_pc_col5',
+    'layout_pc_sp'
+  ],
+}
+
+# 原稿タイプID100057 商品
+画像(比率1:1)＋商品名  
+画像入稿サイズ：360×360px  
+
+<Space />
+★部分へアドプラッツからダウンロードした配信タグを貼り付けてください。
+
+## SP3カラム/PC5カラム
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html adHighlight={true} content={staticSP3columnPC5columnHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='lg'>
+    <Html adHighlight={true} device='lg' content={staticSP3columnPC5columnHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={integrationSP3columnPC5columnHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+

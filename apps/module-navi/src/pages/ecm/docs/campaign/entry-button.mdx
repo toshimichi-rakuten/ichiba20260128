@@ -1,0 +1,691 @@
+import Html from 'src/components/Html'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import spDefaultHtml from 'ecm/src/modules/entry-button/sp/default.html'
+import spCheckboxHtml from 'ecm/src/modules/entry-button/sp/checkbox.html'
+import spDefaultCheckedHtml from 'ecm/src/modules/entry-button/sp/default-checked.html'
+import spMatrixHtml from 'ecm/src/modules/entry-button/sp/matrix.html'
+import spCustomButtonHtml from 'ecm/src/modules/entry-button/sp/custom-button.html'
+import spCustomCheckboxHtml from 'ecm/src/modules/entry-button/sp/custom-checkbox.html'
+import spLinkedCodesHtml from 'ecm/src/modules/entry-button/sp/linked-codes.html'
+import spDynamicEkeyHtml from 'ecm/src/modules/entry-button/sp/dynamic-ekey.html'
+import pcDefaultHtml from 'ecm/src/modules/entry-button/pc/default.html'
+import pcCheckboxHtml from 'ecm/src/modules/entry-button/pc/checkbox.html'
+import { addBasePath } from 'src/utils'
+
+export const meta = {
+  title: 'エントリーボタン',
+  description: 'エントリーするためのボタン',
+  url: '/ecm/docs/campaign/entry-button',
+  tags: ['entry', 'campaign', 'button'],
+}
+
+# エントリーボタン
+
+エントリーキャンペーンに使用する、エントリーするためのボタンパーツです。
+
+<Space />
+
+投票ボタンや、別の API を呼び出すボタンとしても使用できます。  
+使用パターン詳細や、ソースコードチェックの方法は[詳細マニュアル](https://confluence.rakuten-it.com/confluence/pages/viewpage.action?pageId=3386152014)（閲覧は社内環境限定）をご確認ください。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='image' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='image'>イメージ</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='image'>
+    <Html device="lg" height={'400px'} content={`
+      <div class="d-flex justify-center items-center d-flex-col">
+        <h2 class="font-weight-bold">SP</h2>
+        <img src="${addBasePath('/_assets/docs/entry_button/images/cap_01.png')}"/>
+
+        <h2 class="font-weight-bold mt-32">PC</h2>
+        <img src="${addBasePath('/_assets/docs/entry_button/images/cap_02.png')}"/>
+      </div>
+    `}/>
+
+  </Tabs.Panel>
+</Tabs>
+
+## 使い方
+
+エントリーボタン用の javascript を追加の上、モジュールのソースコードをコピーし、キャンペーンコードを正しく記入して利用してください。  
+モジュールは大きく分けて、Basic と Advance の２種類です。  
+通常のエントリーボタンを使用する場合は、Basic を使用してください。  
+通常と異なる使い方をする場合は、Advance より使用シーンに合わせて使ってください。  
+選び方は、[詳細マニュアル](https://confluence.rakuten-it.com/confluence/pages/viewpage.action?pageId=3386152014) （閲覧は社内環境限定）をご確認ください。 ※特に Advance を使用する際
+
+<Space />
+
+＜種類＞
+
+<Space />
+
+**Basic**
+
+- Default（SP）
+- Default（PC）
+- With Checkbox（SP）
+- With Checkbox（PC）
+- Default Checked Checkbox
+
+**Advance**
+
+- Matrix Pattern
+- With Custom Button
+- Custom Checkbox
+- Linked Campaign Codes
+- Dynamic Ekey
+
+## エントリーボタン用 javascript
+
+以下の javascript をアウトラインファイル下部の=== ページJavaScript ===部分へ追記して読み込ませてください。
+
+<Space />
+
+<Code
+  content={`
+<script defer="defer" src="https://r.r10s.jp/com/js/c/common/entry_button/1.1/entry_button-1.1.0.min.js"></script>
+`}
+/>
+
+## 注意事項
+
+- コピーしたソースコードの ★★★ 部分を適宜編集してください。
+
+  - 市場の企画にはキャンペーンコード冒頭に、/ic/ が付いているので、忘れない様ご注意ください。  
+    　例：
+    　キャンペーンページの URL が「`https://oubo.rakuten.co.jp/apply/ic/card20180505point5`」の場合、 ソースコードに記載するキャンペーンコードは、「`/ic/card20180505point5`」。
+
+※キャンペーンコードの冒頭の / は、記載有無を問わずエントリーは機能します。
+
+- 注意文言については、下記ルールを参照の上編集してください。（閲覧は社内環境限定）
+  - [メールパーミッション取得文言の UI ルール](https://confluence.rakuten-it.com/confluence/pages/viewpage.action?pageId=1779542474)
+  - [★RUP★ リワード系企画表記統一 Project - Reward campaign Unify notation Project](https://confluence.rakuten-it.com/confluence/pages/viewpage.action?pageId=3153249132)
+
+※表示チェックの観点ではないため、表示管理責任者からの指摘はしませんが、必ず各担当者でのご確認お願いいたします。
+
+## モジュール
+
+### Basic
+
+#### Default (SP)
+
+<Tabs keepMounted={false} defaultValue='image' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='image'>イメージ</Tabs.Tab>
+    <Tabs.Tab value='sp'>SP コード</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='image'>
+    <Html device="lg" height={'400px'} content={`
+      <div class="d-flex justify-center items-center d-flex-col">
+        <h2 class="font-weight-bold">SP</h2>
+        <img src="${addBasePath('/_assets/docs/entry_button/images/cap_01.png')}"/>
+
+        <h2 class="font-weight-bold mt-32">PC</h2>
+        <img src="${addBasePath('/_assets/docs/entry_button/images/cap_02.png')}"/>
+      </div>
+    `}/>
+
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='lg'>
+    <Code content={pcDefaultHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='sp'>
+    <Code content={spDefaultHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+※エントリーボタン内のアイコンを非表示にしたい場合は、`"withIcon": false`を追記します  
+※[「オブジェクトのパラメータの設定」](#object-のパラメータの設定)の設定により、テキストをカスタマイズすることができます。
+
+#### With Checkbox
+
+<Tabs keepMounted={false} defaultValue='image' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='image'>イメージ</Tabs.Tab>
+    <Tabs.Tab value='sp'>SP コード</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='image'>
+    <Html device="lg" height={'400px'} content={`
+      <div class="d-flex justify-center items-center d-flex-col">
+        <h2 class="font-weight-bold">SP</h2>
+        <img src="${addBasePath('/_assets/docs/entry_button/images/cap_03.png')}"/>
+
+        <h2 class="font-weight-bold mt-32">PC</h2>
+        <img src="${addBasePath('/_assets/docs/entry_button/images/cap_04.png')}"/>
+      </div>
+    `}/>
+
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='sp'>
+    <Code content={spCheckboxHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='lg'>
+    <Code content={pcCheckboxHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+#### Default Checked Checkbox
+
+<Tabs keepMounted={false} defaultValue='image' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='image'>イメージ</Tabs.Tab>
+    <Tabs.Tab value='sp'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='image'>
+    <Html device="lg" height={'400px'} content={`
+      <div class="d-flex justify-center items-center d-flex-col">
+        <img src="${addBasePath('/_assets/docs/entry_button/images/cap_08.png')}"/>
+      </div>
+    `}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='sp'>
+    <Code content={spDefaultCheckedHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+※エントリーにチェックが必須の場合は `"checkboxRequired": true` を追加します
+
+### Advance
+
+#### Matrix Pattern
+
+一つのキャンペーン（campaignCode）に対して複数のボタンを表示させる場合に使用してください。
+
+<Space />
+
+（例）投票ボタンとして使用する場合：[モジュールの説明・選び方＞＞ Advance：モジュール種類](https://confluence.rakuten-it.com/confluence/pages/viewpage.action?pageId=3386152014)を参照  
+こちらのソースコードは、サンプルです。  
+実際に利用する場合は、見た目についてなど、ページ側でカスタムが必要です。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='image' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='image'>イメージ</Tabs.Tab>
+    <Tabs.Tab value='sp'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='image'>
+    <Html device="lg" height={'400px'} content={`
+      <div class="d-flex justify-center items-center d-flex-col">
+        <img src="${addBasePath('/_assets/docs/entry_button/images/cap_05.png')}"/>
+      </div>
+    `}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='sp'>
+    <Code content={spMatrixHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+※`ekey` は投票ボタンとして利用する場合のみ、設定する必要があります。  
+※`ekey` を使用せずに複数のキャンペーンにエントリーすることも可能です。
+
+#### With Custom Button
+
+ボタンをカスタムしたい場合、画像に置き換えて使用できます。  
+こちらを使用する際は `data-entry-button` の記載が必須となります。  
+こちらのソースコードは、サンプルです。  
+実際に利用する場合は、ボタンを適切に表示/非表示にするなど、ページ側でカスタムが必要です。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Code content={spCustomButtonHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+※これらのクラス名 `fake-button`、`fake-button__XXXX` は例です。
+※参照＞[クラス名ステータス](<#classes-advance>)
+
+#### Custom Checkbox
+
+メルマガチェックボックス周辺の文字等をカスタムしたい場合使用してください。  
+こちらを使用する際は `data-entry-checkbox` の記載が必須となります。  
+こちらのソースコードは、サンプルです。  
+実際に利用する場合は、見た目についてなど、ページ側でコーディングが必要です。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='image' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='image'>イメージ</Tabs.Tab>
+    <Tabs.Tab value='sp'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='image'>
+    <Html device="lg" height={'400px'} content={`
+      <div class="d-flex justify-center items-center d-flex-col">
+        <img src="${addBasePath('/_assets/docs/entry_button/images/cap_07.png')}"/>
+      </div>
+    `}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='sp'>
+    <Code content={spCustomCheckboxHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+※必要に応じて `<input required>` や `<input checked>` などの属性を追加・削除することができます。  
+※[Dynamic Ekey](#dynamic-ekey) は、Custom Checkbox でも使用可能です。その際 `<input value>` は不要となります。  
+※`<input>` は 1 つしか使えません。
+
+#### Linked Campaign Codes
+
+参照用キャンペーンコード（`linkedCodes`）のどれかに ユーザーがエントリー済みの場合、実施中のキャンペーンコード（`campaignCode`）のエントリー状況に関わらず、ボタンのステータスはエントリー済みとなります。  
+「過去の同じ企画にエントリーしたことのあるユーザーは、今回のキャンペーンでエントリーできない」という様な設定をする際に使用してください。
+
+<Space />
+
+ソースコードをコピーし、 ★★★ 部分を、下記内容に沿って適宜編集してください。
+
+<Space />
+
+▽ 実施中キャンペーンコード
+
+- エントリーさせたいキャンペーンコードを入れてください
+
+▽ 参照用キャンペーンコード
+
+- ユーザーが既にエントリーしているかどうかのチェックの際に使います。
+- エントリー済みかどうかを確認したいキャンペーンコードを入れてください。
+- 設定可能なキャンペーンコードは 20 個までです。21 個以上設定した場合、冒頭から 20 個のみが使われます。
+- 半角カンマ「,」で区切って入力してください。
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Code content={spLinkedCodesHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+#### Dynamic Ekey
+
+チェックされてない状態の ekey コードが必要な場合に使用してください。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Code content={spDynamicEkeyHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+※Custom Checkbox でも使用可能です。  
+※`"checkedEkey":`、`"uncheckedEkey":` については、[「Object のパラメータの設定」](#object-のパラメータの設定)を参照
+
+## 詳細設定
+
+### HTML 属性
+
+<table class='mdx-table'>
+  <thead class='mdx-table-header'>
+    <tr>
+      <th style={{ minWidth: '240px', width: '240px' }}>アトリビュート</th>
+      <th style={{ minWidth: '340px', width: '340px' }}>値</th>
+      <th style={{ width: '100%' }}>メモ</th>
+    </tr>
+  </thead>
+  <tbody class='mdx-table-body'>
+    <tr>
+      <td class='mdx-mono'>`class`</td>
+      <td class='mdx-mono'>"rcEntryButton"</td>
+      <td>イニシエータクラスの JS が、利用可能な全ボタンを検索します</td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>`layout`</td>
+      <td class='mdx-mono'>
+        <div>string</div>
+        <div style={{ color: '#8f8f8f' }}>デフォルト: ''</div>
+      </td>
+      <td>レイアウトのスタイルを変更します Options: 'pc' | ''</td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>`class`</td>
+      <td class='mdx-mono'>
+        <div>string</div>
+        <div style={{ color: '#8f8f8f' }}>デフォルト: `{}`</div>
+      </td>
+      <td>Object の設定はエントリーボタンに依って異なります</td>
+    </tr>
+  </tbody>
+</table>
+
+### Object のパラメータの設定
+
+<table class='mdx-table'>
+  <thead class='mdx-table-header'>
+    <tr>
+      <th style={{ minWidth: '240px', width: '240px' }}>キー（プロパティ名）</th>
+      <th style={{ minWidth: '340px', width: '340px' }}>値</th>
+      <th style={{ minWidth: '100px', width: '100px' }} class='mdx-text-center'>
+        必須
+      </th>
+      <th style={{ width: '100%' }}>メモ</th>
+    </tr>
+  </thead>
+  <tbody class='mdx-table-body'>
+    <tr>
+      <td class='mdx-mono'>`campaignCode`</td>
+      <td class='mdx-mono'>string</td>
+      <td class='mdx-mono mdx-text-center'>○</td>
+      <td>キャンペーンコード</td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>`linkedCodes`</td>
+      <td class='mdx-mono'>string</td>
+      <td class='mdx-mono mdx-text-center'>×</td>
+      <td>
+        エントリーに applied をされた際は実際のキャンペーンコードの適用ステータスに関係なく、ボタンのステータスは
+        applied が設定されます。
+      </td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>`ekey`</td>
+      <td class='mdx-mono'>string</td>
+      <td class='mdx-mono mdx-text-center'>×</td>
+      <td>ekey code</td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>`baseLink`</td>
+      <td class='mdx-mono'>
+        <div>string</div>
+        <div style={{ color: '#8f8f8f' }}>デフォルト: "https://oubo.rakuten.co.jp/apply"</div>
+      </td>
+      <td class='mdx-mono mdx-text-center'>×</td>
+      <td>API に失敗した場合、ボタンは以下の URL にリダイレクトされる。 `baseLink`+ `campaignCode`</td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>`withIcon`</td>
+      <td class='mdx-mono'>
+        <div>Boolean</div>
+        <div style={{ color: '#8f8f8f' }}>デフォルト: TRUE</div>
+      </td>
+      <td class='mdx-mono mdx-text-center'>×</td>
+      <td>`entryText`の横に DefaultSVG アイコンを表示する。</td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>`beforeText`</td>
+      <td class='mdx-mono'>
+        <div>string</div>
+        <div style={{ color: '#8f8f8f' }}>デフォルト: エントリー開始前</div>
+      </td>
+      <td class='mdx-mono mdx-text-center'>×</td>
+      <td>ステータスが`before_start`の時に表示されるテキスト</td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>`entryText`</td>
+      <td class='mdx-mono'>
+        <div>string</div>
+        <div style={{ color: '#8f8f8f' }}>デフォルト: エントリーはこちら</div>
+      </td>
+      <td class='mdx-mono mdx-text-center'>×</td>
+      <td>ステータスが`ongoing`の時に表示されるテキスト</td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>`appliedText`</td>
+      <td class='mdx-mono'>
+        <div>string</div>
+        <div style={{ color: '#8f8f8f' }}>デフォルト: エントリーが完了しました</div>
+      </td>
+      <td class='mdx-mono mdx-text-center'>×</td>
+      <td>ユーザーがボタン押下しエントリーが成功した時に表示されるテキスト</td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>`selectedText`</td>
+      <td class='mdx-mono'>
+        <div>string</div>
+        <div style={{ color: '#8f8f8f' }}>デフォルト: エントリー済です</div>
+      </td>
+      <td class='mdx-mono mdx-text-center'>×</td>
+      <td>同じコードのボタンが複数ある場合に、ユーザーがボタンの ekey を使用して apply した後に表示されるテキスト</td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>`enteredText`</td>
+      <td class='mdx-mono'>
+        <div>string</div>
+        <div style={{ color: '#8f8f8f' }}>デフォルト: エントリー済です</div>
+      </td>
+      <td class='mdx-mono mdx-text-center'>×</td>
+      <td>ユーザーが apply している状態で、ステータスが`ongoing`、`closed`の時に表示されるテキスト</td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>`closedText`</td>
+      <td class='mdx-mono'>
+        <div>string</div>
+        <div style={{ color: '#8f8f8f' }}>デフォルト: エントリー期間は終了しました</div>
+      </td>
+      <td class='mdx-mono mdx-text-center'>×</td>
+      <td>ユーザーが apply していない状態で、ステータスが closed の時に表示されるテキスト</td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>`loadingText`</td>
+      <td class='mdx-mono'>string</td>
+      <td class='mdx-mono mdx-text-center'>×</td>
+      <td>ユーザーがボタン押下し、ローディング状態が表示された後に表示されるテキスト（スピナーの横に表示されます）</td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>`checkboxLabel`</td>
+      <td class='mdx-mono'>string</td>
+      <td class='mdx-mono mdx-text-center'>×</td>
+      <td>チェックボックスエリアのラベル</td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>`checkboxText`</td>
+      <td class='mdx-mono'>HTML</td>
+      <td class='mdx-mono mdx-text-center'>×</td>
+      <td>チェックボックスのラベルの下に表示されるテキストと html</td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>`defaultChecked`</td>
+      <td class='mdx-mono'>
+        <div>Boolean</div>
+        <div style={{ color: '#8f8f8f' }}>デフォルト: FALSE</div>
+      </td>
+      <td class='mdx-mono mdx-text-center'>×</td>
+      <td>
+        生成されたチェックボックスはデフォルトでチェックされているように設定されます。（checkboxLabel と checkboxText
+        が必要です。）
+      </td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>`checkboxRequired`</td>
+      <td class='mdx-mono'>
+        <div>Boolean</div>
+        <div style={{ color: '#8f8f8f' }}>デフォルト: FALSE</div>
+      </td>
+      <td class='mdx-mono mdx-text-center'>×</td>
+      <td>エントリーにチェックが必須の場合</td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>`checkedEkey`</td>
+      <td class='mdx-mono'>String</td>
+      <td class='mdx-mono mdx-text-center'>×</td>
+      <td>チェック時の ekey コード（該当する場合）</td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>`uncheckedEkey`</td>
+      <td class='mdx-mono'>String</td>
+      <td class='mdx-mono mdx-text-center'>×</td>
+      <td>チェックされていない時の ekey コード</td>
+    </tr>
+  </tbody>
+</table>
+
+### ステータス
+
+js のアクションは、API のレスポンスに拠ります。以下の各 API のステータスを参照してください。
+
+#### Check API
+
+すべての HTTP 関連のエラーは、ボタンが ongoing ステータスとして表示されます。
+
+<Space />
+
+<table class='mdx-table'>
+  <thead class='mdx-table-header'>
+    <tr>
+      <th style={{ minWidth: '240px', width: '240px' }}>ステータス</th>
+      <th style={{ width: '50%' }}>メモ</th>
+      <th style={{ width: '50%' }}>アクション</th>
+    </tr>
+  </thead>
+  <tbody class='mdx-table-body'>
+    <tr>
+      <td class='mdx-mono'>`error`</td>
+      <td class='mdx-mono'>エラー</td>
+      <td>ボタンには、Default のテキストとスタイル（entryText）が表示される。</td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>`before_start`</td>
+      <td class='mdx-mono'>キャンペーン開始前</td>
+      <td>ボタンには、キャンペーン前のテキストとスタイル（before Text）が表示される。</td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>`ongoing`</td>
+      <td class='mdx-mono'>キャンペーン期間中</td>
+      <td>ボタンには、Default のテキストとスタイル（entryText）が表示される。</td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>`closed: not applied `</td>
+      <td class='mdx-mono'>キャンペーン終了後（ユーザーが apply していない）</td>
+      <td>ボタンには、closedText が表示される。</td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>`closed: applied`</td>
+      <td class='mdx-mono'>キャンペーン終了後 (check API が applied: true を返している)</td>
+      <td>ボタンには、entered のテキストとスタイルが表示される。</td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>`campaign_not_found`</td>
+      <td class='mdx-mono'>キャンペーン情報が見つからない状態（エラーではない） </td>
+      <td>ボタンには、`campaign_not_found`と表示され、無効になっている。</td>
+    </tr>
+  </tbody>
+</table>
+
+#### apply API
+
+すべての HTTP 関連のエラー（4xx、5xx）は、レスポンスの success が false の場合、ユーザーをキャンペーンコードページにリダイレクトします。
+
+<Space />
+
+<table class='mdx-table'>
+  <thead class='mdx-table-header'>
+    <tr>
+      <th style={{ minWidth: '240px', width: '240px' }}>ステータス</th>
+      <th style={{ width: '50%' }}>メモ</th>
+      <th style={{ width: '50%' }}>アクション</th>
+    </tr>
+  </thead>
+  <tbody class='mdx-table-body'>
+    <tr>
+      <td class='mdx-mono'>`error`</td>
+      <td class='mdx-mono'>いずれかのエラーが発生している状態(レスポンスの success が false)</td>
+      <td>oubo のキャンペーンページへリダイレクトする</td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>`applied`</td>
+      <td class='mdx-mono'>レスポンスの success が true</td>
+      <td>ボタンが appliedText を表示</td>
+    </tr>
+  </tbody>
+</table>
+
+### Classes (advance)
+
+With Custom Button を使用している場合は、ステータスに応じてこれらのクラスが適用されます。  
+ボタンの表示のステータスの違いはクラスのみに依存しており、正しいボタンを表示するためには CSS が必要です  
+(setting style="display:none" は正しく機能しない場合があります)。
+
+<Space />
+
+<table class='mdx-table'>
+  <thead class='mdx-table-header'>
+    <tr>
+      <th style={{ minWidth: '320px', width: '320px' }}>クラス</th>
+      <th style={{ width: '100%' }}>メモ</th>
+    </tr>
+  </thead>
+  <tbody class='mdx-table-body'>
+    <tr>
+      <td class='mdx-mono'>`rcEntryButton`</td>
+      <td class='mdx-mono'>ベースクラス （status class はこのセレクタに追加されます）</td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>`rcEntryButton-button`</td>
+      <td class='mdx-mono'>
+        シンプルなボタンとそれに関連する挙動のための reserved class （外部の CSS によって変更されるべきではない）
+      </td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>`rcEntryButton-status--before`</td>
+      <td class='mdx-mono'>EntryCheck API が'before_start'のステータスを返す時追加される。</td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>`rcEntryButton-status--loading`</td>
+      <td class='mdx-mono'>ボタンを押下するとこの class が追加される。</td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>`rcEntryButton-status--applied`</td>
+      <td class='mdx-mono'>ボタン押下後成功すると、この class が追加される。</td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>`rcEntryButton-status--selected`</td>
+      <td class='mdx-mono'>
+        同じコードのボタンが複数あり、ekey が指定されている場合、この class は localStorage の ekey
+        に対応するボタンに追加される。
+      </td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>`rcEntryButton-status--entered`</td>
+      <td class='mdx-mono'>
+        EntryCheck API が`applied: true`を返した時。 同じコードの別のボタンが適用されている場合も同様。
+      </td>
+    </tr>
+    <tr>
+      <td class='mdx-mono'>`rcEntryButton-status--notfound`</td>
+      <td class='mdx-mono'>EntryCheck API が'campaign_not_found'のステータスを返す時追加される。</td>
+    </tr>
+  </tbody>
+</table>

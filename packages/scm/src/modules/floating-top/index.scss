@@ -1,0 +1,13 @@
+@import 'ecm/src/_scss/variables';
+@import 'ecm/src/_scss/mixins';
+
+.scm-floating-top {
+  top: unset !important;
+  right: $space-16;
+  bottom: $space-16;
+
+  @include screen('md', 'up') {
+    right: $space-32;
+    bottom: $space-32;
+  }
+}

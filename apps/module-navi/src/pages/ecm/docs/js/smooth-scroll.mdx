@@ -1,0 +1,137 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+
+export const meta = {
+  title: 'スムーズスクロール',
+  description: 'ページ内の要素に"スムーズに"スクロールする',
+  url: '/ecm/docs/js/smooth-scroll',
+  tags: ['smooth', 'scroll'],
+}
+
+# スムーズスクロール
+
+ページの要素にスクロールさせるモジュールです。ページトップにスクロールさせたい場合は [上に戻る](/ecm/docs/ui/scroll-to-top) を使用してください。
+
+## 主な機能・特徴
+
+- ページ内アンカーをジャンプせずにアニメーションをつけてスクロールします。
+- フローティングナビがある場合など、オフセットを設定してアンカー位置をずらせます。
+
+## 使い方
+
+### 固定スクロール位置
+
+<Code content={`
+<a href="#campaign-detail" data-module-name="ecm-smooth-scroll">キャンペーン詳細</a>
+....
+<div id="campaign-detail">
+</div>
+`}/>
+
+### スクロール位置を調整
+
+<Code content={`
+<nav data-module-name="ecm-floating-navi">...</nav> // blocking view by 100px height
+<a href="#campaign-detail" data-offset="100" data-module-name="ecm-smooth-scroll">キャンペーン詳細</a> // offset scroll by 100px
+....
+<div id="campaign-detail">
+</div>
+`}/>
+
+### スクロール位置を自分の高さで調整
+
+<Code content={`
+<nav data-module-name="ecm-floating-navi">
+  // 自分が上部をブロックしているので、自分の高さでずらせます
+  <a href="#section1" data-offset="self" data-module-name="ecm-smooth-scroll">section1へ</a> // offset scroll by self height
+</nav>
+....
+// set detect-offset to improve detection
+<div id="section1" data-detect-offset="auto">
+</div>
+`}/>
+
+## 注意事項
+
+- スクロール先の要素が非表示（`display:none;`）の場合、スクロールは動作しません。スクロール先の要素、およびその親・祖先の要素は必ず表示されている必要があります。
+
+## アトリビュート一覧
+
+<Tabs keepMounted={false} defaultValue='target' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="anchor">アンカーアトリビュート</Tabs.Tab>
+    <Tabs.Tab value="target">ターゲットアトリビュート</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='anchor'>
+    <table class="mdx-table">
+      <thead class="mdx-table-header">
+        <tr>
+          <th style={{minWidth: '240px', width: '240px'}}>アトリビュート</th>
+          <th style={{minWidth: '240px', width: '240px'}}>値</th>
+          <th style={{width: '100%'}}>メモ</th>
+        </tr>
+      </thead>
+      <tbody class="mdx-table-body">
+        <tr>
+          <td class="mdx-mono">`data-module-name`</td>
+          <td class="mdx-mono">"ecm-smooth-scroll"</td>
+          <td>モジュール名</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`href`</td>
+          <td class="mdx-mono">string</td>
+          <td>スクロール先の要素のID（`#hogehoge`）</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`data-offset`</td>
+          <td class="mdx-mono">
+            <div>
+              'self' | number
+            </div>
+            <div style={{ color: "#8f8f8f"}}>
+              デフォルト: 0（単位はpx）
+            </div>
+          </td>
+          <td>オフセット。'self'の場合はい、自分の高さでセットされます。</td>
+        </tr>
+      </tbody>
+    </table>
+  </Tabs.Panel>
+
+    <Tabs.Panel value='target'>
+    <table class="mdx-table">
+      <thead class="mdx-table-header">
+        <tr>
+          <th style={{minWidth: '240px', width: '240px'}}>アトリビュート</th>
+          <th style={{minWidth: '240px', width: '240px'}}>値</th>
+          <th style={{width: '100%'}}>メモ</th>
+        </tr>
+      </thead>
+      <tbody class="mdx-table-body">
+        <tr>
+          <td class="mdx-mono">`id`</td>
+          <td class="mdx-mono">string</td>
+          <td>要素のID（`#hogehoge`）</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`data-detect-offset`</td>
+          <td class="mdx-mono">
+            <div>
+              'auto' | number
+            </div>
+            <div style={{ color: "#8f8f8f"}}>
+              デフォルト: 0（単位はpx）
+            </div>
+          </td>
+          <td>オフセット。'auto'の場合はアンカーの高さの３倍にセットされます。</td>
+        </tr>
+      </tbody>
+    </table>
+  </Tabs.Panel>
+</Tabs>
+
+

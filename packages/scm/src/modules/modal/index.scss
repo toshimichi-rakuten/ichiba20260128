@@ -1,0 +1,134 @@
+@import 'ecm/src/_scss/variables';
+@import 'ecm/src/_scss/mixins';
+
+$transition-ms: 280ms;
+$modal-max-width-pc: 792px;
+$modal-max-height-pc: 527px;
+$modal-padding-y-pc: $space-24;
+
+.scm-modal-content-wrapper {
+  box-sizing: border-box;
+
+  // The value obtained by subtracting 8.53vw(32px) margins on the left and right.
+  width: 91.47vw;
+
+  @include screen('md', 'up') {
+    max-width: $modal-max-width-pc;
+    width: 100%;
+  }
+}
+
+.scm-modal-close {
+  align-items: center;
+  background-color: $color-white;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  z-index: 1;
+
+  .ecm-icon-close {
+    color: $color-gray-2;
+  }
+
+  &.scm-modal-close-fixed {
+    border-radius: 50%;
+    box-shadow: 0 1.25px 6px rgb(0 0 0 / 25%);
+    height: 28px;
+    position: absolute;
+    right: -10px;
+    top: 36px;
+    width: 28px;
+  }
+
+  &.scm-modal-close-static {
+    @include vw-text-sm;
+
+    color: $color-gray-1;
+    padding: 15px 0;
+    width: 100%;
+
+    .ecm-icon-close {
+      margin-right: $space-4;
+    }
+
+    @include screen('md', 'up') {
+      @include text-base;
+
+      font-weight: bold;
+      height: 40px;
+      line-height: 1;
+      padding: 0;
+
+      @media (hover: hover) {
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+
+.scm-modal-title {
+  @include vw-text-xl;
+
+  color: $color-gray-1;
+  font-weight: bold;
+  flex-shrink: 0;
+  text-align: center;
+
+  @include screen('md', 'up') {
+    @include text-2xl;
+  }
+}
+
+.scm-modal-trigger-wrapper {
+  bottom: 64px;
+  right: 16px;
+
+  @include screen('md', 'up') {
+    bottom: 112px;
+    right: 32px;
+  }
+}
+
+.scm-modal-trigger {
+  background-color: $color-white;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+
+  @include screen('md', 'up') {
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &.scm-modal-trigger-static {
+    @include vw-text-base;
+
+    align-items: center;
+    color: $color-gray-1;
+    display: flex;
+    justify-content: center;
+
+    @include screen('md', 'up') {
+      @include text-base;
+    }
+  }
+
+  &.scm-modal-trigger-fixed {
+    display: block;
+
+    img {
+      width: 90px;
+
+      @include screen('md', 'up') {
+        width: 136px;
+      }
+    }
+  }
+}

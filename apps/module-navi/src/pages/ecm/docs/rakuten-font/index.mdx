@@ -1,0 +1,58 @@
+import Html from 'src/components/Html'
+import Space from 'src/components/Space'
+import Code from 'src/components/Code'
+import Note from 'src/components/Note'
+import rakutenCondensedHtml from 'rakuten-sans/src/rakuten_condensed.html'
+import rakutenRoundedHtml from 'rakuten-sans/src/rakuten_rounded.html'
+import rakutenSerifHtml from 'rakuten-sans/src/rakuten_serif.html'
+import rakutenSerifItalicHtml from 'rakuten-sans/src/rakuten_serif_italic.html'
+import rakutenSansJp2Html from 'rakuten-sans/src/rakuten_sans_jp2.html'
+import rakutenSansJp2TnHtml from 'rakuten-sans/src/rakuten_sans_jp2tn.html'
+
+export const meta = {
+  title: 'Rakuten Fontについて',
+  description: '楽天グールプフォント',
+  url: '/ecm/docs/rakuten-font',
+  tags: ['font', 'フォント']
+}
+
+# Rakuten Fontについて
+
+[Rakuten Font](https://rex.rakuten.design/brand/typefaces/rakuten-font/)をページ内で利用できるようサポートしています。
+<Space />
+スタイルには大きく２種類Roman and CyrillicとJapaneseがあり、 Roman (英語などのラテン文字) および Cyrillic (ロシア語などのキリル文字) については、バリアブルフォント機能をご利用いただけます。この機能により、フォントサイズの幅を自由に調整し、より柔軟なデザイン表現が可能になります。
+<Space />
+バリアブルフォント機能の詳細については、[ユーザーマニュアル（閲覧は社内環境限定）](https://rak.app.box.com/s/yqwump1pmrm9uy8znfjbpunii0sq0d3k/file/1919126498205) をご参照ください。
+
+## 使い方
+
+Rakuten Fontを利用する方法は以下の２パターンあります。
+
+- **デフォルトサポート**: Rakuten Fontの基本的なスタイルは、20250217リリースにて予めアウトラインファイルにセットされているため 追加のCSS設定なしでご利用いただけます。
+
+- **オプショナルスタイル**: デフォルトでサポートされていないスタイルをご利用の場合は、別途CSSを追加していただくことで対応可能です。
+
+## スタイルパターン
+
+### デフォルトサポート
+
+- Rakuten Sans JP2（font-weight:400&700のみ）
+
+### オプショナルスタイル
+
+- Rakuten Condensed
+- Rakuten Rounded
+- Rakuten Serif
+- Rakuten Sans JP2（font-weight:400&700以外）
+- Rakuten Sans JP2TN
+
+<Note>
+各フォントのデザインについては[こちら（閲覧は社内環境限定）](https://rak.app.box.com/s/yqwump1pmrm9uy8znfjbpunii0sq0d3k/file/1919126498205)からご確認お願いします。
+</Note>
+
+## 注意事項
+
+- 特定のウェイトのパターンしか読み込んでいない状態で、CSSでfont-weightの数値を変更して他ウェイトを表現することも可能ですが、 フォントの本来の美しさや意図したデザインは実現されません。
+  そのため、必要なウェイトを含むフォントファイルをすべて読み込むことを推奨します。
+
+- Rakuten Fontのデフォルトサポートを使用しない場合は、アウトラインファイル内からデフォルトサポートのCSSの記述を 削除しても問題ありません。

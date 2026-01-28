@@ -1,0 +1,24 @@
+@import 'ecm/src/_scss/variables';
+@import 'ecm/src/_scss/mixins';
+
+.scm-scroll-to-top {
+  border: none;
+  box-shadow: 0 1.25px 6px rgb(0 0 0 / 25%);
+  cursor: pointer;
+  padding: 0;
+
+  @include screen('md', 'up') {
+    height: $space-48;
+    width: $space-48;
+  }
+
+  .ecm-icon-chevron-up {
+    @include text-xl;
+
+    color: $color-gray-3;
+
+    @include screen('md', 'up') {
+      @include text-4xl;
+    }
+  }
+}

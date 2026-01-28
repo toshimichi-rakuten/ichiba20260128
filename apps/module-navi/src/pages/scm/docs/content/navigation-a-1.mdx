@@ -1,0 +1,49 @@
+
+import Demo from 'src/components/Demo'
+import Code from 'src/components/Code'
+import Html from 'src/components/Html'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'scm/src/modules/content-card/default.html'
+import soloHtml from 'scm/src/modules/content-card/default-solo.html'
+import integrationHtml from 'scm/src/modules/content-card/default-integration.html'
+
+export const meta = {
+  title: '下層導線 A-1 通常',
+  description: '画像(比率1:1)＋メインカテゴリ名＋説明文(省略可)',
+  url: '/scm/docs/content/navigation-a-1',
+  tags: ['navigation'],
+}
+
+# 下層導線 A-1 通常
+
+画像(比率1:1)＋メインカテゴリ名＋説明文(省略可)
+adplatsのコードで実装する場合は、 `data-module-name="ecm-auto-parameter"` に `data-dynamic="true"` の追加が必要です。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='demo' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='demo'>デモ</Tabs.Tab>
+    <Tabs.Tab value='code-adplats'>コード（adplats）</Tabs.Tab>
+    <Tabs.Tab value='code-beta'>コード（ベタ）</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='demo'>
+    <Html scm={true} content={soloHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code-adplats'>
+    <Code content={integrationHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code-beta'>
+    <Code content={soloHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## バリエーション一覧
+
+<Demo scm={true} content={defaultHtml} breakpoints={['sp', 'md', 'lg']} />
+
+

@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: module-navi-GIT_BRANCH_NAME
+  name: module-navi-GIT_BRANCH_NAME
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: module-navi-GIT_BRANCH_NAME
+  template:
+    metadata:
+      labels:
+        app: module-navi-GIT_BRANCH_NAME
+    spec:
+      containers:
+      - name: module-navi-GIT_BRANCH_NAME
+        image: 'registry-jpe1.r-local.net/cwd-sidekick/module-navi:IMAGE_TAG'
+        ports:
+        - containerPort: 8080
+        securityContext:
+            runAsUser: 999
+        resources:
+          limits:
+            memory: 100Mi
+            cpu: 100m
+          requests:
+            memory: 50Mi
+            cpu: 50m

@@ -1,0 +1,568 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'ecm/src/utilities/grid/default.html'
+import sample1Html from 'ecm/src/utilities/grid/sample1.html'
+import sample2Html from 'ecm/src/utilities/grid/sample2.html'
+
+export const meta = {
+  title: 'グリッドレイアウト',
+  description: 'グリッドレイアウトは、カラム配置でレイアウトできる',
+  url: '/scm/docs/css/grid',
+  tags: ['グリッド', 'grid', 'd-grid', 'layout'],
+}
+
+# グリッドレイアウト
+
+グリッドレイアウトは、カラム配置でレイアウトできるモジュールです。使い方の基本は [CSSユーティリティクラス](/ecm/docs/css/) と同様です。
+
+## 主な機能・特徴
+
+- 12カラムベースのレスポンシブグリッドシステムです。
+- PC用のクラス（接頭辞 `md-`）を使用することで、1つのソースコードでPCとSPでレイアウトを変更することができます。
+- 各グリッドアイテムは等しい幅と高さを持つことになります。
+
+## 使い方
+
+各行のカラム数と、各グリッドアイテム間（行下/列間）のスペースをクラス名で指定します。  
+カラムで並べる要素の外側（親）要素に、以下の各クラスを設定します。
+
+<Space />
+
+> `d-grid`：グリッドレイアウトを適用  
+> `d-grid-col-★`：★カラムで表示（★＝`1～12` の整数）  
+> `d-grid-gap-☆`：要素の間、下の余白が☆pxになる（☆＝`4～80` の `4` の倍数）
+
+<Space />
+
+例）3カラム、要素の余白（下、間）16px
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html scm={true} content={defaultHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html scm={true} device='lg' content={defaultHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={defaultHtml} />
+  </Tabs.Panel>
+</Tabs>
+
+### デバイスごとに指定したい場合
+
+デバイスごとにレイアウトを表示分けする場合は、[CSSユーティリティクラス](/ecm/docs/css/)と同様、PC用に接頭辞を付けたクラス名を追加します。  
+以下の各クラスを設定します。（接頭辞が無いものはSP/PC反映、接頭辞があるものでPC用に上書き反映されます。）
+
+<Space />
+
+> `d-grid`：グリッドレイアウトを適用  
+> `d-grid-col-★`：★カラムで表示（★＝`1～12` の整数）  
+> `d-grid-gap-☆`：要素の間・下の余白が☆pxになる（☆＝`4～80` の `4` の倍数）  
+> `md-d-grid-col-●`：PC幅のときは●カラムで表示（●＝`1～12` の整数）  
+> `md-d-grid-gap-○`：PC幅のときは要素の間・下の余白が○pxになる（○＝`4～80` の `4` の倍数）
+
+<Space />
+
+例）SP：3カラム、要素の余白（下・間）16px、PC：5カラム、要素の余白（下・間）24px
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html scm={true} content={sample1Html} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html scm={true} device='lg' content={sample1Html} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={sample1Html} />
+  </Tabs.Panel>
+</Tabs>
+
+### 余白の指定を上下と左右で分けたい場合
+
+左右間の余白は `d-grid-gap-x-` 上下の余白は `d-grid-gap-y-` で分けて指定することができます。
+
+<Space />
+
+> `d-grid`：グリッドレイアウトを適用  
+> `d-grid-col-★`：★カラムで表示（★＝`1～12` の整数）  
+> `d-grid-gap-x-☆`：要素の間の余白が☆pxになる（☆＝`4～80` の `4` の倍数）  
+> `d-grid-gap-y-■`：要素の下の余白が■pxになる（■＝`4～80` の `4` の倍数）  
+> `md-d-grid-col-●`：PC幅のときは●カラムで表示（●＝`1～12` の整数）  
+> `md-d-grid-gap-x-○`：PC幅のときは要素の間の余白が○pxになる（○＝`4～80` の `4` の倍数）  
+> `md-d-grid-gap-y-□`：PC幅のときは要素の下の余白が□pxになる（□＝`4～80` の `4` の倍数）
+
+<Space />
+
+例）SP：3カラム、要素間の余白16px、要素下の余白24px、PC：5カラム、要素間の余白24px、要素下の余白32px
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html scm={true} content={sample2Html} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html scm={true} device='lg' content={sample2Html} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={sample2Html} />
+  </Tabs.Panel>
+</Tabs>
+
+## 一覧
+
+### カラム数
+
+<table class="mdx-table">
+  <thead class="mdx-table-header">
+    <tr>
+      <th style={{minWidth: '240px', width: '240px'}}>クラス名</th>
+      <th style={{minWidth: '240px', width: '100%'}}>プロパティ</th>
+    </tr>
+  </thead>
+  <tbody class="mdx-table-body">
+    <tr>
+      <td class="mdx-mono">`d-grid`</td>
+      <td class="mdx-mono">`display: grid;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-grid-col-1`</td>
+      <td class="mdx-mono">`1 col`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-grid-col-2`</td>
+      <td class="mdx-mono">`2 col`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-grid-col-3`</td>
+      <td class="mdx-mono">`3 col`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-grid-col-4`</td>
+      <td class="mdx-mono">`4 col`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-grid-col-5`</td>
+      <td class="mdx-mono">`5 col`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-grid-col-6`</td>
+      <td class="mdx-mono">`6 col`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-grid-col-7`</td>
+      <td class="mdx-mono">`7 col`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-grid-col-8`</td>
+      <td class="mdx-mono">`8 col`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-grid-col-9`</td>
+      <td class="mdx-mono">`9 col`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-grid-col-10`</td>
+      <td class="mdx-mono">`10 col`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-grid-col-11`</td>
+      <td class="mdx-mono">`11 col`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-grid-col-12`</td>
+      <td class="mdx-mono">`12 col`</td>
+    </tr>
+  </tbody>
+</table>
+
+### スペース
+
+<table class="mdx-table" style={{width: '100%'}}>
+  <thead class="mdx-table-header">
+    <tr>
+      <th style={{width: '25%'}}>クラス名（XとY）</th>
+      <th style={{width: '25%'}}>クラス名（Xのみ）</th>
+      <th style={{width: '25%'}}>クラス名（Yのみ）</th>
+      <th style={{width: '25%'}}>スペース</th>
+    </tr>
+  </thead>
+  <tbody class="mdx-table-body">
+    <tr>
+      <td class="mdx-mono">`.d-grid-gap-4`</td>
+      <td class="mdx-mono">`.d-grid-gap-x-4`</td>
+      <td class="mdx-mono">`.d-grid-gap-y-4`</td>
+      <td class="mdx-mono">`4px`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`.d-grid-gap-8`</td>
+      <td class="mdx-mono">`.d-grid-gap-x-8`</td>
+      <td class="mdx-mono">`.d-grid-gap-y-8`</td>
+      <td class="mdx-mono">`8px`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`.d-grid-gap-12`</td>
+      <td class="mdx-mono">`.d-grid-gap-x-12`</td>
+      <td class="mdx-mono">`.d-grid-gap-y-12`</td>
+      <td class="mdx-mono">`12px`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`.d-grid-gap-16`</td>
+      <td class="mdx-mono">`.d-grid-gap-x-16`</td>
+      <td class="mdx-mono">`.d-grid-gap-y-16`</td>
+      <td class="mdx-mono">`16px`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`.d-grid-gap-20`</td>
+      <td class="mdx-mono">`.d-grid-gap-x-20`</td>
+      <td class="mdx-mono">`.d-grid-gap-y-20`</td>
+      <td class="mdx-mono">`20px`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`.d-grid-gap-24`</td>
+      <td class="mdx-mono">`.d-grid-gap-x-24`</td>
+      <td class="mdx-mono">`.d-grid-gap-y-24`</td>
+      <td class="mdx-mono">`24px`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`.d-grid-gap-28`</td>
+      <td class="mdx-mono">`.d-grid-gap-x-28`</td>
+      <td class="mdx-mono">`.d-grid-gap-y-28`</td>
+      <td class="mdx-mono">`28px`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`.d-grid-gap-32`</td>
+      <td class="mdx-mono">`.d-grid-gap-x-32`</td>
+      <td class="mdx-mono">`.d-grid-gap-y-32`</td>
+      <td class="mdx-mono">`32px`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`.d-grid-gap-36`</td>
+      <td class="mdx-mono">`.d-grid-gap-x-36`</td>
+      <td class="mdx-mono">`.d-grid-gap-y-36`</td>
+      <td class="mdx-mono">`36px`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`.d-grid-gap-40`</td>
+      <td class="mdx-mono">`.d-grid-gap-x-40`</td>
+      <td class="mdx-mono">`.d-grid-gap-y-40`</td>
+      <td class="mdx-mono">`40px`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`.d-grid-gap-44`</td>
+      <td class="mdx-mono">`.d-grid-gap-x-44`</td>
+      <td class="mdx-mono">`.d-grid-gap-y-44`</td>
+      <td class="mdx-mono">`44px`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`.d-grid-gap-48`</td>
+      <td class="mdx-mono">`.d-grid-gap-x-48`</td>
+      <td class="mdx-mono">`.d-grid-gap-y-48`</td>
+      <td class="mdx-mono">`48px`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`.d-grid-gap-52`</td>
+      <td class="mdx-mono">`.d-grid-gap-x-52`</td>
+      <td class="mdx-mono">`.d-grid-gap-y-52`</td>
+      <td class="mdx-mono">`52px`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`.d-grid-gap-56`</td>
+      <td class="mdx-mono">`.d-grid-gap-x-56`</td>
+      <td class="mdx-mono">`.d-grid-gap-y-56`</td>
+      <td class="mdx-mono">`56px`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`.d-grid-gap-60`</td>
+      <td class="mdx-mono">`.d-grid-gap-x-60`</td>
+      <td class="mdx-mono">`.d-grid-gap-y-60`</td>
+      <td class="mdx-mono">`60px`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`.d-grid-gap-64`</td>
+      <td class="mdx-mono">`.d-grid-gap-x-64`</td>
+      <td class="mdx-mono">`.d-grid-gap-y-64`</td>
+      <td class="mdx-mono">`64px`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`.d-grid-gap-68`</td>
+      <td class="mdx-mono">`.d-grid-gap-x-68`</td>
+      <td class="mdx-mono">`.d-grid-gap-y-68`</td>
+      <td class="mdx-mono">`68px`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`.d-grid-gap-72`</td>
+      <td class="mdx-mono">`.d-grid-gap-x-72`</td>
+      <td class="mdx-mono">`.d-grid-gap-y-72`</td>
+      <td class="mdx-mono">`72px`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`.d-grid-gap-76`</td>
+      <td class="mdx-mono">`.d-grid-gap-x-76`</td>
+      <td class="mdx-mono">`.d-grid-gap-y-76`</td>
+      <td class="mdx-mono">`76px`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`.d-grid-gap-80`</td>
+      <td class="mdx-mono">`.d-grid-gap-x-80`</td>
+      <td class="mdx-mono">`.d-grid-gap-y-80`</td>
+      <td class="mdx-mono">`80px`</td>
+    </tr>
+  </tbody>
+</table>
+
+### align指定
+
+<table class="mdx-table">
+  <thead class="mdx-table-header">
+    <tr>
+      <th style={{minWidth: '240px', width: '240px'}}>クラス名</th>
+      <th style={{minWidth: '240px', width: '100%'}}>プロパティ</th>
+    </tr>
+  </thead>
+  <tbody class="mdx-table-body">
+    <tr>
+      <td class="mdx-mono">`justify-start`</td>
+      <td class="mdx-mono">`justify-content: flex-start;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`justify-end`</td>
+      <td class="mdx-mono">`justify-content: flex-end;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`justify-center`</td>
+      <td class="mdx-mono">`justify-content: center;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`justify-between`</td>
+      <td class="mdx-mono">`justify-content: space-between;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`justify-around`</td>
+      <td class="mdx-mono">`justify-content: space-around;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`justify-evenly`</td>
+      <td class="mdx-mono">`justify-content: space-evenly;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`items-start`</td>
+      <td class="mdx-mono">`align-items: flex-start;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`items-end`</td>
+      <td class="mdx-mono">`align-items: flex-end;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`items-center`</td>
+      <td class="mdx-mono">`align-items: center;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`items-baseline`</td>
+      <td class="mdx-mono">`align-items: baseline;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`items-stretch`</td>
+      <td class="mdx-mono">`align-items: stretch;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`content-center`</td>
+      <td class="mdx-mono">`align-content: center;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`content-start`</td>
+      <td class="mdx-mono">`align-content: flex-start;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`content-end`</td>
+      <td class="mdx-mono">`align-content: flex-end;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`content-between`</td>
+      <td class="mdx-mono">`align-content: space-between;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`content-around`</td>
+      <td class="mdx-mono">`align-content: space-around;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`content-evenly`</td>
+      <td class="mdx-mono">`align-content: space-evenly;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`justify-items-start`</td>
+      <td class="mdx-mono">`justify-items: start;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`justify-items-end`</td>
+      <td class="mdx-mono">`justify-items: end;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`justify-items-center`</td>
+      <td class="mdx-mono">`justify-items: center;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`justify-items-stretch`</td>
+      <td class="mdx-mono">`justify-items: stretch;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`justify-self-auto`</td>
+      <td class="mdx-mono">`justify-self: auto;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`place-content-center`</td>
+      <td class="mdx-mono">`place-content: center;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`place-content-start`</td>
+      <td class="mdx-mono">`place-content: start;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`place-content-end`</td>
+      <td class="mdx-mono">`place-content: end;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`place-content-between`</td>
+      <td class="mdx-mono">`place-content: space-between;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`place-content-around`</td>
+      <td class="mdx-mono">`place-content: space-around;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`place-content-evenly`</td>
+      <td class="mdx-mono">`place-content: space-evenly;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`place-content-baseline`</td>
+      <td class="mdx-mono">`place-content: baseline;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`place-content-stretch`</td>
+      <td class="mdx-mono">`place-content: stretch;`</td>
+    </tr>
+  </tbody>
+</table>
+
+### グリッド要素align指定
+
+<table class="mdx-table">
+  <thead class="mdx-table-header">
+    <tr>
+      <th style={{minWidth: '240px', width: '240px'}}>クラス名</th>
+      <th style={{minWidth: '240px', width: '100%'}}>プロパティ</th>
+    </tr>
+  </thead>
+  <tbody class="mdx-table-body">
+    <tr>
+      <td class="mdx-mono">`justify-self-start`</td>
+      <td class="mdx-mono">`justify-self: start;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`justify-self-end`</td>
+      <td class="mdx-mono">`justify-self: end;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`justify-self-center`</td>
+      <td class="mdx-mono">`justify-self: center;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`justify-self-stretch`</td>
+      <td class="mdx-mono">`justify-self: stretch;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`place-items-start`</td>
+      <td class="mdx-mono">`place-items: start;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`place-items-end`</td>
+      <td class="mdx-mono">`place-items: end;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`place-items-center`</td>
+      <td class="mdx-mono">`place-items: center;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`place-items-baseline`</td>
+      <td class="mdx-mono">`place-items: baseline;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`place-items-stretch`</td>
+      <td class="mdx-mono">`place-items: stretch;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`place-self-auto`</td>
+      <td class="mdx-mono">`place-self: auto;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`place-self-start`</td>
+      <td class="mdx-mono">`place-self: start;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`place-self-end`</td>
+      <td class="mdx-mono">`place-self: end;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`place-self-center`</td>
+      <td class="mdx-mono">`place-self: center;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`place-self-stretch`</td>
+      <td class="mdx-mono">`place-self: stretch;`</td>
+    </tr>
+  </tbody>
+</table>
+
+### grid-auto-flow指定
+
+<table class="mdx-table">
+  <thead class="mdx-table-header">
+    <tr>
+      <th style={{minWidth: '240px', width: '240px'}}>クラス名</th>
+      <th style={{minWidth: '240px', width: '100%'}}>プロパティ</th>
+    </tr>
+  </thead>
+  <tbody class="mdx-table-body">
+    <tr>
+      <td class="mdx-mono">`d-grid-flow-row`</td>
+      <td class="mdx-mono">`grid-auto-flow: row;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-grid-flow-col`</td>
+      <td class="mdx-mono">`grid-auto-flow: col;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-grid-flow-row-dense`</td>
+      <td class="mdx-mono">`grid-auto-flow: row dense;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-grid-flow-col-dense`</td>
+      <td class="mdx-mono">`grid-auto-flow: row dense;`</td>
+    </tr>
+  </tbody>
+</table>

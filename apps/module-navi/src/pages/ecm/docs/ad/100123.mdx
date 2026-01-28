@@ -1,0 +1,110 @@
+
+import Html from 'src/components/Html'
+import Code from 'src/components/Code'
+import Note from 'src/components/Note'
+import Table, { ClassTable, AttributeTable } from 'src/components/Table'
+import { Tabs } from '@mantine/core'
+import Space from 'src/components/Space'
+import ad100123Pc2ColumnHtml from 'ecm/src/modules/ad/100123/pc-2column.html'
+import ad100123Pc3ColumnHtml from 'ecm/src/modules/ad/100123/pc-3column.html'
+import ad100123Pc4ColumnHtml from 'ecm/src/modules/ad/100123/pc-4column.html'
+import ad100123integrationPc2ColumnHtml from 'ecm/src/modules/ad/100123/integration_pc-2column.html'
+import ad100123integrationPc3ColumnHtml from 'ecm/src/modules/ad/100123/integration_pc-3column.html'
+import ad100123integrationPc4ColumnHtml from 'ecm/src/modules/ad/100123/integration_pc-4column.html'
+
+export const meta = {
+  title: '原稿タイプID100123 クーポン',
+  subtitle: '【クーポン範囲：広告原稿自動反映】',
+  description: '画像(比率1:1)＋商品名＋元値＋価格＋店内全品/対象商品＋割引率/割引額+ショップ名＋クーポン用リンク＋有効期間',
+  url: '/ecm/docs/ad/100123',
+  tags: ['商品', 'ad', '広告'],
+  finder_tags: [
+    'category_coupon',
+    'image_1x1',
+    'text_coupon',
+    'text_others',
+    'price_value',
+    'price_original_value',
+    'icon_coupon',
+    'layout_sp_list',
+    'layout_pc_col2',
+    'layout_pc_col3',
+    'layout_pc_col4',
+    'layout_pc_sp',
+    'price_discount'
+  ],
+}
+
+# 原稿タイプID100123 クーポン【クーポン範囲：広告原稿自動反映】
+画像(比率1:1)＋商品名＋元値＋価格＋店内全品/対象商品＋割引率/割引額+ショップ名＋クーポン用リンク＋有効期間  
+画像入稿サイズ：480×480px  
+
+<Space />
+★部分へアドプラッツからダウンロードした配信タグを貼り付けてください。
+
+## SPリスト/PC2カラム
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='pc'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html adHighlight={true} content={ad100123Pc2ColumnHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='pc'>
+    <Html adHighlight={true} device='lg' content={ad100123Pc2ColumnHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={ad100123integrationPc2ColumnHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## SPリスト/PC3カラム
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='pc'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html adHighlight={true} content={ad100123Pc3ColumnHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='pc'>
+    <Html adHighlight={true} device='lg' content={ad100123Pc3ColumnHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={ad100123integrationPc3ColumnHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## SPリスト/PC4カラム
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='pc'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html adHighlight={true} content={ad100123Pc4ColumnHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='pc'>
+    <Html adHighlight={true} device='lg' content={ad100123Pc4ColumnHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={ad100123integrationPc4ColumnHtml}/>
+  </Tabs.Panel>
+</Tabs>
+

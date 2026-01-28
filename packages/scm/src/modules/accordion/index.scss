@@ -1,0 +1,45 @@
+@import 'ecm/src/_scss/variables';
+@import 'ecm/src/_scss/mixins';
+
+.scm-accordion-item {
+  &:first-child {
+    border-top: 1px solid rgb(0 0 0 / 8%);
+  }
+}
+
+.scm-accordion-trigger {
+  box-sizing: border-box;
+  font-weight: bold;
+
+  .ecm-icon-chevron-down {
+    color: $color-gray-3;
+  }
+}
+
+.scm-accordion-panel-item {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+
+  &:first-child {
+    border-top: 1px solid rgb(0 0 0 / 8%);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: none;
+
+      span {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &:link {
+    color: #333;
+  }
+
+  .ecm-icon-chevron-right {
+    color: $color-gray-3;
+  }
+}

@@ -1,0 +1,44 @@
+<div
+  data-module-name="ecm-alcor"
+  data-alcor-type="normal"
+>
+  <template data-alcor-output>
+    <div
+      class="d-grid d-grid-col-1 d-grid-gap-16 md-d-grid-col-4 md-d-grid-gap-32"
+      data-alcor-item-container
+    ></div>
+  </template>
+
+  <template data-alcor-data>
+    <!-- Alcor Template -->
+    <!--#include virtual="★"-->
+    <!-- /Alcor template -->
+  </template>
+
+  <template data-alcor-item-template>
+    <div class="ecm-alcor ecm-alcor-horizontal">
+      <a
+        class="ecm-alcor-image-link"
+        href="###item-url###"
+      >
+        <img
+          class="w-full h-full aspect-ratio-1x1 object-contain"
+          src="https://r.r10s.jp/com/img/home/t.gif?resize=340:340"
+          data-lazy-loading="###image-url###?_ex=680:680"
+          alt=""
+        />
+      </a>
+      <div class="ecm-alcor-body">
+        <a
+          class="ecm-alcor-item-link"
+          href="###item-url###"
+        >
+          <div class="ecm-alcor-name clamp-2 mb-8 md-mb-0">###itemname###</div>
+          <div class="ecm-alcor-price mt-0 md-mt-12">
+            <p class="ecm-alcor-price-num">###kakaku###</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </template>
+</div>

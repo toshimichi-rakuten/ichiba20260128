@@ -1,0 +1,55 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+.ecm-button {
+  @include text-sm;
+
+  @include colorize-link($color-gray-1);
+
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background-color: $color-white;
+  border: 1px solid #d1d1d1;
+  border-radius: 4px;
+  padding: 11px $space-16;
+  cursor: pointer;
+  white-space: nowrap;
+
+  &.ecm-button-size-xs {
+    @include text-12px;
+
+    padding: 7px $space-12;
+  }
+
+  &.ecm-button-size-sm {
+    @include text-xs;
+
+    padding: 10px 14px;
+  }
+
+  &.ecm-button-size-lg {
+    @include text-base;
+
+    padding: 11px 18px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: rgb(0 0 0 / 4%);
+      text-decoration: none;
+    }
+  }
+
+  [class^='ecm-icon-']:first-child,
+  [class*=' ecm-icon-']:first-child {
+    margin-right: $space-4;
+  }
+
+  [class^='ecm-icon-']:last-child,
+  [class*=' ecm-icon-']:last-child {
+    margin-left: $space-4;
+  }
+}

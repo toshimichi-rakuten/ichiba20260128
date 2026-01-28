@@ -1,0 +1,19 @@
+{
+  "tasks": {
+    "dev": {
+      "cache": false
+    },
+    "build": {
+      "outputs": [".next/**", "dist/**"]
+    },
+    "build:sb": {
+      "dependsOn": ["^build"],
+      "outputs": ["storybook-static/**"]
+    },
+    "lint": {},
+    "lint:js": {},
+    "lint:css": {},
+    "start": {},
+    "start:sb": {}
+  }
+}

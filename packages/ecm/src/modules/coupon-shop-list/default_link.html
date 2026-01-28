@@ -1,0 +1,77 @@
+<div
+  data-module-name="ecm-coupon-shop-list"
+  data-coupon-genre="20230926"
+>
+  <template data-coupon-shop-list-output>
+    <button
+      class="ecm-link text-sm"
+      aria-expanded="false"
+      aria-controls="couponShopListDefault1"
+    >
+      クーポン対象ショップ一覧
+    </button>
+
+    <div
+      id="couponShopListDefault1"
+      class="ecm-sheet ecm-sheet-below ecm-sheet-full-screen"
+      data-module-name="ecm-toggle"
+      data-body-lock="true"
+      data-transition="true"
+      data-transition-ms="450"
+      aria-modal="true"
+      role="dialog"
+    >
+      <div
+        class="ecm-sheet-bg"
+        aria-expanded="false"
+        aria-controls="couponShopListDefault1"
+      ></div>
+      <div class="ecm-sheet-content-wrapper">
+        <div class="ecm-sheet-content">
+          <div class="ecm-sheet-content-header ecm-sheet-content-header-bordered">
+            <div class="ecm-sheet-title">クーポン対象ショップ一覧</div>
+            <button
+              class="ecm-sheet-content-close"
+              aria-expanded="false"
+              aria-controls="couponShopListDefault1"
+            >
+              <i
+                class="ecm-icon-close"
+                aria-hidden="true"
+              ></i>
+            </button>
+          </div>
+
+          <div class="ecm-sheet-content-body">
+            <ul
+              class="ecm-accordion bordered-b"
+              data-coupon-shop-list-item-container
+              data-sort="shop_name_kana"
+              data-sort-type="asc"
+            ></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <template
+    data-coupon-shop-list-data
+    data-coupons-json-url="★★★coupons.json★★★"
+  ></template>
+
+  <template data-coupon-shop-list-item-template>
+    <li class="ecm-accordion-item">
+      <a
+        class="ecm-accordion-trigger ecm-accordion-trigger-link"
+        href="https://www.rakuten.co.jp/###shop_url###/"
+      >
+        <span>###shop_name###</span>
+        <i
+          class="ecm-icon-chevron-right"
+          aria-hidden="true"
+        ></i>
+      </a>
+    </li>
+  </template>
+</div>

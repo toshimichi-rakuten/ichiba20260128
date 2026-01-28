@@ -1,0 +1,12 @@
+@import 'ecm/src/_scss/variables';
+@import 'ecm/src/_scss/mixins';
+
+.scm-alert-content-end {
+  text-align: center;
+  font-weight: bold;
+  @include screen('md', 'up') {
+    @include text-lg;
+
+    padding: $space-16 $space-24;
+  }
+}

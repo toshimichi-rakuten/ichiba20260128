@@ -1,0 +1,76 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+@include util-md('overflow-auto') {
+  overflow: auto;
+}
+@include util-md('overflow-hidden') {
+  overflow: hidden;
+}
+@include util-md('overflow-scroll') {
+  overflow: scroll;
+}
+@include util-md('overflow-clip') {
+  overflow: clip;
+}
+@include util-md('overflow-x-auto') {
+  overflow-x: auto;
+}
+@include util-md('overflow-y-auto') {
+  overflow-y: auto;
+}
+@include util-md('overflow-x-hidden') {
+  overflow-x: hidden;
+}
+@include util-md('overflow-y-hidden') {
+  overflow-y: hidden;
+}
+@include util-md('overflow-x-scroll') {
+  overflow-x: scroll;
+}
+@include util-md('overflow-y-scroll') {
+  overflow-y: scroll;
+}
+@include util-md('overflow-x-clip') {
+  overflow-x: clip;
+}
+@include util-md('overflow-y-clip') {
+  overflow-y: clip;
+}
+
+@include util-md('overflow-auto', true) {
+  overflow: auto !important;
+}
+@include util-md('overflow-hidden', true) {
+  overflow: hidden !important;
+}
+@include util-md('overflow-scroll', true) {
+  overflow: scroll !important;
+}
+@include util-md('overflow-clip', true) {
+  overflow: clip !important;
+}
+@include util-md('overflow-x-auto', true) {
+  overflow-x: auto !important;
+}
+@include util-md('overflow-y-auto', true) {
+  overflow-y: auto !important;
+}
+@include util-md('overflow-x-hidden', true) {
+  overflow-x: hidden !important;
+}
+@include util-md('overflow-y-hidden', true) {
+  overflow-y: hidden !important;
+}
+@include util-md('overflow-x-scroll', true) {
+  overflow-x: scroll !important;
+}
+@include util-md('overflow-y-scroll', true) {
+  overflow-y: scroll !important;
+}
+@include util-md('overflow-x-clip', true) {
+  overflow-x: clip !important;
+}
+@include util-md('overflow-y-clip', true) {
+  overflow-y: clip !important;
+}

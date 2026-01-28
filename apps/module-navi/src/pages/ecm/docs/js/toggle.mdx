@@ -1,0 +1,204 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'ecm/src/modules/toggle/default.html'
+import disabledHtml from 'ecm/src/modules/toggle/disabled.html'
+
+export const meta = {
+  title: 'トグル',
+  description: '要素を画面に追従させる機能',
+  url: '/ecm/docs/js/toggle',
+  tags: ['toggle'],
+}
+
+# トグル
+
+要素の表示・非表示の状態が交互に切り替わる機能です。
+
+## 主な機能・特徴
+
+- 要素の表示・非表示をクリックによって切り替えることができます。
+- クリックできない（disabled）指定が可能です
+
+## 使い方
+
+### デフォルト
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP/PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={defaultHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={defaultHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+### Disabled
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP/PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={disabledHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={disabledHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## カスタムイベント
+
+<Code language='js' content={`
+// Open
+toggle.dispatchEvent(new Event('ecmToggleOpen'))
+// Close
+toggle.dispatchEvent(new Event('ecmToggleOpen'))
+// Toggle
+toggle.dispatchEvent(new Event('ecmToggleToggle'))
+`}/>
+
+## アトリビュート一覧
+
+<Tabs keepMounted={false} defaultValue='attribute' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="attribute">アトリビュート</Tabs.Tab>
+    <Tabs.Tab value="trigger">トリガー アトリビュート</Tabs.Tab>
+  </Tabs.List>
+  
+  <Tabs.Panel value="attribute">
+    <table class="mdx-table">
+      <thead class="mdx-table-header">
+        <tr>
+          <th style={{minWidth: '250px', width: '250px'}}>アトリビュート</th>
+          <th style={{minWidth: '250px', width: '250px'}}>値</th>
+          <th style={{width: '100%'}}>メモ</th>
+        </tr>
+      </thead>
+      <tbody class="mdx-table-body">
+        <tr>
+          <td class="mdx-mono">`data-module-name`</td>
+          <td class="mdx-mono">"ecm-toggle"</td>
+          <td>モジュール名</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`id`</td>
+          <td class="mdx-mono">string</td>
+          <td>モジュールのユニークID</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`data-transition`</td>
+          <td class="mdx-mono">
+            <div>
+              boolean
+            </div>
+            <div style={{ color: "#8f8f8f"}}>
+              デフォルト: true
+            </div>
+          </td>
+          <td>
+            アニメーションをするかどうか<br />
+            `"false"` を設定した場合、アニメーションがなくなります
+          </td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`data-transition-ms`</td>
+          <td class="mdx-mono">
+            <div>
+              number
+            </div>
+            <div style={{ color: "#8f8f8f"}}>
+              デフォルト: 280（単位はms）
+            </div>
+          </td>
+          <td>
+            <div>
+              アニメーションの待ち時間
+            </div>
+            <div style={{ marginTop: "16px"}}>
+              ※調整した場合、CSSも調整が必要
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`data-default-open`</td>
+          <td class="mdx-mono">
+            <div>
+              boolean
+            </div>
+            <div style={{ color: "#8f8f8f"}}>
+              デフォルト: false
+            </div>
+          </td>
+          <td>
+            ページ表示時に要素を開いた状態にするかどうか<br />
+            `"true"` を設定した場合、ページ表示時に要素が開いた状態になります
+          </td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`aria-hidden`</td>
+          <td class="mdx-mono">boolean</td>
+          <td>
+            <div>
+              要素が表示されているかどうか
+            </div>
+            <div style={{ marginTop: "16px"}}>
+              ※このアトリビュートは、`ecm-toggle` 要素の可視性状態に合わせてJSで操作されます<br />
+              デフォルト（最初のページロード）で要素を非表示にしたい場合は、予め `aria-hidden="true"` を設定してください
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </Tabs.Panel>
+
+  <Tabs.Panel value="trigger">
+    <table class="mdx-table">
+      <thead class="mdx-table-header">
+        <tr>
+          <th style={{minWidth: '250px', width: '250px'}}>アトリビュート</th>
+          <th style={{minWidth: '250px', width: '250px'}}>値</th>
+          <th style={{width: '100%'}}>メモ</th>
+        </tr>
+      </thead>
+      <tbody class="mdx-table-body">
+        <tr>
+          <td class="mdx-mono">`aria-controls`</td>
+          <td class="mdx-mono">string</td>
+          <td>`ecm-toggle` 要素のユニークID（`id` の値）を設定</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`aria-expanded`</td>
+          <td class="mdx-mono">boolean</td>
+          <td>`ecm-toggle` 要素が展開されているかどうか</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`aria-disabled`</td>
+          <td class="mdx-mono">
+            <div>
+              boolean
+            </div>
+            <div style={{ color: "#8f8f8f"}}>
+              デフォルト: false
+            </div>
+          </td>
+          <td>
+            開くボタンを無効にするかどうか<br />
+            `"true"` を設定した場合、開くボタンが無効になります
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </Tabs.Panel>
+</Tabs>

@@ -1,0 +1,351 @@
+@import 'ecm/src/_scss/variables';
+@import 'ecm/src/_scss/mixins';
+@import '../../_scss/mixins/typography';
+
+$max-width-sp: 414px;
+$color-blue-1: #e3f2f3;
+$color-blue-2: #005076;
+$color-blue-3: #9cc2cd;
+$color-blue-4: #9bd9db;
+$color-yellow-1: #ddd690;
+$color-yellow-2: #f5f3dd;
+
+.scm-okurimono {
+  // For ".scm-okurimono-search" SP Style.
+  overflow: hidden;
+
+  @include screen('md', 'down') {
+    background-color: $color-blue-1;
+    padding: $space-16 0;
+  }
+}
+
+.scm-okurimono-triangle {
+  border: 7px solid transparent;
+  border-bottom-color: $color-blue-2;
+  border-right-color: $color-blue-2;
+  bottom: 8px;
+  position: absolute;
+  right: 8px;
+}
+
+.scm-okurimono-guide {
+  box-sizing: border-box;
+  padding: 0 $space-16 $space-16;
+  // For ".screen-reader-text" Style.
+  position: relative;
+
+  @include screen('md', 'down') {
+    max-width: $max-width-sp;
+    margin: 0 auto;
+  }
+
+  @include screen('md', 'up') {
+    background-color: $color-blue-1;
+    border-radius: 8px 8px 0 0;
+    padding: $space-24;
+  }
+}
+
+.scm-okurimono-guide-headline {
+  @include font-default;
+  @include text-4xl;
+
+  color: $color-blue-2;
+  font-weight: bold;
+  text-align: center;
+
+  @include screen('md', 'down') {
+    // Copy ".screen-reader-text" Style.
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+}
+
+.scm-okurimono-guide-link {
+  @include colorize-link($color-gray-1 !important);
+
+  background-color: $color-white;
+  border: 1px solid $color-blue-3;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: block;
+  padding: 10px 0;
+  text-align: center;
+
+  @include screen('md', 'up') {
+    height: 100%;
+    padding: $space-12 $space-16 $space-20;
+    position: relative;
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.8;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.scm-okurimono-guide-title {
+  @include font-default;
+  @include text-lg;
+
+  align-items: center;
+  justify-content: center;
+  color: $color-blue-2;
+  display: flex;
+  font-weight: bold;
+
+  @include screen('md', 'up') {
+    @include text-lg;
+
+    flex-direction: column;
+    justify-content: center;
+
+    span {
+      margin-top: 10px;
+    }
+  }
+}
+
+.scm-okurimono-guide-title-icon {
+  @include screen('md', 'down') {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-right: $space-8;
+
+    svg {
+      height: auto;
+    }
+
+    &.scm-okurimono-guide-title-icon-ques svg {
+      width: 18px;
+    }
+
+    &.scm-okurimono-guide-title-icon-truck svg {
+      width: 41px;
+    }
+
+    &.scm-okurimono-guide-title-icon-shipping svg {
+      width: 20px;
+    }
+  }
+}
+
+.scm-okurimono-guide-text {
+  @include font-default;
+  @include text-12px;
+
+  margin-top: 6px;
+  margin-left: 0;
+
+  @include screen('md', 'down') {
+    padding: 0 $space-8;
+  }
+
+  @include screen('md', 'up') {
+    @include text-12px;
+  }
+}
+
+.scm-okurimono-search {
+  background-color: $color-white;
+  box-sizing: border-box;
+  padding: $space-24 0 14px;
+
+  @include screen('md', 'down') {
+    max-width: $max-width-sp;
+    margin: 0 auto;
+    position: relative;
+
+    &::before,
+    &::after {
+      background-repeat: no-repeat;
+      background-size: 90% auto;
+      content: '';
+      height: 0;
+      max-width: $max-width-sp;
+      padding-top: 37.5%;
+      position: absolute;
+      width: 100%;
+    }
+
+    &::before {
+      background-image: url('https://r.r10s.jp/evt/event/gift/_sp/img/201907/definition_bg01.png?v=201908012216');
+      left: -4%;
+      top: -7%;
+    }
+
+    &::after {
+      background-image: url('https://r.r10s.jp/evt/event/gift/_sp/img/201907/definition_bg02.png?v=201908012216');
+      right: -14%;
+      top: -7%;
+    }
+  }
+
+  @include screen('md', 'up') {
+    background-color: $color-blue-1;
+    border-radius: 0 0 8px 8px;
+    margin-top: 2px;
+    padding: $space-24;
+  }
+}
+
+.scm-okurimono-search-inner {
+  @include font-default;
+  // For "screen-reader-text" style.
+  position: relative;
+  // To make it more front than ".scm-okurimono-search" element.
+  z-index: 1;
+
+  @include screen('md', 'up') {
+    background-color: $color-white;
+    padding: $space-40 $space-32 $space-32;
+  }
+}
+
+.scm-okurimono-search-headline {
+  text-align: center;
+
+  svg {
+    height: auto;
+    width: 53.33%;
+
+    @include screen('md', 'up') {
+      width: 343px;
+    }
+  }
+}
+
+.scm-okurimono-search-lead {
+  @include font-default;
+  @include text-lg;
+
+  color: $color-gray-1;
+  font-weight: bold;
+  text-align: center;
+}
+
+.scm-okurimono-search-sub-headline {
+  @include font-default;
+  @include text-2xl;
+
+  align-items: center;
+  color: $color-gray-1;
+  display: flex;
+  flex-grow: 1;
+  font-weight: bold;
+  text-align: center;
+
+  &::before,
+  &::after {
+    background: url('https://r.r10s.jp/evt/event/keirou/2019/_pc/img/cmn/footer/giftnavi/riTtl002_950_dotted.gif?v=201907161154')
+      repeat-x center / auto 1px;
+    content: '';
+    flex-grow: 1;
+    height: 1px;
+  }
+
+  &::before {
+    margin-right: $space-16;
+  }
+
+  &::after {
+    margin-left: $space-16;
+  }
+}
+
+.scm-okurimono-search-link {
+  @include font-default;
+  @include colorize-link($color-gray-1 !important);
+  @include text-sm;
+
+  align-items: center;
+  background-color: $color-yellow-2;
+  box-sizing: border-box;
+  display: flex;
+  height: 100px;
+  padding-left: 126px;
+  padding-right: $space-8;
+  position: relative;
+
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0.8;
+      text-decoration: none;
+    }
+  }
+
+  img {
+    bottom: 0;
+    display: block;
+    left: -6px;
+    position: absolute;
+  }
+
+  .scm-okurimono-triangle {
+    border-bottom-color: $color-yellow-1;
+    border-right-color: $color-yellow-1;
+    border-width: 5px;
+    bottom: 6px;
+    right: 6px;
+  }
+}
+
+.scm-okurimono-button {
+  @include font-default;
+  @include colorize-link($color-blue-2 !important);
+  @include text-sm;
+
+  background-color: $color-blue-4;
+  box-sizing: border-box;
+  border: none;
+  display: block;
+  margin: 0 auto;
+  min-width: 235px;
+  padding: 10px;
+  position: relative;
+  text-align: center;
+  width: fit-content;
+
+  @include screen('md', 'down') {
+    .scm-okurimono-button-arrow {
+      margin-left: 0.5em;
+      width: 1em;
+
+      &::before {
+        content: '\00ff1e';
+      }
+    }
+  }
+
+  @include screen('md', 'up') {
+    @include text-4xl;
+
+    align-items: center;
+    background-color: $color-white;
+    border: 1px solid $color-blue-3;
+    border-radius: 8px;
+    display: flex;
+    font-weight: bold;
+    height: 90px;
+    justify-content: center;
+    width: 100%;
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.8;
+        text-decoration: none;
+      }
+    }
+  }
+}

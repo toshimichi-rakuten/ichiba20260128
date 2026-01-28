@@ -1,0 +1,5 @@
+node_modules
+apps/module-navi/public
+apps/documents/public
+apps/module-navi/.next
+next.config.js

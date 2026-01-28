@@ -1,0 +1,47 @@
+@import 'ecm/src/_scss/variables';
+@import 'ecm/src/_scss/mixins';
+
+.scm-page-overview {
+  padding: $space-16;
+  position: relative;
+
+  @include screen('md', 'up') {
+    padding: $space-40;
+  }
+}
+
+.scm-page-overview-headline {
+  @include vw-text-lg;
+
+  color: $color-gray-1;
+  font-weight: bold;
+  text-align: center;
+
+  @include screen('md', 'up') {
+    @include text-2xl;
+  }
+}
+
+.scm-page-overview-text {
+  @include vw-text-12px;
+
+  color: $color-gray-1;
+
+  @include screen('md', 'up') {
+    @include text-12px;
+  }
+}
+
+.scm-page-overview-image-wrapper {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.scm-page-overview-image {
+  height: 100%;
+  object-fit: cover;
+}

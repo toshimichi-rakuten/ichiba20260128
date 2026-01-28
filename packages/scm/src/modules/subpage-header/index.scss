@@ -1,0 +1,48 @@
+@import 'ecm/src/_scss/variables';
+@import 'ecm/src/_scss/mixins';
+
+.scm-subpage-header {
+  @include colorize-link($color-gray-1 !important);
+  @include vw-text-sm;
+
+  background-color: $color-gray-5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $space-4 $space-16;
+  box-sizing: border-box;
+}
+
+.scm-subpage-header-image {
+  display: block;
+  object-fit: contain;
+  height: 100%;
+  flex-shrink: 1;
+  margin-right: $space-16;
+}
+
+.scm-subpage-header-text {
+  display: block;
+  flex-shrink: 0;
+  position: relative;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: $space-12;
+}
+
+.scm-subpage-header-icon {
+  background-color: $color-white;
+  color: $color-gray-3;
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .ecm-icon-chevron-right {
+    @include text-sm;
+
+    display: block;
+  }
+}

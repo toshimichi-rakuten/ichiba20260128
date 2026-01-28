@@ -1,0 +1,53 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+
+export const meta = {
+  title: 'Wrap',
+  description: '',
+  url: '/ecm/docs/ui/wrap',
+  tags: ['wrap'],
+}
+
+export const defaultHtml = `
+<div class="ecm-wrap">
+  ...
+</div>
+`
+
+export const minWidthHtml = `
+<div class="ecm-wrap ecm-wrap-1024">
+  ...
+</div>
+`
+
+# Wrap
+
+Wrap(`.ecm-wrap`)はページ内のECM以外の要素に影響がないように作成されたECMモジュールをWrapしているクラスです。  
+Wrapはあらかじめアウトラインファイルに設定されています。  
+Wrapはページの デフォルトスタイルをセットしていますので、外さないようにしてください。
+
+<Space />
+
+<Code content={defaultHtml}/>
+
+<Space />
+
+## PC用固定幅Wrap
+PC用固定幅Wrap(`.ecm-wrap-1024`)はPC用のページで最小幅1024pxの幅を固定し、ECMのレスポンシブレイアウトを固定表示にするために利用されます。  
+画面幅が1024px以下であっても、要素は固定幅で表示され、レスポンシブデザインではなく横スクロールが発生します。
+
+### 使い方
+対象となるHTML要素に(`.ecm-wrap-1024`)を追加します。  
+このクラスは(`.ecm-wrap`)が既に適用されている要素に対して使用することが前提です。  
+
+<Space />
+
+<Code content={minWidthHtml}/>
+
+### 注意点
+PC用固定幅Wrap(`.ecm-wrap-1024`)を使用することで、PC表示を固定幅で設定することが可能です。  
+しかし、ECMが提供するモジュールは本来レスポンシブ対応しており、異なる画面幅に適応するよう設計されています。  
+そのため、画面幅に応じたレイアウト調整を行うことを推奨します。  

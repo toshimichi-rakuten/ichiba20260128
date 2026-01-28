@@ -1,0 +1,28 @@
+
+import Demo from 'src/components/Demo'
+import Code from 'src/components/Code'
+import Html from 'src/components/Html'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'scm/src/modules/commentary/default.html'
+import grayHtml from 'scm/src/modules/commentary/gray.html'
+
+export const meta = {
+  title: '特集一覧',
+  url: '/scm/docs/other/commentary',
+  tags: ['ページ一覧', '一覧', 'page list', 'link'],
+}
+
+# 特集一覧
+
+## ボタン stroke
+
+<Demo scm={true} content={defaultHtml} breakpoints={['sp', 'md', 'lg']} />
+
+<Space h='lg' />
+
+## ボタン fill
+
+<Demo scm={true} content={grayHtml} breakpoints={['sp', 'md', 'lg']} />
+
+

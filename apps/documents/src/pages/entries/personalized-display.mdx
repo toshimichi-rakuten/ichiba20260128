@@ -1,0 +1,392 @@
+import { Space } from 'src/components/Space'
+import Code from 'module-navi/src/components/Code'
+import Note from 'module-navi/src/components/Note'
+import { Tabs } from '@mantine/core'
+
+# Personalized Display
+
+パーソナライズドディスプレイはデータをもとに、一部のコンテンツを動的に差し替えることが出来ます。  
+主にPITARI機能などを利用して、ユーザーに応じたコンテンツを表示することが可能です。  
+
+このドキュメントでは、リプレイスPITARIの利用例を交えて説明します。
+
+<Space />
+<Space />
+
+## 使い方
+
+### 1. スクリプトの設定
+
+<div style={{ paddingLeft: '40px', fontWeight: 'bold'}}>
+1.1 fet.jsをページに追加してください
+</div>
+
+<Space />
+
+<Code content={`
+<!-- ==================== ページJavaScript ==================== -->
+<!-- fet.jsはPITARIのリプレイスに必要なJavaScriptです。 -->
+<script
+  src="https://r.r10s.jp/com/js/c/fet/1.0/fet-1.0.0.min.js?v=202507021527"
+  type="text/javascript"
+></script>
+
+<!-- condition.jsをご記載ください。 -->
+<script
+  src="condition.js"
+  type="text/javascript"
+></script>
+
+<!-- phoenix.jsをご記載ください。 -->
+<script
+  src="phoenix.js"
+  type="text/javascript"
+></script>
+<!-- ==================== /ページJavaScript ==================== -->
+`} />
+
+<Space />
+
+<Note>
+condition.jsとphoenix.jsはPITARI側で取得してください
+</Note>
+
+<Space />
+
+<div style={{ paddingLeft: '40px'}}>
+スクリプトは`body`タグの最後に配置し、読み込み順番は`fet.js`を先にしてください
+</div>
+
+<Space />
+<Space />
+
+### 2. 設定用タグの追加  
+
+<div style={{ paddingLeft: '40px', fontWeight: 'bold'}}>
+2.1 PersonalizedDisplay をページに追加
+</div>
+
+<div style={{ paddingLeft: '40px', marginTop: '8px'}}>
+ページのどの位置でも動作しますが、統一性のため `ecm-wrap`に近い所に追加してください。
+</div>
+
+<Space />
+
+<Code highlighted={[3,4,5,6,7]} content={`
+<div class="ecm-wrap">
+  <!-- こちらに追加 -->
+  <div
+    data-plugin-name="fet-personalized-display"
+    data-personalized-display-id="colors"
+  >
+  </div>
+</div>
+`} />
+<Space />
+
+<Note>
+  <code>data-personalized-display-id</code>はNo.3 UI表示用の<code>data-personalized-display-view</code>
+  と紐付けるためのIDです。任意の値で構いませんが、同じ値を設定してください。
+</Note>
+<Space />
+<Space />
+
+<div style={{ paddingLeft: '40px' ,fontWeight: 'bold'}}>
+2.2 PersonalizedDisplay内へのPITARI 設定タグの追加
+</div>
+
+<div style={{ paddingLeft: '40px', marginTop: '8px'}}>
+PITARIの設定タグは、`PersonalizedDisplay`タグの中にネストして配置してください。
+</div>
+
+<Space />
+
+<Code highlighted={[7,8,9,10]} content={`
+<div class="ecm-wrap">
+  <div
+    data-plugin-name="fet-personalized-display"
+    data-personalized-display-id="colors"
+  >
+  <!-- こちらに追加 -->
+    <div 
+      id="pitari_area"
+      data-phoenix-*
+    >
+    </div>
+  </div>
+</div>
+`} />
+
+<Space />
+<Space />
+
+### 3. UI 表示用タグの追加
+
+<div style={{ paddingLeft: '40px', fontWeight: 'bold' }}>
+3.1 PersonalizedDisplayViewをページに追加
+</div>
+
+<div style={{ paddingLeft: '40px', marginTop: '8px'}}>
+`PersonalizedDisplayView`は、出し分けコンテンツが表示される領域です。出し分けコンテンツを表示したい場所に追加してください。
+</div>
+
+<Space />
+
+<Code content={`
+<div data-personalized-display-view="colors">
+  <template data-type="red" data-init-ecm="true">
+    <div>
+        <p>
+            ユーザーが'red'の場合、こちらの中身が表示されます
+        </p>
+    </div>
+  </template>
+
+  <template data-type="blue" data-init-ecm="true">
+    <div>
+        <p>
+            ユーザーが'blue'の場合、こちらの中身が表示されます
+        </p>
+    </div>
+  </template>
+
+  <template data-type="green" data-init-ecm="true">
+    <div>
+        <p>
+            ユーザーが'green'の場合、こちらの中身が表示されます
+        </p>
+    </div>
+  </template>
+</div>
+`} />
+
+<Space />
+
+<Note>
+<code>&lt;template&gt;</code>タグの中に、実際に表示したいHTMLを記述してください。
+<code>data-type</code>属性には、出し分け条件ごとの値を設定します。 PITARIの判定結果に応じて、該当するテンプレートの内容が表示されます。
+</Note>
+
+<Space />
+<Space />
+
+### 4. PITARIパーツ作成
+
+<div style={{ paddingLeft: '40px', fontWeight: 'bold' }}>
+4.1 各data-typeのINCファイルを作成してください
+</div>
+
+<div style={{ paddingLeft: '40px', marginTop: '8px' }}>
+  `data-type`ごとに、対応するインクルードファイルを作成してください。各ファイルの中身は、対応する`data-type`を持つ`div`要素のみです。これらのINCファイルは次ステップに記載のとおり`condition.js`から読み込まれるため、HTMLへの直接記述は不要です。
+</div>
+
+<Space />
+
+<Code copy={false} content={`
+<!-- /_inc/red.html -->
+<div data-type="red"></div>
+
+<!-- /_inc/blue.html -->
+<div data-type="blue"></div>
+
+<!-- /_inc/green.html -->
+<div data-type="green"></div>
+`} />
+
+<Space />
+<Space />
+
+<div style={{ paddingLeft: '40px', fontWeight: 'bold' }}>
+4.2 condition.jsの方にdata-typeのINCをセット
+</div>
+
+<Space />
+
+<Code highlighted={[10, 22, 34, 46, 58, 70]} copy={false} language='javascript' content={`
+var __px = window.__px || {};
+__px.campaigns = __px.campaigns || [];
+__px.campaigns.push({
+    "nest": {
+        "conditions": [{
+            "patternName": "target__root__00_non_login",
+            "patternId": "target__93410__297180",
+            "actions": {
+                "replace": [{
+                    "source": "/_inc/red.html",
+                    "target": "pitari_area"
+                }]
+            },
+            "match": {
+                "__pitari_non_login": 0
+            }
+        }, {
+            "patternName": "target__root__01_sameday",
+            "patternId": "target__93410__297181",
+            "actions": {
+                "replace": [{
+                    "source": "/_inc/blue.html",
+                    "target": "pitari_area"
+                }]
+            },
+            "match": {
+                "cu_soku": 1
+            }
+        }, {
+            "patternName": "target__root__02_normal",
+            "patternId": "target__93410__297182",
+            "actions": {
+                "replace": [{
+                    "source": "/_inc/red.html",
+                    "target": "pitari_area"
+                }]
+            },
+            "match": {
+                "cu_soku": 2
+            }
+        }, {
+            "patternName": "target__root__03_unkown",
+            "patternId": "target__93410__297183",
+            "actions": {
+                "replace": [{
+                    "source": "/_inc/red.html",
+                    "target": "pitari_area"
+                }]
+            },
+            "match": {
+                "cu_soku": 3
+            }
+        }, {
+            "patternName": "target__root__04_asuraku",
+            "patternId": "target__93410__297184",
+            "actions": {
+                "replace": [{
+                    "source": "/_inc/green.html",
+                    "target": "pitari_area"
+                }]
+            },
+            "match": {
+                "cu_soku": 0
+            }
+        }, {
+            "patternName": "target__root__99_else_segment",
+            "patternId": "target__93410__297185",
+            "actions": {
+                "replace": [{
+                    "source": "/_inc/red.html",
+                    "target": "pitari_area"
+                }]
+            }
+        }],
+        "type": "Target"
+    }
+});
+`} />
+
+<Space />
+<Space />
+
+## アトリビュート一覧
+
+<Tabs keepMounted={false} defaultValue='attribute' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="attribute">アトリビュート</Tabs.Tab>
+    <Tabs.Tab value="viewAttribute">Viewのアトリビュート</Tabs.Tab>
+    <Tabs.Tab value="viewTemplateAttribute">ViewTemplateのアトリビュート</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value="attribute">
+    <table class="mdx-table">
+      <thead class="mdx-table-header">
+        <tr>
+          <th style={{minWidth: '240px', width: '240px'}}>アトリビュート</th>
+          <th style={{minWidth: '240px', width: '240px'}}>値</th>
+          <th style={{width: '100%'}}>メモ</th>
+        </tr>
+      </thead>
+      <tbody class="mdx-table-body">
+        <tr>
+          <td class="mdx-mono">`data-plugin-name`</td>
+          <td class="mdx-mono">"fet-personalized-display"</td>
+          <td>プラグイン名</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`data-personalized-display-id`</td>
+          <td class="mdx-mono">string</td>
+          <td>
+            <div>
+             PersonalizedDisplayViewと紐付けるID
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='viewAttribute'>
+    <table class="mdx-table">
+      <thead class="mdx-table-header">
+        <tr>
+          <th style={{minWidth: '240px', width: '240px'}}>アトリビュート</th>
+          <th style={{minWidth: '240px', width: '240px'}}>値</th>
+          <th style={{width: '100%'}}>メモ</th>
+        </tr>
+      </thead>
+      <tbody class="mdx-table-body">
+        <tr>
+          <td class="mdx-mono">`data-personalized-display-view`</td>
+          <td class="mdx-mono">string</td>
+          <td>PersonalizedDisplayのIDと一致させる</td>
+        </tr>
+      </tbody>
+    </table>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='viewTemplateAttribute'>
+    <table class="mdx-table">
+      <thead class="mdx-table-header">
+        <tr>
+          <th style={{minWidth: '240px', width: '240px'}}>アトリビュート</th>
+          <th style={{minWidth: '240px', width: '240px'}}>値</th>
+          <th style={{width: '100%'}}>メモ</th>
+        </tr>
+      </thead>
+      <tbody class="mdx-table-body">
+        <tr>
+          <td class="mdx-mono">`data-type`</td>
+          <td class="mdx-mono">string</td>
+          <td>表示切替用のタイプ名</td>
+        </tr>
+
+        <tr>
+          <td class="mdx-mono">`data-load-scripts`</td>
+          <td class="mdx-mono">
+            <div>string[]</div>
+          </td>
+          <td>追加で読み込むスクリプト</td>
+        </tr>
+
+        <tr>
+          <td class="mdx-mono">`data-init-ecm`</td>
+          <td class="mdx-mono">
+            <div>boolean</div>
+            <div style={{ color: "#8f8f8f"}}>
+              デフォルト: false
+            </div>
+          </td>
+          <td>処理後、ECMをイニシャライズをする</td>
+        </tr>
+
+        <tr>
+          <td class="mdx-mono">`data-init-old-ecm`</td>
+          <td class="mdx-mono">
+            <div>boolean</div>
+            <div style={{ color: "#8f8f8f"}}>
+              デフォルト: false
+            </div>
+          </td>
+          <td>処理後、旧ECMをイニシャライズをする</td>
+        </tr>
+      </tbody>
+    </table>
+  </Tabs.Panel>
+</Tabs>

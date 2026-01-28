@@ -1,0 +1,116 @@
+import Demo from 'src/components/Demo'
+import Code from 'src/components/Code'
+import Html from 'src/components/Html'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import filterHTML from 'scm/src/modules/gs-intro/filter.html'
+import filterMultiHTML from 'scm/src/modules/gs-intro/filter-multi.html'
+
+export const meta = {
+  title: 'ギフトサーチ導線 ソートあり',
+  url: '/scm/docs/other/gs-intro-filter',
+  tags: ['gift', 'banner', 'バナー', 'ソート'],
+}
+
+# ギフトサーチ導線 ソートあり
+
+## 使い方
+
+- `form`タグの`action`に遷移先URLを設定してください。
+
+<Code
+  copy={false}
+  content={`
+    <form
+    class="text-center overflow-x-hidden"
+    method="get"
+    action="★遷移先URLを入れる★"
+    accept-charset="utf-8"
+  >
+`}
+/>
+
+- 選択肢(`option`タグ)の`value`に値を設定してください。値はギフトサーチページで使用しているものと同じになります。設定する値はディレクターに確認してください。
+  「〜を選ぶ」など、選択肢ではない`option`の`value`は空（`value=""`）のままで問題ありません。
+
+<Code
+  copy={false}
+  content={`
+    <option value="" selected>価格帯を選ぶ</option>
+<option value="★設定したい値を入れる★">○○円未満</option>
+<option value="★設定したい値を入れる★">○○～○○円</option>
+`}
+/>
+例：
+<Code
+  copy={false}
+  content={`
+  価格
+<option value="" selected>価格帯を選ぶ</option>
+<option value="~2999">3,000円円未満</option>
+<option value="3000~4999">3,000～5,000円</option>
+カテゴリー
+<option value="" selected>カテゴリーを選ぶ</option>
+<option value="food_wagashi">和菓子</option>
+<option value="fashion">ファッション・雑貨・インテリア</option>
+`}
+/>
+
+- 不要な選択肢の`option`タグは削除してください。
+  削除する際は、開始タグ（`<option ...>`）だけでなく、終了タグ（`</option>`）まで忘れずに削除してください。
+
+## カテゴリー × 価格
+
+<Demo
+  scm={true}
+  content={filterMultiHTML}
+  breakpoints={['sp', 'md', 'lg']}
+/>
+
+<Space h='lg' />
+
+## 価格のみ
+
+<Demo
+  scm={true}
+  content={filterHTML}
+  breakpoints={['sp', 'md', 'lg']}
+/>
+
+### カテゴリーのみに変更
+
+カテゴリーのみの絞り込みに変更したい場合、上記コードの`select`タグの`name`の値を`price`から`genre`に変更してください。
+
+<Code
+  copy={false}
+  content={`
+    <select class="scm-gs-intro-filter-select" name="genre">
+`}
+/>
+
+## パラメーター設定（l-idなど）
+
+本ギフトサーチ動線フォームでは、各inputやselectタグの`name`属性および`value`属性の値が、フォーム送信時に遷移先のURLのパラメーターとして付与されます。
+
+例えば、
+
+- `name`属性が`l-id`、`value`属性が`giftsearch_btn`の場合（「l-id」に「giftsearch_btn」を設定した場合）
+- `name`属性が`genre`、`value`属性が`food_wagashi`の場合（「カテゴリー」で「和菓子」を選択した場合）
+- `name`属性が`price`、`value`属性が`~2999`の場合（「価格」で「3,000円未満」を選択した場合）
+
+遷移先のURLには次のようにパラメーターが付与されます。
+
+`?l-id=giftsearch_btn&genre=food_wagashi&price=~2999`
+
+このパラメーターが付与されることで遷移先でソートが機能するという仕組みになっています。
+
+### l-id を入れる場合
+
+`form`タグ内にあるl-id用のinputタグの`value`を変更してください。
+
+<Code
+  copy={false}
+  content={`
+<input type="hidden" name="l-id" value="★付けたいl-idの値を入れる★">
+`}
+/>

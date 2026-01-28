@@ -1,0 +1,61 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+$max-width: 976px;
+
+$max-width-slider: 876px;
+$height-slider: 80px;
+
+.ecm-floating-banner {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: calc(100% - $space-24);
+  max-width: $max-width;
+  background-color: rgb(0 0 0 / 20%);
+  padding: $space-8;
+  border-radius: 4px;
+
+  // so that bottom gets respected
+  &[data-static='false'] {
+    top: unset;
+  }
+
+  &.ecm-floating-banner-slider {
+    height: $height-slider;
+    max-width: $max-width-slider;
+  }
+
+  &.ecm-floating-banner-fit {
+    width: fit-content;
+  }
+}
+
+.ecm-floating-banner-close {
+  border: 0;
+  background-color: rgb(0 0 0 / 50%);
+  color: $color-white;
+  box-shadow: none;
+  position: absolute;
+  top: -#{$space-8};
+  right: -#{$space-8};
+  width: $space-24;
+  height: $space-24;
+  border-radius: $space-40;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ecm-floating-banner-white {
+  background-color: $color-white;
+  box-shadow: 0 1.25px 6px rgb(0 0 0 / 20%);
+
+  .ecm-floating-banner-close {
+    background-color: $color-white;
+    box-shadow: 0 1.25px 6px rgb(0 0 0 / 20%);
+    color: $color-9c9c9c;
+  }
+}

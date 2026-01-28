@@ -1,0 +1,63 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'ecm/src/modules/link/default.html'
+import grayHtml from 'ecm/src/modules/link/gray.html'
+
+export const meta = {
+  title: 'テキストリンク',
+  description: 'テキストリンク',
+  url: '/ecm/docs/ui/link',
+  tags: ['link'],
+}
+
+# テキストリンク
+
+テキストリンク用のモジュールです。
+
+<Space />
+
+<Note type='warn'>
+  テキストリンクを利用する場合は、原則このモジュールを利用すること。  
+  リンク色がEventサイトの規定に則っています。
+</Note>
+
+## 通常リンク
+
+- `a` タグでリンク遷移する場合はLink、javascriptなどで動作をさせる場合は `button` を利用します。
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP/PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={defaultHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={defaultHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## グレーリンク
+
+- `a` タグでリンク遷移する場合はLink、javascriptなどで動作をさせる場合は `button` を利用します。
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP/PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={grayHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={grayHtml}/>
+  </Tabs.Panel>
+</Tabs>

@@ -1,0 +1,29 @@
+@import 'ecm/src/_scss/variables';
+@import 'ecm/src/_scss/mixins';
+
+.scm-ad-logo-100210 {
+  @extend .scm-ad-image-link;
+
+  flex-shrink: 0;
+  width: 40px;
+}
+
+.scm-ad-name-100210 {
+  @include font-default;
+  @include text-12px;
+  @include colorize-link($color-gray-1 !important);
+
+  align-items: center;
+  display: flex;
+  font-weight: bold;
+  margin-left: $space-8;
+  width: 100%;
+
+  @include screen('md', 'up') {
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

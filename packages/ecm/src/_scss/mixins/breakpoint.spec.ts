@@ -1,0 +1,30 @@
+import { ROOT_PATH, rootScreenshot } from '../../../../../e2e/helper'
+import { test } from '@playwright/test'
+
+test('Breakpoint', async ({ page }, testInfo) => {
+  await page.goto(`${ROOT_PATH}/iframe.html?args=&id=dev-breakpoints--default&viewMode=story`)
+  await page.waitForLoadState('networkidle')
+
+  page.setViewportSize({ width: 359, height: 667 })
+  await rootScreenshot(page, testInfo)
+  page.setViewportSize({ width: 360, height: 667 })
+  await rootScreenshot(page, testInfo)
+  page.setViewportSize({ width: 511, height: 667 })
+  await rootScreenshot(page, testInfo)
+  page.setViewportSize({ width: 512, height: 667 })
+  await rootScreenshot(page, testInfo)
+  page.setViewportSize({ width: 767, height: 667 })
+  await rootScreenshot(page, testInfo)
+  page.setViewportSize({ width: 768, height: 667 })
+  await rootScreenshot(page, testInfo)
+  page.setViewportSize({ width: 1023, height: 667 })
+  await rootScreenshot(page, testInfo)
+  page.setViewportSize({ width: 1024, height: 667 })
+  await rootScreenshot(page, testInfo)
+  page.setViewportSize({ width: 1279, height: 667 })
+  await rootScreenshot(page, testInfo)
+  page.setViewportSize({ width: 1280, height: 667 })
+  await rootScreenshot(page, testInfo)
+  page.setViewportSize({ width: 1440, height: 667 })
+  await rootScreenshot(page, testInfo)
+})

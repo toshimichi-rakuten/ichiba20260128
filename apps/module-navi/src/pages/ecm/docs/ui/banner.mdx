@@ -1,0 +1,52 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'ecm/src/modules/banner/default.html'
+
+export const meta = {
+  title: 'バナー',
+  description: 'ページ内にバナーを設置する場合に利用',
+  url: '/ecm/docs/ui/banner',
+  tags: ['banner'],
+}
+
+# バナー
+
+ページ内にバナーを設置する場合に利用するモジュールです。 あらかじめレイジーローディングの設定が用意され、各種レイアウトに対応しています。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value="code">コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={defaultHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={defaultHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={defaultHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## 使い方
+
+- バナーは、各種レイアウト（カラム、スライダー、カルーセルなど）に入るように設計されています。
+- `data-lazy-loading=""` に実際表示させる画像パスを記載してください。
+- `src="https://r.r10s.jp/com/img/home/t.gif?resize=400:400"` の `?resize=400:400` 部分は実際の画像サイズ（横:縦）へ編集してください。
+- HTMLを必要なバナーの数だけコピーして、レイアウトと組み合わせて下さい。
+
+<Space />
+
+<Note type='info'>
+  グリッドシステムについては[グリッド](/ecm/docs/css/grid/)を参照
+</Note>

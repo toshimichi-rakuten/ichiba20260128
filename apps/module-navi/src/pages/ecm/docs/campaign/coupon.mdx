@@ -1,0 +1,217 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'ecm/src/modules/coupon/default.html'
+import twoHtml from 'ecm/src/modules/coupon/two.html'
+import threeHtml from 'ecm/src/modules/coupon/three.html'
+import fourHtml from 'ecm/src/modules/coupon/four.html'
+import fiveHtml from 'ecm/src/modules/coupon/five.html'
+import centerOneHtml from 'ecm/src/modules/coupon/center-one.html'
+import centerTwoHtml from 'ecm/src/modules/coupon/center-two.html'
+import centerThreeHtml from 'ecm/src/modules/coupon/center-three.html'
+import afterHtml from 'ecm/src/modules/coupon/after.html'
+
+export const meta = {
+  title: '非遷移クーポン獲得ボタン',
+  description: 'ページに遷移することなくクーポン獲得をお知らせ',
+  url: '/ecm/docs/campaign/coupon',
+  tags: ['coupon'],
+}
+
+# 非遷移クーポン獲得ボタン
+
+クーポン獲得ボタンを押したあとに「獲得しました」ページに遷移することなく、クーポンを獲得したことをお知らせする非遷移型のボタンです。  
+制作にあたっては、[クーポン制作ガイドライン](https://confluence.rakuten-it.com/confluence/pages/viewpage.action?pageId=2074215487)（閲覧は社内環境限定）もご確認ください。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='image' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="image">イメージ</Tabs.Tab>
+    <Tabs.Tab value="after-image">ボタン押下後のイメージ</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='image'>
+    <Html content={defaultHtml} /> 
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='after-image'>
+    <Html device='lg' content={afterHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+## 使い方
+
+- 基本的な使い方は下記手順です。
+- 最新のアウトラインファイルを利用
+- ボタンモジュールソースコードをコピー&ペースト
+- ボタンモジュールソースコードの中の、☆☆クーポンURL☆☆部分、金額・条件などテキストを企画に合わせて編集
+- `data-coupon-authkey="9b781a58b8acd07450d7d28a499ed5c1` は市場event page専用のauthkeyのため固定です。
+- 1行の枚数のレイアウト設定については、PC用、SP用で個別にソースコード部分の説明を参照して編集してください。
+- 色など変更する場合は企画ごと個別CSSで対応してください。カラーバリエーションは[バリエーション例](http://kakunin.rakuten.ne.jp/public_access/ichiba/event/_CREATE/module-reference/page/ver3/function/module_2020/pdf/rc-noTransitionCoupon_pattern.pdf)を参考にしてください。
+
+### 注意事項
+
+- 利用対象ドメインは `https://event.rakuten.co.jp/` です
+- ランク指定のクーポン、メンバーシップ（プレミアム、学割）のクーポンにはこの機能は使えません
+- クーポンを獲得しても、獲得メールが来ません
+- WEB企画チェックシートをもとに最終チェックしてください（クーポン企画の場合のオプションチェック項目を参照）
+
+<Note type='warn'>
+  カラム数や余白などはページで見せたいレイアウトに合わせて、グリッドシステムを利用して変更できますが、本モジュールはカラム数によりフォントサイズを調整するクラスが付与されています。  
+  そのため、カラム数を変更する場合はグリッドシステムのクラスのみを変更するのではなく、レイアウトからソースをコピーして使用してください。
+</Note>
+
+## レイアウト
+
+### SP2カラム/PC2カラム
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="sp">SP</Tabs.Tab>
+    <Tabs.Tab value="lg">PC</Tabs.Tab>
+    <Tabs.Tab value="code">コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html device='sp' content={twoHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={twoHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value="code">
+    <Code content={twoHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+### SP1カラム/PC3カラム
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="sp">SP</Tabs.Tab>
+    <Tabs.Tab value="lg">PC</Tabs.Tab>
+    <Tabs.Tab value="code">コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html device='sp' content={threeHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={threeHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value="code">
+    <Code content={threeHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+### SP1カラム/PC4カラム
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="sp">SP</Tabs.Tab>
+    <Tabs.Tab value="lg">PC</Tabs.Tab>
+    <Tabs.Tab value="code">コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html device='sp' content={fourHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={fourHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value="code">
+    <Code content={fourHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+### SP1カラム/PC5カラム
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="sp">SP</Tabs.Tab>
+    <Tabs.Tab value="lg">PC</Tabs.Tab>
+    <Tabs.Tab value="code">コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html device='sp' content={fiveHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={fiveHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value="code">
+    <Code content={fiveHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+### 1～3カラムで中央揃えにする配置
+
+#### 1カラム
+
+<Tabs keepMounted={false} defaultValue='lg' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="lg">PC</Tabs.Tab>
+    <Tabs.Tab value="code">コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={centerOneHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value="code">
+    <Code content={centerOneHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+#### 2カラム
+
+<Tabs keepMounted={false} defaultValue='lg' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="lg">PC</Tabs.Tab>
+    <Tabs.Tab value="code">コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={centerTwoHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value="code">
+    <Code content={centerTwoHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+#### 3カラム
+
+<Tabs keepMounted={false} defaultValue='lg' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="lg">PC</Tabs.Tab>
+    <Tabs.Tab value="code">コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={centerThreeHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value="code">
+    <Code content={centerThreeHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Note type='info'>
+  `ecm-coupon` 要素の横幅はデフォルト100%となっています。幅の調整には別途CSSを記述して幅を制御する必要があります。  
+  上記レイアウトでは、`d-grid` 要素（ボタンが並ぶエリア）にカスタムしたい最大横幅（ボタン数＋余白の幅）を指定し、`m-auto` を使用して `d-grid` 要素（ボタンが並ぶエリア）を中央に揃えています。
+</Note>

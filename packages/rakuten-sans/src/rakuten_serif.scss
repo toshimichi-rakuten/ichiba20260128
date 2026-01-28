@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'Rakuten Serif Variable';
+  font-weight: 300 900;
+  font-style: normal;
+  src: url('https://r.r10s.jp/com/js/c/rakuten_sans/assets/fonts/RakutenSerif/RakutenSerifVF_W_Wght.woff2')
+    format('woff2');
+}
+
+@font-face {
+  font-family: 'Rakuten Serif Variable';
+  font-weight: 300 900;
+  font-style: italic;
+  src: url('https://r.r10s.jp/com/js/c/rakuten_sans/assets/fonts/RakutenSerif/RakutenSerifItVF_W_Wght.woff2')
+    format('woff2');
+}
+
+.font-rakuten-serif {
+  font-family: 'Rakuten Serif Variable';
+}

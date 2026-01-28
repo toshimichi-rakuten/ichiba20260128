@@ -1,0 +1,99 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'ecm/src/modules/kanban/default.html'
+import withtextHtml from 'ecm/src/modules/kanban/with-text.html'
+import sliderHtml from 'ecm/src/modules/kanban/slider.html'
+
+export const meta = {
+  title: '看板',
+  description: '企画ページの看板（画像・企画タイトル・リード文）',
+  url: '/ecm/docs/ui/kanban',
+  tags: ['kanban'],
+}
+
+
+# 看板
+
+企画ページの看板（画像・企画タイトル・リード文）のモジュールです。
+
+## 画像のみ
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html contentPadding="0px" content={defaultHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html contentPadding="0px" device='lg' content={defaultHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={defaultHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## 画像＋テキスト
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html contentPadding="0px" content={withtextHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html contentPadding="0px" device='lg' content={withtextHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={withtextHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Note type='info'>
+  画像のサイズは自由に設定できます。テキストサイズの変更は、[ユーティリティクラス](/ecm/docs/css/list/)が利用できます。
+</Note>
+
+## スライダー
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={sliderHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={sliderHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={sliderHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Note type='info'>
+  スライドのサイズは `style`で設定されています。幅・高さを変更する場合は、カスタムクラスを作成してください。
+
+</Note>

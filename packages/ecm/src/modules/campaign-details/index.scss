@@ -1,0 +1,85 @@
+/* stylelint-disable */
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+.ecm-campaign-details-headline {
+  @include text-base;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+
+  .ecm-icon-info-outlined {
+    @include text-lg;
+    margin-right: $space-8;
+  }
+}
+
+// キャンペーン詳細
+.ecm-campaign-details {
+  @include text-sm;
+  padding: $space-16;
+  margin-top: $space-16;
+  background: $color-white;
+  border-radius: $space-4;
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.08);
+
+  @include screen('md', 'up') {
+    padding: $space-24 $space-32;
+  }
+}
+
+.ecm-campaign-details-title {
+  @include text-sm;
+  font-weight: bold;
+  color: $color-crimson;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-white;
+  text-align: left;
+  border: 0;
+  padding: 0;
+  width: 100%;
+
+  .ecm-icon-chevron-down {
+    @include text-base;
+    color: $color-gray-2;
+    transition: transform 0.2s ease-out;
+  }
+
+  &[aria-expanded='true'] {
+    .ecm-icon-chevron-down {
+      transform: rotate(180deg);
+    }
+  }
+
+  @include screen('md', 'up') {
+    cursor: default;
+    .ecm-icon-chevron-down {
+      display: none;
+    }
+  }
+}
+
+.ecm-campaign-details-group {
+  @include text-sm;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: $space-12;
+  padding-bottom: $space-12;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: $space-8;
+
+  &:not(.ecm-campaign-details-group-full) {
+    @include screen('md', 'up') {
+      display: grid;
+      grid-template-columns: 140px minmax(0, 1fr);
+      gap: $space-24;
+    }
+  }
+
+  &:first-child {
+    border-top: 0;
+  }
+}

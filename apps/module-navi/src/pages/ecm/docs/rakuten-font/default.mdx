@@ -1,0 +1,41 @@
+import Html from 'src/components/Html'
+import Space from 'src/components/Space'
+import Code from 'src/components/Code'
+import Note from 'src/components/Note'
+import rakutenSansJpDefault2Html from 'rakuten-sans/src/rakuten_sans_jp2_default.html'
+
+export const meta = {
+  title: 'デフォルトサポート',
+  description: 'デフォルトサポート',
+  url: '/ecm/docs/rakuten-font/default',
+  tags: ['font', 'フォント']
+}
+
+# デフォルトサポート
+
+## Rakuten Sans JP2（font-weight:400&700）
+
+<Html
+  full={true}
+  device={'lg'}
+  rakutenSansJp2={true}
+  content={rakutenSansJpDefault2Html}
+/>
+
+## 使い方
+
+フォントを適用させたいテキストに下記のようにclass属性を付与する
+
+<Space />
+
+<Code content={`
+<!-- Regular (400) -->
+<div class="font-rakuten-sans-jp2-400">
+    Regular Weight Text
+</div>
+
+<!-- Bold (700) -->
+<div class="font-rakuten-sans-jp2-700">
+  Bold Weight Text
+</div>
+`} />

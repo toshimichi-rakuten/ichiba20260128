@@ -1,0 +1,102 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+
+export const meta = {
+  title: 'ダイナミックコンテンツ・カスタムJS',
+  description: 'JSによって動的に追加されるマークアップ',
+  url: '/ecm/docs/js/dynamic-content',
+  tags: ['dynamic', 'content'],
+}
+
+# ダイナミックコンテンツ・カスタムJS
+
+**※コーダー/エンジニア向け**
+
+<Space />
+
+ダイナミックコンテンツとはJSによって動的に追加されるマークアップです。ECMでは最初の静的なマークアップにのみインスタンス化されます。  
+ECMをダイナミックコンテンツで動作させるには、`dynamic-content`モジュールを使用してください。  
+ECMにHTMLの変更を監視させ、必要に応じてモジュールをインスタンス化します。
+
+## ダイナミックコンテンツ
+
+<Code language='html' content={`
+<div id="fruits-container" data-module-name="ecm-dynamic-content"></div>
+
+<script>
+// custom js that renders an array of fruits to html using \"ecm-view-more\" module
+const array = ['apple', 'orange', 'kiwi'];
+const container = document.getElementById('fruits-container');
+
+const fruits = array.map(el => {
+  return \`<li class="ecm-view-more-item">\${el}</li>\`
+}).join('');
+
+container.innerHTML = \`
+<ul data-module-name="ecm-view-more">
+  \${fruits}
+</ul>
+\`;
+</script>
+`}/>
+
+
+## イベント
+
+
+1. `ecmInitialize` モジュールをInitializeする
+
+<Code language='html' content={`
+<template id="template">
+  <div data-module-name="ecm-accordion" id="node">
+  </div>
+</template>
+
+<script>
+const body = document.querySelector('body');
+const templ = document.querySelector('#template');
+const content = templ.content.cloneNode(true);
+body.appendChild(content);
+
+const node = document.querySelector('#node');
+
+const event = new CustomEvent('ecmInitialize', {
+  detail: {
+    target: node,
+  },
+});
+
+document.dispatchEvent(event);
+</script>
+`}/>
+
+2. `ecmInitializeBlock` ブロック内の全てのモジュールをInitializeする
+
+<Code language='html' content={`
+<template id="template">
+  <div id="parent">
+    <div data-module-name="ecm-accordion"></div>
+    <div data-module-name="ecm-slider"></div>
+  </div>
+</template>
+
+<script>
+const body = document.querySelector('body');
+const templ = document.querySelector('#template');
+const content = templ.content.cloneNode(true);
+body.appendChild(content);
+
+const parent = document.querySelector('#parent');
+
+const event = new CustomEvent('ecmInitializeBlock', {
+  detail: {
+    target: parent,
+  },
+});
+
+document.dispatchEvent(event);
+</script>
+`}/>

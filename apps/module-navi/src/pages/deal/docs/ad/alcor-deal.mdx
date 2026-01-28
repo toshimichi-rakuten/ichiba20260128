@@ -1,0 +1,61 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import { PasswordView } from 'src/components/PasswordView'
+import { AlcorDealGenerator }  from 'src/page-files/alcor-deal/generator'
+
+export const meta = {
+  title: 'アルコル（DEAL）',
+  description: '商品リスト作成ツール アルコルで利用できるHTMLテンプレート',
+  url: '/deal/docs/ad/alcor-deal',
+  tags: ['alcor', 'alcor-deal', 'アルコル', 'item'],
+}
+
+# アルコル（DEAL）
+
+商品リスト作成ツール アルコルで利用できるHTMLテンプレートです。モジュールでは、商品リスト部分のみをアルコルのテンプレートとして登録し、実際のページでの見せ方＝レイアウト（何の要素を表示させるか・何カラム表示にするか、スライダーにするか）は、ページ側で設定・変更できるように制作されています。アルコルツール自体について詳しくは、[アルコル（Alcor）](https://confluence.rakuten-it.com/confluence/pages/viewpage.action?pageId=1098887034)（閲覧は社内環境限定）をご確認ください。
+
+## 使い方
+
+1. 下記のフォームを使用してモジュールを設定する
+
+    <Space />
+
+    フォームの設定を変更すると、設定内容に基づいてHTMLコードが自動更新されます。
+
+    <Space />
+
+2. 生成されたHTMLコードをコピーする
+
+    <Space />
+
+    フォームの設定に基づいて、下部にHTMLコードが自動生成されます。
+    生成されたコードをコピーし、ページに貼り付けてください。
+
+    <Space />
+
+3. アルコルの出力HTMLパスを記載する
+
+    <Space />
+
+    DEALアルコルモジュール用のテンプレートである `ecm_alcor_deal_50_v2.html` を選択して、HTMLを出力してください。こちらのテンプレートはPC/SP共通で利用可能です。  
+    出力されたHTMLの
+
+    <Space />
+
+    <Code content={`
+    <!-- Alcor Template -->
+   <!--#include virtual="★"-->
+   <!-- /Alcor template -->
+    `}/>
+
+    <Space />
+
+    includeのパス部分を、出力したHTMLのインクルードパス `/itemlist/deal/20xxxx/****.html` と置き換えてください。  
+    最後に、レイアウトが正しく表示されるか確認します。
+
+## フォーム
+
+<AlcorDealGenerator />

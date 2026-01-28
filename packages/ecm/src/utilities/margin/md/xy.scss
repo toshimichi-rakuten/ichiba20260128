@@ -1,0 +1,48 @@
+@import '../../../_scss/variables';
+@import '../../../_scss/mixins';
+
+// Horizontal
+@for $i from 0 through $space-max-level {
+  @include util-md('mx-#{$i * $space-unit}') {
+    margin-left: ($i * $space-unit) + px;
+    margin-right: ($i * $space-unit) + px;
+  }
+}
+// Vertical
+@for $i from 0 through $space-max-level {
+  @include util-md('my-#{$i * $space-unit}') {
+    margin-top: ($i * $space-unit) + px;
+    margin-bottom: ($i * $space-unit) + px;
+  }
+}
+@include util-md('mx-0') {
+  margin-left: 0;
+  margin-right: 0;
+}
+@include util-md('my-0') {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+// Horizontal
+@for $i from 0 through $space-max-level {
+  @include util-md('mx-#{$i * $space-unit}', true) {
+    margin-left: ($i * $space-unit) + px !important;
+    margin-right: ($i * $space-unit) + px !important;
+  }
+}
+// Vertical
+@for $i from 0 through $space-max-level {
+  @include util-md('my-#{$i * $space-unit}', true) {
+    margin-top: ($i * $space-unit) + px !important;
+    margin-bottom: ($i * $space-unit) + px !important;
+  }
+}
+@include util-md('mx-0', true) {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+@include util-md('my-0', true) {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}

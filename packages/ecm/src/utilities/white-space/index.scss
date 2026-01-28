@@ -1,0 +1,34 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+@include util-all('whitespace-normal') {
+  white-space: normal;
+}
+@include util-all('whitespace-nowrap') {
+  white-space: nowrap;
+}
+@include util-all('whitespace-pre') {
+  white-space: pre;
+}
+@include util-all('whitespace-pre-line') {
+  white-space: pre-line;
+}
+@include util-all('whitespace-pre-wrap') {
+  white-space: pre-wrap;
+}
+
+@include util-all('whitespace-normal', true) {
+  white-space: normal !important;
+}
+@include util-all('whitespace-nowrap', true) {
+  white-space: nowrap !important;
+}
+@include util-all('whitespace-pre', true) {
+  white-space: pre !important;
+}
+@include util-all('whitespace-pre-line', true) {
+  white-space: pre-line !important;
+}
+@include util-all('whitespace-pre-wrap', true) {
+  white-space: pre-wrap !important;
+}

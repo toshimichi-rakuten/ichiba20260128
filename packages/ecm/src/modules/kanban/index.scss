@@ -1,0 +1,61 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+.ecm-kanban {
+  position: relative;
+
+  @include screen('md', 'up') {
+    min-width: 768px;
+    max-width: 1920px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+}
+
+.ecm-kanban-image {
+  width: 100%;
+  height: auto;
+
+  @include screen('md', 'up') {
+    width: initial;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.ecm-kanban-text {
+  padding: $space-12 $space-16 $space-16;
+
+  @include screen('md', 'up') {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: $space-24;
+    margin: auto;
+    width: 960px;
+    text-align: center;
+  }
+}
+
+.ecm-kanban-text-title {
+  @include text-sm;
+
+  display: inline;
+  font-weight: 700;
+
+  @include screen('md', 'up') {
+    @include text-base;
+
+    margin-right: $space-8;
+  }
+}
+
+.ecm-kanban-text-lead {
+  @include text-sm;
+
+  display: inline;
+
+  @include screen('md', 'up') {
+    @include text-base;
+  }
+}

@@ -1,0 +1,164 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+// All
+@include util-md('p-0') {
+  padding: 0;
+}
+
+@for $i from 0 through $space-max-level {
+  @include util-md('p-#{$i * $space-unit}') {
+    padding: ($i * $space-unit) + px;
+  }
+}
+
+// Horizontal
+@include util-md('px-0') {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@for $i from 0 through $space-max-level {
+  @include util-md('px-#{$i * $space-unit}') {
+    padding-left: ($i * $space-unit) + px;
+    padding-right: ($i * $space-unit) + px;
+  }
+}
+
+// Vertical
+@include util-md('py-0') {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+@for $i from 0 through $space-max-level {
+  @include util-md('py-#{$i * $space-unit}') {
+    padding-top: ($i * $space-unit) + px;
+    padding-bottom: ($i * $space-unit) + px;
+  }
+}
+
+// Left
+@include util-md('pl-0') {
+  padding-left: 0;
+}
+
+@for $i from 0 through $space-max-level {
+  @include util-md('pl-#{$i * $space-unit}') {
+    padding-left: ($i * $space-unit) + px;
+  }
+}
+
+// Top
+@include util-md('pt-0') {
+  padding-top: 0;
+}
+
+@for $i from 0 through $space-max-level {
+  @include util-md('pt-#{$i * $space-unit}') {
+    padding-top: ($i * $space-unit) + px;
+  }
+}
+
+// Bottom
+@include util-md('pb-0') {
+  padding-bottom: 0;
+}
+
+@for $i from 0 through $space-max-level {
+  @include util-md('pb-#{$i * $space-unit}') {
+    padding-bottom: ($i * $space-unit) + px;
+  }
+}
+
+// Right
+@include util-md('pr-0') {
+  padding-right: 0;
+}
+
+@for $i from 0 through $space-max-level {
+  @include util-md('pr-#{$i * $space-unit}') {
+    padding-right: ($i * $space-unit) + px;
+  }
+}
+
+// All
+@include util-md('p-0', true) {
+  padding: 0 !important;
+}
+
+@for $i from 0 through $space-max-level {
+  @include util-md('p-#{$i * $space-unit}', true) {
+    padding: ($i * $space-unit) + px !important;
+  }
+}
+
+// Horizontal
+@include util-md('px-0', true) {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+@for $i from 0 through $space-max-level {
+  @include util-md('px-#{$i * $space-unit}', true) {
+    padding-left: ($i * $space-unit) + px !important;
+    padding-right: ($i * $space-unit) + px !important;
+  }
+}
+
+// Vertical
+@include util-md('py-0', true) {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+@for $i from 0 through $space-max-level {
+  @include util-md('py-#{$i * $space-unit}', true) {
+    padding-top: ($i * $space-unit) + px !important;
+    padding-bottom: ($i * $space-unit) + px !important;
+  }
+}
+
+// Left
+@include util-md('pl-0', true) {
+  padding-left: 0 !important;
+}
+
+@for $i from 0 through $space-max-level {
+  @include util-md('pl-#{$i * $space-unit}', true) {
+    padding-left: ($i * $space-unit) + px !important;
+  }
+}
+
+// Top
+@include util-md('pt-0', true) {
+  padding-top: 0 !important;
+}
+
+@for $i from 0 through $space-max-level {
+  @include util-md('pt-#{$i * $space-unit}', true) {
+    padding-top: ($i * $space-unit) + px !important;
+  }
+}
+
+// Bottom
+@include util-md('pb-0', true) {
+  padding-bottom: 0 !important;
+}
+
+@for $i from 0 through $space-max-level {
+  @include util-md('pb-#{$i * $space-unit}', true) {
+    padding-bottom: ($i * $space-unit) + px !important;
+  }
+}
+
+// Right
+@include util-md('pr-0') {
+  padding-right: 0 !important;
+}
+
+@for $i from 0 through $space-max-level {
+  @include util-md('pr-#{$i * $space-unit}', true) {
+    padding-right: ($i * $space-unit) + px !important;
+  }
+}

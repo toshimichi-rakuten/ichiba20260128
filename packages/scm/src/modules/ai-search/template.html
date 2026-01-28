@@ -1,0 +1,553 @@
+<div data-plugin-name="scm-ai-search">
+  <form
+    class="scm-ai-search-form"
+    data-output="form"
+  >
+  </form>
+
+  <div data-output="results"></div>
+
+  <template data-template="ai-search-form">
+    <div class="scm-ai-search-hero md-mb-16">
+      <div class="scm-ai-search-hero-texture pt-32">
+        <div class="ecm-container">
+          <div class="scm-ai-search-title-pill">簡単ギフトサーチ</div>
+          <h1
+            class="scm-ai-search-title mt-20"
+            data-ratevent="appear"
+            data-ratid="{{ratPrefix}}_udr_aisearch_01_kanban"
+            data-ratparam="all"
+          >
+            <svg
+              class="scm-ai-search-title-ai"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 113.52 64.75"
+            >
+              <title>AI</title>
+              <path
+                style="fill: #fffc00"
+                d="m45.59 11 13.54 42.75h7.73v11H35.02v-11h8.29l-3.09-11h-16.8l-3.44 11h8.64v11H0v-11h7.99L20.58 11h-8.64V0h42.37v11h-8.72ZM32.1 13.62l-5.8 19.55h11.26L32.1 13.62ZM103.55 11v42.75h9.97v11H76.91v-11h9.75V11h-9.75V0h36.61v11h-9.97Z"
+              />
+            </svg>
+            <span>が選ぶとっておきギフト</span>
+          </h1>
+          <div class="scm-ai-search-text-input-group-wrapper">
+            <div class="scm-ai-search-text-input-group">
+              <textarea
+                class="scm-ai-search-text-input"
+                data-rat-custom-event-id="{{ratPrefix}}_udr_aisearch_input"
+                data-rat-custom-event-type="input"
+                name="keyword"
+                placeholder="何でも聞いてください"
+                rows="2"
+              ></textarea>
+              <button
+                class="scm-ai-search-text-input-send"
+                data-ratevent="click"
+                data-ratid="{{ratPrefix}}_udr_aisearch_freeword_search"
+                type="submit"
+              >
+                <i
+                  class="ecm-icon-push-notification-filled"
+                  aria-hidden="true"
+                ></i>
+              </button>
+              <div class="scm-ai-search-text-input-suggestion-wrapper mt-12 md-mt-16"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scm-ai-search-filter-wrapper">
+      <div
+        id="searchFilterToggle1"
+        class="scm-ai-search-filter"
+        data-module-name="ecm-toggle"
+        data-body-lock="false"
+        aria-hidden="true"
+      >
+        <div>
+          {{> ai-search-range-slider}}
+          <div class="scm-ai-search-select-grid"> {{#each selects}} {{{this}}} {{/each}} </div>
+
+          <div class="scm-ai-search-submit-wrapper">
+            <button
+              class="scm-ai-search-submit-button"
+              data-ratevent="click"
+              data-ratid="{{ratPrefix}}_udr_aisearch_detail_search"
+              type="submit"
+            >
+              <i
+                class="ecm-icon-search"
+                aria-hidden="true"
+              ></i>
+              <span>入力した内容で検索</span>
+            </button>
+            <button
+              class="scm-ai-search-submit-reset-button"
+              data-ratevent="click"
+              data-ratid="{{ratPrefix}}_udr_aisearch_reset"
+              data-ratparam="all"
+              type="button"
+              >絞り込みを解除</button
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scm-ai-search-toggle-wrapper">
+      <button
+        class="scm-ai-search-toggle scm-ai-search-toggle-open"
+        data-ratevent="click"
+        data-ratid="{{ratPrefix}}_udr_aisearch_open"
+        data-ratparam="all"
+        aria-expanded="false"
+        aria-controls="searchFilterToggle1"
+        type="button"
+      >
+        <span>条件をもっと絞る</span>
+        <i
+          class="ecm-icon-plus"
+          aria-hidden="true"
+        ></i>
+      </button>
+
+      <button
+        class="scm-ai-search-toggle scm-ai-search-toggle-close"
+        data-ratevent="click"
+        data-ratid="{{ratPrefix}}_udr_aisearch_close"
+        data-ratparam="all"
+        aria-expanded="false"
+        aria-controls="searchFilterToggle1"
+        type="button"
+      >
+        <span>閉じる</span>
+        <i
+          class="ecm-icon-minus"
+          aria-hidden="true"
+        ></i>
+      </button>
+    </div>
+
+    <div class="ecm-container mt-16">
+      <div class="scm-ai-search-message">
+        <div>※AIが自動生成したギフト商品候補です。内容が最新情報と異なる場合があります。</div>
+        <div>※配送環境にご配慮いただき、なるべく1回での受け取りを考慮したご注文にご協力ください。 </div>
+        <a href="https://event.rakuten.co.jp/guide/shipping/sustainable/">
+          <i
+            class="ecm-icon-info-outlined"
+            aria-hidden="true"
+          ></i>
+          配送の負担軽減のために
+        </a>
+      </div>
+    </div>
+  </template>
+
+  <template data-template="ai-search-results">
+    <div class="ecm-container">
+      <div
+        class="text-3xl md-text-4xl font-weight-bold mb-16 mt-40 md-mt-56"
+        data-ratevent="appear"
+        data-ratid="{{ratPrefix}}_udr_aisearch_02_item"
+        data-ratparam="all"
+        >{{headline}}</div
+      >
+      <div class="d-grid d-grid-col-2 md-d-grid-col-3 lg-d-grid-col-4 d-grid-gap-x-16 d-grid-gap-y-24">
+        {{#each items}} {{> ai-search-ad}} {{/each}}
+      </div>
+    </div>
+  </template>
+
+  <template data-template="ai-search-results-loading">
+    <div class="text-center py-32">
+      <img
+        src="https://r.r10s.jp/evt/event/season/event/giftsearch/img/loading.gif"
+        alt="検索中"
+        width="240"
+        height="240"
+      />
+    </div>
+  </template>
+
+  <template data-template="ai-search-results-empty">
+    <div class="ecm-container text-center text-lg p-16">
+      <p>条件に一致するアイテムが見つかりませんでした。</p>
+      <p>内容を変更してお探しください。</p>
+    </div>
+  </template>
+
+  <template data-template="ai-search-results-error">
+    <div class="ecm-container text-center text-lg p-16">
+      <p>アイテムの取得ができませんでした。</p>
+      <p>時間をおいて、再度お試しください。</p>
+    </div>
+  </template>
+
+  <template data-template="ai-search-suggestion-loading">
+    <button
+      class="scm-ai-search-text-input-suggestion scm-ai-search-text-input-skeleton"
+      type="button"
+      >&nbsp;
+    </button>
+  </template>
+
+  <template data-template="ai-search-suggestion">
+    <button
+      class="scm-ai-search-text-input-suggestion"
+      data-ratevent="click"
+      data-ratid="{{ratPrefix}}_udr_aisearch_freeword_{{index}}"
+      data-ratparam="all"
+      type="button"
+    >
+      <span class="scm-ai-search-text-input-suggestion-text"> {{value}} </span>
+    </button>
+  </template>
+
+  <template data-template="ai-search-range-slider">
+    <span class="scm-search-ai-range-slider-label">商品価格</span>
+    <div class="scm-search-ai-range-slider-wrapper">
+      <div class="scm-search-ai-range-slider">
+        <div class="scm-search-ai-range-slider-inputs">
+          <div class="scm-search-ai-range-slider-combined-bubble">
+            <span data-scm-search-ai-range-slider-from-value-combined></span>
+            <span>～</span>
+            <span data-scm-search-ai-range-slider-to-value-combined></span>
+          </div>
+          <input
+            class="scm-search-ai-range-slider-input"
+            data-scm-search-ai-range-slider-from-slider
+            data-rat-custom-event-id="{{ratPrefix}}_udr_aisearch_range_from"
+            data-rat-custom-event-type="range"
+            step="{{rangeFilter.stepper}}"
+            type="range"
+            value="{{rangeFilter.defaultMin}}"
+            min="{{rangeFilter.min}}"
+            max="{{rangeFilter.max}}"
+            name="priceFrom"
+          />
+          <input
+            class="scm-search-ai-range-slider-input"
+            data-scm-search-ai-range-slider-to-slider
+            data-rat-custom-event-id="{{ratPrefix}}_udr_aisearch_range_to"
+            data-rat-custom-event-type="range"
+            step="{{rangeFilter.stepper}}"
+            type="range"
+            value="{{rangeFilter.defaultMax}}"
+            min="{{rangeFilter.min}}"
+            max="{{rangeFilter.max}}"
+            name="priceTo"
+          />
+          <div class="scm-search-ai-range-slider-thumb scm-search-ai-range-slider-from-thumb">
+            <div class="scm-search-ai-range-slider-bubble scm-search-ai-range-slider-from-bubble">
+              <span data-scm-search-ai-range-slider-from-value-bubble></span>
+            </div>
+          </div>
+          <div class="scm-search-ai-range-slider-thumb scm-search-ai-range-slider-to-thumb">
+            <div class="scm-search-ai-range-slider-bubble scm-search-ai-range-slider-to-bubble">
+              <span data-scm-search-ai-range-slider-to-value-bubble></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scm-search-ai-range-slider-value">
+        <span>{{rangeFilter.minLabel}}</span>
+        <span>{{rangeFilter.maxLabel}}</span>
+      </div>
+    </div>
+  </template>
+
+  <template data-template="ai-search-ad">
+    <div class="scm-ai-search-ad">
+      <a
+        class="scm-ai-search-ad-image-link"
+        href="{{originalItemUrlWithSID}}"
+      >
+        <img
+          class="w-full h-full aspect-ratio-1x1 object-contain"
+          src="{{image}}"
+          alt="{{text}}"
+          loading="lazy"
+        />
+      </a>
+      <div class="scm-ai-search-ad-body">
+        <a
+          class="scm-ai-search-ad-name"
+          href="{{originalItemUrlWithSID}}"
+          >{{text}}</a
+        >
+        <a
+          class="scm-ai-search-ad-price"
+          href="{{originalItemUrlWithSID}}"
+        >
+          <p class="scm-ai-search-ad-price-num">
+            <span>{{price}}{{#if hasPriceRange}}〜{{/if}}</span>
+            <span class="scm-ai-search-ad-free-shipping">{{#if isShippingFree}}送料無料{{/if}}</span>
+          </p>
+        </a>
+        {{#if giftLabels.length}}
+        <div class="scm-ai-search-ad-tag-container">
+          {{#each giftLabels}}
+          <div class="scm-ai-search-ad-tag">{{this}}</div>
+          {{/each}}
+        </div>
+        {{/if}}
+        <div class="scm-ai-search-ad-review">
+          {{{ratingStars}}}
+          <span class="scm-ai-search-ad-review-ave">{{ratingAverage}}</span>
+          <span class="scm-ai-search-ad-review-num">({{reviewCount}}件)</span>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <template data-template="ai-search-select-input">
+    <div class="d-flex items-center">
+      <input
+        id="{{name}}-{{prefix}}-{{value}}"
+        class="scm-ai-search-select-input"
+        data-ratevent="click"
+        data-ratid="{{ratPrefix}}_udr_aisearch_{{name}}_{{value}}"
+        data-ratparam="all"
+        type="{{inputType}}"
+        name="{{name}}-{{prefix}}"
+        value="{{value}}"
+      />
+      <label
+        class="cursor-pointer"
+        for="{{name}}-{{prefix}}-{{value}}"
+        >{{label}}</label
+      >
+    </div>
+  </template>
+
+  <template data-template="ai-search-select-option">
+    <button
+      class="scm-ai-search-select-option"
+      data-ratevent="click"
+      data-ratid="{{ratPrefix}}_udr_aisearch_{{name}}_{{value}}"
+      data-ratparam="all"
+      data-value="{{value}}"
+      type="button"
+      >{{label}}</button
+    >
+  </template>
+
+  <template data-template="ai-search-select-single">
+    <button
+      style="grid-column: span {{smGridSpan}};"
+      class="scm-ai-search-select-sm"
+      data-ratevent="click"
+      data-ratid="{{ratPrefix}}_udr_aisearch_{{name}}"
+      data-ratparam="all"
+      data-filter-name="{{name}}"
+      aria-expanded="false"
+      aria-controls="ai-search-sheet-{{name}}"
+      type="button"
+    >
+      <span>{{placeholder}}</span>
+      <i
+        class="ecm-icon-chevron-down"
+        aria-hidden="true"
+      ></i>
+    </button>
+
+    <div class="scm-ai-search-select-md-wrapper">
+      <button
+        class="scm-ai-search-select-md"
+        data-ratevent="click"
+        data-ratid="{{ratPrefix}}_udr_aisearch_{{name}}"
+        data-ratparam="all"
+        data-filter-name="{{name}}"
+        aria-expanded="false"
+        aria-controls="ai-search-dropdown-{{name}}"
+        type="button"
+      >
+        <span>{{placeholder}}</span>
+        <i
+          class="ecm-icon-chevron-down"
+          aria-hidden="true"
+        ></i>
+      </button>
+
+      <div
+        id="ai-search-dropdown-{{name}}"
+        class="scm-ai-search-select-dropdown"
+      >
+        <div class="scm-ai-search-select-dropdown-content">
+          {{#each desktopOptions}} {{> ai-search-select-option}} {{/each}}
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="ai-search-sheet-{{name}}"
+      class="ecm-sheet ecm-sheet-above"
+      data-module-name="ecm-toggle"
+      data-body-lock="true"
+      data-transition="true"
+      data-transition-ms="450"
+      aria-modal="true"
+      role="dialog"
+    >
+      <div
+        class="ecm-sheet-bg"
+        aria-expanded="false"
+        aria-controls="ai-search-sheet-{{name}}"
+      ></div>
+
+      <div class="ecm-sheet-content-wrapper">
+        <div class="ecm-sheet-content">
+          <div
+            style="position: relative"
+            class="d-flex justify-center"
+          >
+            <div class="font-weight-bold text-xl p-16 justify-center"> {{placeholder}} </div>
+            <button
+              style="position: absolute; right: 16px; top: 16px"
+              class="ecm-sheet-content-close"
+              data-ratevent="click"
+              data-ratid="{{ratPrefix}}_udr_aisearch_{{name}}"
+              data-ratparam="all"
+              aria-expanded="false"
+              aria-controls="ai-search-sheet-{{name}}"
+            >
+              <i
+                class="ecm-icon-close"
+                aria-hidden="true"
+              ></i>
+            </button>
+          </div>
+
+          <div class="ecm-sheet-content-body">
+            <div class="scm-ai-search-select-options-container">
+              {{#each mobileOptions}} {{> ai-search-select-option}} {{/each}}
+            </div>
+          </div>
+        </div>
+
+        <button
+          class="ecm-sheet-close"
+          aria-expanded="false"
+          aria-controls="ai-search-sheet-{{name}}"
+        >
+          <i
+            class="ecm-icon-close"
+            aria-hidden="true"
+          ></i>
+          <span>閉じる</span>
+        </button>
+      </div>
+    </div>
+  </template>
+
+  <template data-template="ai-search-select-multi">
+    <button
+      style="grid-column: span {{smGridSpan}};"
+      class="scm-ai-search-select-sm"
+      data-ratevent="click"
+      data-ratid="{{ratPrefix}}_udr_aisearch_{{name}}"
+      data-ratparam="all"
+      data-filter-name="{{name}}"
+      aria-expanded="false"
+      aria-controls="ai-search-sheet-{{name}}"
+      type="button"
+    >
+      <span>{{placeholder}}</span>
+      <i
+        class="ecm-icon-chevron-down"
+        aria-hidden="true"
+      ></i>
+    </button>
+
+    <div class="scm-ai-search-select-md-wrapper">
+      <button
+        class="scm-ai-search-select-md"
+        data-ratevent="click"
+        data-ratid="{{ratPrefix}}_udr_aisearch_{{name}}"
+        data-ratparam="all"
+        data-filter-name="{{name}}"
+        aria-expanded="false"
+        aria-controls="ai-search-dropdown-{{name}}"
+        type="button"
+      >
+        <span>{{placeholder}}</span>
+        <i
+          class="ecm-icon-chevron-down"
+          aria-hidden="true"
+        ></i>
+      </button>
+
+      <div
+        id="ai-search-dropdown-{{name}}"
+        class="scm-ai-search-select-dropdown"
+      >
+        <div class="scm-ai-search-select-dropdown-content">
+          {{#each desktopOptions}} {{> ai-search-select-input prefix="md" name=../name inputType=../inputType}}
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="ai-search-sheet-{{name}}"
+      class="ecm-sheet ecm-sheet-above"
+      data-module-name="ecm-toggle"
+      data-body-lock="true"
+      data-transition="true"
+      data-transition-ms="450"
+      aria-modal="true"
+      role="dialog"
+    >
+      <div
+        class="ecm-sheet-bg"
+        aria-expanded="false"
+        aria-controls="ai-search-sheet-{{name}}"
+      ></div>
+
+      <div class="ecm-sheet-content-wrapper">
+        <div class="ecm-sheet-content">
+          <div
+            style="position: relative"
+            class="d-flex justify-center"
+          >
+            <div class="font-weight-bold text-xl p-16 justify-center"> {{placeholder}} </div>
+            <button
+              style="position: absolute; right: 16px; top: 16px"
+              class="ecm-sheet-content-close"
+              aria-expanded="false"
+              aria-controls="ai-search-sheet-{{name}}"
+            >
+              <i
+                class="ecm-icon-close"
+                aria-hidden="true"
+              ></i>
+            </button>
+          </div>
+
+          <div class="ecm-sheet-content-body">
+            <div class="scm-ai-search-select-input-container">
+              {{#each mobileOptions}} {{> ai-search-select-input prefix="sm" name=../name inputType=../inputType}}
+              {{/each}}
+            </div>
+          </div>
+        </div>
+
+        <button
+          class="ecm-sheet-close"
+          aria-expanded="false"
+          aria-controls="ai-search-sheet-{{name}}"
+        >
+          <i
+            class="ecm-icon-close"
+            aria-hidden="true"
+          ></i>
+          <span>閉じる</span>
+        </button>
+      </div>
+    </div>
+  </template>
+</div>

@@ -1,0 +1,40 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+$space-14: #{3.5 * $space-unit}px;
+$space-18: #{4.5 * $space-unit}px;
+
+.ecm-pill {
+  @include text-sm;
+  @include colorize-link($color-gray-1);
+
+  padding: $space-8 $space-16;
+  color: $color-gray-1;
+  border-radius: 32px;
+  border: 1px solid #d1d1d1;
+
+  &.ecm-pill-size-xs {
+    @include text-12px;
+
+    padding: $space-8 $space-12;
+  }
+
+  &.ecm-pill-size-sm {
+    @include text-xs;
+
+    padding: $space-8 $space-14;
+  }
+
+  &.ecm-pill-size-lg {
+    @include text-base;
+
+    padding: $space-8 $space-18;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: #f5f5f5;
+      text-decoration: none;
+    }
+  }
+}

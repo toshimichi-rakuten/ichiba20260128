@@ -1,0 +1,1214 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import wrapHtml from 'ecm/src/utilities/flex/wrap.html'
+import levelsHtml from 'ecm/src/utilities/typography/levels.html'
+
+export const meta = {
+  title: 'CSSスタイル一覧',
+  description: 'ページでコーディングをする際によく使われるCSSのスタイルをクラス名で定義したもの',
+  url: '/ecm/docs/css/list',
+  tags: ['css', 'class', 'クラス', 'utils', 'space', 'spacing', 'margin', 'マージン', 'padding', 'パディング', 'text', 'テキスト', 'typography', 'タイポグラフィ', 'font-size', 'フォントサイズ', 'flex', 'フレックス'],
+}
+
+# CSSスタイル一覧	
+
+ページでコーディングをする際によく使われるCSSのスタイルをクラス名で定義したものです。本ページ内ctrl+Fで検索して利用してください。  
+使い方は [CSSユーティリティ](/ecm/docs/css/) についてを確認してください。
+
+## margin
+
+<table class="mdx-table">
+  <thead class="mdx-table-header">
+    <tr>
+      <th style={{minWidth: '240px', width: '240px'}}>クラス名</th>
+      <th style={{minWidth: '240px', width: '100%'}}>プロパティ</th>
+    </tr>
+  </thead>
+  <tbody class="mdx-table-body">
+    <tr>
+      <td class="mdx-mono">`m-{0-80}`</td>
+      <td class="mdx-mono">`margin: {0-80}px;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`mt-{0-80}`</td>
+      <td class="mdx-mono">`margin-top: {0-80}px;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`ml-{0-80}`</td>
+      <td class="mdx-mono">`margin-left: {0-80}px;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`mb-{0-80}`</td>
+      <td class="mdx-mono">`margin-bottom: {0-80}px;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`mr-{0-80}`</td>
+      <td class="mdx-mono">`margin-right: {0-80}px;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`mx-{0-80}`</td>
+      <td class="mdx-mono">`margin-left: {0-80}px; margin-right: {0-80}px;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`my-{0-80}`</td>
+      <td class="mdx-mono">`margin-top: {0-80}px; margin-bottom: {0-80}px;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`m-auto`</td>
+      <td class="mdx-mono">`margin: auto;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`mt-auto`</td>
+      <td class="mdx-mono">`margin-top: auto;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`ml-auto`</td>
+      <td class="mdx-mono">`margin-left: auto;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`mb-auto`</td>
+      <td class="mdx-mono">`margin-bottom: auto;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`mr-auto`</td>
+      <td class="mdx-mono">`margin-right: auto;`</td>
+    </tr>
+  </tbody>
+</table>
+
+<Space />
+
+`{0-80}` は `4` の倍数、`0` から `80` までになります。
+
+## padding
+
+<table class="mdx-table">
+  <thead class="mdx-table-header">
+    <tr>
+      <th style={{minWidth: '240px', width: '240px'}}>クラス名</th>
+      <th style={{minWidth: '240px', width: '100%'}}>プロパティ</th>
+    </tr>
+  </thead>
+  <tbody class="mdx-table-body">
+    <tr>
+      <td class="mdx-mono">`p-{0-80}`</td>
+      <td class="mdx-mono">`padding: {0-80}px;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`pt-{0-80}`</td>
+      <td class="mdx-mono">`padding-top: {0-80}px;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`pl-{0-80}`</td>
+      <td class="mdx-mono">`padding-left: {0-80}px;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`pb-{0-80}`</td>
+      <td class="mdx-mono">`padding-bottom: {0-80}px;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`pr-{0-80}`</td>
+      <td class="mdx-mono">`padding-right: {0-80}px;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`px-{0-80}`</td>
+      <td class="mdx-mono">`padding-left: {0-80}px; padding-right: {0-80}px;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`py-{0-80}`</td>
+      <td class="mdx-mono">`padding-top: {0-80}px; padding-bottom: {0-80}px;`</td>
+    </tr>
+  </tbody>
+</table>
+
+<Space />
+
+`{0-80}` は `4` の倍数、`0` から `80` までになります。
+
+## flex
+
+<table class="mdx-table">
+  <thead class="mdx-table-header">
+    <tr>
+      <th style={{minWidth: '240px', width: '240px'}}>クラス名</th>
+      <th style={{minWidth: '240px', width: '100%'}}>プロパティ</th>
+    </tr>
+  </thead>
+  <tbody class="mdx-table-body">
+    <tr>
+      <td class="mdx-mono">`d-inline-flex`</td>
+      <td class="mdx-mono">`display: inline-flex;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-flex`</td>
+      <td class="mdx-mono">`display: flex;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-flex-row`</td>
+      <td class="mdx-mono">`flex-direction: row;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-flex-row-reverse`</td>
+      <td class="mdx-mono">`flex-direction: row-reverse;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-flex-col`</td>
+      <td class="mdx-mono">`flex-direction: column;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-flex-col-reverse`</td>
+      <td class="mdx-mono">`flex-direction: column-reverse;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-flex-wrap`</td>
+      <td class="mdx-mono">`flex-wrap: wrap;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-flex-no-wrap`</td>
+      <td class="mdx-mono">`flex-wrap: nowrap;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-flex-wrap-reverse`</td>
+      <td class="mdx-mono">`flex-wrap: wrap-reverse;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-flex-grow-0`</td>
+      <td class="mdx-mono">`flex-grow: 0;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-flex-grow-1`</td>
+      <td class="mdx-mono">`flex-grow: 1;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-flex-shrink-0`</td>
+      <td class="mdx-mono">`flex-shrink: 0;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-flex-shrink-1`</td>
+      <td class="mdx-mono">`flex-shrink: 1;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-flex-basis-0`</td>
+      <td class="mdx-mono">`flex-basis: 0;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-flex-basis-auto`</td>
+      <td class="mdx-mono">`flex-basis: auto;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-flex-none`</td>
+      <td class="mdx-mono">`flex: none;` (`flex-grow: 0; flex-shrink: 0; flex-basis: auto;`と同じ)</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-flex-1`</td>
+      <td class="mdx-mono">`flex: 1;` (`flex-grow: 1; flex-shrink: 1; flex-basis: 0;`と同じ)</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-flex-gap-{4-80}`</td>
+      <td class="mdx-mono">`margin-top: -{4-80}px; margin-left: -{4-80}px; & > * { margin-top: {4-80}px; margin-left: {4-80}px; }`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-flex-gap-{4-80}`</td>
+      <td class="mdx-mono">
+        <span style={{fontWeight: 'bold'}}>class名が、`class="d-flex-gap-{4-80} d-flex-col"` のような場合</span><br />
+        `& > * + * { margin-top: {4-80}px; }`
+      </td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`justify-start`</td>
+      <td class="mdx-mono">`justify-content: flex-start;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`justify-end`</td>
+      <td class="mdx-mono">`justify-content: flex-end;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`justify-center`</td>
+      <td class="mdx-mono">`justify-content: center;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`justify-between`</td>
+      <td class="mdx-mono">`justify-content: space-between;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`justify-around`</td>
+      <td class="mdx-mono">`justify-content: space-around;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`justify-evenly`</td>
+      <td class="mdx-mono">`justify-content: space-evenly;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`items-start`</td>
+      <td class="mdx-mono">`align-items: flex-start;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`items-end`</td>
+      <td class="mdx-mono">`align-items: flex-end;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`items-center`</td>
+      <td class="mdx-mono">`align-items: center;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`items-baseline`</td>
+      <td class="mdx-mono">`align-items: baseline;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`items-stretch`</td>
+      <td class="mdx-mono">`align-items: stretch;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`content-center`</td>
+      <td class="mdx-mono">`align-content: center;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`content-start`</td>
+      <td class="mdx-mono">`align-content: flex-start;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`content-end`</td>
+      <td class="mdx-mono">`align-content: flex-end;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`content-between`</td>
+      <td class="mdx-mono">`align-content: space-between;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`content-around`</td>
+      <td class="mdx-mono">`align-content: space-around;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`content-evenly`</td>
+      <td class="mdx-mono">`align-content: space-evenly;`</td>
+    </tr>
+  </tbody>
+</table>
+
+### 例
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={wrapHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={wrapHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={wrapHtml} />
+  </Tabs.Panel>
+</Tabs>
+
+## text関連
+
+<table class="mdx-table">
+  <thead class="mdx-table-header">
+    <tr>
+      <th style={{minWidth: '240px', width: '240px'}}>クラス名</th>
+      <th style={{minWidth: '240px', width: '100%'}}>プロパティ</th>
+    </tr>
+  </thead>
+  <tbody class="mdx-table-body">
+    <tr>
+      <td class="mdx-mono">`text-10px`</td>
+      <td class="mdx-mono">`font-size: 10px; line-height: 1.3;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`text-11px`</td>
+      <td class="mdx-mono">`font-size: 11px; line-height: 1.3;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`text-12px`</td>
+      <td class="mdx-mono">`font-size: 12px; line-height: 1.3;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`text-xs`</td>
+      <td class="mdx-mono">`font-size: 13px; line-height: 1.3;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`text-sm`</td>
+      <td class="mdx-mono">`font-size: 14px; line-height: 1.3;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`text-base`</td>
+      <td class="mdx-mono">`font-size: 16px; line-height: 1.3;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`text-lg`</td>
+      <td class="mdx-mono">`font-size: 20px; line-height: 1.3;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`text-xl`</td>
+      <td class="mdx-mono">`font-size: 22px; line-height: 1.3;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`text-2xl`</td>
+      <td class="mdx-mono">`font-size: 24px; line-height: 1.3;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`text-3xl`</td>
+      <td class="mdx-mono">`font-size: 28px; line-height: 1.3;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`text-4xl`</td>
+      <td class="mdx-mono">`font-size: 32px; line-height: 1.3;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`text-5xl`</td>
+      <td class="mdx-mono">`font-size: 44px; line-height: 1.3;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`text-6xl`</td>
+      <td class="mdx-mono">`font-size: 56px; line-height: 1.3;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`text-7xl`</td>
+      <td class="mdx-mono">`font-size: 72px; line-height: 1.3;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`text-center`</td>
+      <td class="mdx-mono">`text-align: center;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`text-left`</td>
+      <td class="mdx-mono">`text-align: left;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`text-right`</td>
+      <td class="mdx-mono">`text-align: right;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`line-height-1`</td>
+      <td class="mdx-mono">`line-height: 1.0;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`line-height-1-third`</td>
+      <td class="mdx-mono">`line-height: 1.3;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`line-height-1-half`</td>
+      <td class="mdx-mono">`line-height: 1.5;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`line-height-2`</td>
+      <td class="mdx-mono">`line-height: 2.0;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`font-weight-300`</td>
+      <td class="mdx-mono">`font-weight: 300;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`font-weight-400`</td>
+      <td class="mdx-mono">`font-weight: 400;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`font-weight-600`</td>
+      <td class="mdx-mono">`font-weight: 600;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`font-weight-700`</td>
+      <td class="mdx-mono">`font-weight: 700;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`font-weight-800`</td>
+      <td class="mdx-mono">`font-weight: 800;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`font-weight-900`</td>
+      <td class="mdx-mono">`font-weight: 900;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`font-weight-bold`</td>
+      <td class="mdx-mono">`font-weight: bold;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`font-weight-bolder`</td>
+      <td class="mdx-mono">`font-weight: bolder;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`font-weight-lighter`</td>
+      <td class="mdx-mono">`font-weight: lighter;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`font-style-italic`</td>
+      <td class="mdx-mono">`font-style: italic;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`font-style-normal`</td>
+      <td class="mdx-mono">`font-style: normal;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`font-roboto`</td>
+      <td class="mdx-mono">`font-family: Roboto; (数字のみ)`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`font-yakuhan`</td>
+      <td class="mdx-mono">`font-family: YakuHanJPs;`</td>
+    </tr>
+  </tbody>
+</table>
+
+<Space />
+
+<Html device='lg' content={levelsHtml}/>
+
+## その他
+
+<table class="mdx-table">
+  <thead class="mdx-table-header">
+    <tr>
+      <th style={{minWidth: '240px', width: '240px'}}>クラス名</th>
+      <th style={{minWidth: '240px', width: '100%'}}>プロパティ</th>
+    </tr>
+  </thead>
+  <tbody class="mdx-table-body">
+    <tr>
+      <td class="mdx-mono">`screen-reader-text`</td>
+      <td class="mdx-mono">`/** スクリーンリーダーの為のテキスト */`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`clamp-1`</td>
+      <td class="mdx-mono">`/** テキストを1行に設定する */`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`clamp-2`</td>
+      <td class="mdx-mono">`/** テキストを2行に設定する */`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`clamp-3`</td>
+      <td class="mdx-mono">`/** テキストを3行に設定する */`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`clamp-4`</td>
+      <td class="mdx-mono">`/** テキストを4行に設定する */`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`clamp-5`</td>
+      <td class="mdx-mono">`/** テキストを5行に設定する */`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`color-transparent`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: 'transparent', border: '0.5px solid black'}} />`transparent`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`color-link`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#0078b5'}} />`#0078b5`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`color-crimson`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#bf0000'}} />`#bf0000`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`color-crimson-light`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#d70000'}} />`#d70000`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`color-crimson-lightest`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#ffbebe'}} />`#ffbebe`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`color-black`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#000'}} />`#000`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`color-gray-1`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#333'}} />`#333`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`color-gray-2`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#717171'}} />`#717171`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`color-gray-3`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#8f8f8f'}} />`#8f8f8f`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`color-gray-4`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#d1d1d1'}} />`#d1d1d1`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`color-gray-5`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#ebebeb'}} />`#ebebeb`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`color-gray-6`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#f7f7f7'}} />`#f7f7f7`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`color-white`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#fff', border: '0.5px solid black'}} />`#fff`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`color-110606`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#110606'}} />`#110606`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`color-828282`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#828282'}} />`#828282`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`color-9c9c9c`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#9c9c9c'}} />`#9c9c9c`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`bg-color-transparent`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: 'transparent', border: '0.5px solid black'}} />`transparent`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`bg-color-black`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#000'}} />`#000`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`bg-color-gray-1`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#333'}} />`#333`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`bg-color-gray-2`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#717171'}} />`#717171`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`bg-color-gray-3`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#8f8f8f'}} />`#8f8f8f`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`bg-color-gray-4`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#d1d1d1'}} />`#d1d1d1`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`bg-color-gray-5`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#ebebeb'}} />`#ebebeb`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`bg-color-gray-6`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#f7f7f7'}} />`#f7f7f7`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`bg-color-white`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#fff', border: '0.5px solid black'}} />`#fff`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`bg-color-9c9c9c`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#9c9c9c'}} />`#9c9c9c`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`bg-color-110606`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#110606'}} />`#110606`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`bg-color-828282`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#828282'}} />`#828282`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-none`</td>
+      <td class="mdx-mono">`display: none;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-block`</td>
+      <td class="mdx-mono">`display: block;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-inline-block`</td>
+      <td class="mdx-mono">`display: inline-block;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`d-inline`</td>
+      <td class="mdx-mono">`display: inline;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`bordered`</td>
+      <td class="mdx-mono">`border: 1px solid rgb(0 0 0 / 8%);`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`bordered-t`</td>
+      <td class="mdx-mono">`border-top: 1px solid rgb(0 0 0 / 8%);`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`bordered-b`</td>
+      <td class="mdx-mono">`border-bottom: 1px solid rgb(0 0 0 / 8%);`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`bordered-l`</td>
+      <td class="mdx-mono">`border-left: 1px solid rgb(0 0 0 / 8%);`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`bordered-r`</td>
+      <td class="mdx-mono">`border-right: 1px solid rgb(0 0 0 / 8%);`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`divided-y`</td>
+      <td class="mdx-mono">`& > * + * { border-top: 1px solid rgb(0 0 0 / 8%); }`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`divided-x`</td>
+      <td class="mdx-mono">`& > * + * { border-right: 1px solid rgb(0 0 0 / 8%); }`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`bordered-none`</td>
+      <td class="mdx-mono">`border: none;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`bordered-t-none`</td>
+      <td class="mdx-mono">`border-top: none;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`bordered-b-none`</td>
+      <td class="mdx-mono">`border-bottom: none;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`bordered-l-none`</td>
+      <td class="mdx-mono">`border-left: none;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`bordered-r-none`</td>
+      <td class="mdx-mono">`border-right: none;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`overflow-auto`</td>
+      <td class="mdx-mono">`overflow: auto;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`overflow-hidden`</td>
+      <td class="mdx-mono">`overflow: hidden;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`overflow-scroll`</td>
+      <td class="mdx-mono">`overflow: scroll;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`overflow-clip`</td>
+      <td class="mdx-mono">`overflow: clip;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`overflow-x-auto`</td>
+      <td class="mdx-mono">`overflow-x: auto;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`overflow-y-auto`</td>
+      <td class="mdx-mono">`overflow-y: auto;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`overflow-x-hidden`</td>
+      <td class="mdx-mono">`overflow-x: hidden;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`overflow-y-hidden`</td>
+      <td class="mdx-mono">`overflow-y: hidden;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`overflow-x-scroll`</td>
+      <td class="mdx-mono">`overflow-x: scroll;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`overflow-y-scroll`</td>
+      <td class="mdx-mono">`overflow-y: scroll;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`overflow-x-clip`</td>
+      <td class="mdx-mono">`overflow-x: clip;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`overflow-y-clip`</td>
+      <td class="mdx-mono">`overflow-y: clip;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`h-auto`</td>
+      <td class="mdx-mono">`height: auto;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`h-full`</td>
+      <td class="mdx-mono">`height: 100%;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`h-min-content`</td>
+      <td class="mdx-mono">`height: min-content;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`h-max-content`</td>
+      <td class="mdx-mono">`height: max-content;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`h-fit-content`</td>
+      <td class="mdx-mono">`height: fit-content;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`h-unset`</td>
+      <td class="mdx-mono">`height: unset;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`min-h-full`</td>
+      <td class="mdx-mono">`min-height: 100%;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`min-h-min-content`</td>
+      <td class="mdx-mono">`min-height: min-content;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`min-h-max-content`</td>
+      <td class="mdx-mono">`min-height: max-content;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`min-h-fit-content`</td>
+      <td class="mdx-mono">`min-height: fit-content;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`min-h-unset`</td>
+      <td class="mdx-mono">`min-height: unset;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`max-h-full`</td>
+      <td class="mdx-mono">`max-height: 100%;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`max-h-min-content`</td>
+      <td class="mdx-mono">`max-height: min-content;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`max-h-max-content`</td>
+      <td class="mdx-mono">`max-height: max-content;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`max-h-fit-content`</td>
+      <td class="mdx-mono">`max-height: fit-content;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`max-h-unset`</td>
+      <td class="mdx-mono">`max-height: unset;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`w-auto`</td>
+      <td class="mdx-mono">`width: auto;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`w-full`</td>
+      <td class="mdx-mono">`width: 100%;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`w-min-content`</td>
+      <td class="mdx-mono">`width: min-content;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`w-max-content`</td>
+      <td class="mdx-mono">`width: max-content;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`w-fit-content`</td>
+      <td class="mdx-mono">`width: fit-content;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`w-unset`</td>
+      <td class="mdx-mono">`width: unset;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`min-w-full`</td>
+      <td class="mdx-mono">`min-width: 100%;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`min-w-min-content`</td>
+      <td class="mdx-mono">`min-width: min-content;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`min-w-max-content`</td>
+      <td class="mdx-mono">`min-width: max-content;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`min-w-fit-content`</td>
+      <td class="mdx-mono">`min-width: fit-content;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`min-w-unset`</td>
+      <td class="mdx-mono">`min-width: unset;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`max-w-full`</td>
+      <td class="mdx-mono">`max-width: 100%;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`max-w-min-content`</td>
+      <td class="mdx-mono">`max-width: min-content;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`max-w-max-content`</td>
+      <td class="mdx-mono">`max-width: max-content;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`max-w-fit-content`</td>
+      <td class="mdx-mono">`max-width: fit-content;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`max-w-unset`</td>
+      <td class="mdx-mono">`max-width: unset;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`object-contain`</td>
+      <td class="mdx-mono">`object-fit: contain;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`object-cover`</td>
+      <td class="mdx-mono">`object-fit: cover;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`object-fill`</td>
+      <td class="mdx-mono">`object-fit: fill;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`object-none`</td>
+      <td class="mdx-mono">`object-fit: none;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`object-scale-down`</td>
+      <td class="mdx-mono">`object-fit: scale-down;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`aspect-ratio-1x1`</td>
+      <td class="mdx-mono">`aspect-ratio: 1/1;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`aspect-ratio-4x3`</td>
+      <td class="mdx-mono">`aspect-ratio: 4/3;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`aspect-ratio-16x9`</td>
+      <td class="mdx-mono">`aspect-ratio: 16/9;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`radius-2`</td>
+      <td class="mdx-mono">`border-radius: 2px;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`radius-4`</td>
+      <td class="mdx-mono">`border-radius: 4px;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`radius-8`</td>
+      <td class="mdx-mono">`border-radius: 8px;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`radius-16`</td>
+      <td class="mdx-mono">`border-radius: 16px;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`radius-32`</td>
+      <td class="mdx-mono">`border-radius: 32px;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`radius-full`</td>
+      <td class="mdx-mono">`border-radius: 9999px;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`underline`</td>
+      <td class="mdx-mono">`text-decoration: underline;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`overflow-wrap-normal`</td>
+      <td class="mdx-mono">`overflow-wrap: normal;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`overflow-wrap-break-word`</td>
+      <td class="mdx-mono">`overflow-wrap: break-word;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`overflow-wrap-anywhere`</td>
+      <td class="mdx-mono">`overflow-wrap: anywhere;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`cursor-wait`</td>
+      <td class="mdx-mono">`cursor: wait;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`cursor-not-allowed`</td>
+      <td class="mdx-mono">`cursor: not-allowed;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`cursor-auto`</td>
+      <td class="mdx-mono">`cursor: auto;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`cursor-pointer`</td>
+      <td class="mdx-mono">`cursor: pointer;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`pointer-events-auto`</td>
+      <td class="mdx-mono">`pointer-events: auto;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`pointer-events-none`</td>
+      <td class="mdx-mono">`pointer-events: none;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`user-select-none`</td>
+      <td class="mdx-mono">`user-select: none;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`user-select-text`</td>
+      <td class="mdx-mono">`user-select: text;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`user-select-all`</td>
+      <td class="mdx-mono">`user-select: all;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`user-select-auto`</td>
+      <td class="mdx-mono">`user-select: auto;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`whitespace-normal`</td>
+      <td class="mdx-mono">`white-space: normal;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`whitespace-nowrap`</td>
+      <td class="mdx-mono">`white-space: nowrap;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`whitespace-pre`</td>
+      <td class="mdx-mono">`white-space: pre;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`whitespace-pre-line`</td>
+      <td class="mdx-mono">`white-space: pre-line;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`whitespace-pre-wrap`</td>
+      <td class="mdx-mono">`white-space: pre-wrap;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`whitespace-collapse`</td>
+      <td class="mdx-mono">`white-space: collapse;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`word-break-normal`</td>
+      <td class="mdx-mono">`word-break: normal;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`word-break-break-all`</td>
+      <td class="mdx-mono">`word-break: break-all;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`word-break-keep-all`</td>
+      <td class="mdx-mono">`word-break: keep-all;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`z-auto`</td>
+      <td class="mdx-mono">`z-index: auto;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`z-0`</td>
+      <td class="mdx-mono">`z-index: 0;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`z-1`</td>
+      <td class="mdx-mono">`z-index: 1;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`z-2`</td>
+      <td class="mdx-mono">`z-index: 2;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`z-3`</td>
+      <td class="mdx-mono">`z-index: 3;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`z-4`</td>
+      <td class="mdx-mono">`z-index: 4;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`z-5`</td>
+      <td class="mdx-mono">`z-index: 5;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`z-n1`</td>
+      <td class="mdx-mono">`z-index: -1;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`z-n2`</td>
+      <td class="mdx-mono">`z-index: -2;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`z-n3`</td>
+      <td class="mdx-mono">`z-index: -3;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`z-n4`</td>
+      <td class="mdx-mono">`z-index: -4;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`z-n5`</td>
+      <td class="mdx-mono">`z-index: -5;`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`hover-opacity-80`</td>
+      <td class="mdx-mono">`&:hover {opacity: 0.8;}`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`hover-underline`</td>
+      <td class="mdx-mono">`&:hover {text-decoration: underline;}`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`hover-decoration-none`</td>
+      <td class="mdx-mono">`&:hover {text-decoration: none;}`</td>
+    </tr>
+  </tbody>
+</table>
+
+## CSS カスタムプロパティ（変数）
+
+ECMユーティリティ上で使う色の値は変数でも利用可能です。
+
+<Space />
+
+<Code copy={false} content={`
+<div class="custom-class">
+  Rakuten
+</div>
+<div style="background-color: var(--ecm-color-gray-3);">
+  Rakuten
+</div>
+
+<style>
+.custom-class {
+  color: var(--ecm-color-crimson);
+}
+</style>
+`}/>
+
+<Space />
+
+<table class="mdx-table">
+  <thead class="mdx-table-header">
+    <tr>
+      <th style={{minWidth: '350px', width: '350px'}}>変数名</th>
+      <th style={{minWidth: '240px', width: '100%'}}>色</th>
+    </tr>
+  </thead>
+  <tbody class="mdx-table-body">
+    <tr>
+      <td class="mdx-mono">`var(--ecm-color-transparent)`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: 'transparent', border: '0.5px solid black'}} />`transparent`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`var(--ecm-color-link)`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#0078b5'}} />`#0078b5`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`var(--ecm-color-crimson)`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#bf0000'}} />`#bf0000`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`var(--ecm-color-crimson-light)`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#d70000'}} />`#d70000`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`var(--ecm-color-crimson-lightest)`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#ffbebe'}} />`#ffbebe`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`var(--ecm-color-black)`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#000'}} />`#000`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`var(--ecm-color-gray-1)`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#333'}} />`#333`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`var(--ecm-color-gray-2)`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#717171'}} />`#717171`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`var(--ecm-color-gray-3)`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#8f8f8f'}} />`#8f8f8f`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`var(--ecm-color-gray-4)`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#d1d1d1'}} />`#d1d1d1`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`var(--ecm-color-gray-5)`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#ebebeb'}} />`#ebebeb`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`var(--ecm-color-gray-6)`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#f7f7f7'}} />`#f7f7f7`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`var(--ecm-color-white)`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#fff', border: '0.5px solid black'}} />`#fff`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`var(--ecm-color-110606)`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#110606'}} />`#110606`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`var(--ecm-color-828282)`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#828282'}} />`#828282`</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`var(--ecm-color-9c9c9c)`</td>
+      <td class="mdx-mono" style={{ display: 'flex', alignItems: 'center'}}><div style={{ height: '16px', width: '16px', marginRight: '8px', backgroundColor: '#9c9c9c'}} />`#9c9c9c`</td>
+    </tr>
+  </tbody>
+</table>
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='demo' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='demo'>デモ</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='demo'>
+<Html device='lg' height='96px' content={`
+  <div class="d-flex">
+    <div class="d-flex-grow-1" style="height: 64px; background-color: var(--ecm-color-transparent); border: 0.5px solid black;"></div>
+    <div class="d-flex-grow-1" style="height: 64px; background-color: var(--ecm-color-link);"></div>
+    <div class="d-flex-grow-1" style="height: 64px; background-color: var(--ecm-color-crimson);"></div>
+    <div class="d-flex-grow-1" style="height: 64px; background-color: var(--ecm-color-crimson-light);"></div>
+    <div class="d-flex-grow-1" style="height: 64px; background-color: var(--ecm-color-crimson-lightest);"></div>
+    <div class="d-flex-grow-1" style="height: 64px; background-color: var(--ecm-color-black);"></div>
+    <div class="d-flex-grow-1" style="height: 64px; background-color: var(--ecm-color-gray-1);"></div>
+    <div class="d-flex-grow-1" style="height: 64px; background-color: var(--ecm-color-gray-2);"></div>
+    <div class="d-flex-grow-1" style="height: 64px; background-color: var(--ecm-color-gray-3);"></div>
+    <div class="d-flex-grow-1" style="height: 64px; background-color: var(--ecm-color-gray-4);"></div>
+    <div class="d-flex-grow-1" style="height: 64px; background-color: var(--ecm-color-gray-5);"></div>
+    <div class="d-flex-grow-1" style="height: 64px; background-color: var(--ecm-color-gray-6);"></div>
+    <div class="d-flex-grow-1" style="height: 64px; background-color: var(--ecm-color-white); border: 0.5px solid black;"></div>
+    <div class="d-flex-grow-1" style="height: 64px; background-color: var(--ecm-color-110606);"></div>
+    <div class="d-flex-grow-1" style="height: 64px; background-color: var(--ecm-color-828282);"></div>
+    <div class="d-flex-grow-1" style="height: 64px; background-color: var(--ecm-color-9c9c9c);"></div>
+  </div>
+  `} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={`
+<div class="d-flex">
+  <div class="d-flex-grow-1" style="height: 64px; background-color: var(--ecm-color-transparent); border: 0.5px solid black;"></div>
+  <div class="d-flex-grow-1" style="height: 64px; background-color: var(--ecm-color-link);"></div>
+  <div class="d-flex-grow-1" style="height: 64px; background-color: var(--ecm-color-crimson);"></div>
+  <div class="d-flex-grow-1" style="height: 64px; background-color: var(--ecm-color-crimson-light);"></div>
+  <div class="d-flex-grow-1" style="height: 64px; background-color: var(--ecm-color-crimson-lightest);"></div>
+  <div class="d-flex-grow-1" style="height: 64px; background-color: var(--ecm-color-black);"></div>
+  <div class="d-flex-grow-1" style="height: 64px; background-color: var(--ecm-color-gray-1);"></div>
+  <div class="d-flex-grow-1" style="height: 64px; background-color: var(--ecm-color-gray-2);"></div>
+  <div class="d-flex-grow-1" style="height: 64px; background-color: var(--ecm-color-gray-3);"></div>
+  <div class="d-flex-grow-1" style="height: 64px; background-color: var(--ecm-color-gray-4);"></div>
+  <div class="d-flex-grow-1" style="height: 64px; background-color: var(--ecm-color-gray-5);"></div>
+  <div class="d-flex-grow-1" style="height: 64px; background-color: var(--ecm-color-gray-6);"></div>
+  <div class="d-flex-grow-1" style="height: 64px; background-color: var(--ecm-color-white); border: 0.5px solid black;"></div>
+  <div class="d-flex-grow-1" style="height: 64px; background-color: var(--ecm-color-110606);"></div>
+  <div class="d-flex-grow-1" style="height: 64px; background-color: var(--ecm-color-828282);"></div>
+  <div class="d-flex-grow-1" style="height: 64px; background-color: var(--ecm-color-9c9c9c);"></div>
+</div>
+    `} />
+  </Tabs.Panel>
+</Tabs>

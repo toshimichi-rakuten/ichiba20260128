@@ -1,0 +1,365 @@
+import Html from 'src/components/Html'
+import Space from 'src/components/Space'
+import Code from 'src/components/Code'
+import Note from 'src/components/Note'
+import rakutenCondensedHtml from 'rakuten-sans/src/rakuten_condensed.html'
+import rakutenRoundedHtml from 'rakuten-sans/src/rakuten_rounded.html'
+import rakutenSerifHtml from 'rakuten-sans/src/rakuten_serif.html'
+import rakutenSerifItalicHtml from 'rakuten-sans/src/rakuten_serif_italic.html'
+import rakutenSansJp2OptionalHtml from 'rakuten-sans/src/rakuten_sans_jp2_optional.html'
+import rakutenSansJp2TnHtml from 'rakuten-sans/src/rakuten_sans_jp2tn.html'
+
+export const meta = {
+  title: 'オプショナルスタイル',
+  description: 'オプショナルスタイル',
+  url: '/ecm/docs/rakuten-font/optional',
+  tags: ['font', 'フォント']
+}
+
+# オプショナルスタイル
+
+## Rakuten Condensed
+
+<Html
+  full={true}
+  device={'lg'}
+  rakutenCondensed={true}
+  content={rakutenCondensedHtml}
+/>
+
+### 使い方 [condensed]
+
+#### 1. CSSの読み込み [condensed]
+
+HTML内で、適用するCSSファイルを下記の通り記述する。
+<Space/>
+<Code content={`
+<link
+  rel="stylesheet"
+  href="https://r.r10s.jp/com/js/c/rakuten_sans/rakuten_condensed/1.0/rakuten_condensed-1.0.0.min.css?v=202512221523"
+/>
+`} />
+
+#### 2. フォントの適用 [condensed]
+
+<Code content={`
+<!-- Light (300) -->
+<div class="font-rakuten-condensed font-weight-300">
+  Light Weight Text
+</div>
+
+<!-- Regular (400) -->
+<div class="font-rakuten-condensed font-weight-400">
+  Regular Weight Text
+</div>
+
+<!-- Semi-Bold (600) -->
+<div class="font-rakuten-condensed font-weight-600">
+  Semi-Bold Weight Text
+</div>
+
+<!-- Bold (700) -->
+<div class="font-rakuten-condensed font-weight-700">
+  Bold Weight Text
+</div>
+
+<!-- Black (900) -->
+<div class="font-rakuten-condensed font-weight-900">
+  Black Weight Text
+</div>
+
+<!-- 変数フォントのため、任意の数値も指定可能 -->
+<div class="font-rakuten-condensed" style="font-weight: 442;">
+  Custom Weight
+</div>
+`} />
+
+## Rakuten Rounded
+
+<Html
+  full={true}
+  device={'lg'}
+  rakutenRounded={true}
+  content={rakutenRoundedHtml}
+/>
+
+### 使い方 [rounded]
+
+#### 1. CSSの読み込み [rounded]
+
+HTML内で、適用するCSSファイルを下記の通り記述する。
+<Space/>
+<Code content={`
+<link
+  rel="stylesheet"
+  href="https://r.r10s.jp/com/js/c/rakuten_sans/rakuten_rounded/1.0/rakuten_rounded-1.0.0.min.css?v=202512221523"
+/>
+`} />
+
+
+#### 2. フォントの適用 [rounded]
+
+<Code content={`
+<!-- Light (300) -->
+<div class="font-rakuten-rounded font-weight-300">
+  Light Weight Text
+</div>
+
+<!-- Regular (400) -->
+<div class="font-rakuten-rounded font-weight-400">
+  Regular Weight Text
+</div>
+
+<!-- Semi-Bold (600) -->
+<div class="font-rakuten-rounded font-weight-600">
+  Semi-Bold Weight Text
+</div>
+
+<!-- Bold (700) -->
+<div class="font-rakuten-rounded font-weight-700">
+  Bold Weight Text
+</div>
+
+<!-- Black (900) -->
+<div class="font-rakuten-rounded font-weight-900">
+  Black Weight Text
+</div>
+
+<!-- 変数フォントのため、任意の数値も指定可能 -->
+<div class="font-rakuten-rounded" style="font-weight: 442;">
+  Custom Weight
+</div>
+`} />
+
+## Rakuten Serif
+
+<Html
+  full={true}
+  device={'lg'}
+  rakutenSerif={true}
+  content={rakutenSerifHtml + `<div style="margin-top: 32px" />` + rakutenSerifItalicHtml}
+/>
+
+### 使い方 [serif]
+
+#### 1. CSSの読み込み [serif]
+
+HTML内で、適用するCSSファイルを下記の通り記述する。
+<Space/>
+<Code content={`
+<link
+  rel="stylesheet"
+  href="https://r.r10s.jp/com/js/c/rakuten_sans/rakuten_serif/1.0/rakuten_serif-1.0.0.min.css?v=202512221523"
+/>
+`} />
+
+
+#### 2. フォントの適用 [serif]
+
+<Code content={`
+<!-- Light (300) -->
+<div class="font-rakuten-serif font-weight-300">
+  Light Weight Text
+</div>
+
+<!-- Regular (400) -->
+<div class="font-rakuten-serif font-weight-400">
+  Regular Weight Text
+</div>
+
+<!-- Semi-Bold (600) -->
+<div class="font-rakuten-serif font-weight-600">
+  Semi-Bold Weight Text
+</div>
+
+<!-- Bold (700) -->
+<div class="font-rakuten-serif font-weight-700">
+  Bold Weight Text
+</div>
+
+<!-- Black (900) -->
+<div class="font-rakuten-serif font-weight-900">
+  Black Weight Text
+</div>
+
+<!-- 変数フォントのため、任意の数値も指定可能 -->
+<div class="font-rakuten-serif" style="font-weight: 442;">
+  Custom Weight
+</div>
+`} />
+
+#### イタリック体の使用
+
+<Code content={`
+<!-- Regular Italic -->
+<div class="font-rakuten-serif font-style-italic">
+  Regular Italic Text
+</div>
+
+<!-- Bold Italic -->
+<div class="font-rakuten-serif font-style-italic font-weight-700">
+  Bold Italic Text
+</div>
+`} />
+
+## Rakuten Sans JP2
+
+<Html
+  full={true}
+  device={'lg'}
+  rakutenSansJp2={true}
+  content={rakutenSansJp2OptionalHtml}
+/>
+
+### 使い方 [jp2]
+
+#### 1. CSSの読み込み [jp2]
+
+HTML内で、適用するCSSファイルを下記の通り記述する。
+
+##### 300 (Light)
+
+<Code content={`
+<link
+  rel="stylesheet"
+  href="https://r.r10s.jp/com/js/c/rakuten_sans/rakuten_sans_jp2_300/1.0/rakuten_sans_jp2_300-1.0.0.min.css?v=202512221523"
+/>
+`} />
+
+
+##### 500 (Medium)
+
+<Code content={`
+<link
+  rel="stylesheet"
+  href="https://r.r10s.jp/com/js/c/rakuten_sans/rakuten_sans_jp2_500/1.0/rakuten_sans_jp2_500-1.0.0.min.css?v=202512221523"
+/>
+`} />
+
+##### 600 (SemiBold)
+
+<Code content={`
+<link
+  rel="stylesheet"
+  href="https://r.r10s.jp/com/js/c/rakuten_sans/rakuten_sans_jp2_600/1.0/rakuten_sans_jp2_600-1.0.0.min.css?v=202512221523"
+/>
+`} />
+
+
+##### 800 (Heavy)
+
+<Code content={`
+<link
+  rel="stylesheet"
+  href="https://r.r10s.jp/com/js/c/rakuten_sans/rakuten_sans_jp2_800/1.0/rakuten_sans_jp2_800-1.0.0.min.css?v=202512221523"
+/>
+`} />
+
+#### 2. フォントの適用 [jp2]
+
+<Note>
+  このフォントはウェイトごとに分割されているため、`font-rakuten-sans-jp2 font-weight-800` のような組み合わせは機能しません。ウェイトごとのクラス（例：`font-rakuten-sans-jp2-800`）を使用してください。
+</Note>
+
+<Space />
+
+<Code content={`
+<!-- Regular (500) -->
+<div class="font-rakuten-sans-jp2-500">
+  楽天市場へようこそ
+</div>
+
+<!-- Bold (800) -->
+<div class="font-rakuten-sans-jp2-800">
+  重要なお知らせ
+</div>
+`} />
+
+## Rakuten Sans JP2TN
+
+<Html
+  full={true}
+  device={'lg'}
+  rakutenSansJp2Tn={true}
+  content={rakutenSansJp2TnHtml}
+/>
+
+### 使い方 [jp2tn]
+
+#### 1. CSSの読み込み [jp2tn]
+
+HTML内で、適用するCSSファイルを下記の通り記述する。
+
+##### 300 (Light)
+
+<Code content={`
+<link
+  rel="stylesheet"
+  href="https://r.r10s.jp/com/js/c/rakuten_sans/rakuten_sans_jp2tn_300/1.0/rakuten_sans_jp2tn_300-1.0.0.min.css?v=202512221523"
+/>
+`} />
+
+##### 400 (Normal)
+
+<Code content={`
+<link
+  rel="stylesheet"
+  href="https://r.r10s.jp/com/js/c/rakuten_sans/rakuten_sans_jp2tn_400/1.0/rakuten_sans_jp2tn_400-1.0.0.min.css?v=202512221523"
+/>
+`} />
+
+##### 500 (Medium)
+
+<Code content={`
+<link
+  rel="stylesheet"
+  href="https://r.r10s.jp/com/js/c/rakuten_sans/rakuten_sans_jp2tn_500/1.0/rakuten_sans_jp2tn_500-1.0.0.min.css?v=202512221523"
+/>
+`} />
+
+##### 600 (SemiBold)
+
+<Code content={`
+<link
+  rel="stylesheet"
+  href="https://r.r10s.jp/com/js/c/rakuten_sans/rakuten_sans_jp2tn_600/1.0/rakuten_sans_jp2tn_600-1.0.0.min.css?v=202512221523"
+/>
+`} />
+
+##### 700 (Bold)
+
+<Code content={`
+<link
+  rel="stylesheet"
+  href="https://r.r10s.jp/com/js/c/rakuten_sans/rakuten_sans_jp2tn_700/1.0/rakuten_sans_jp2tn_700-1.0.0.min.css?v=202512221523"
+/>
+`} />
+
+##### 800 (Heavy)
+
+<Code content={`
+<link
+  rel="stylesheet"
+  href="https://r.r10s.jp/com/js/c/rakuten_sans/rakuten_sans_jp2tn_800/1.0/rakuten_sans_jp2tn_800-1.0.0.min.css?v=202512221523"
+/>
+`} />
+
+#### 2. フォントの適用 [jp2tn]
+
+<Note>
+  このフォントはウェイトごとに分割されているため、`font-rakuten-sans-jp2tn font-weight-700` のような組み合わせは機能しません。ウェイトごとのクラス（例：`font-rakuten-sans-jp2tn-700`）を使用してください。
+</Note>
+
+<Space />
+
+<Code content={`
+<!-- Regular (400) -->
+<div class="font-rakuten-sans-jp2tn-400">
+  価格: ¥1,980
+</div>
+
+<!-- Bold (700) -->
+<div class="font-rakuten-sans-jp2tn-700">
+  数量: 123個
+</div>
+`} />

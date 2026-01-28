@@ -1,0 +1,65 @@
+<div
+  data-module-name="ecm-alcor"
+  data-alcor-type="ranking"
+>
+  <template data-alcor-output>
+    <div class="ecm-ranking-alcor-updatedate">
+      <span
+        data-alcor-item="1"
+        data-key="updatedate"
+      ></span>
+      <span
+        class="ml-4"
+        data-alcor-item="1"
+        data-key="updatetime"
+      ></span
+      >更新
+    </div>
+
+    <ul
+      class="d-grid d-grid-col-2 d-grid-gap-12 md-d-grid-col-4 d-grid-gap-24"
+      data-alcor-item-container
+    ></ul>
+  </template>
+
+  <template data-alcor-data>
+    <!-- Alcor Template -->
+    <!--#include virtual="★"-->
+    <!-- Alcor Template -->
+  </template>
+
+  <template data-alcor-item-template>
+    <li class="ecm-ranking-alcor">
+      <a
+        class="ecm-ranking-alcor-link"
+        href="###itemurl###"
+      >
+        <img
+          class="ecm-ranking-alcor-image"
+          src="https://r.r10s.jp/com/img/home/t.gif?resize=340:340"
+          data-lazy-loading="###imageurl###?_ex=340:340"
+          alt=""
+        />
+      </a>
+      <div class="ecm-ranking-alcor-text-box">
+        <p class="ecm-ranking-alcor-rank"><span class="ecm-ranking-alcor-rank-num">###rank###</span>位</p>
+        <a
+          class="ecm-ranking-alcor-text-link"
+          href="###itemurl###"
+        >
+          <p class="ecm-ranking-alcor-price">###kakaku###</p>
+        </a>
+        <a
+          class="ecm-ranking-alcor-shop-link"
+          href="###shopurl###"
+        >
+          <i
+            class="ecm-icon-shop-outlined"
+            aria-hidden="true"
+          ></i>
+          <div class="ecm-ranking-alcor-shop-name clamp-1">###shopname###</div>
+        </a>
+      </div>
+    </li>
+  </template>
+</div>

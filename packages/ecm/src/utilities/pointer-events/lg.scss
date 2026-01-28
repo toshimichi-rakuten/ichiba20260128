@@ -1,0 +1,18 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+@include util-lg('pointer-events-auto') {
+  pointer-events: auto;
+}
+
+@include util-lg('pointer-events-none') {
+  pointer-events: none;
+}
+
+@include util-lg('pointer-events-auto', true) {
+  pointer-events: auto !important;
+}
+
+@include util-lg('pointer-events-none', true) {
+  pointer-events: none !important;
+}

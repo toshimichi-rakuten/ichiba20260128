@@ -1,0 +1,53 @@
+.ecm-ad-overflow-100402 {
+  @include screen('md', 'down') {
+    overflow-x: scroll;
+  }
+}
+
+.ecm-ad-wrapper-100402 {
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 10%);
+
+  @include screen('md', 'up') {
+    box-shadow: 0 0 5px 0 rgb(0 0 0 / 26%);
+  }
+
+  .ecm-ad {
+    @include screen('md', 'down') {
+      width: 168px;
+      border-right: 1px solid $color-gray-5;
+    }
+
+    &:nth-child(n + 5) {
+      @include screen('md', 'up') {
+        display: none;
+      }
+    }
+  }
+}
+
+.ecm-ad-name-100402 {
+  height: calc(1.3 * 2em);
+}
+
+.ecm-ad-badge-100402 {
+  @include screen('md', 'up') {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.ecm-ad-logo-100402 {
+  width: 80px;
+}
+
+.ecm-ad-logo-100402-2 {
+  width: 40%;
+
+  @include screen('md', 'up') {
+    width: 150px;
+  }
+}
+
+.ecm-ad-pointback-bar-100402 {
+  background-color: #ffd;
+}

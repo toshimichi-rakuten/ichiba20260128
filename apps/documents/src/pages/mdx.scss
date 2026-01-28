@@ -1,0 +1,51 @@
+// Styling for HTML in Markdown
+
+.mdx-table {
+  font-size: 14px;
+  text-align: left;
+  border-collapse: collapse;
+  border-top: 1px solid rgb(0 0 0 / 8%);
+  border-bottom: 1px solid rgb(0 0 0 / 8%);
+}
+
+.mdx-table-header {
+  background-color: #f7f7f7;
+
+  th {
+    padding: 16px 24px;
+  }
+}
+
+.mdx-table-body {
+  tr {
+    border-top: 1px solid rgb(0 0 0 / 8%);
+  }
+
+  th,
+  td {
+    word-break: break-word;
+  }
+
+  td {
+    padding: 16px 24px;
+    line-height: 1.6;
+  }
+}
+
+.mdx-mono {
+  font-family: 'JetBrains Mono';
+}
+
+.mdx-text-left {
+  text-align: left;
+}
+
+.mdx-text-center {
+  text-align: center;
+}
+
+.mdx-hover-opacity {
+  &:hover {
+    opacity: 0.7;
+  }
+}

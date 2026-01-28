@@ -1,0 +1,15 @@
+.ecm-ad-logo-100523 {
+  width: 82.76%;
+  margin: 0 auto;
+
+  @include screen('md', 'up') {
+    width: 235px;
+  }
+}
+
+.ecm-ad-badge-100523 {
+  @include screen('md', 'up') {
+    top: -16px;
+    right: -16px;
+  }
+}

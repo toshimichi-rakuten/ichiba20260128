@@ -1,0 +1,28 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+@include util-lg('d-none') {
+  display: none;
+}
+@include util-lg('d-block') {
+  display: block;
+}
+@include util-lg('d-inline-block') {
+  display: inline-block;
+}
+@include util-lg('d-inline') {
+  display: inline;
+}
+
+@include util-lg('d-none', true) {
+  display: none !important;
+}
+@include util-lg('d-block', true) {
+  display: block !important;
+}
+@include util-lg('d-inline-block', true) {
+  display: inline-block !important;
+}
+@include util-lg('d-inline', true) {
+  display: inline !important;
+}

@@ -1,0 +1,33 @@
+<button id="cb1">Custom Button Open</button>
+<button id="cb2">Custom Button Close</button>
+<button id="cb3">Custom Button Toggle</button>
+
+<div
+  id="toggle1"
+  data-module-name="ecm-toggle"
+  data-body-lock="false"
+  aria-hidden="true"
+>
+  Toggle Content
+</div>
+
+<script>
+  ;(function () {
+    const root = document.getElementById('toggle1')
+
+    const cb1 = document.getElementById('cb1')
+    cb1.addEventListener('click', () => {
+      root.dispatchEvent(new Event('ecmToggleOpen'))
+    })
+
+    const cb2 = document.getElementById('cb2')
+    cb2.addEventListener('click', () => {
+      root.dispatchEvent(new Event('ecmToggleClose'))
+    })
+
+    const cb3 = document.getElementById('cb3')
+    cb3.addEventListener('click', () => {
+      root.dispatchEvent(new Event('ecmToggleToggle'))
+    })
+  })()
+</script>

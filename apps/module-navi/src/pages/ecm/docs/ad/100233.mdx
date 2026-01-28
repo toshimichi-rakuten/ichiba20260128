@@ -1,0 +1,65 @@
+import Html from 'src/components/Html'
+import Code from 'src/components/Code'
+import Note from 'src/components/Note'
+import Table, { ClassTable, AttributeTable } from 'src/components/Table'
+import { Tabs } from '@mantine/core'
+import Space from 'src/components/Space'
+import ad100233Html from 'ecm/src/modules/ad/100233/default.html'
+import adCarouselIntegrationHtml from 'ecm/src/modules/ad/100233/integration.html'
+
+export const meta = {
+  title: '原稿タイプID100233 スライダー',
+  description: '',
+  url: '/ecm/docs/ad/100233',
+  tags: ['商品', 'ad', '原稿タイプ', 'スライダー', 'slider'],
+  finder_tags: [
+    'category_slider',
+    'image_3x2',
+    'icon_free_delivery',
+    'layout_sp_only',
+    'layout_pc_only',
+    'layout_others',
+  ],
+}
+
+# 原稿タイプID100233 スライダー
+
+画像入稿サイズ：960×400px
+
+<Space />
+
+★部分へアドプラッツからダウンロードした配信タグを貼り付けてください。
+
+<Space />
+
+スライダー設定については、[スライダーページ](/ecm/docs/ui/slider/)を参照してください。
+
+<Space />
+
+<Tabs
+  keepMounted={false}
+  defaultValue='sp'
+  styles={{ panel: { paddingTop: '16px' } }}
+>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel value='sp'>
+    <Html
+      sliderItemHighlight={true}
+      content={ad100233Html}
+    />
+  </Tabs.Panel>
+  <Tabs.Panel value='lg'>
+    <Html
+      sliderItemHighlight={true}
+      device='lg'
+      content={ad100233Html}
+    />
+  </Tabs.Panel>
+  <Tabs.Panel value='code'>
+    <Code content={adCarouselIntegrationHtml} />
+  </Tabs.Panel>
+</Tabs>

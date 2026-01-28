@@ -1,0 +1,65 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'ecm/src/modules/scroll-to-top/default.html'
+import floatingTopHtml from 'ecm/src/modules/floating-top/default.html'
+
+export const meta = {
+  title: '上に戻る',
+  description: 'ページを上にスクロール',
+  url: '/ecm/docs/ui/scroll-to-top',
+  tags: ['top', 'scroll'],
+}
+
+# 上に戻る
+
+ページ上にスクロールさせるモジュールです。要素にスクロールしたい場合は [スムーズスクロール](/ecm/docs/js/smooth-scroll/) を使用してください。  
+このモジュールはアウトラインファイルにあらかじめ設定された状態で提供されています。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={floatingTopHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={floatingTopHtml} />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={defaultHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## アトリビュート一覧
+
+<table class="mdx-table">
+  <thead class="mdx-table-header">
+    <tr>
+      <th style={{minWidth: '240px', width: '240px'}}>アトリビュート</th>
+      <th style={{minWidth: '240px', width: '240px'}}>値</th>
+      <th style={{width: '100%'}}>メモ</th>
+    </tr>
+  </thead>
+  <tbody class="mdx-table-body">
+    <tr>
+      <td class="mdx-mono">`data-module-name`</td>
+      <td class="mdx-mono">"ecm-scroll-to-top"</td>
+      <td>モジュール名</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`aria-label`</td>
+      <td class="mdx-mono">"上に戻る"</td>
+      <td>どのような役割を持つかを明示的にする（`a11y`用）</td>
+    </tr>
+  </tbody>
+</table>

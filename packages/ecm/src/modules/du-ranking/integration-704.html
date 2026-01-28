@@ -1,0 +1,159 @@
+<!-- ランキングパーツ ↓ -->
+<div
+  id="rnkEventColumn"
+  class="ecm-du-ranking ecm-du-ranking-pc704"
+  data-ratevent="appear"
+  data-ratid="rk_appear_pc"
+>
+  <script
+    id="rnkDailyItem"
+    type="text/template"
+  >
+    <div class="ecm-du-ranking-item">
+      <a class="ecm-du-ranking-item-link" href="#ITEMURL#">
+        <div class="ecm-du-ranking-item-image">#ITEMIMGELE#</div>
+          <div class="ecm-du-ranking-item-rank">#ITEMRNK#<div class="ecm-du-ranking-item-rank-text">位</div></div>
+          <p class="ecm-du-ranking-item-name">#ITEMNAME#</p>
+          <p class="ecm-du-ranking-item-price">#KAKAKU#</p>
+          <div class="ecm-du-ranking-item-review">
+            <div class="ecm-du-ranking-item-review-star">#ITEMREVIEW#</div>
+            <p class="ecm-du-ranking-item-review-count">#REVIEWNUM#</p>
+        </div>
+      </a>
+    </div>
+  </script>
+  <script
+    id="rnkGenreTab"
+    type="text/template"
+  >
+    <div id="#GENRELINKEVENT#_tab" class="ecm-du-ranking-tab">
+      <div id="#GENRELINKEVENT#_linked" class="ecm-du-ranking-link">
+        <div id="#GENRELINKEVENT#">#ITEMNAME#</div>
+      </div>
+        <div id="#GENRELINKEVENT#_unlink" class="ecm-du-ranking-tab-unlink" style="display:none;">
+          <div>#ITEMNAME#</div>
+        </div>
+    </div>
+  </script>
+  <div
+    id="rnkDailyConfig"
+    disptab="0"
+    autoresize="1"
+    ajaxtimer="10"
+    mouseoverdelay="300"
+    imagesize="280"
+    autoslide="0"
+    updatetype="1"
+    sidtype="0"
+    maxitem="6"
+    sid="hogehoge"
+    svrgrp="1"
+    reviewlid="rk_parts_review"
+  ></div>
+
+  <ul
+    id="rnkDailyGenreList"
+    style="display: none"
+  >
+    <li
+      gid="214058"
+      du="7"
+      ge="9"
+      offset="30"
+      unqid="rk_toshikoshi2024_ranking01"
+      eventid="Toshikoshi2024word1"
+    ></li>
+  </ul>
+
+  <div
+    id="rnkDailyExistItemDisplay"
+    style="display: none"
+  >
+    <div class="ecm-du-ranking-header">
+      <h3 class="ecm-du-ranking-header-title">リアルタイムランキング</h3>
+      <p class="ecm-du-ranking-header-link">
+        <span id="rnkDailyUpdateDate"></span>
+      </p>
+    </div>
+    <div id="rnkRankingColumn">
+      <div id="rnkGenreTabBase">
+        <div
+          id="rnkDailyGenreTabs"
+          class="ecm-du-ranking-genre-tab"
+        >
+          <div
+            id="rnkDailyGenrePrevButton"
+            class="ecm-rank-tab-prev-btn"
+          >
+            <a
+              class="ecm-rank-tab-prev-btn-link"
+              href="#"
+              ><i
+                class="ecm-icon-chevron-left"
+                aria-hidden="true"
+              ></i
+            ></a>
+          </div>
+          <div
+            id="rnkDailyGenreItemsDisplay"
+            class="ecm-du-ranking-genre-tab-display"
+          ></div>
+          <div
+            id="rnkDailyGenreNextButton"
+            class="ecm-rank-tab-next-btn"
+          >
+            <a
+              class="ecm-rank-tab-next-btn-link"
+              href="#"
+              ><i
+                class="ecm-icon-chevron-right"
+                aria-hidden="true"
+              ></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div
+        id="rnkTabSet"
+        class="ecm-rank-tab-set"
+      >
+        <div
+          id="rnkTabItemdiv_#GENRELINKEVENT#"
+          class="ecm-rank-tab-item-div"
+        >
+          <div id="rnkDailyPrevButton_#GENRELINKEVENT#">
+            <a class="ecm-rank-link-prev">
+              <div
+                class="ecm-rank-link-prev-btn"
+                href="#"
+              >
+                <i
+                  class="ecm-icon-chevron-left"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </a>
+          </div>
+          <div
+            id="rnkDailyItemsDisplay_#GENRELINKEVENT#"
+            class="ecm-rank-wrap"
+          ></div>
+          <div id="rnkDailyNextButton_#GENRELINKEVENT#">
+            <a class="ecm-rank-link-next">
+              <div
+                class="ecm-rank-link-next-btn"
+                href="#"
+              >
+                <i
+                  class="ecm-icon-chevron-right"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /ランキングパーツ ↑ -->

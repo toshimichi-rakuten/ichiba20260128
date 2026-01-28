@@ -1,0 +1,57 @@
+
+import Html from 'src/components/Html'
+import Code from 'src/components/Code'
+import Note from 'src/components/Note'
+import Table, { ClassTable, AttributeTable } from 'src/components/Table'
+import { Tabs } from '@mantine/core'
+import Space from 'src/components/Space'
+import ad100162SoloHtml from 'ecm/src/modules/ad/100162/solo.html'
+import ad100162integrationHtml from 'ecm/src/modules/ad/100162/integration.html'
+
+export const meta = {
+  title: '原稿タイプID100162 ブランドロゴ',
+  description: '（ブランドロゴ画像(比率4:1)＋画像(比率3:2)',
+  url: '/ecm/docs/ad/100162',
+  tags: ['商品', 'ad', '広告'],
+  finder_tags: [
+    'category_brand',
+    'image_3x2',
+    'brand_3x1',
+    'text_item_name',
+    'layout_sp_col2',
+    'layout_pc_col2',
+    'layout_pc_col4',
+    'layout_pc_sp'
+  ],
+  responsive: true,
+}
+
+# 原稿タイプID100162 ブランドロゴ
+（ブランドロゴ画像(比率4:1)＋画像(比率3:2)  
+商品画像入稿サイズ：480×320px  
+ブランドロゴ画像入稿サイズ：480×120px  
+
+<Space />
+★部分へアドプラッツからダウンロードした配信タグを貼り付けてください。
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html adHighlight={true} device='sp' content={ad100162SoloHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html adHighlight={true} device='lg' content={ad100162SoloHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={ad100162integrationHtml}/>
+  </Tabs.Panel>
+</Tabs>
+

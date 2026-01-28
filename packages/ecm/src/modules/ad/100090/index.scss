@@ -1,0 +1,19 @@
+.ecm-ad-image-block-100090 {
+  width: 37.5%;
+  margin: 0 auto;
+  display: block;
+}
+
+.ecm-ad-shop-name-100090 {
+  color: $color-gray-1;
+  display: flex;
+  font-weight: bold;
+  align-items: baseline;
+
+  i {
+    @include text-sm;
+
+    flex-shrink: 0;
+    margin-right: $space-4;
+  }
+}

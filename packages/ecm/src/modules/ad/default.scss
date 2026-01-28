@@ -1,0 +1,633 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+/** 
+* Reuse the default classes as much as possible.  
+If you need a complicated styling, please create a new class and add the id number in the end.
+
+class="ecm-ad ecm-ad-xxxxx"
+class="ecm-ad-name ecm-ad-name-xxxxx"
+class="ecm-ad-triangle ecm-ad-triangle-xxxxx"
+*/
+
+.ecm-ad {
+  background-color: $color-white;
+
+  &.ecm-ad-relative {
+    position: relative;
+  }
+
+  &.ecm-ad-shadowed {
+    box-shadow: 0 0 5px 0 rgb(0 0 0 / 20%);
+  }
+
+  &.md-ecm-ad-shadowed {
+    @include screen('md', 'up') {
+      box-shadow: 0 0 5px 0 rgb(0 0 0 / 20%);
+    }
+  }
+
+  &.ecm-ad-card {
+    padding: $space-16;
+    border: 1px solid rgb(0 0 0 / 8%);
+    border-radius: 4px;
+  }
+}
+
+.ecm-ad-link {
+  display: block;
+
+  @include screen('md', 'up') {
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.ecm-ad-image-block {
+  display: block;
+
+  @include screen('md', 'up') {
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &.ecm-ad-image-block-relative {
+    position: relative;
+  }
+}
+
+.ecm-ad-image {
+  aspect-ratio: 1/1;
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+
+  &.ecm-ad-image-ratio-3x1 {
+    aspect-ratio: 3/1;
+  }
+
+  &.ecm-ad-image-ratio-1x3 {
+    aspect-ratio: 1/3;
+  }
+
+  &.ecm-ad-image-ratio-3x2 {
+    aspect-ratio: 3/2;
+  }
+
+  &.ecm-ad-image-ratio-4x1 {
+    aspect-ratio: 4/1;
+  }
+
+  &.ecm-ad-image-ratio-3x4 {
+    aspect-ratio: 3/4;
+  }
+
+  &.ecm-ad-image-ratio-5x2 {
+    aspect-ratio: 5/2;
+  }
+
+  &.ecm-ad-image-ratio-8x5 {
+    aspect-ratio: 8/5;
+  }
+
+  &.ecm-ad-image-ratio-16x9 {
+    aspect-ratio: 16/9;
+  }
+
+  &.ecm-ad-image-ratio-22x5 {
+    aspect-ratio: 22/5;
+  }
+
+  &.ecm-ad-image-ratio-32x9 {
+    aspect-ratio: 32/9;
+  }
+
+  &.ecm-ad-image-ratio-46x17 {
+    aspect-ratio: 46/17;
+  }
+}
+
+.ecm-ad-body {
+  display: block;
+
+  @include screen('md', 'up') {
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.ecm-ad-name {
+  @include text-xs;
+
+  color: $color-gray-1;
+
+  @include screen('md', 'up') {
+    @include text-sm;
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.ecm-ad-price-container {
+  align-items: baseline;
+  color: $color-crimson;
+  display: flex;
+  flex-wrap: wrap;
+
+  @include screen('md', 'up') {
+    @media (hover: hover) {
+      &:hover {
+        cursor: auto;
+      }
+    }
+  }
+}
+
+.ecm-ad-price-amount {
+  @include font-roboto(500);
+  @include text-lg;
+
+  line-height: 1;
+  margin-right: 6px;
+  word-break: break-all;
+
+  @include screen('md', 'up') {
+    @include text-2xl;
+  }
+}
+
+.ecm-ad-price-unit {
+  @include font-roboto(700);
+  @include text-xs;
+
+  margin-left: 1px;
+
+  @include screen('md', 'up') {
+    @include text-sm;
+  }
+}
+
+.ecm-ad-original-price {
+  @include text-xs;
+
+  color: $color-gray-1;
+  text-decoration: line-through;
+}
+
+.ecm-ad-price-free-shipping {
+  @include text-xs;
+
+  font-weight: bold;
+
+  /* stylelint-disable-next-line */
+  &.ecm-ad-price-free-shipping- {
+    display: none;
+  }
+
+  @include screen('md', 'up') {
+    @include text-sm;
+  }
+}
+
+.ecm-ad-price-original {
+  @include text-xs;
+
+  color: $color-black;
+  text-decoration: line-through;
+}
+
+.ecm-ad-label-container {
+  align-items: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+
+  // Maximum number of .ecm-ad-label is assumed to be 2.
+  > .ecm-ad-label {
+    margin: $space-4 $space-4 0 0;
+
+    &:first-child {
+      margin-top: $space-8;
+
+      &:empty + .ecm-ad-label {
+        margin-top: $space-8;
+      }
+    }
+  }
+}
+
+/* stylelint-disable */
+.ecm-ad-label {
+  @include text-10px;
+
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid $color-crimson;
+  border-radius: 2px;
+  color: $color-crimson;
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+  min-height: 16px;
+  padding: 0 $space-4;
+
+  &:empty {
+    display: none;
+  }
+
+  &.ecm-ad-label-filled {
+    @include text-11px;
+
+    color: $color-white;
+    background-color: $color-crimson;
+  }
+
+  &.ecm-ad-label-price_half {
+    color: $color-black;
+    background-color: #fff100;
+    border: none;
+  }
+
+  &.ecm-ad-label-price_discount {
+    color: $color-white;
+    background-color: $color-crimson;
+    border: none;
+  }
+}
+/* stylelint-enable */
+
+.ecm-ad-shop {
+  @include colorize-link($color-gray-2);
+
+  display: flex;
+
+  i {
+    @include text-sm;
+
+    flex-shrink: 0;
+    margin-right: $space-4;
+  }
+
+  @include screen('md', 'up') {
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    span {
+      @media (hover: hover) {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.ecm-ad-coupon {
+  @include colorize-link($color-gray-1);
+
+  align-items: center;
+  background-color: #ffefd6;
+  border: 1px solid #ffb238;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  padding: $space-8 0;
+
+  i {
+    @include text-base;
+
+    color: #e46500;
+  }
+
+  span {
+    @include text-xs;
+
+    font-weight: bold;
+    margin-left: $space-4;
+  }
+
+  @include screen('md', 'up') {
+    padding: $space-14 0;
+    position: relative;
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: none;
+
+        &::after {
+          background: rgba($color-black, 0.04);
+          content: '';
+          height: 100%;
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 100%;
+        }
+      }
+    }
+
+    span {
+      @include text-sm;
+    }
+  }
+}
+
+.ecm-ad-copy {
+  @include text-base;
+
+  font-weight: bold;
+  color: $color-gray-1;
+}
+
+.ecm-ad-ranking-rank {
+  @include font-roboto(500);
+
+  color: $color-gray-1;
+  line-height: 1;
+
+  span {
+    font-weight: bold;
+  }
+}
+
+.ecm-ad-ranking-crown {
+  margin-left: 6px;
+  text-decoration: none;
+  display: inline-block;
+
+  &.ecm-ad-ranking-crown-gold {
+    color: $color-ad-gold;
+  }
+
+  &.ecm-ad-ranking-crown-silver {
+    color: $color-ad-silver;
+  }
+
+  &.ecm-ad-ranking-crown-bronze {
+    color: $color-ad-bronze;
+  }
+}
+
+.sm-ecm-ad-horizontal {
+  @include screen('md', 'down') {
+    display: flex;
+
+    img {
+      object-position: top;
+    }
+  }
+}
+
+.sm-ecm-ad-horizontal-image {
+  @include screen('md', 'down') {
+    flex: 0 0 auto;
+    margin-right: $space-12;
+    width: calc((100% - #{$space-12}) / 2);
+  }
+}
+
+.sm-ecm-ad-horizontal-body {
+  @include screen('md', 'down') {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+}
+
+.ecm-ad-note {
+  @include text-12px;
+
+  color: $color-828282;
+}
+
+.ecm-ad-review-link {
+  display: flex;
+  flex-wrap: wrap;
+  word-break: break-all;
+
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  span {
+    @include text-12px;
+  }
+}
+
+// レビューの星のコンテナー
+.ecm-ad-review-link-star {
+  display: flex;
+  width: 60px;
+  height: 14px;
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  background-position:
+    0 1px,
+    12px 1px,
+    24px 1px,
+    36px 1px,
+    48px 1px;
+  // 星のスコア0.5点ごとにモディファイヤーを付ける、モディファイヤーが無い場合は何も表示しない（既存のimgを使う場合）
+
+  /* stylelint-disable */
+  &.ecm-ad-review-link-star-review_000 {
+    background-image: url('https://r.r10s.jp/com/js/c/ecm/svg/review-unfilled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-unfilled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-unfilled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-unfilled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-unfilled.svg');
+  }
+
+  &.ecm-ad-review-link-star-review_050 {
+    background-image: url('https://r.r10s.jp/com/js/c/ecm/svg/review-half.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-unfilled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-unfilled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-unfilled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-unfilled.svg');
+  }
+
+  &.ecm-ad-review-link-star-review_100 {
+    background-image: url('https://r.r10s.jp/com/js/c/ecm/svg/review-filled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-unfilled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-unfilled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-unfilled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-unfilled.svg');
+  }
+
+  &.ecm-ad-review-link-star-review_150 {
+    background-image: url('https://r.r10s.jp/com/js/c/ecm/svg/review-filled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-half.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-unfilled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-unfilled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-unfilled.svg');
+  }
+
+  &.ecm-ad-review-link-star-review_200 {
+    background-image: url('https://r.r10s.jp/com/js/c/ecm/svg/review-filled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-filled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-unfilled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-unfilled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-unfilled.svg');
+  }
+
+  &.ecm-ad-review-link-star-review_250 {
+    background-image: url('https://r.r10s.jp/com/js/c/ecm/svg/review-filled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-filled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-half.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-unfilled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-unfilled.svg');
+  }
+
+  &.ecm-ad-review-link-star-review_300 {
+    background-image: url('https://r.r10s.jp/com/js/c/ecm/svg/review-filled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-filled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-filled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-unfilled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-unfilled.svg');
+  }
+
+  &.ecm-ad-review-link-star-review_350 {
+    background-image: url('https://r.r10s.jp/com/js/c/ecm/svg/review-filled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-filled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-filled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-half.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-unfilled.svg');
+  }
+
+  &.ecm-ad-review-link-star-review_400 {
+    background-image: url('https://r.r10s.jp/com/js/c/ecm/svg/review-filled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-filled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-filled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-filled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-unfilled.svg');
+  }
+
+  &.ecm-ad-review-link-star-review_450 {
+    background-image: url('https://r.r10s.jp/com/js/c/ecm/svg/review-filled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-filled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-filled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-filled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-half.svg');
+  }
+
+  &.ecm-ad-review-link-star-review_500 {
+    background-image: url('https://r.r10s.jp/com/js/c/ecm/svg/review-filled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-filled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-filled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-filled.svg'),
+      url('https://r.r10s.jp/com/js/c/ecm/svg/review-filled.svg');
+  }
+  /* stylelint-enable */
+}
+
+.ecm-ad-review-link-rate {
+  margin-left: 2px;
+  font-weight: bold;
+  color: #f2ab00;
+}
+
+.ecm-ad-review-link-count {
+  margin-left: 2px;
+
+  @include screen('md', 'up') {
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.ecm-ad-coupon-lead-text {
+  @include text-12px;
+
+  font-weight: bold;
+  color: $color-gray-1;
+}
+
+.ecm-ad-discount-text {
+  @include text-3xl;
+
+  line-height: 1;
+  color: $color-gray-1;
+  font-weight: bold;
+}
+
+/* stylelint-disable-next-line */
+.ecm-ad-asuraku- {
+  display: none;
+}
+
+.ecm-ad-discount-rate {
+  @include text-10px;
+
+  background-color: $color-crimson;
+  color: $color-white;
+  padding: 0 $space-4;
+}
+
+.ecm-ad-badge {
+  line-height: 1;
+  position: absolute;
+  z-index: 1;
+  top: -8px;
+  right: -8px;
+  display: grid;
+  width: 56px;
+  height: 56px;
+  text-align: center;
+  pointer-events: none;
+  color: $color-white;
+  background: url('https://r.r10s.jp/com/js/c/ecm/svg/badge-superdeal.svg') 0 0 / contain no-repeat;
+  place-content: center;
+
+  @include screen('md', 'up') {
+    width: 80px;
+    height: 80px;
+  }
+
+  &.ecm-ad-badge-black {
+    top: 0;
+    right: 0;
+    color: #f8e71c;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M40 75.2L36.0793 79.8074L33.1328 74.5236L28.3886 78.2776L26.5295 72.5206L21.1441 75.2768L20.4439 69.2677L14.6243 70.9204L15.1098 64.8902L9.07958 65.3757L10.7323 59.5561L4.72315 58.8559L7.47944 53.4705L1.72239 51.6114L5.47636 46.8672L0.192611 43.9207L4.8 40L0.192611 36.0793L5.47636 33.1328L1.72239 28.3886L7.47944 26.5295L4.72315 21.1441L10.7323 20.4439L9.07958 14.6243L15.1098 15.1098L14.6243 9.07958L20.4439 10.7323L21.1441 4.72315L26.5295 7.47944L28.3886 1.72239L33.1328 5.47636L36.0793 0.192611L40 4.8L43.9207 0.192611L46.8672 5.47636L51.6114 1.72239L53.4705 7.47944L58.8559 4.72315L59.5561 10.7323L65.3757 9.07958L64.8902 15.1098L70.9204 14.6243L69.2677 20.4439L75.2768 21.1441L72.5206 26.5295L78.2776 28.3886L74.5236 33.1328L79.8074 36.0793L75.2 40L79.8074 43.9207L74.5236 46.8672L78.2776 51.6114L72.5206 53.4705L75.2768 58.8559L69.2677 59.5561L70.9204 65.3757L64.8902 64.8902L65.3757 70.9204L59.5561 69.2677L58.8559 75.2768L53.4705 72.5206L51.6114 78.2776L46.8672 74.5236L43.9207 79.8074L40 75.2Z" fill="%23000000"/></svg>');
+  }
+}
+
+.ecm-ad-badge-point {
+  @include font-roboto(500);
+}
+
+.ecm-ad-pointback-bar {
+  font-weight: bold;
+  line-height: 1;
+  padding: 8px 0;
+  text-align: center;
+  color: $color-white;
+  background-color: $color-crimson;
+
+  @include screen('md', 'down') {
+    order: -1;
+  }
+
+  &.ecm-ad-pointback-bar-bg-transparent {
+    color: $color-crimson;
+    background-color: transparent;
+  }
+}

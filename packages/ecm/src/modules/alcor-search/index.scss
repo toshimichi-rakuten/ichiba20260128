@@ -1,0 +1,342 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+$transition-ms: 280ms;
+
+@mixin search-alcor {
+  background-color: $color-white;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin search-alcor-card {
+  padding: $space-12;
+  border-radius: $space-4;
+  box-shadow: rgb(0 0 0 / 5%) 0 0 0 1px;
+}
+
+.ecm-search-alcor {
+  @include search-alcor;
+}
+
+.ecm-search-alcor-card {
+  @include search-alcor;
+  @include search-alcor-card;
+}
+
+.ecm-search-alcor-horizontal {
+  @include search-alcor;
+  @include search-alcor-card;
+
+  flex-direction: row;
+
+  @include screen('md', 'up') {
+    align-items: flex-start;
+  }
+}
+
+.ecm-search-alcor-horizontal-b {
+  @include search-alcor;
+  @include search-alcor-card;
+
+  align-items: stretch;
+}
+
+.ecm-search-alcor-title {
+  @include text-sm;
+
+  display: flex;
+  width: 100%;
+  align-items: baseline;
+
+  a {
+    @include colorize-link($color-gray-1);
+  }
+
+  .ecm-icon-search {
+    margin-right: $space-4;
+  }
+}
+
+.ecm-search-alcor-image-crop {
+  display: block;
+  overflow: hidden;
+  border-radius: $space-4;
+}
+
+.ecm-search-alcor-image-link-tag {
+  @include text-11px;
+  @include colorize-link($color-white);
+
+  padding: 8px;
+  background-color: rgb(0 0 0 / 30%);
+  color: $color-white;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transition: all 0.2s ease;
+  opacity: 0;
+  pointer-events: none;
+
+  &:hover {
+    text-decoration: none;
+    background-color: rgb(0 0 0 / 70%);
+  }
+}
+
+.ecm-search-alcor-image-container {
+  width: 100%;
+  position: relative;
+  flex-shrink: 0;
+  display: block;
+
+  @media (hover: hover) and (pointer: fine) {
+    cursor: pointer;
+  }
+
+  &.ecm-search-alcor-image-container-touch {
+    display: block;
+
+    // https://stackoverflow.com/questions/60531036/problem-with-css-media-query-to-detect-if-samsung-device-supports-hover#answer-71546583
+    @media (hover: hover) and (pointer: fine) {
+      display: none;
+    }
+  }
+
+  &.ecm-search-alcor-image-container-mouse {
+    display: none;
+
+    @media (hover: hover) and (pointer: fine) {
+      display: block;
+    }
+  }
+
+  &:hover,
+  &:focus-within {
+    .ecm-search-alcor-image-link-tag {
+      opacity: 1;
+      pointer-events: unset;
+    }
+  }
+}
+
+.ecm-search-alcor-image-list {
+  @include screen('md', 'down') {
+    max-width: 100px;
+  }
+}
+
+.md-ecm-search-alcor-image-list {
+  @include screen('md', 'up') {
+    max-width: 50%;
+  }
+}
+
+.ecm-search-alcor-popup-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: $z-alcor-popup-bg;
+  transition: opacity $transition-ms ease;
+  background-color: rgb(0 0 0 / 30%);
+  visibility: hidden;
+  opacity: 0;
+
+  &[data-visible='true'] {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &[data-closing='true'] {
+    opacity: 0;
+    visibility: visible;
+  }
+
+  &[data-opening='true'] {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.ecm-search-alcor-popup-menu {
+  @include text-sm;
+
+  background-color: $color-white;
+  position: absolute;
+  z-index: $z-alcor-popup-menu;
+  bottom: 0;
+  flex-direction: column;
+  border-radius: 4px;
+  display: flex;
+  transform: translate(-50%, 80%);
+  margin-left: 50%;
+  width: calc(100% - 16px);
+  min-width: 142px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity $transition-ms ease;
+
+  &[data-visible='true'] {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &[data-closing='true'] {
+    opacity: 0;
+    visibility: visible;
+  }
+
+  &[data-opening='true'] {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-bottom-color: $color-white;
+    border-top: 0;
+    margin-left: -10px;
+    margin-top: -10px;
+  }
+}
+
+.ecm-search-alcor-popup-menu-list {
+  @include text-sm;
+
+  background-color: $color-white;
+  position: absolute;
+  z-index: $z-alcor-popup-menu;
+  bottom: 0;
+  flex-direction: column;
+  border-radius: 4px;
+  display: flex;
+  transform: translate(-50%, 80%);
+  width: unset;
+  margin-left: calc(50% + 8px);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity $transition-ms ease;
+
+  &[data-visible='true'] {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &[data-closing='true'] {
+    opacity: 0;
+    visibility: visible;
+  }
+
+  &[data-opening='true'] {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: calc(50% - 8px);
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-bottom-color: $color-white;
+    border-top: 0;
+    margin-left: -10px;
+    margin-top: -10px;
+  }
+}
+
+.ecm-search-alcor-popup-menu-ellipse {
+  @include text-sm;
+
+  background-color: $color-white;
+  position: absolute;
+  z-index: $z-alcor-popup-menu;
+  flex-direction: column;
+  border-radius: 4px;
+  display: flex;
+  width: 144px;
+  top: 24px;
+  right: -13px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity $transition-ms ease;
+
+  &[data-visible='true'] {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &[data-closing='true'] {
+    opacity: 0;
+    visibility: visible;
+  }
+
+  &[data-opening='true'] {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-bottom-color: $color-white;
+    border-top: 0;
+    margin-left: -8px;
+    margin-top: -8px;
+  }
+}
+
+.ecm-search-alcor-popup-link {
+  @include colorize-link($color-gray-1);
+
+  padding: 16px;
+  white-space: nowrap;
+
+  & + & {
+    border-top: 1px solid #ebebeb;
+  }
+}
+
+.ecm-search-alcor-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.ecm-search-alcor-ellipse-container {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 8px;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+
+  @include screen('md', 'up') {
+    display: none;
+  }
+}
+
+.ecm-search-alcor-popup-trigger {
+  background: none;
+  border: none;
+  padding: 0;
+  display: block;
+}

@@ -1,0 +1,153 @@
+<div
+  data-module-name="ecm-tab"
+  data-role="tablist"
+  data-default-open="outerTabColPanel1"
+  data-session="false"
+  data-tab-group-name="outer"
+>
+  <div class="ecm-tab-container bordered-b">
+    <button
+      id="outerTabColTab1"
+      style="width: 33.33%"
+      class="ecm-tab"
+      data-tab="outer"
+      aria-controls="outerTabColPanel1"
+      aria-selected="false"
+      role="tab"
+    >
+      <span>Outer Tab 1</span>
+    </button>
+    <button
+      id="outerTabColTab2"
+      style="width: 33.33%"
+      class="ecm-tab"
+      data-tab="outer"
+      aria-controls="outerTabColPanel2"
+      aria-selected="false"
+      role="tab"
+    >
+      <span>Outer Tab 2</span>
+    </button>
+  </div>
+
+  <div class="p-16">
+    <div
+      id="outerTabColPanel1"
+      data-tabpanel="outer"
+      aria-hidden="true"
+      aria-labelledby="outerTabColTab1"
+      role="tabpanel"
+    >
+      <div
+        data-module-name="ecm-tab"
+        data-role="tablist"
+        data-default-open="innerTabColPanel1-1"
+        data-session="false"
+        data-tab-group-name="inner"
+      >
+        <div class="ecm-tab-container bordered-b">
+          <button
+            id="innerTabColTab1-1"
+            style="width: 33.33%"
+            class="ecm-tab"
+            data-tab="inner"
+            aria-controls="innerTabColPanel1-1"
+            aria-selected="false"
+            role="tab"
+          >
+            <span>Inner Tab 1-1</span>
+          </button>
+          <button
+            id="innerTabColTab1-2"
+            style="width: 33.33%"
+            class="ecm-tab"
+            data-tab="inner"
+            aria-controls="innerTabColPanel1-2"
+            aria-selected="false"
+            role="tab"
+          >
+            <span>Inner Tab 1-2</span>
+          </button>
+        </div>
+
+        <div class="p-16">
+          <div
+            id="innerTabColPanel1-1"
+            data-tabpanel="inner"
+            aria-hidden="true"
+            aria-labelledby="innerTabColTab1-1"
+            role="tabpanel"
+          >
+          </div>
+          <div
+            id="innerTabColPanel1-2"
+            data-tabpanel="inner"
+            aria-hidden="true"
+            aria-labelledby="innerTabColTab1-2"
+            role="tabpanel"
+          >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="outerTabColPanel2"
+      data-tabpanel="outer"
+      aria-hidden="true"
+      aria-labelledby="outerTabColTab2"
+      role="tabpanel"
+    >
+      <div
+        data-module-name="ecm-tab"
+        data-role="tablist"
+        data-default-open="innerTabColPanel2-1"
+        data-session="false"
+        data-tab-group-name="inner"
+      >
+        <div class="ecm-tab-container bordered-b">
+          <button
+            id="innerTabColTab2-1"
+            style="width: 33.33%"
+            class="ecm-tab"
+            data-tab="inner"
+            aria-controls="innerTabColPanel2-1"
+            aria-selected="false"
+            role="tab"
+          >
+            <span>Inner Tab 2-1</span>
+          </button>
+          <button
+            id="innerTabColTab2-2"
+            style="width: 33.33%"
+            class="ecm-tab"
+            data-tab="inner"
+            aria-controls="innerTabColPanel2-2"
+            aria-selected="false"
+            role="tab"
+          >
+            <span>Inner Tab 2-2</span>
+          </button>
+        </div>
+
+        <div class="p-16">
+          <div
+            id="innerTabColPanel2-1"
+            data-tabpanel="inner"
+            aria-hidden="true"
+            aria-labelledby="innerTabColTab2-1"
+            role="tabpanel"
+          >
+          </div>
+          <div
+            id="innerTabColPanel2-2"
+            data-tabpanel="inner"
+            aria-hidden="true"
+            aria-labelledby="innerTabColTab2-2"
+            role="tabpanel"
+          >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

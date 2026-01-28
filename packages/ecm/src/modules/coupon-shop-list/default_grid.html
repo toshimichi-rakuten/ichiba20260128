@@ -1,0 +1,30 @@
+<div
+  data-module-name="ecm-coupon-shop-list"
+  data-coupon-genre="20230926"
+>
+  <template data-coupon-shop-list-output>
+    <h3 class="mb-16">クーポン対象ショップ一覧</h3>
+
+    <div class="ecm-card ecm-card-rounded-sm p-32 text-sm">
+      <div
+        class="d-grid d-grid-col-3 d-grid-gap-x-24 d-grid-gap-y-12"
+        data-coupon-shop-list-item-container
+        data-sort="shop_name_kana"
+        data-sort-type="asc"
+      ></div>
+    </div>
+  </template>
+
+  <template
+    data-coupon-shop-list-data
+    data-coupons-json-url="★★★coupons.json★★★"
+  ></template>
+
+  <template data-coupon-shop-list-item-template>
+    <a
+      class="ecm-link-color-gray-1"
+      href="https://www.rakuten.co.jp/###shop_url###/"
+      >###shop_name###</a
+    >
+  </template>
+</div>

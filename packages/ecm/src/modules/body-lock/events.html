@@ -1,0 +1,24 @@
+<body>
+  <button id="cb1">Custom Button Lock</button>
+  <button id="cb2">Custom Button Unlock</button>
+  <button id="cb3">Custom Button Toggle</button>
+</body>
+
+<script>
+  const root = document.querySelector('body')
+
+  const cb1 = document.getElementById('cb1')
+  cb1.addEventListener('click', () => {
+    root.dispatchEvent(new Event('ecmBodyLockLock'))
+  })
+
+  const cb2 = document.getElementById('cb2')
+  cb2.addEventListener('click', () => {
+    root.dispatchEvent(new Event('ecmBodyLockUnlock'))
+  })
+
+  const cb3 = document.getElementById('cb3')
+  cb3.addEventListener('click', () => {
+    root.dispatchEvent(new Event('ecmBodyLockToggle'))
+  })
+</script>

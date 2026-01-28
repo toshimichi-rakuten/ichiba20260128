@@ -1,0 +1,258 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+.ecm-ranking-alcor,
+.ecm-ranking-alcor-updatedate {
+  list-style: none;
+}
+
+.ecm-ranking-alcor-updatedate {
+  @include text-12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: $space-12;
+  color: $color-gray-2;
+}
+
+.ecm-ranking-alcor-image {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+
+  @include screen('md', 'up') {
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.ecm-ranking-alcor-rank {
+  @include text-base;
+  @include font-roboto(500);
+
+  margin-top: $space-8;
+  color: $color-gray-1;
+  line-height: 1;
+  font-weight: 700;
+
+  @include screen('md', 'up') {
+    margin-top: $space-12;
+  }
+
+  &.ecm-ranking-alcor-rank-small {
+    @include text-sm;
+
+    margin-top: $space-8;
+  }
+}
+
+.ecm-ranking-alcor-rank-num {
+  @include text-3xl;
+  @include font-roboto(500);
+
+  margin-right: 1px;
+
+  &.ecm-ranking-alcor-rank-num-2xl {
+    @include text-2xl;
+  }
+}
+
+.ecm-ranking-alcor-text-link:hover {
+  @include screen('md', 'up') {
+    text-decoration: none;
+
+    .ecm-ranking-alcor-name {
+      text-decoration: underline;
+    }
+
+    .ecm-ranking-alcor-price {
+      text-decoration: none;
+    }
+  }
+}
+
+.ecm-ranking-alcor-name {
+  @include text-xs;
+  @include clamp(2);
+  @include colorize-link($color-gray-1);
+
+  margin-top: $space-8;
+  height: calc(2em * $base-line-height);
+
+  // HACK: with 2em and text-xs, the third line slightly shows in Safari.
+  @supports (hanging-punctuation: first) and (font: -apple-system-body) and (-webkit-appearance: none) {
+    height: calc(1.925em * $base-line-height);
+  }
+
+  @include screen('md', 'up') {
+    @include text-sm;
+    height: calc(2em * $base-line-height);
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.ecm-ranking-alcor-price {
+  @include text-lg;
+  @include colorize-link($color-crimson);
+  @include font-roboto(500);
+
+  flex: 0 0 auto;
+  display: flex;
+  align-items: baseline;
+  margin: $space-8 0 0;
+  font-weight: 500;
+  line-height: 1;
+  word-break: break-all;
+
+  @include screen('md', 'up') {
+    @include text-2xl;
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &.ecm-ranking-alcor-price-text-base {
+    @include text-base;
+  }
+}
+
+.ecm-ranking-alcor-review {
+  margin-top: $space-8;
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 1;
+}
+
+.ecm-ranking-alcor-review-rate {
+  @include text-12px;
+
+  color: #f2ab00;
+}
+
+.ecm-ranking-alcor-review-amount {
+  @include text-12px;
+
+  color: $color-gray-2;
+  margin-left: $space-4;
+}
+
+.ecm-ranking-alcor-shop-link {
+  @include colorize-link($color-gray-2);
+
+  display: flex;
+  align-items: flex-start;
+  margin: $space-12 0 0;
+
+  @include screen('md', 'up') {
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.ecm-ranking-alcor-shop-name {
+  @include text-12px;
+
+  margin-left: $space-4;
+
+  @include screen('md', 'up') {
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.ecm-ranking-alcor-link:hover {
+  text-decoration: none;
+}
+
+.ecm-ranking-alcor-view-more {
+  @include text-sm;
+
+  margin: $space-48 auto $space-16;
+  color: $color-gray-1;
+
+  @include screen('md', 'up') {
+    @include text-base;
+  }
+}
+
+.ecm-ranking-alcor-view-more-text:hover {
+  text-decoration: underline;
+}
+
+.ecm-ranking-alcor-view-more-icon {
+  color: $color-9c9c9c;
+}
+
+/* eslint-disable */
+/* stylelint-disable */
+@include screen('md', 'down') {
+  // sp horizontal
+  .ecm-ranking-alcor-horizontal {
+    display: flex;
+
+    .ecm-ranking-alcor-rank {
+      margin-top: 0;
+    }
+
+    .ecm-ranking-alcor-link {
+      flex: 0 0 auto;
+      width: calc((100vw - 164px) / 12 * 4 + 36px);
+      margin-right: $space-12;
+    }
+
+    .ecm-ranking-alcor-name {
+      @include text-12px;
+
+      margin-top: $space-4;
+    }
+
+    .ecm-ranking-alcor-price {
+      @include text-base;
+
+      margin-top: $space-4;
+    }
+
+    .ecm-ranking-alcor-review {
+      margin-top: $space-4;
+    }
+
+    .ecm-ranking-alcor-shop-link {
+      margin-top: $space-8;
+    }
+  }
+
+  // sp group slider
+  .ecm-ranking-alcor-sptwoline {
+    @include scrollable-x;
+
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-auto-flow: column;
+    gap: $space-16 $space-12;
+
+    .ecm-ranking-alcor {
+      width: calc((100vw - 164px) / 12 * 10 + 108px) !important;
+    }
+  }
+}
+/* eslint-enable */
+/* stylelint-enable */

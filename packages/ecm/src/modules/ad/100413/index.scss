@@ -1,0 +1,19 @@
+.ecm-ad-body-100413 {
+  @include screen('md', 'down') {
+    display: contents;
+  }
+}
+
+.ecm-ad-image-block-100413 {
+  @include screen('md', 'up') {
+    width: calc((100% - 16px) / 2);
+  }
+}
+
+.ecm-ad-copy-100413 {
+  font-size: 14px;
+
+  @include screen('md', 'up') {
+    font-size: 18px;
+  }
+}

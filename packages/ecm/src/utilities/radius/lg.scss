@@ -1,0 +1,46 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+@include util-lg('radius-0') {
+  border-radius: 0;
+}
+@include util-lg('radius-2') {
+  border-radius: 2px;
+}
+@include util-lg('radius-4') {
+  border-radius: 4px;
+}
+@include util-lg('radius-8') {
+  border-radius: 8px;
+}
+@include util-lg('radius-16') {
+  border-radius: 16px;
+}
+@include util-lg('radius-32') {
+  border-radius: 32px;
+}
+@include util-lg('radius-full') {
+  border-radius: 9999px;
+}
+
+@include util-lg('radius-0', true) {
+  border-radius: 0 !important;
+}
+@include util-lg('radius-2', true) {
+  border-radius: 2px !important;
+}
+@include util-lg('radius-4', true) {
+  border-radius: 4px !important;
+}
+@include util-lg('radius-8', true) {
+  border-radius: 8px !important;
+}
+@include util-lg('radius-16', true) {
+  border-radius: 16px !important;
+}
+@include util-lg('radius-32', true) {
+  border-radius: 32px !important;
+}
+@include util-lg('radius-full', true) {
+  border-radius: 9999px !important;
+}

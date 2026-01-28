@@ -1,0 +1,10 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+@include util-md('underline') {
+  text-decoration: underline;
+}
+
+@include util-md('underline', true) {
+  text-decoration: underline !important;
+}

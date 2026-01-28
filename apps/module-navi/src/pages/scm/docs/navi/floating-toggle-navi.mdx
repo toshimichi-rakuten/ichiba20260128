@@ -1,0 +1,111 @@
+
+import Demo from 'src/components/Demo'
+import Code from 'src/components/Code'
+import Html from 'src/components/Html'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'scm/src/modules/floating-navi/default.html'
+import defaultDemoHtml from 'scm/src/modules/floating-navi/default_demo.html'
+import spDefaultHtml from 'scm/src/modules/floating-toggle-navi/default.html'
+import spDefaultDemoHtml from 'scm/src/modules/floating-toggle-navi/default_demo.html'
+import spBorderedHtml from 'scm/src/modules/floating-toggle-navi/bordered.html'
+import spAnchorHtml from 'scm/src/modules/floating-toggle-navi/anchor.html'
+import spAnchorBorderedHtml from 'scm/src/modules/floating-toggle-navi/anchor-bordered.html'
+
+export const meta = {
+  title: 'グローバルナビ',
+  url: '/scm/docs/navi/floating-toggle-navi',
+  tags: ['floating', 'toggle', 'navi', 'anchor', 'フローティング', 'トグル', 'アンカー'],
+  enabled: true
+}
+
+# グローバルナビ
+
+PCとSPで別パーツとなります。
+
+## PC
+
+<Tabs keepMounted={false} defaultValue='lg' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='lg'>LG</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='lg'>
+    <Html scm={true} device="lg" content={defaultDemoHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={defaultHtml} />
+  </Tabs.Panel>
+</Tabs>
+
+## SP
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html scm={true} content={spDefaultDemoHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={spDefaultHtml} />
+  </Tabs.Panel>
+</Tabs>
+
+### 下線あり
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html scm={true} content={spBorderedHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={spBorderedHtml} />
+  </Tabs.Panel>
+</Tabs>
+
+### アンカー
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html scm={true} content={spAnchorHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={spAnchorHtml} />
+  </Tabs.Panel>
+</Tabs>
+
+### アンカー（下線あり）
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html scm={true} content={spAnchorBorderedHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={spAnchorBorderedHtml} />
+  </Tabs.Panel>
+</Tabs>
+
+

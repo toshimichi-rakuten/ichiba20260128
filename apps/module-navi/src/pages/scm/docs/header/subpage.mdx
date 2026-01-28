@@ -1,0 +1,34 @@
+
+import Demo from 'src/components/Demo'
+import Code from 'src/components/Code'
+import Html from 'src/components/Html'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'scm/src/modules/subpage-header/default.html'
+
+export const meta = {
+  title: '下層特集共通ヘッダ',
+  url: '/scm/docs/header/subpage',
+  tags: ['header', 'subpage', '下層', 'ヘッダー'],
+}
+
+# 下層特集共通ヘッダ
+
+SPページでのみ使用します。
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html scm={true} content={defaultHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={defaultHtml} />
+  </Tabs.Panel>
+</Tabs>
+
+

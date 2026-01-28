@@ -1,0 +1,26 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+@include util-md('word-break-normal') {
+  word-break: normal;
+}
+
+@include util-md('word-break-break-all') {
+  word-break: break-all;
+}
+
+@include util-md('word-break-keep-all') {
+  word-break: keep-all;
+}
+
+@include util-md('word-break-normal', true) {
+  word-break: normal !important;
+}
+
+@include util-md('word-break-break-all', true) {
+  word-break: break-all !important;
+}
+
+@include util-md('word-break-keep-all', true) {
+  word-break: keep-all !important;
+}

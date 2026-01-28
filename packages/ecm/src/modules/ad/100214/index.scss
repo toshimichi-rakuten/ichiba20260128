@@ -1,0 +1,42 @@
+.ecm-ad-title-100214 {
+  @include text-base;
+
+  font-weight: bold;
+  color: $color-gray-1;
+  text-align: center;
+
+  @include screen('md', 'down') {
+    text-align: left;
+  }
+}
+
+.ecm-ad-link-100214 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ecm-ad-image-block-100214 {
+  display: flex;
+  justify-content: flex-end;
+  flex: 0 0 auto;
+  width: calc((100% - $space-24) / 2);
+
+  @include screen('md', 'down') {
+    width: calc((100% - $space-8) / 2);
+  }
+}
+
+.ecm-ad-logo-100214 {
+  max-width: 200px;
+}
+
+.ecm-ad-shop-100214 {
+  width: calc((100% - $space-24) / 2);
+}
+
+.ecm-ad-shop-introduction-100214 {
+  @include text-sm;
+
+  color: $color-gray-1;
+}

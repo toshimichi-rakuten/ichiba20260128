@@ -1,0 +1,111 @@
+/* stylelint-disable */
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+.ecm-coupon-alcor {
+  background-color: transparent;
+  background-image: radial-gradient(circle at center left, transparent 0px, transparent 11px, $color-white 12px),
+    radial-gradient(circle at center right, transparent 0px, transparent 11px, $color-white 12px);
+  background-size:
+    calc(55% + 1px) 100%,
+    calc(55% + 1px) 100%;
+  background-position:
+    -1px 50%,
+    calc(100% + 1px) 50%;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  filter: drop-shadow(0 4px 4px rgb(0 0 0 / 25%));
+  position: relative;
+  text-decoration: none;
+  width: 100%;
+  max-width: 343px;
+  height: 100%;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.ecm-coupon-alcor-body {
+  column-gap: 12px;
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  padding: 30px 19px 30px 24px;
+  flex: 1 0 auto;
+}
+
+.ecm-coupon-alcor-image {
+  height: auto;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+
+.ecm-coupon-alcor-discount {
+  color: $color-gray-1;
+  margin: 0;
+  line-height: 1;
+  @include text-4xl;
+  @include font-roboto(500);
+
+  @include screen('md', 'up') {
+    @include text-2xl;
+    line-height: $base-line-height;
+  }
+}
+
+.ecm-coupon-alcor-expiration,
+.ecm-coupon-alcor-shop {
+  color: $color-gray-2;
+  font-weight: 300;
+
+  @include text-12px;
+}
+
+.ecm-coupon-alcor-expiration {
+  margin-top: $space-8;
+}
+
+.ecm-coupon-alcor-shop {
+  align-items: center;
+  display: flex;
+  margin: 4px 0 0;
+}
+
+.ecm-coupon-alcor-shop-icon {
+  margin-right: 4px;
+  align-self: baseline;
+  flex: 0 0 14px;
+
+  @include text-sm;
+}
+
+.ecm-coupon-alcor-foot {
+  align-items: center;
+  border-top: 1px solid rgb(0 0 0 / 8%);
+  box-sizing: border-box;
+  color: $color-gray-1;
+  display: flex;
+  font-weight: 600;
+  flex: 0 0 56px;
+  height: 56px;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  padding-left: $space-8;
+  padding-right: $space-8;
+
+  @include text-base;
+
+  &:hover {
+    background-color: rgb(0 0 0 / 4%);
+  }
+}
+
+.ecm-coupon-alcor-foot-icon {
+  margin-right: 4px;
+  color: #e46500;
+}

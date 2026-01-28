@@ -1,0 +1,603 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import ColumnPrice from 'ecm/src/modules/alcor-normal/col_price.html?raw'
+import ColumnPriceName from 'ecm/src/modules/alcor-normal/col_price_name.html?raw'
+import ColumnPriceNameShop from 'ecm/src/modules/alcor-normal/col_price_name_shop.html?raw'
+import ColumnPriceNameReviewShop from 'ecm/src/modules/alcor-normal/col_price_name_review_shop.html?raw'
+import SPHorizontalPCColumnPrice from 'ecm/src/modules/alcor-normal/sp_horizontal_price.html?raw'
+import SPHorizontalPCColumnPriceName from 'ecm/src/modules/alcor-normal/sp_horizontal_price_name.html?raw'
+import SPHorizontalPCColumnPriceNameShop from 'ecm/src/modules/alcor-normal/sp_horizontal_price_name_shop.html?raw'
+import SPHorizontalPCColumnPriceNameReviewShop from 'ecm/src/modules/alcor-normal/sp_horizontal_price_name_review_shop.html?raw'
+import SliderPrice from 'ecm/src/modules/alcor-normal/slider_price.html?raw'
+import SliderPriceName from 'ecm/src/modules/alcor-normal/slider_price_name.html?raw'
+import SliderPriceNameShop from 'ecm/src/modules/alcor-normal/slider_price_name_shop.html?raw'
+import SliderPriceNameReviewShop from 'ecm/src/modules/alcor-normal/slider_price_name_review_shop.html?raw'
+import Slider2Price from 'ecm/src/modules/alcor-normal/slider_2_price.html?raw'
+import Slider2PriceName from 'ecm/src/modules/alcor-normal/slider_2_price_name.html?raw'
+import Slider2PriceNameShop from 'ecm/src/modules/alcor-normal/slider_2_price_name_shop.html?raw'
+import Slider2PriceNameReviewShop from 'ecm/src/modules/alcor-normal/slider_2_price_name_review_shop.html?raw'
+
+import {
+  staticColumnPriceHtml,
+  staticColumnPriceNameHtml,
+  staticColumnPriceNameShopHtml,
+  staticColumnPriceNameReviewShopHtml,
+  staticSPHorizontalPCColumnPriceHtml,
+  staticSPHorizontalPCColumnPriceNameHtml,
+  staticSPHorizontalPCColumnPriceNameShopHtml,
+  staticSPHorizontalPCColumnPriceNameReviewShopHtml,
+  staticSliderPriceHtml,
+  staticSliderPriceNameHtml,
+  staticSliderPriceNameShopHtml,
+  staticSliderPriceNameReviewShopHtml,
+  staticSlider2PriceHtml,
+  staticSlider2PriceNameHtml,
+  staticSlider2PriceNameShopHtml,
+  staticSlider2PriceNameReviewShopHtml,
+} from 'ecm/src/modules/alcor-normal/static'
+
+export const meta = {
+  title: 'アルコル（通常）',
+  description: '商品リスト作成ツール アルコルで利用できるHTMLテンプレート',
+  url: '/ecm/docs/ad/alcor-normal',
+  tags: ['alcor', 'alcor-normal', 'アルコル', 'item'],
+}
+
+# アルコル（通常）
+
+商品リスト作成ツール アルコルで利用できるHTMLテンプレートです。モジュールでは、商品リスト部分のみをアルコルのテンプレートとして登録し、実際のページでの見せ方＝レイアウト（何の要素を表示させるか・何カラム表示にするか、スライダーにするか）は、ページ側で設定・変更できるように制作されています。アルコルツール自体について詳しくは、[アルコル（Alcor）](https://confluence.rakuten-it.com/confluence/pages/viewpage.action?pageId=1098887034)（閲覧は社内環境限定）をご確認ください。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={staticColumnPriceHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={staticColumnPriceHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={ColumnPrice}/>
+  </Tabs.Panel>
+</Tabs>
+
+## 使い方
+
+1. テンプレートを選んでアルコルを作成する
+
+    <Space />
+
+    アルコルの「商品一覧のHTMLを作成する」にある、PCの「HTMLを出力する 」で、アルコル（通常）モジュール用のテンプレートである `ecm_alcor_normal_50.html` を選択して、HTMLを出力してください。PC/SP共通利用が可能です。  
+    アルコル側で設定した商品数（商品取得件数・商品登録数）がページへ表示されます。
+
+    <Space />
+
+2. 表示したい要素・レイアウトに応じたHTMLを選択する
+
+    <Space />
+
+    本ページのレイアウトから、表示したい要素の組み合わせ（価格・商品名・店舗名・レビュー）、使いたいレイアウトのソースコードをコピーし、PC/SPページのHTMLの必要な場所に貼り付けてください。  
+    （PC/SP共通利用が可能です）必要に応じて、カラム数を指定するclass部分を書き換えます。  
+    カラム数の変更詳細については、グリッドレイアウトを参照。
+
+    <Space />
+
+3. アルコルの出力HTMLパスを記載する
+
+    <Space />
+
+    ページのHTMLに追加したレイアウトHTMLの
+
+    <Space />
+
+    <Code content={`
+    <!-- Alcor Template -->
+   <!--#include virtual="★"-->
+   <!-- /Alcor template -->
+    `}/>
+
+    <Space />
+
+    includeのパス部分を、出力したHTMLのインクルードパス `/itemlist/20xxxx/****.html` と置き換えてください。  
+    最後に、レイアウトが正しく表示されるか確認します。
+
+## レイアウト
+
+### 商品画像・価格
+
+#### カラムレイアウト [1]
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={staticColumnPriceHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={staticColumnPriceHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={ColumnPrice}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+上記ソースコードは、SP2カラム、PC4カラムになります。カラム数を変更する場合は、以下の部分の数字を書き換えてください。  
+SP は `1〜2` カラムの調整ができ、PC は `3〜5` カラムの調整ができます。
+
+<Space />
+
+> class="d-grid d-grid-col-**2** d-grid-gap-16 md-d-grid-col-**4** md-d-grid-gap-32"
+
+#### SPリストレイアウト・PCカラムレイアウト [1]
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={staticSPHorizontalPCColumnPriceHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={staticSPHorizontalPCColumnPriceHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={SPHorizontalPCColumnPrice}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+上記ソースコードは、SPリストレイアウト、PC4カラムになります。カラム数を変更する場合は、以下の部分の数字を書き換えてください。  
+PC は `3~5` カラムの調整ができます。
+
+<Space />
+
+> class="d-grid d-grid-col-1 d-grid-gap-16 md-d-grid-col-**4** md-d-grid-gap-32"
+
+#### スライダーレイアウト [1]
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={staticSliderPriceHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={staticSliderPriceHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={SliderPrice}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Note type='info'>
+  スライダーの設定については、[スライダー](/ecm/docs/ui/slider/)を参照して、設定を変更してください
+</Note>
+
+#### SPグループスクロール・PCカラムレイアウト [1]
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={staticSlider2PriceHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={staticSlider2PriceHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={Slider2Price}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+上記ソースコードは、PCレイアウトは4カラムになります。PCカラム数を変更する場合は、以下の部分の数字を書き換えてください。  
+
+<Space />
+
+> class="md-d-grid md-d-grid-col-**4** md-d-grid-gap-32"
+
+### 商品画像・価格・商品名
+
+#### カラムレイアウト [2]
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={staticColumnPriceNameHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={staticColumnPriceNameHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={ColumnPriceName}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+上記ソースコードは、SP2カラム、PC4カラムになります。カラム数を変更する場合は、以下の部分の数字を書き換えてください。  
+SP は `1〜2` カラムの調整ができ、PC は `3〜5` カラムの調整ができます。
+
+<Space />
+
+> class="d-grid d-grid-col-**2** d-grid-gap-16 md-d-grid-col-**4** md-d-grid-gap-32"
+
+#### SPリストレイアウト・PCカラムレイアウト [2]
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={staticSPHorizontalPCColumnPriceNameHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={staticSPHorizontalPCColumnPriceNameHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={SPHorizontalPCColumnPriceName}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+上記ソースコードは、SPリストレイアウト、PC4カラムになります。カラム数を変更する場合は、以下の部分の数字を書き換えてください。  
+PC は `3~5` カラムの調整ができます。
+
+<Space />
+
+> class="d-grid d-grid-col-1 d-grid-gap-16 md-d-grid-col-**4** md-d-grid-gap-32"
+
+#### スライダーレイアウト [2]
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={staticSliderPriceNameHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={staticSliderPriceNameHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={SliderPriceName}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Note type='info'>
+  スライダーの設定については、[スライダー](/ecm/docs/ui/slider/)を参照して、設定を変更してください
+</Note>
+
+#### SPグループスクロール・PCカラムレイアウト [2]
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={staticSlider2PriceNameHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={staticSlider2PriceNameHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={Slider2PriceName}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+上記ソースコードは、PCレイアウトは4カラムになります。PCカラム数を変更する場合は、以下の部分の数字を書き換えてください。  
+
+<Space />
+
+> class="md-d-grid md-d-grid-col-**4** md-d-grid-gap-32"
+
+### 商品画像・価格・商品名・ショップ名
+
+#### カラムレイアウト [3]
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={staticColumnPriceNameShopHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={staticColumnPriceNameShopHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={ColumnPriceNameShop}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+上記ソースコードは、SP2カラム、PC4カラムになります。カラム数を変更する場合は、以下の部分の数字を書き換えてください。  
+SP は `1〜2` カラムの調整ができ、PC は `3〜5` カラムの調整ができます。
+
+<Space />
+
+> class="d-grid d-grid-col-**2** d-grid-gap-16 md-d-grid-col-**4** md-d-grid-gap-32"
+
+#### SPリストレイアウト・PCカラムレイアウト [3]
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={staticSPHorizontalPCColumnPriceNameShopHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={staticSPHorizontalPCColumnPriceNameShopHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={SPHorizontalPCColumnPriceNameShop}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+上記ソースコードは、SPリストレイアウト、PC4カラムになります。カラム数を変更する場合は、以下の部分の数字を書き換えてください。  
+PC は `3~5` カラムの調整ができます。
+
+<Space />
+
+> class="d-grid d-grid-col-1 d-grid-gap-16 md-d-grid-col-**4** md-d-grid-gap-32"
+
+#### スライダーレイアウト [3]
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={staticSliderPriceNameShopHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={staticSliderPriceNameShopHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={SliderPriceNameShop}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Note type='info'>
+  スライダーの設定については、[スライダー](/ecm/docs/ui/slider/)を参照して、設定を変更してください
+</Note>
+
+#### SPグループスクロール・PCカラムレイアウト [3]
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={staticSlider2PriceNameShopHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={staticSlider2PriceNameShopHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={Slider2PriceNameShop}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+上記ソースコードは、PCレイアウトは4カラムになります。PCカラム数を変更する場合は、以下の部分の数字を書き換えてください。  
+
+<Space />
+
+> class="md-d-grid md-d-grid-col-**4** md-d-grid-gap-32"
+
+### 商品画像・価格・商品名・ショップ名・レビュー
+
+#### カラムレイアウト [4]
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={staticColumnPriceNameReviewShopHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={staticColumnPriceNameReviewShopHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={ColumnPriceNameReviewShop}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+上記ソースコードは、SP2カラム、PC4カラムになります。カラム数を変更する場合は、以下の部分の数字を書き換えてください。  
+SP は `1〜2` カラムの調整ができ、PC は `3〜5` カラムの調整ができます。
+
+<Space />
+
+> class="d-grid d-grid-col-**2** d-grid-gap-16 md-d-grid-col-**4** md-d-grid-gap-32"
+
+#### SPリストレイアウト・PCカラムレイアウト [4]
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={staticSPHorizontalPCColumnPriceNameReviewShopHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={staticSPHorizontalPCColumnPriceNameReviewShopHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={SPHorizontalPCColumnPriceNameReviewShop}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+上記ソースコードは、SPリストレイアウト、PC4カラムになります。カラム数を変更する場合は、以下の部分の数字を書き換えてください。  
+PC は `3~5` カラムの調整ができます。
+
+<Space />
+
+> class="d-grid d-grid-col-1 d-grid-gap-16 md-d-grid-col-**4** md-d-grid-gap-32"
+
+#### スライダーレイアウト [4]
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={staticSliderPriceNameReviewShopHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={staticSliderPriceNameReviewShopHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={SliderPriceNameReviewShop}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Note type='info'>
+  スライダーの設定については、[スライダー](/ecm/docs/ui/slider/)を参照して、設定を変更してください
+</Note>
+
+#### SPグループスクロール・PCカラムレイアウト [4]
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={staticSlider2PriceNameReviewShopHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={staticSlider2PriceNameReviewShopHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={Slider2PriceNameReviewShop}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+上記ソースコードは、PCレイアウトは4カラムになります。PCカラム数を変更する場合は、以下の部分の数字を書き換えてください。  
+
+<Space />
+
+> class="md-d-grid md-d-grid-col-**4** md-d-grid-gap-32"

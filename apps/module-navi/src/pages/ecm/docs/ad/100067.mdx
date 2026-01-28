@@ -1,0 +1,54 @@
+import Html from 'src/components/Html'
+import Code from 'src/components/Code'
+import Note from 'src/components/Note'
+import Table, { ClassTable, AttributeTable } from 'src/components/Table'
+import { Tabs } from '@mantine/core'
+import Space from 'src/components/Space'
+import ad100067SoloHtml from 'ecm/src/modules/ad/100067/solo.html'
+import ad100067integrationHtml from 'ecm/src/modules/ad/100067/integration.html'
+
+export const meta = {
+  title: '原稿タイプID100067 ランキング形式',
+  description: '',
+  url: '/ecm/docs/ad/100067',
+  tags: ['商品', 'ad', '原稿タイプ', 'ranking'],
+  finder_tags: [
+    'category_ranking',
+    'image_3x2',
+    'text_item_name',
+    'text_item_desc',
+    'text_shop_name',
+    'price_value',
+    'icon_free_delivery',
+    'layout_pc_col2',
+    'layout_pc_col3',
+    'layout_pc_only',
+    'layout_others'
+  ],
+}
+
+# 原稿タイプID100067 ランキング形式
+PC only  
+商品画像入稿サイズ：720×480px  
+見出し画像入稿サイズ：960×60px  
+
+<Space />
+★部分へアドプラッツからダウンロードした配信タグを貼り付けてください。
+<Space />
+
+<Tabs keepMounted={false} defaultValue='demo'  styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='demo'>デモ</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='demo'>
+    <Html adHighlight={true} device='lg' content={ad100067SoloHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={ad100067integrationHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+

@@ -1,0 +1,50 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+.ecm-reward-header {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -$space-4;
+  margin-left: -$space-4;
+  @include screen('md', 'up') {
+    margin-left: -$space-8;
+    align-items: flex-start;
+  }
+
+  @include screen('md', 'down') {
+    flex-direction: column;
+  }
+}
+
+.ecm-reward-badge-container {
+  display: inline-flex;
+  flex-wrap: wrap;
+  @include screen('md', 'up') {
+    margin-left: $space-4;
+  }
+
+  .ecm-badge {
+    margin-top: $space-4;
+    margin-left: $space-4;
+  }
+}
+
+.ecm-reward-requirement-container {
+  margin-top: $space-4;
+  margin-left: $space-4;
+
+  @include screen('md', 'up') {
+    margin-left: $space-8;
+  }
+}
+
+.ecm-reward-requirement {
+  @include text-12px;
+
+  margin: 0;
+  font-weight: bold;
+
+  @include screen('md', 'up') {
+    @include text-12px;
+  }
+}

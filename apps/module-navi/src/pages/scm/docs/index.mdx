@@ -1,0 +1,73 @@
+
+import Demo from 'src/components/Demo'
+import Html from 'src/components/Html'
+import Code from 'src/components/Code'
+import Note from 'src/components/Note'
+import { Tabs } from '@mantine/core'
+import Space from 'src/components/Space'
+import ad100187soloHtml from 'scm/src/modules/ad/100187/solo.html'
+import {
+  getScmCssHref,
+  getScmJsHref,
+} from 'src/utils'
+
+export const meta = {
+  title: '使い方',
+  url: '/scm/docs/',
+  tags: [],
+}
+
+# 使い方
+
+## 1. アウトラインファイルDL
+
+最新の[アウトラインファイル](https://kakunin.rakuten.ne.jp/public_access/ichiba/cwd/reference/latest/ecm/docs/)をDLしてください。
+
+## 2. CSSをインポート
+
+PCとSPのアウトラインファイイルの`head`タグに下記の`link`を追加してください。
+
+<Code content={`
+<link
+  rel="stylesheet"
+  href="${getScmCssHref()}"
+/>
+`}/>
+
+<Space />
+
+位置は`ページCSS`の方に入力してください。
+
+<Code copy={false} content={`
+<!-- ==================== ECM ==================== -->
+<!--#include virtual="/com/js/c/ecm/group_inc/seasonal_gift/seasonal_gift_001_ecm_head.html"-->
+<!-- ==================== ECM ==================== -->
+
+<!-- ================= ページCSS ================= -->
+<!-- ページで作成するCSSはここに追加してください -->
+<link
+  rel="stylesheet"
+  href="${getScmCssHref()}"
+/>
+<!-- ================= /ページCSS ================ -->
+
+<!-- ==================== ECM ==================== -->
+<!--#include virtual="/com/js/c/ecm/group_inc/seasonal_gift/seasonal_gift_001_ecm_utils_head.html"-->
+<!-- ==================== ECM ==================== -->
+`} /> 
+
+
+## 3. 動作確認
+
+こちらのコードをコピーして、問題なければ下記と同じように表示されます。
+
+<Demo scm={true} content={ad100187soloHtml} breakpoints={['sp', 'md', 'lg']} />
+
+## コーディング
+
+SCMはPC・SPで共通です。includeを使ってそれぞれのアウトラインファイルから読み込んで利用してください。
+
+- `index.html`
+  - `/cmn/responsive.html`
+- `sp_index.html`
+  - `/cmn/responsive.html`

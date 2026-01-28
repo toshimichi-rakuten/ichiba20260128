@@ -1,0 +1,22 @@
+@import 'ecm/src/_scss/variables';
+@import 'ecm/src/_scss/mixins';
+
+.scm-alert-free-shipping {
+  padding: $space-16;
+
+  @include screen('md', 'up') {
+    padding: $space-12 $space-16;
+  }
+}
+
+.scm-alert-free-shipping-text {
+  @include vw-text-12px;
+
+  color: $color-gray-1;
+  text-indent: -1em;
+  padding-left: 1em;
+
+  @include screen('md', 'up') {
+    @include text-sm;
+  }
+}

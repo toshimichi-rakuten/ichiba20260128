@@ -1,0 +1,111 @@
+
+import Html from 'src/components/Html'
+import Code from 'src/components/Code'
+import Note from 'src/components/Note'
+import Table, { ClassTable, AttributeTable } from 'src/components/Table'
+import { Tabs } from '@mantine/core'
+import Space from 'src/components/Space'
+
+import {
+  staticSP1columnPC2columnHtml,
+  staticSP1columnPC3columnHtml,
+  staticSP1columnPC4columnHtml,
+  integrationSP1columnPC2columnHtml,
+  integrationSP1columnPC3columnHtml,
+  integrationSP1columnPC4columnHtml,
+} from 'ecm/src/modules/ad/100039/'
+
+export const meta = {
+  title: '原稿タイプID100039 商品',
+  description: '送料無料あり ポイント0～20倍 レビュー★あり 画像(比率3:2)＋商品名＋価格',
+  url: '/ecm/docs/ad/100039',
+  tags: ['商品', 'ad', '広告'],
+  finder_tags: [
+    'category_item',
+    'image_3x2',
+    'text_others',
+    'price_value',
+    'icon_free_delivery',
+    'icon_point_multiplier',
+    'icon_review',
+    'layout_sp_col1',
+    'layout_pc_col2',
+    'layout_pc_col3',
+    'layout_pc_col4',
+    'layout_pc_sp'
+  ],
+}
+
+# 原稿タイプID100039 商品
+送料無料あり ポイント0～20倍 レビュー★あり 画像(比率3:2)＋商品名＋価格  
+画像入稿サイズ：720×480px  
+
+<Space />
+★部分へアドプラッツからダウンロードした配信タグを貼り付けてください。
+
+## SP1カラム/PC2カラム
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html adHighlight={true} content={staticSP1columnPC2columnHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html adHighlight={true} device='lg' content={staticSP1columnPC2columnHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={integrationSP1columnPC2columnHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## SP1カラム/PC3カラム
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html adHighlight={true} content={staticSP1columnPC3columnHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='lg'>
+    <Html adHighlight={true} device='lg' content={staticSP1columnPC3columnHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={integrationSP1columnPC3columnHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## SP1カラム/PC4カラム
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html adHighlight={true} content={staticSP1columnPC4columnHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='lg'>
+    <Html adHighlight={true} device='lg' content={staticSP1columnPC4columnHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={integrationSP1columnPC4columnHtml}/>
+  </Tabs.Panel>
+</Tabs>
+

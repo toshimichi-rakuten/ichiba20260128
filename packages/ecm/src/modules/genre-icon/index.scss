@@ -1,0 +1,183 @@
+@font-face {
+  font-family: 'ecm-genre-icon';
+  src: url('https://r.r10s.jp/com/js/c/ecm/assets/fonts/ecm-genre-icon.woff?v=20250101') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^='ecm-genre-icon-'],
+[class*=' ecm-genre-icon-'] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'ecm-genre-icon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ecm-genre-icon-auto-goods::before {
+  content: '\e900';
+}
+
+.ecm-genre-icon-accessories::before {
+  content: '\e901';
+}
+
+.ecm-genre-icon-appliance::before {
+  content: '\e902';
+}
+
+.ecm-genre-icon-auto::before {
+  content: '\e903';
+}
+
+.ecm-genre-icon-baby::before {
+  content: '\e904';
+}
+
+.ecm-genre-icon-beauty::before {
+  content: '\e905';
+}
+
+.ecm-genre-icon-bedding::before {
+  content: '\e906';
+}
+
+.ecm-genre-icon-books::before {
+  content: '\e907';
+}
+
+.ecm-genre-icon-camera::before {
+  content: '\e908';
+}
+
+.ecm-genre-icon-computer::before {
+  content: '\e909';
+}
+
+.ecm-genre-icon-daily::before {
+  content: '\e90a';
+}
+
+.ecm-genre-icon-drink::before {
+  content: '\e90b';
+}
+
+.ecm-genre-icon-electronics::before {
+  content: '\e90c';
+}
+
+.ecm-genre-icon-fashion-goods::before {
+  content: '\e90d';
+}
+
+.ecm-genre-icon-flower::before {
+  content: '\e90e';
+}
+
+.ecm-genre-icon-food::before {
+  content: '\e90f';
+}
+
+.ecm-genre-icon-game::before {
+  content: '\e910';
+}
+
+.ecm-genre-icon-garden::before {
+  content: '\e911';
+}
+
+.ecm-genre-icon-golf::before {
+  content: '\e912';
+}
+
+.ecm-genre-icon-health::before {
+  content: '\e913';
+}
+
+.ecm-genre-icon-hobby::before {
+  content: '\e914';
+}
+
+.ecm-genre-icon-inner::before {
+  content: '\e915';
+}
+
+.ecm-genre-icon-instrument::before {
+  content: '\e916';
+}
+
+.ecm-genre-icon-interior::before {
+  content: '\e917';
+}
+
+.ecm-genre-icon-kitchen::before {
+  content: '\e918';
+}
+
+.ecm-genre-icon-ladies-fashion::before {
+  content: '\e919';
+}
+
+.ecm-genre-icon-liquor::before {
+  content: '\e91a';
+}
+
+.ecm-genre-icon-media::before {
+  content: '\e91b';
+}
+
+.ecm-genre-icon-medicine::before {
+  content: '\e91c';
+}
+
+.ecm-genre-icon-mens-fashion::before {
+  content: '\e91d';
+}
+
+.ecm-genre-icon-pet::before {
+  content: '\e91e';
+}
+
+.ecm-genre-icon-sake::before {
+  content: '\e91f';
+}
+
+.ecm-genre-icon-service::before {
+  content: '\e920';
+}
+
+.ecm-genre-icon-shoes::before {
+  content: '\e921';
+}
+
+.ecm-genre-icon-smart-device::before {
+  content: '\e922';
+}
+
+.ecm-genre-icon-sports::before {
+  content: '\e923';
+}
+
+.ecm-genre-icon-sweets::before {
+  content: '\e924';
+}
+
+.ecm-genre-icon-toy::before {
+  content: '\e925';
+}
+
+.ecm-genre-icon-watch::before {
+  content: '\e926';
+}
+
+.ecm-genre-icon-wine::before {
+  content: '\e927';
+}

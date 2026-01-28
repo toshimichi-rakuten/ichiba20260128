@@ -1,0 +1,80 @@
+<style>
+  .ss-floating {
+    z-index: 121 !important;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: yellow;
+  }
+
+  .ss-menu-open[aria-expanded='true'] {
+    display: none;
+  }
+
+  .ss-menu-close[aria-expanded='false'] {
+    display: none;
+  }
+</style>
+
+<div class="ss-floating" data-module-name="ecm-floating" data-show-at="#show-floating"
+  data-ignore-body-lock-scroll-event="true" aria-hidden="true">
+  <div class="d-flex justify-end">
+    <button class="ecm-button ss-menu-open" aria-expanded="false" aria-controls="sheetBelow1">
+      Open
+    </button>
+
+    <button class="ecm-button ss-menu-close" aria-expanded="false" aria-controls="sheetBelow1">
+      Close
+    </button>
+  </div>
+</div>
+
+<div id="sheetBelow1" class="ecm-sheet ecm-sheet-below" data-module-name="ecm-toggle" data-body-lock="true"
+  data-transition="true" data-transition-ms="450" aria-modal="true" role="dialog">
+  <div class="ecm-sheet-bg" aria-expanded="false" aria-controls="sheetBelow1"></div>
+
+  <div class="ecm-sheet-content-wrapper">
+    <div class="ecm-sheet-content">
+      <div class="ecm-sheet-content-body">
+        <div class="px-16">
+          <div class="py-16">Sheet Content</div>
+          <div class="py-16">Sheet Content</div>
+          <div class="py-16">Sheet Content</div>
+          <div class="py-16">Sheet Content</div>
+          <div class="py-16">Sheet Content</div>
+          <div class="py-16">Sheet Content</div>
+          <div class="py-16">Sheet Content</div>
+          <div class="py-16">Sheet Content</div>
+          <div class="py-16">Sheet Content</div>
+          <div class="py-16">Sheet Content</div>
+          <div class="py-16">Sheet Content</div>
+          <div class="py-16">Sheet Content</div>
+          <div class="py-16">Sheet Content</div>
+          <div class="py-16">Sheet Content</div>
+          <div class="py-16">Sheet Content</div>
+          <div class="py-16">Sheet Content</div>
+          <div class="py-16">Sheet Content</div>
+          <div class="py-16">Sheet Content</div>
+          <div class="py-16">Sheet Content</div>
+          <div class="py-16">Sheet Content</div>
+          <div class="py-16">Sheet Content</div>
+          <div class="py-16">Sheet Content</div>
+          <div class="py-16">Sheet Content</div>
+          <div class="py-16">Sheet Content</div>
+          <div class="py-16">Sheet Content</div>
+          <div class="py-16">Sheet Content</div>
+          <div class="py-16">Sheet Content</div>
+          <div class="py-16">Sheet Content</div>
+          <div class="py-16">Sheet Content</div>
+          <div class="py-16">Sheet Content</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>Page Top</div>
+<div style="height: 500px; background-color: whitesmoke"></div>
+<div id="show-floating"></div>
+<div style="height: 3000px; background-color: whitesmoke"></div>
+<div>Page Bottom</div>

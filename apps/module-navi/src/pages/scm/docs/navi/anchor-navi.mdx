@@ -1,0 +1,73 @@
+
+import Demo from 'src/components/Demo'
+import Code from 'src/components/Code'
+import Html from 'src/components/Html'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import column4Html from 'scm/src/modules/anchor-navi/column4.html'
+import column4DemoHtml from 'scm/src/modules/anchor-navi/column4_demo.html'
+import column3Html from 'scm/src/modules/anchor-navi/column3.html'
+import column3DemoHtml from 'scm/src/modules/anchor-navi/column3_demo.html'
+import referenceHtml from 'scm/src/modules/anchor-navi/reference.html'
+
+export const meta = {
+  title: 'アンカーナビ',
+  url: '/scm/docs/navi/anchor-navi',
+  tags: ['anchor', 'navi'],
+  enabled: true
+}
+
+SPのみのパーツになります。
+
+## 4カラム
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html scm={true} content={column4DemoHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={column4Html} />
+  </Tabs.Panel>
+</Tabs>
+
+## 3カラム
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html scm={true} content={column3DemoHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={column3Html} />
+  </Tabs.Panel>
+</Tabs>
+
+## バリエーション一覧
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html scm={true} content={referenceHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={referenceHtml} />
+  </Tabs.Panel>
+</Tabs>
+
+

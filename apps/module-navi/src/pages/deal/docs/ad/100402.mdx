@@ -1,0 +1,113 @@
+import Html from 'src/components/Html'
+import Code from 'src/components/Code'
+import Note from 'src/components/Note'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import { PasswordView } from 'src/components/PasswordView'
+import staticSpScrollPc4ColumnHtml from 'ecm/src/modules/ad/100402/sp-scroll_pc-4column.html'
+import staticSp1ColumnPcListHtml from 'ecm/src/modules/ad/100402/sp-1column_pc-list.html'
+import staticSp1ColumnPc2ColumnHtml from 'ecm/src/modules/ad/100402/sp-1column_pc-2column.html'
+import integrationSpScrollPc4ColumnHtml from 'ecm/src/modules/ad/100402/integration_sp-scroll_pc-4column.html'
+import integrationSp1ColumnPcListHtml from 'ecm/src/modules/ad/100402/integration_sp-1column_pc-list.html'
+import integrationSp1ColumnPc2ColumnHtml from 'ecm/src/modules/ad/100402/integration_sp-1column_pc-2column.html'
+
+export const meta = {
+  title: '原稿タイプID：100402',
+  description: 'TOPおよび下層用、タイムセール用　24時間限定枠　ロゴ有|バッジ',
+  url: '/deal/docs/ad/100402',
+  tags: ['商品', 'ad', '原稿タイプ'],
+}
+
+# 原稿タイプID：100402
+TOPおよび下層用、タイムセール用　24時間限定枠　ロゴ有|バッジ
+
+<Space />
+
+★部分へアドプラッツからダウンロードした配信タグを貼り付けてください。
+
+## SPスクロール、PC4カラム　TOP
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html
+      scm={true}
+      content={staticSpScrollPc4ColumnHtml}
+    />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='lg'>
+    <Html
+      scm={true}
+      device='lg'
+      content={staticSpScrollPc4ColumnHtml}
+    />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={integrationSpScrollPc4ColumnHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## SP1カラム、PC1カラム リスト型　下層用
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html
+      scm={true}
+      content={staticSp1ColumnPcListHtml}
+    />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='lg'>
+    <Html
+      scm={true}
+      device='lg'
+      content={staticSp1ColumnPcListHtml}
+    />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={integrationSp1ColumnPcListHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## SP１カラム、PC2カラム　タイムセール用
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html
+      scm={true}
+      content={staticSp1ColumnPc2ColumnHtml}
+    />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='lg'>
+    <Html
+      scm={true}
+      device='lg'
+      content={staticSp1ColumnPc2ColumnHtml}
+    />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={integrationSp1ColumnPc2ColumnHtml}/>
+  </Tabs.Panel>
+</Tabs>

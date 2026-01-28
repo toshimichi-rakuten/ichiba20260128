@@ -1,0 +1,62 @@
+/**
+ * This is a modified version of Swiper 11.0.6 core CSS.
+ * Only class name is updated. Styles is untouched.
+ */
+.ecm-slider {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+  display: block;
+}
+.ecm-slider-vertical > .ecm-slider-track {
+  flex-direction: column;
+}
+.ecm-slider-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  transition-timing-function: initial;
+  box-sizing: content-box;
+}
+.ecm-slider-android .ecm-slider-slide,
+.ecm-slider-ios .ecm-slider-slide,
+.ecm-slider-track {
+  transform: translate3d(0px, 0, 0);
+}
+.ecm-slider-horizontal {
+  touch-action: pan-y;
+}
+.ecm-slider-vertical {
+  touch-action: pan-x;
+}
+.ecm-slider-slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
+  display: block;
+}
+.ecm-slider-slide-invisible-blank {
+  visibility: hidden;
+}
+.ecm-slider-autoheight,
+.ecm-slider-autoheight .ecm-slider-slide {
+  height: auto;
+}
+.ecm-slider-autoheight .ecm-slider-track {
+  align-items: flex-start;
+  transition-property: transform, height;
+}
+.ecm-slider-backface-hidden .ecm-slider-slide {
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}

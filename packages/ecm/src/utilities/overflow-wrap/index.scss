@@ -1,0 +1,26 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+@include util-all('overflow-wrap-normal') {
+  overflow-wrap: normal;
+}
+
+@include util-all('overflow-wrap-break-word') {
+  overflow-wrap: break-word;
+}
+
+@include util-all('overflow-wrap-anywhere') {
+  overflow-wrap: anywhere;
+}
+
+@include util-all('overflow-wrap-normal', true) {
+  overflow-wrap: normal !important;
+}
+
+@include util-all('overflow-wrap-break-word', true) {
+  overflow-wrap: break-word !important;
+}
+
+@include util-all('overflow-wrap-anywhere', true) {
+  overflow-wrap: anywhere !important;
+}

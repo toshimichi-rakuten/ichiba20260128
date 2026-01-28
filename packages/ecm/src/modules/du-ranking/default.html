@@ -1,0 +1,522 @@
+<div
+  id="rnkEventColumn"
+  class="ecm-du-ranking ecm-du-ranking-pc"
+  data-ratevent="appear"
+  data-ratid="rk_appear_pc"
+>
+  <script
+    id="rnkDailyItem"
+    type="text/template"
+  >
+    <div class="ecm-du-ranking-item">
+      <a class="ecm-du-ranking-item-link" href="#ITEMURL#">
+        <div class="ecm-du-ranking-item-image">#ITEMIMGELE#</div>
+        <div class="ecm-du-ranking-item-rank">#ITEMRNK#<div class="ecm-du-ranking-item-rank-text">位</div></div>
+        <p class="ecm-du-ranking-item-name">#ITEMNAME#</p>
+        <p class="ecm-du-ranking-item-price">#KAKAKU#</p>
+        <div class="ecm-du-ranking-item-review">
+          <div class="ecm-du-ranking-item-review-star">#ITEMREVIEW#</div>
+          <p class="ecm-du-ranking-item-review-count">#REVIEWNUM#</p>
+        </div>
+      </a>
+    </div>
+  </script>
+  <script
+    id="rnkGenreTab"
+    type="text/template"
+  >
+    <div id="#GENRELINKEVENT#_tab" class="ecm-du-ranking-tab">
+    	<div id="#GENRELINKEVENT#_linked" class="ecm-du-ranking-link">
+    		<div id="#GENRELINKEVENT#">#ITEMNAME#</div>
+    	</div>
+      <div id="#GENRELINKEVENT#_unlink" class="ecm-du-ranking-tab-unlink" style="display:none;">
+        <div>#ITEMNAME#</div>
+      </div>
+    </div>
+  </script>
+  <div
+    id="rnkDailyConfig"
+    disptab="0"
+    autoresize="1"
+    ajaxtimer="10"
+    mouseoverdelay="300"
+    imagesize="280"
+    autoslide="0"
+    updatetype="1"
+    sidtype="0"
+    maxitem="6"
+    sid="hogehoge"
+    svrgrp="1"
+    reviewlid="rk_parts_review"
+  ></div>
+
+  <div id="rnkDailyExistItemDisplay">
+    <div class="ecm-du-ranking-header">
+      <h3 class="ecm-du-ranking-header-title">リアルタイムランキング</h3>
+      <p class="ecm-du-ranking-header-link">
+        <span id="rnkDailyUpdateDate">12月20日(水) 19:15</span>
+      </p>
+    </div>
+    <div id="rnkRankingColumn">
+      <div
+        id="rnkGenreTabBase"
+        style="display: none"
+      >
+        <div
+          id="rnkDailyGenreTabs"
+          class="ecm-du-ranking-genre-tab"
+        >
+          <div
+            id="rnkDailyGenrePrevButton"
+            style="visibility: visible"
+          >
+            <a
+              class="ecm-rank-tab-prev-btn-link"
+              href="#"
+              ><i
+                class="ecm-icon-chevron-left"
+                aria-hidden="true"
+              ></i
+            ></a>
+          </div>
+          <div
+            id="rnkDailyGenreItemsDisplay"
+            class="ecm-du-ranking-genre-tab-display"
+          >
+            <div
+              id="rnkDailyGenreLink_0_tab"
+              style="position: absolute; z-index: 100; left: 0px; display: none"
+              class="ecm-du-ranking-tab"
+            >
+              <div
+                id="rnkDailyGenreLink_0_linked"
+                style="display: none"
+                class="ecm-du-ranking-link"
+              >
+                <div id="rnkDailyGenreLink_0"></div>
+              </div>
+              <div
+                id="rnkDailyGenreLink_0_unlink"
+                class="ecm-du-ranking-tab-unlink"
+              >
+                <div></div>
+              </div>
+            </div>
+          </div>
+          <div
+            id="rnkDailyGenreNextButton"
+            style="visibility: visible"
+          >
+            <a class="ecm-rank-link-next">
+              <div
+                class="ecm-rank-link-next-btn"
+                href="#"
+              >
+                <i
+                  class="ecm-icon-chevron-right"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        id="rnkTabSet"
+        style="display: grid"
+        class="ecm-rank-tab-set"
+      >
+        <div
+          id="rnkTabItemdiv_#GENRELINKEVENT#"
+          style="height: 0px; visibility: hidden"
+          class="ecm-rank-tab-item-div"
+        >
+          <div id="rnkDailyPrevButton_#GENRELINKEVENT#">
+            <a class="ecm-rank-link-prev">
+              <div
+                class="ecm-rank-link-prev-btn"
+                href="#"
+              >
+                <i
+                  class="ecm-icon-chevron-left"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </a>
+          </div>
+          <div
+            id="rnkDailyItemsDisplay_#GENRELINKEVENT#"
+            class="ecm-rank-wrap"
+          ></div>
+          <div id="rnkDailyNextButton_#GENRELINKEVENT#">
+            <a class="ecm-rank-link-next">
+              <div
+                class="ecm-rank-link-next-btn"
+                href="#"
+              >
+                <i
+                  class="ecm-icon-chevron-right"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div
+          id="rnkTabItemdiv_rnkDailyGenreLink_0"
+          style="height: 223px; visibility: visible"
+          class="ecm-rank-tab-item-div"
+        >
+          <div id="rnkDailyPrevButton_rnkDailyGenreLink_0">
+            <a class="ecm-rank-link-prev">
+              <div
+                class="ecm-rank-link-prev-btn"
+                href="#"
+              >
+                <i
+                  class="ecm-icon-chevron-left"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </a>
+          </div>
+          <div
+            id="rnkDailyItemsDisplay_rnkDailyGenreLink_0"
+            class="ecm-rank-wrap"
+          >
+            <div style="position: absolute; width: 100%; float: none">
+              <div
+                style="z-index: 2; opacity: 1; position: relative; width: 16.5%"
+                class="ecm-du-ranking-item"
+              >
+                <a
+                  class="ecm-du-ranking-item-link"
+                  href="https://item.rakuten.co.jp/f232190-komaki/a37_003/?s-id=rk_toshikoshi2024_ranking01"
+                >
+                  <div class="ecm-du-ranking-item-image">
+                    <img
+                      src="https://tshop.r10s.jp/f232190-komaki/cabinet/09680132/09737259/035s04-s.jpg?fitin=280:280"
+                    />
+                  </div>
+                  <div class="ecm-du-ranking-item-rank">
+                    1
+                    <div class="ecm-du-ranking-item-rank-text">位</div>
+                  </div>
+                  <p class="ecm-du-ranking-item-name">【ふるさと納税】 2024年 迎春 おせち 冷…</p>
+                  <p class="ecm-du-ranking-item-price">50,000円</p>
+                </a>
+                <div class="ecm-du-ranking-item-review">
+                  <a
+                    class="ecm-du-ranking-item-link"
+                    href="https://item.rakuten.co.jp/f232190-komaki/a37_003/?s-id=rk_toshikoshi2024_ranking01"
+                  >
+                    <div class="ecm-du-ranking-item-review-star">
+                      <img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10_half.gif"
+                      />
+                    </div>
+                  </a>
+                  <p class="ecm-du-ranking-item-review-count">
+                    <a
+                      class="ecm-du-ranking-item-link"
+                      href="https://item.rakuten.co.jp/f232190-komaki/a37_003/?s-id=rk_toshikoshi2024_ranking01"
+                    ></a
+                    ><a href="https://review.rakuten.co.jp/item/1/372184_10000010/1.1/?l-id=rk_parts_review">(127件)</a>
+                  </p>
+                </div>
+              </div>
+              <div
+                style="z-index: 2; opacity: 1; position: relative; width: 16.5%"
+                class="ecm-du-ranking-item"
+              >
+                <a
+                  class="ecm-du-ranking-item-link"
+                  href="https://item.rakuten.co.jp/f402052-iizuka/10001924/?s-id=rk_toshikoshi2024_ranking01"
+                >
+                  <div class="ecm-du-ranking-item-image">
+                    <img
+                      src="https://tshop.r10s.jp/f402052-iizuka/cabinet/09343157/imgrc0086687673.jpg?fitin=280:280"
+                    />
+                  </div>
+                  <div class="ecm-du-ranking-item-rank">
+                    2
+                    <div class="ecm-du-ranking-item-rank-text">位</div>
+                  </div>
+                  <p class="ecm-du-ranking-item-name">【ふるさと納税】「板前魂の極」特大八.…</p>
+                  <p class="ecm-du-ranking-item-price">37,000円</p>
+                </a>
+                <div class="ecm-du-ranking-item-review">
+                  <a
+                    class="ecm-du-ranking-item-link"
+                    href="https://item.rakuten.co.jp/f402052-iizuka/10001924/?s-id=rk_toshikoshi2024_ranking01"
+                  >
+                    <div class="ecm-du-ranking-item-review-star">
+                      <img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10_half.gif"
+                      />
+                    </div>
+                  </a>
+                  <p class="ecm-du-ranking-item-review-count">
+                    <a
+                      class="ecm-du-ranking-item-link"
+                      href="https://item.rakuten.co.jp/f402052-iizuka/10001924/?s-id=rk_toshikoshi2024_ranking01"
+                    ></a
+                    ><a href="https://review.rakuten.co.jp/item/1/336263_10001924/1.1/?l-id=rk_parts_review">(400件)</a>
+                  </p>
+                </div>
+              </div>
+              <div
+                style="z-index: 2; opacity: 1; position: relative; width: 16.5%"
+                class="ecm-du-ranking-item"
+              >
+                <a
+                  class="ecm-du-ranking-item-link"
+                  href="https://item.rakuten.co.jp/f262064-kameoka/8595-30025427/?s-id=rk_toshikoshi2024_ranking01"
+                >
+                  <div class="ecm-du-ranking-item-image">
+                    <img
+                      src="https://tshop.r10s.jp/f262064-kameoka/cabinet/kansai/85184-30044217-01a.jpg?fitin=280:280"
+                    />
+                  </div>
+                  <div class="ecm-du-ranking-item-rank">
+                    3
+                    <div class="ecm-du-ranking-item-rank-text">位</div>
+                  </div>
+                  <p class="ecm-du-ranking-item-name">【ふるさと納税】おせち 京都 三千院の里…</p>
+                  <p class="ecm-du-ranking-item-price">77,000円</p>
+                </a>
+                <div class="ecm-du-ranking-item-review">
+                  <a
+                    class="ecm-du-ranking-item-link"
+                    href="https://item.rakuten.co.jp/f262064-kameoka/8595-30025427/?s-id=rk_toshikoshi2024_ranking01"
+                  >
+                    <div class="ecm-du-ranking-item-review-star">
+                      <img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10_half.gif"
+                      />
+                    </div>
+                  </a>
+                  <p class="ecm-du-ranking-item-review-count">
+                    <a
+                      class="ecm-du-ranking-item-link"
+                      href="https://item.rakuten.co.jp/f262064-kameoka/8595-30025427/?s-id=rk_toshikoshi2024_ranking01"
+                    ></a
+                    ><a href="https://review.rakuten.co.jp/item/1/331592_10000634/1.1/?l-id=rk_parts_review">(88件)</a>
+                  </p>
+                </div>
+              </div>
+              <div
+                style="z-index: 2; opacity: 1; position: relative; width: 16.5%"
+                class="ecm-du-ranking-item"
+              >
+                <a
+                  class="ecm-du-ranking-item-link"
+                  href="https://item.rakuten.co.jp/f272132-izumisano/y043/?s-id=rk_toshikoshi2024_ranking01"
+                >
+                  <div class="ecm-du-ranking-item-image">
+                    <img src="https://tshop.r10s.jp/f272132-izumisano/cabinet/f-item09/y043_1.jpg?fitin=280:280" />
+                  </div>
+                  <div class="ecm-du-ranking-item-rank">
+                    4
+                    <div class="ecm-du-ranking-item-rank-text">位</div>
+                  </div>
+                  <p class="ecm-du-ranking-item-name">【ふるさと納税】年内発送 おせち「板前…</p>
+                  <p class="ecm-du-ranking-item-price">52,000円</p>
+                </a>
+                <div class="ecm-du-ranking-item-review">
+                  <a
+                    class="ecm-du-ranking-item-link"
+                    href="https://item.rakuten.co.jp/f272132-izumisano/y043/?s-id=rk_toshikoshi2024_ranking01"
+                  >
+                    <div class="ecm-du-ranking-item-review-star">
+                      <img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      />
+                    </div>
+                  </a>
+                  <p class="ecm-du-ranking-item-review-count">
+                    <a
+                      class="ecm-du-ranking-item-link"
+                      href="https://item.rakuten.co.jp/f272132-izumisano/y043/?s-id=rk_toshikoshi2024_ranking01"
+                    ></a
+                    ><a href="https://review.rakuten.co.jp/item/1/333314_10007113/1.1/?l-id=rk_parts_review">(2件)</a>
+                  </p>
+                </div>
+              </div>
+              <div
+                style="z-index: 2; opacity: 1; position: relative; width: 16.5%"
+                class="ecm-du-ranking-item"
+              >
+                <a
+                  class="ecm-du-ranking-item-link"
+                  href="https://item.rakuten.co.jp/f232149-gamagori/g0174/?s-id=rk_toshikoshi2024_ranking01"
+                >
+                  <div class="ecm-du-ranking-item-image">
+                    <img
+                      src="https://tshop.r10s.jp/f232149-gamagori/cabinet/osethi/09936726/09936734/omotenashi-01.jpg?fitin=280:280"
+                    />
+                  </div>
+                  <div class="ecm-du-ranking-item-rank">
+                    5
+                    <div class="ecm-du-ranking-item-rank-text">位</div>
+                  </div>
+                  <p class="ecm-du-ranking-item-name">【ふるさと納税】G0174　千賀屋謹製 2024…</p>
+                  <p class="ecm-du-ranking-item-price">50,000円</p>
+                </a>
+                <div class="ecm-du-ranking-item-review">
+                  <a
+                    class="ecm-du-ranking-item-link"
+                    href="https://item.rakuten.co.jp/f232149-gamagori/g0174/?s-id=rk_toshikoshi2024_ranking01"
+                  >
+                    <div class="ecm-du-ranking-item-review-star">
+                      <img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10_half.gif"
+                      />
+                    </div>
+                  </a>
+                  <p class="ecm-du-ranking-item-review-count">
+                    <a
+                      class="ecm-du-ranking-item-link"
+                      href="https://item.rakuten.co.jp/f232149-gamagori/g0174/?s-id=rk_toshikoshi2024_ranking01"
+                    ></a
+                    ><a href="https://review.rakuten.co.jp/item/1/384386_10000175/1.1/?l-id=rk_parts_review">(21件)</a>
+                  </p>
+                </div>
+              </div>
+              <div
+                style="z-index: 2; opacity: 1; position: relative; width: 16.5%"
+                class="ecm-du-ranking-item"
+              >
+                <a
+                  class="ecm-du-ranking-item-link"
+                  href="https://item.rakuten.co.jp/f402109-yame/cv607-r1230/?s-id=rk_toshikoshi2024_ranking01"
+                >
+                  <div class="ecm-du-ranking-item-image">
+                    <img src="https://tshop.r10s.jp/f402109-yame/cabinet/sp/017/shukukasen-01.jpg?fitin=280:280" />
+                  </div>
+                  <div class="ecm-du-ranking-item-rank">
+                    6
+                    <div class="ecm-du-ranking-item-rank-text">位</div>
+                  </div>
+                  <p class="ecm-du-ranking-item-name">【ふるさと納税】千賀屋謹製　2024年迎春…</p>
+                  <p class="ecm-du-ranking-item-price">40,000円</p>
+                </a>
+                <div class="ecm-du-ranking-item-review">
+                  <a
+                    class="ecm-du-ranking-item-link"
+                    href="https://item.rakuten.co.jp/f402109-yame/cv607-r1230/?s-id=rk_toshikoshi2024_ranking01"
+                  >
+                    <div class="ecm-du-ranking-item-review-star">
+                      <img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10_half.gif"
+                      />
+                    </div>
+                  </a>
+                  <p class="ecm-du-ranking-item-review-count">
+                    <a
+                      class="ecm-du-ranking-item-link"
+                      href="https://item.rakuten.co.jp/f402109-yame/cv607-r1230/?s-id=rk_toshikoshi2024_ranking01"
+                    ></a
+                    ><a href="https://review.rakuten.co.jp/item/1/373848_10001437/1.1/?l-id=rk_parts_review">(2件)</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="rnkDailyNextButton_rnkDailyGenreLink_0">
+            <a class="ecm-rank-link-next">
+              <div
+                class="ecm-rank-link-next-btn"
+                href="#"
+              >
+                <i
+                  class="ecm-icon-chevron-right"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

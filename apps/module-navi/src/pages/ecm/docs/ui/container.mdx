@@ -1,0 +1,98 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'ecm/src/modules/container/default.html'
+import defaultDemoHtml from 'ecm/src/modules/container/default_demo.html'
+import leftHtml from 'ecm/src/modules/container/left-sidebar.html'
+import leftDemoHtml from 'ecm/src/modules/container/left-sidebar_demo.html'
+
+export const meta = {
+  title: 'コンテナー',
+  description: 'コンテンツエリアを定義する',
+  url: '/ecm/docs/ui/container',
+  tags: ['container', 'layout'],
+}
+
+# コンテナー
+
+コンテンツエリアを定義するモジュールです。このモジュールはアウトラインファイルにあらかじめ設定された状態で提供されています。  
+各モジュールは、このコンテナーの中に配置して利用します。
+
+## SP/PC1カラムアウトライン共通
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html contentPadding="0px" content={defaultDemoHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html contentPadding="0px" device='lg' content={defaultDemoHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={defaultHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+- コンテナー（`ecm-container`要素）のスタイル指定は、左右パディング `16px`、左右マージン `auto`、横幅 `100%` が設定されています。
+- PC1カラムアウトラインでは、左右パディング `32`px、横幅 `1024px`（`min-width:1024px; max-width:1024px;`）コンテンツ内容幅 960px が適用されます。
+
+## PC2カラムアウトライン
+
+### Left Sidebar
+
+<Tabs keepMounted={false} defaultValue='lg' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+
+  <Tabs.Panel value='lg'>
+    <Html contentPadding="0px" device='lg' content={leftDemoHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={leftHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+
+## 注意事項
+
+- `class="ecm-container"` 要素の中に、`class="ecm-container"` 要素を入れないように注意してください。崩れの原因になります。
+
+<Space />
+**NG例)**  
+
+<Code copy={false} content={`
+<div class="ecm-container">
+  <main>
+    <section class="ecm-container">
+      セクション
+    </section>
+
+    <section class="ecm-container">
+      セクション
+    </section>
+
+    <section class="ecm-container">
+      セクション
+    </section>
+
+    <section class="ecm-container">
+      セクション
+    </section>
+  </main>
+</div>
+`}/>

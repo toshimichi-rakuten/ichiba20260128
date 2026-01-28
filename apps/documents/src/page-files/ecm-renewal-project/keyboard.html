@@ -1,0 +1,157 @@
+<div
+  class="ecm-room-recommend"
+  data-module-name="ecm-room-recommend"
+  data-json-url="/_assets/testdata/room.json"
+>
+  <template data-room-recommend-output>
+    <div class="ecm-room-recommend-header pl-16 md-pl-0">
+      <h2 class="ecm-room-recommend-header-text">ROOMからのおすすめ</h2>
+      <!-- PCのみ表示 -->
+      <a
+        class="text-12px d-none md-d-flex"
+        href="https://room.rakuten.co.jp/all/items"
+        >楽天市場のショッピングSNS「ROOM」へ</a
+      >
+      <!-- SPのみ表示 -->
+      <i
+        class="ecm-icon-info-filled color-9c9c9c ml-8 md-d-none"
+        aria-hidden="true"
+        aria-expanded="false"
+        aria-controls="roomRecommendModal"
+      ></i>
+      <div
+        id="roomRecommendModal"
+        class="ecm-modal ecm-modal-fade-in"
+        data-module-name="ecm-toggle"
+        data-default-open="true"
+        data-body-lock="true"
+        data-transition="true"
+        aria-modal="true"
+        aria-hidden="true"
+        role="dialog"
+      >
+        <div
+          class="ecm-modal-bg"
+          aria-expanded="false"
+          aria-controls="roomRecommendModal"
+        ></div>
+
+        <div class="ecm-modal-content-wrapper">
+          <button
+            class="ecm-modal-close"
+            aria-expanded="false"
+            aria-controls="roomRecommendModal"
+          >
+            <i
+              class="ecm-modal-close-icon ecm-icon-close"
+              aria-hidden="true"
+            ></i>
+          </button>
+
+          <div class="ecm-modal-scroller">
+            <button
+              class="ecm-modal-scroller-spacer"
+              aria-expanded="false"
+              aria-controls="roomRecommendModal"
+            ></button>
+            <div class="ecm-modal-content p-0">
+              <img
+                class="w-full h-full"
+                src="https://r.r10s.jp/com/inc/genre/20080930/smart/img/room/2020/fashion/thumbnail_modal.png"
+                alt=""
+              />
+              <div class="pt-24 pr-24 pb-80 pl-24">
+                <p class="text-center text-base font-weight-700">ROOMは楽天市場の<br />ショッピングSNSです。</p>
+                <p class="mt-24 text-sm">
+                  お気に入りの商品を投稿することで、他の人とつながり、お互いに思わぬ魅力的な商品に出会うことができます。
+                </p>
+              </div>
+              <a
+                class="bordered-t p-20 d-flex justify-center text-sm font-weight-700"
+                href="https://room.rakuten.co.jp/"
+                >ROOMを始める</a
+              >
+            </div>
+            <button
+              class="ecm-modal-scroller-spacer"
+              aria-expanded="false"
+              aria-controls="roomRecommendModal"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="ecm-slider-container mt-20 md-mt-24"
+      data-module-name="ecm-slider"
+      data-loop="true"
+      data-centered-slides="false"
+      data-initial-slide="0"
+      data-slides-per-group="2"
+      data-slides-per-view="2.5"
+      data-space-between="8"
+      data-md-slides-per-view="4"
+      data-md-slides-per-group="4"
+      data-lg-slides-per-view="5"
+      data-lg-slides-per-group="5"
+      data-xl-slides-per-view="6"
+      data-xl-slides-per-group="6"
+      data-md-space-between="16"
+    >
+      <!-- Slider main container -->
+      <div class="ecm-slider pl-16 md-pl-0">
+        <!-- 登録したROOM-recommendのjsonをリプレイス -->
+        <div
+          class="ecm-slider-track"
+          data-room-recommend-item-container
+        ></div>
+      </div>
+
+      <!-- If we need navigation buttons -->
+      <div class="ecm-slider-prev d-none md-d-flex">
+        <i
+          class="ecm-icon-chevron-left"
+          aria-hidden="true"
+        ></i>
+      </div>
+
+      <div class="ecm-slider-next d-none md-d-flex">
+        <i
+          class="ecm-icon-chevron-right"
+          aria-hidden="true"
+        ></i>
+      </div>
+    </div>
+  </template>
+
+  <template data-room-recommend-item-template>
+    <div class="ecm-slider-slide">
+      <a
+        class="ecm-room-recommend-item-link"
+        href="###itemUrl###"
+      >
+        <img
+          class="w-full h-full aspect-ratio-1x1 object-contain"
+          src="https://r.r10s.jp/com/img/home/t.gif?resize=300:300"
+          data-lazy-loading="###roomItemImg###"
+          alt=""
+        />
+        <div class="ecm-room-recommend-comment-body">
+          <p class="ecm-room-recommend-comment">###userComment###</p>
+        </div>
+      </a>
+      <a
+        class="ecm-room-recommend-user-link"
+        href="###itemUrl###"
+      >
+        <img
+          class="ecm-room-recommend-user-image aspect-ratio-1x1"
+          src="###userImg###"
+          alt=""
+        />
+        <p class="ecm-room-recommend-user-name clamp-1">###userName###</p>
+      </a>
+    </div>
+  </template>
+</div>

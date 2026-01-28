@@ -1,0 +1,136 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+$two-column-margin: 44px;
+$three-column-margin: 56px;
+$four-column-margin: 68px;
+$five-column-margin: 80px;
+
+[data-module-name='ecm-tab'] {
+  [role='tabpanel'] {
+    display: none;
+
+    &[aria-hidden='false'] {
+      display: block;
+    }
+  }
+}
+
+.ecm-tab-container {
+  display: flex;
+  @include scrollable-x;
+}
+
+.ecm-tab {
+  @include text-12px;
+
+  flex-shrink: 0;
+  padding: $space-16 $space-12;
+  border: 0;
+  background-color: transparent;
+  color: $color-gray-2;
+  transition: background-color 0.2s ease;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: rgb(0 0 0 / 4%);
+    }
+  }
+
+  &[aria-selected='true'] {
+    color: $color-crimson;
+    font-weight: 700;
+    border-bottom: 2px solid $color-crimson;
+  }
+
+  @include screen('md', 'up') {
+    @include text-base;
+  }
+}
+
+.ecm-tab-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -8px;
+}
+
+.ecm-tab-card {
+  @include text-base;
+
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  padding: $space-12;
+  margin: 0 0 $space-12 $space-8;
+  background-color: transparent;
+  border: 1px solid $color-white;
+  border-radius: $space-4;
+  color: $color-white;
+  outline: none;
+  appearance: none;
+  position: relative;
+
+  @include screen('md', 'up') {
+    flex-grow: 0;
+  }
+
+  &[aria-selected='true'] {
+    color: $color-black;
+    background-color: $color-white;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      width: 12px;
+      height: 8px;
+      margin-left: calc(0px - 12px / 2);
+      background-color: inherit;
+      clip-path: polygon(0 0, 100% 0%, 50% 100%);
+    }
+  }
+
+  .ecm-tab-grid-2 & {
+    width: calc((100% - $two-column-margin) / 2);
+  }
+
+  .ecm-tab-grid-3 & {
+    width: calc((100% - $three-column-margin) / 3);
+  }
+
+  .ecm-tab-grid-4 & {
+    width: calc((100% - $four-column-margin) / 4);
+  }
+
+  .ecm-tab-grid-5 & {
+    width: calc((100% - $five-column-margin) / 5);
+  }
+
+  @include screen('md', 'up') {
+    .ecm-tab-grid-2 &,
+    .ecm-tab-grid-3 &,
+    .ecm-tab-grid-4 &,
+    .ecm-tab-grid-5 & {
+      width: initial;
+    }
+  }
+}
+
+.ecm-tab-card-with-image {
+  padding: $space-8;
+}
+
+.ecm-tab-card-image {
+  flex-shrink: 0;
+}
+
+.ecm-tab-panel-card {
+  border-radius: $space-4;
+  background-color: $color-white;
+  padding: $space-24;
+}
+
+.ecm-tab-card-text {
+  word-break: break-all;
+}

@@ -1,0 +1,290 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import fadeInShortHtml from 'ecm/src/modules/modal/fade-in-short.html'
+import fadeInShortDemoHtml from 'ecm/src/modules/modal/fade-in-short_demo.html'
+import slideUpShortHtml from 'ecm/src/modules/modal/slide-up-short.html'
+import slideUpShortDemoHtml from 'ecm/src/modules/modal/slide-up-short_demo.html'
+import fadeInLongHtml from 'ecm/src/modules/modal/fade-in-long.html'
+import fadeInLongDemoHtml from 'ecm/src/modules/modal/fade-in-long_demo.html'
+import defaultOpenHtml from 'ecm/src/modules/modal/default-open.html'
+import defaultOpenDemoHtml from 'ecm/src/modules/modal/default-open_demo.html'
+import noAnimationHtml from 'ecm/src/modules/modal/no-animation.html'
+import noAnimationDemoHtml from 'ecm/src/modules/modal/no-animation_demo.html'
+import overlayOnlyHtml from 'ecm/src/modules/modal/overlay-only.html'
+
+export const meta = {
+  title: 'モーダル',
+  description: 'ページ内にモーダル（ポップアップ）を設置する',
+  url: '/ecm/docs/ui/modal',
+  tags: ['ポップアップ', 'トグル', 'modal', 'popup', 'toggle'],
+}
+
+# モーダル
+
+ページ内にモーダル（ポップアップ）を設置するモジュールです。  
+モーダルのタイプはフェードイン、スライドアップ、フルスクリーンの3タイプあり、目的に応じて使用できます。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={fadeInShortDemoHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={fadeInShortDemoHtml} />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={fadeInShortHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## 使い方
+
+- モーダルを開くボタンはページ内の自由な場所に設定できます。
+- ボタンとモーダルの紐付けは、ボタン要素の `aria-controls` の値と、モーダル要素（`data-module-name="ecm-toggle"`）の`id`の値を揃えてください。
+- ページ内に複数のモーダルを設置する場合は、モーダル要素（`data-module-name="ecm-toggle"`）の `id` に設定する値が同じにならないように設定してください。
+- PCレイアウト時は最大横幅800pxまで自由にコンテンツを作成できます。
+- モーダル内コンテンツが画面より長い場合はモーダル内でスクロールします。
+
+<Space />
+
+<Note type='info'>
+  ブルスクリーンでモーダルコンテンツを表示する場合は[シート](/ecm/docs/ui/sheet/)を参照
+</Note>
+
+## パターン
+
+### フェードイン
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={fadeInLongDemoHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={fadeInLongDemoHtml} />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={fadeInLongHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Note type='info'>
+  フェードインに変更したい場合は、`ecm-modal` 要素へ `ecm-modal-fade-in` のクラスを追加します
+</Note>
+
+### スライドアップ
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={slideUpShortDemoHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={slideUpShortDemoHtml} />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={slideUpShortHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Note type='info'>
+  スライドアップに変更したい場合は、`ecm-modal` 要素へ `ecm-modal-slide-up` のクラスを追加します
+</Note>
+
+### Default Open
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={defaultOpenDemoHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={defaultOpenDemoHtml} />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={defaultOpenHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Note type='info'>
+  ページ表示時にモーダルを開いた状態で動作させる場合は、`ecm-modal` 要素に `data-default-open="true"` を追加します
+</Note>
+
+## その他の設定
+
+### モーダル背景の透過
+
+モーダル背景の透過はデフォルト `30%` ですが、`50%` に変更することが可能です。  
+`50%` へ変更したい場合は、モーダル背景要素へ `ecm-modal-bg-50` クラスを追加してください。
+
+<Space />
+
+<Code content={`
+<div
+  class="ecm-modal-bg ecm-modal-bg-50"
+  aria-expanded="false"
+  aria-controls="modal1"
+></div>
+`}/>
+
+### アニメーションが働かないようにする
+
+モーダル表示時のアニメーションを働かせたくない場合は `ecm-modal` 要素の `data-transition` に `false` を設定します。  
+`ecm-modal-bg` と `ecm-modal-content-wrapper` に `style="transition: unset"` を追加設定（更新）してください。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={noAnimationDemoHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={noAnimationDemoHtml} />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={noAnimationHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Note type='info'>
+  モーダル表示時のアニメーションが動作するまでの待ち時間を調整したい場合は、`ecm-modal` 要素の `data-transition-ms` に指定の時間をミリ秒（ms）単位で設定します。  
+  `ecm-modal-bg` と `ecm-modal-content-wrapper` の `transition-duration` を同じ値で追加設定（更新）してください。
+</Note>
+
+### 背景のみ (アドバンス)
+
+**※コーダー/エンジニア向け**  
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html scm={true} content={overlayOnlyHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html scm={true} device='lg' content={overlayOnlyHtml} />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={overlayOnlyHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## アトリビュート一覧
+
+<Note type='info'>
+  基本的なアトリビュートについては、[トグル](/ecm/docs/js/toggle/#アトリビュート一覧)を参照  
+  モーダルのモジュールでは下記の設定をカスタマイズして下さい
+</Note>
+
+<Space />
+
+<table class="mdx-table">
+  <thead class="mdx-table-header">
+    <tr>
+      <th style={{minWidth: '250px', width: '250px'}}>アトリビュート</th>
+      <th style={{minWidth: '250px', width: '250px'}}>値</th>
+      <th style={{width: '100%'}}>メモ</th>
+    </tr>
+  </thead>
+  <tbody class="mdx-table-body">
+    <tr>
+      <td class="mdx-mono">`role`</td>
+      <td class="mdx-mono">"dialog"</td>
+      <td>
+        <div>
+          ダイアログコンテナとして機能する要素を識別します（`a11y`用）
+        </div>
+        <div style={{ marginTop: "16px"}}>
+          ※`data-module-name="ecm-toggle"` 要素へ付与する
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`aria-modal`</td>
+      <td class="mdx-mono">"true"</td>
+      <td>
+        <div>
+          表示される際に要素がモーダルであるかどうかを示します（`a11y`用）
+        </div>
+        <div style={{ marginTop: "16px"}}>
+          ※`data-module-name="ecm-toggle"` 要素へ付与する
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`data-body-lock`</td>
+      <td class="mdx-mono">
+        <div>
+          boolean
+        </div>
+        <div style={{ color: "#8f8f8f"}}>
+          デフォルト: false
+        </div>
+      </td>
+      <td>
+        <div>
+          モーダルの背景を固定するかどうか<br />
+          `"true"` を設定した場合、モーダルの背景が動きます
+        </div>
+        <div style={{ marginTop: "16px"}}>
+          ※`data-module-name="ecm-toggle"` 要素へ付与する
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

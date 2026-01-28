@@ -1,0 +1,172 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+@include util-all('color-transparent') {
+  color: $color-transparent;
+}
+@include util-all('color-link') {
+  color: $color-link;
+}
+@include util-all('color-crimson') {
+  color: $color-crimson;
+}
+@include util-all('color-crimson-light') {
+  color: $color-crimson-light;
+}
+@include util-all('color-crimson-lightest') {
+  color: $color-crimson-lightest;
+}
+@include util-all('color-110606') {
+  color: $color-110606;
+}
+@include util-all('color-828282') {
+  color: $color-828282;
+}
+@include util-all('color-9c9c9c') {
+  color: $color-9c9c9c;
+}
+@include util-all('color-black') {
+  color: $color-black;
+}
+@include util-all('color-gray-1') {
+  color: $color-gray-1;
+}
+@include util-all('color-gray-2') {
+  color: $color-gray-2;
+}
+@include util-all('color-gray-3') {
+  color: $color-gray-3;
+}
+@include util-all('color-gray-4') {
+  color: $color-gray-4;
+}
+@include util-all('color-gray-5') {
+  color: $color-gray-5;
+}
+@include util-all('color-gray-6') {
+  color: $color-gray-6;
+}
+@include util-all('color-white') {
+  color: $color-white;
+}
+@include util-all('bg-color-transparent') {
+  background-color: $color-transparent;
+}
+@include util-all('bg-color-black') {
+  background-color: $color-black;
+}
+@include util-all('bg-color-gray-1') {
+  background-color: $color-gray-1;
+}
+@include util-all('bg-color-gray-2') {
+  background-color: $color-gray-2;
+}
+@include util-all('bg-color-gray-3') {
+  background-color: $color-gray-3;
+}
+@include util-all('bg-color-gray-4') {
+  background-color: $color-gray-4;
+}
+@include util-all('bg-color-gray-5') {
+  background-color: $color-gray-5;
+}
+@include util-all('bg-color-gray-6') {
+  background-color: $color-gray-6;
+}
+@include util-all('bg-color-white') {
+  background-color: $color-white;
+}
+@include util-all('bg-color-9c9c9c') {
+  background-color: $color-9c9c9c;
+}
+@include util-all('bg-color-110606') {
+  background-color: $color-110606;
+}
+@include util-all('bg-color-828282') {
+  background-color: $color-828282;
+}
+
+@include util-all('color-transparent', true) {
+  color: $color-transparent !important;
+}
+@include util-all('color-link', true) {
+  color: $color-link !important;
+}
+@include util-all('color-crimson', true) {
+  color: $color-crimson !important;
+}
+@include util-all('color-crimson-light', true) {
+  color: $color-crimson-light !important;
+}
+@include util-all('color-crimson-lightest', true) {
+  color: $color-crimson-lightest !important;
+}
+@include util-all('color-110606', true) {
+  color: $color-110606 !important;
+}
+@include util-all('color-828282', true) {
+  color: $color-828282 !important;
+}
+@include util-all('color-9c9c9c', true) {
+  color: $color-9c9c9c !important;
+}
+@include util-all('color-black', true) {
+  color: $color-black !important;
+}
+@include util-all('color-gray-1', true) {
+  color: $color-gray-1 !important;
+}
+@include util-all('color-gray-2', true) {
+  color: $color-gray-2 !important;
+}
+@include util-all('color-gray-3', true) {
+  color: $color-gray-3 !important;
+}
+@include util-all('color-gray-4', true) {
+  color: $color-gray-4 !important;
+}
+@include util-all('color-gray-5', true) {
+  color: $color-gray-5 !important;
+}
+@include util-all('color-gray-6', true) {
+  color: $color-gray-6 !important;
+}
+@include util-all('color-white', true) {
+  color: $color-white !important;
+}
+@include util-all('bg-color-transparent', true) {
+  background-color: $color-transparent !important;
+}
+@include util-all('bg-color-black', true) {
+  background-color: $color-black !important;
+}
+@include util-all('bg-color-gray-1', true) {
+  background-color: $color-gray-1 !important;
+}
+@include util-all('bg-color-gray-2', true) {
+  background-color: $color-gray-2 !important;
+}
+@include util-all('bg-color-gray-3', true) {
+  background-color: $color-gray-3 !important;
+}
+@include util-all('bg-color-gray-4', true) {
+  background-color: $color-gray-4 !important;
+}
+@include util-all('bg-color-gray-5', true) {
+  background-color: $color-gray-5 !important;
+}
+@include util-all('bg-color-gray-6', true) {
+  background-color: $color-gray-6 !important;
+}
+@include util-all('bg-color-white', true) {
+  background-color: $color-white !important;
+}
+@include util-all('bg-color-9c9c9c', true) {
+  background-color: $color-9c9c9c !important;
+}
+@include util-all('bg-color-110606', true) {
+  background-color: $color-110606 !important;
+}
+@include util-all('bg-color-828282', true) {
+  background-color: $color-828282 !important;
+}

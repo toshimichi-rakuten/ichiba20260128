@@ -1,0 +1,27 @@
+.download {
+  transition: all 0.2s ease;
+  background-color: white;
+  border: 1px solid #bf0000;
+  color: #bf0000 !important;
+  font-size: 12px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  border-radius: 4px;
+  width: 100%;
+  cursor: pointer;
+
+  &:hover {
+    color: white !important;
+    background-color: #bf0000;
+  }
+}
+
+.download-text {
+  margin-left: 4px;
+}
+.download-icon {
+  margin-top: 2px;
+}

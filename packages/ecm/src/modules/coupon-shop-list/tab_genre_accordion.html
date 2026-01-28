@@ -1,0 +1,181 @@
+<div
+  data-module-name="ecm-coupon-shop-list"
+  data-coupon-genre="20230926"
+>
+  <template data-coupon-shop-list-output>
+    <button
+      class="ecm-link text-sm"
+      aria-selected="false"
+      aria-controls="couponShopListTabGenreAccordionSheet1"
+    >
+      クーポン対象ショップ一覧
+    </button>
+
+    <div
+      id="couponShopListTabGenreAccordionSheet1"
+      class="ecm-sheet ecm-sheet-below ecm-sheet-full-screen"
+      data-module-name="ecm-toggle"
+      data-body-lock="true"
+      data-transition="true"
+      data-transition-ms="450"
+      aria-modal="true"
+      role="dialog"
+    >
+      <div
+        class="ecm-sheet-bg"
+        aria-selected="false"
+        aria-controls="couponShopListTabGenreAccordionSheet1"
+      ></div>
+      <div class="ecm-sheet-content-wrapper">
+        <div class="ecm-sheet-content">
+          <div class="ecm-sheet-content-header ecm-sheet-content-header-bordered">
+            <div class="ecm-sheet-title">クーポン対象ショップ一覧</div>
+            <button
+              class="ecm-sheet-content-close"
+              aria-selected="false"
+              aria-controls="couponShopListTabGenreAccordionSheet1"
+            >
+              <i
+                class="ecm-icon-close"
+                aria-hidden="true"
+              ></i>
+            </button>
+          </div>
+
+          <div class="ecm-sheet-content-body">
+            <div
+              data-module-name="ecm-tab"
+              data-role="tablist"
+              data-default-open="couponShopListTabGenreAccordionPanel1"
+            >
+              <div class="ecm-tab-container bordered-b">
+                <button
+                  id="couponShopListTabGenreAccordionTab1"
+                  style="width: 33.33%"
+                  class="ecm-tab"
+                  data-tab
+                  aria-controls="couponShopListTabGenreAccordionPanel1"
+                  aria-selected="false"
+                  role="tab"
+                >
+                  <span>タブ1円OFF</span>
+                </button>
+                <button
+                  id="couponShopListTabGenreAccordionTab2"
+                  style="width: 33.33%"
+                  class="ecm-tab"
+                  data-tab
+                  aria-controls="couponShopListTabGenreAccordionPanel2"
+                  aria-selected="false"
+                  role="tab"
+                >
+                  <span>タブ2円OFF</span>
+                </button>
+                <button
+                  id="couponShopListTabGenreAccordionTab3"
+                  style="width: 33.33%"
+                  class="ecm-tab"
+                  data-tab
+                  aria-controls="couponShopListTabGenreAccordionPanel3"
+                  aria-selected="false"
+                  role="tab"
+                >
+                  <span>タブ3円OFF</span>
+                </button>
+              </div>
+
+              <div
+                id="couponShopListTabGenreAccordionPanel1"
+                data-coupon-shop-list-item-container="★★★category_1★★★"
+                data-sort="shop_name_kana"
+                data-sort-type="asc"
+                data-tabpanel
+                aria-hidden="true"
+                aria-labelledby="couponShopListTabGenreAccordionTab1"
+                role="tabpanel"
+              ></div>
+
+              <div
+                id="couponShopListTabGenreAccordionPanel2"
+                data-coupon-shop-list-item-container="★★★category_2★★★"
+                data-sort="shop_name_kana"
+                data-sort-type="asc"
+                data-tabpanel
+                aria-hidden="true"
+                aria-labelledby="couponShopListTabGenreAccordionTab2"
+                role="tabpanel"
+              ></div>
+
+              <div
+                id="couponShopListTabGenreAccordionPanel3"
+                data-coupon-shop-list-item-container="★★★category_3★★★"
+                data-sort="shop_name_kana"
+                data-sort-type="asc"
+                data-tabpanel
+                aria-hidden="true"
+                aria-labelledby="couponShopListTabGenreAccordionTab3"
+                role="tabpanel"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <template
+    data-coupon-shop-list-data="★★★category_1★★★"
+    data-coupons-json-url="★★★coupons.json★★★"
+  ></template>
+  <template
+    data-coupon-shop-list-data="★★★category_2★★★"
+    data-coupons-json-url="★★★coupons.json★★★"
+  ></template>
+  <template
+    data-coupon-shop-list-data="★★★category_3★★★"
+    data-coupons-json-url="★★★coupons.json★★★"
+  ></template>
+
+  <template data-coupon-shop-list-group-template>
+    <ul
+      class="ecm-accordion bordered-b"
+      data-module-name="ecm-accordion"
+      data-multiple="false"
+    >
+      <li class="ecm-accordion-item">
+        <button
+          id="single-trigger-###genre_group_index###"
+          class="ecm-accordion-trigger"
+          data-accordion-trigger
+          aria-controls="single-panel-###genre_group_index###"
+          aria-selected="false"
+        >
+          <span>###genre_group###</span>
+          <i
+            class="ecm-icon-chevron-down"
+            aria-hidden="true"
+          ></i>
+        </button>
+        <div
+          id="single-panel-###genre_group_index###"
+          class="ecm-accordion-panel"
+          data-accordion-panel
+          aria-labelledby="single-trigger-###genre_group_index###"
+          aria-hidden="true"
+          role="region"
+        >
+          ###items###
+        </div>
+      </li>
+    </ul>
+  </template>
+
+  <template data-coupon-shop-list-item-template>
+    <a
+      class="ecm-accordion-panel-item"
+      href="https://www.rakuten.co.jp/###shop_url###/"
+    >
+      ###shop_name###
+    </a>
+  </template>
+</div>

@@ -1,0 +1,46 @@
+@import 'ecm/src/_scss/variables';
+@import 'ecm/src/_scss/mixins';
+
+.scm-footer-title {
+  @include vw-text-sm;
+
+  color: $color-gray-1;
+  font-weight: bold;
+  text-align: center;
+
+  @include screen('md', 'up') {
+    @include text-sm;
+  }
+}
+
+.scm-footer-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: -$space-8;
+}
+
+.scm-footer-item {
+  position: relative;
+  padding: 0 $space-8;
+  margin-bottom: $space-8;
+}
+
+.scm-footer-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: $space-12;
+  background-color: $color-gray-4;
+}
+
+.scm-footer-item-link {
+  @include vw-text-sm;
+  @include colorize-link($color-gray-1 !important);
+  @include screen('md', 'up') {
+    @include text-sm;
+  }
+}

@@ -1,0 +1,21 @@
+@import './variables.scss';
+
+// For public use.
+:root {
+  --ecm-color-transparent: #{$color-transparent};
+  --ecm-color-link: #{$color-link};
+  --ecm-color-crimson: #{$color-crimson};
+  --ecm-color-crimson-light: #{$color-crimson-light};
+  --ecm-color-crimson-lightest: #{$color-crimson-lightest};
+  --ecm-color-black: #{$color-black};
+  --ecm-color-gray-1: #{$color-gray-1};
+  --ecm-color-gray-2: #{$color-gray-2};
+  --ecm-color-gray-3: #{$color-gray-3};
+  --ecm-color-gray-4: #{$color-gray-4};
+  --ecm-color-gray-5: #{$color-gray-5};
+  --ecm-color-gray-6: #{$color-gray-6};
+  --ecm-color-white: #{$color-white};
+  --ecm-color-110606: #{$color-110606};
+  --ecm-color-828282: #{$color-828282};
+  --ecm-color-9c9c9c: #{$color-9c9c9c};
+}

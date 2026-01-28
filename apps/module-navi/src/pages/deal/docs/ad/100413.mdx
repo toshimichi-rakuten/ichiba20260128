@@ -1,0 +1,81 @@
+import Html from 'src/components/Html'
+import Code from 'src/components/Code'
+import Note from 'src/components/Note'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import { PasswordView } from 'src/components/PasswordView'
+import staticBadgeSp1ColumnPcListHtml from 'ecm/src/modules/ad/100413/badge-sp-1column_pc-list.html'
+import staticTextSp1ColumnPcListHtml from 'ecm/src/modules/ad/100413/text-sp-1column_pc-list.html'
+import integrationBadgeSp1ColumnPcListHtml from 'ecm/src/modules/ad/100413/integration_badge-sp-1column_pc-list.html'
+import integrationTextSp1ColumnPcListHtml from 'ecm/src/modules/ad/100413/integration_text-sp-1column_pc-list.html'
+
+export const meta = {
+  title: '原稿タイプID：100413',
+  description: 'ロゴ無|バッジ（赤）、ロゴ無|テキスト',
+  url: '/deal/docs/ad/100413',
+  tags: ['商品', 'ad', '原稿タイプ'],
+}
+
+# 原稿タイプID：100413
+ロゴ無|バッジ、ロゴ無|テキスト
+<Space />
+
+★部分へアドプラッツからダウンロードした配信タグを貼り付けてください。
+
+## SP1カラム|ロゴ無|バッジ、PC1カラム|ロゴ無|バッジ
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html
+      scm={true}
+      content={staticBadgeSp1ColumnPcListHtml}
+    />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='lg'>
+    <Html
+      scm={true}
+      device='lg'
+      content={staticBadgeSp1ColumnPcListHtml}
+    />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={integrationBadgeSp1ColumnPcListHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## SP1カラム|ロゴ無|テキスト、PC1カラム|ロゴ無|テキスト
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html
+      scm={true}
+      content={staticTextSp1ColumnPcListHtml}
+    />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='lg'>
+    <Html
+      scm={true}
+      device='lg'
+      content={staticTextSp1ColumnPcListHtml}
+    />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={integrationTextSp1ColumnPcListHtml}/>
+  </Tabs.Panel>
+</Tabs>

@@ -1,0 +1,297 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'ecm/src/modules/view-more/default.html'
+import closeHtml from 'ecm/src/modules/view-more/close.html'
+import closeSmoothHtml from 'ecm/src/modules/view-more/close-smooth.html'
+import responsiveHtml from 'ecm/src/modules/view-more/responsive.html'
+
+export const meta = {
+  title: 'もっと見る',
+  description: '隠されていたコンテンツが表示される機能',
+  url: '/ecm/docs/js/view-more',
+  tags: ['view', 'more', 'show'],
+}
+
+# もっと見る
+
+初期状態では一部のコンテンツが隠れていて、「もっと見る」ボタンを押すとそのボタンが消えて隠されていたコンテンツが表示される機能です。
+
+## 主な機能・特徴
+
+- 初期状態で表示させたい要素の数を設定し、それ以上表示させる場合は「もっと見る」ボタンを押して表示させます。
+- 表示させた状態で別ページへ遷移し、ブラウザの戻るで戻った場合に表示させた状態を保持させることができます。
+- 閉じるボタンを追加し、「もっと見る」ボタンを押下後、「閉じる」ボタンで初期状態に戻すことができます。
+- 「閉じる」際に、スムーズスクロールで要素の上に移動させることができます。
+
+## 使い方
+
+### デフォルト
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP/PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={defaultHtml} />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={defaultHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+- もっと見るを実装したいコンテンツの親要素（`ul`, `div`, `section` など）に、`data-module-name="ecm-view-more"` を設定する
+- デフォルトで表示させたいコンテンツの数を、`data-visible=""` に設定する
+- ブラウザの「戻る」で戻った際に開いた状態を保持しない場合、`data-session="false"` を設定する（※"false"に設定されない場合は、"true"になります）
+- もっと見るを実装したいアイテムに`class="ecm-view-more-item"`を設定する
+
+### 閉じるボタンあり
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP/PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={closeHtml} />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={closeHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+
+### 閉じる際のスムーズスクロール
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP/PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={closeSmoothHtml} />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={closeSmoothHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+- `data-scroll-on-click="true"` を設定することで、閉じた際、要素の一番上の位置にスムーズスクロールします。要素が多い場合に利用推奨します。
+
+
+### レスポンシブ
+
+ブレイクポイントごとに`data-visible`を調整したい場合は、`data-md-visible`と`data-lg-visible`をセットしてください。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='md'>MD</Tabs.Tab>
+    <Tabs.Tab value='lg'>LG</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={responsiveHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='md'>
+    <Html device='md' content={responsiveHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={responsiveHtml} />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={responsiveHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## アトリビュート一覧
+
+<Tabs keepMounted={false} defaultValue='attribute' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="attribute">アトリビュート</Tabs.Tab>
+    <Tabs.Tab value="contentAttribute">コンテンツ アトリビュート</Tabs.Tab>
+    <Tabs.Tab value="openButtonAttribute">もっと見るボタン アトリビュート</Tabs.Tab>
+    <Tabs.Tab value="closeButtonAttribute">閉じるボタン アトリビュート</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value="attribute">
+    <table class="mdx-table">
+      <thead class="mdx-table-header">
+        <tr>
+          <th style={{minWidth: '240px', width: '240px'}}>アトリビュート</th>
+          <th style={{minWidth: '240px', width: '240px'}}>値</th>
+          <th style={{width: '100%'}}>メモ</th>
+        </tr>
+      </thead>
+      <tbody class="mdx-table-body">
+        <tr>
+          <td class="mdx-mono">`data-module-name`</td>
+          <td class="mdx-mono">"ecm-view-more"</td>
+          <td>モジュール名</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`id`</td>
+          <td class="mdx-mono">string</td>
+          <td>モジュールのユニークID</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`data-visible`</td>
+          <td class="mdx-mono">number</td>
+          <td>デフォルトで表示させたいコンテンツの数</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`data-md-visible`</td>
+          <td class="mdx-mono">number</td>
+          <td>MDブレイクポイントで、デフォルトで表示させたいコンテンツの数</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`data-lg-visible`</td>
+          <td class="mdx-mono">number</td>
+          <td>LGブレイクポイントで、デフォルトで表示させたいコンテンツの数</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`data-open-if-no-hidden`</td>
+          <td class="mdx-mono">boolean</td>
+          <td>表示されるアイテムがない場合は「もっと見る」ボタンを非表示</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`data-session`</td>
+          <td class="mdx-mono">
+            <div>
+              boolean
+            </div>
+            <div style={{ color: "#8f8f8f"}}>
+              デフォルト: true
+            </div>
+          </td>
+          <td>
+            <div>
+              ブラウザーのセッションに開いた状態を保存するかどうか
+            </div>
+            <div style={{ marginTop: "16px"}}>
+              ※明示的に`"false"` に設定されない場合は、`"true"` になります
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </Tabs.Panel>
+
+  <Tabs.Panel value="contentAttribute">
+    <table class="mdx-table">
+      <thead class="mdx-table-header">
+        <tr>
+          <th style={{minWidth: '240px', width: '240px'}}>アトリビュート</th>
+          <th style={{minWidth: '240px', width: '240px'}}>値</th>
+          <th style={{width: '100%'}}>メモ</th>
+        </tr>
+      </thead>
+      <tbody class="mdx-table-body">
+        <tr>
+          <td class="mdx-mono">`aria-hidden`</td>
+          <td class="mdx-mono">
+            <div>
+              boolean
+            </div>
+            <div style={{ color: "#8f8f8f"}}>
+              デフォルト: true
+            </div>
+          </td>
+          <td>コンテンツが表示されているかどうか</td>
+        </tr>
+      </tbody>
+    </table>
+  </Tabs.Panel>
+
+  <Tabs.Panel value="openButtonAttribute">
+    <table class="mdx-table">
+      <thead class="mdx-table-header">
+        <tr>
+          <th style={{minWidth: '240px', width: '240px'}}>アトリビュート</th>
+          <th style={{minWidth: '240px', width: '240px'}}>値</th>
+          <th style={{width: '100%'}}>メモ</th>
+        </tr>
+      </thead>
+      <tbody class="mdx-table-body">
+        <tr>
+          <td class="mdx-mono">`data-control-type`</td>
+          <td class="mdx-mono">string</td>
+          <td>もっと見るボタンでは `"open"` を設定</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`aria-controls`</td>
+          <td class="mdx-mono">string</td>
+          <td>`ecm-view-more` 要素のユニークID（`id` の値）を設定</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`aria-expanded`</td>
+          <td class="mdx-mono">boolean</td>
+          <td>`ecm-view-more` 要素が展開されているかどうか</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`aria-hidden`</td>
+          <td class="mdx-mono">boolean</td>
+          <td>もっと見るボタンが表示されているかどうか</td>
+        </tr>
+      </tbody>
+    </table>
+  </Tabs.Panel>
+
+  <Tabs.Panel value="closeButtonAttribute">
+    <table class="mdx-table">
+      <thead class="mdx-table-header">
+        <tr>
+          <th style={{minWidth: '240px', width: '240px'}}>アトリビュート</th>
+          <th style={{minWidth: '240px', width: '240px'}}>値</th>
+          <th style={{width: '100%'}}>メモ</th>
+        </tr>
+      </thead>
+      <tbody class="mdx-table-body">
+        <tr>
+          <td class="mdx-mono">`data-control-type`</td>
+          <td class="mdx-mono">string</td>
+          <td>閉じるボタンでは `"close"` を設定</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`data-scroll-on-click`</td>
+          <td class="mdx-mono">"true"</td>
+          <td>閉じるときにスムーズスクロールになります</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`aria-controls`</td>
+          <td class="mdx-mono">string</td>
+          <td>`ecm-view-more` 要素のユニークID（`id` の値）を設定</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`aria-expanded`</td>
+          <td class="mdx-mono">boolean</td>
+          <td>`ecm-view-more` 要素が展開されているかどうか</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`aria-hidden`</td>
+          <td class="mdx-mono">boolean</td>
+          <td>閉じるボタンが表示されているかどうか</td>
+        </tr>
+      </tbody>
+    </table>
+  </Tabs.Panel>
+</Tabs>

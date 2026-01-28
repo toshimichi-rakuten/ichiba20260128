@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: module-navi-GIT_BRANCH_NAME
+spec:
+  ports:
+    - name: http-module-navi-GIT_BRANCH_NAME
+      port: 80
+      targetPort: 8080
+  selector:
+    app: module-navi-GIT_BRANCH_NAME

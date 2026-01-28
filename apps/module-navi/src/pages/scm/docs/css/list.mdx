@@ -1,0 +1,50 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import wrapHtml from 'ecm/src/utilities/flex/wrap.html'
+import levelsHtml from 'ecm/src/utilities/typography/levels.html'
+
+export const meta = {
+  title: 'CSSスタイル一覧',
+  description: 'ページでコーディングをする際によく使われるCSSのスタイルをクラス名で定義したもの',
+  url: '/scm/docs/css/list',
+  tags: ['css', 'class', 'クラス', 'utils', 'space', 'spacing', 'margin', 'マージン', 'padding', 'パディング', 'text', 'テキスト', 'typography', 'タイポグラフィ', 'font-size', 'フォントサイズ'],
+}
+
+# CSSスタイル一覧
+
+ページでコーディングをする際によく使われるCSSのスタイルをクラス名で定義したものです。本ページ内ctrl+Fで検索して利用してください。  
+使い方は [CSSユーティリティ](/ecm/docs/css/) についてを確認してください。
+
+## ダイナミクスサイズ
+
+最大サイズはデフォルトの2倍。最小サイズ設定はありません。
+
+<Space />
+
+<table class="mdx-table">
+  <thead class="mdx-table-header">
+    <tr>
+      <th style={{minWidth: '240px', width: '240px'}}>クラス名</th>
+      <th style={{minWidth: '240px', width: '100%'}}>プロパティ</th>
+    </tr>
+  </thead>
+  <tbody class="mdx-table-body">
+    <tr><td class="mdx-mono">`vw-text-10px`</td><td class="mdx-mono">`(375px) 10px; line-height: 1.3;`</td></tr>
+    <tr><td class="mdx-mono">`vw-text-11px`</td><td class="mdx-mono">`(375px) 11px; line-height: 1.3;`</td></tr>
+    <tr><td class="mdx-mono">`vw-text-12px`</td><td class="mdx-mono">`(375px) 12px; line-height: 1.3;`</td></tr>
+    <tr><td class="mdx-mono">`vw-text-xs`</td><td class="mdx-mono">`(375px) 13px; line-height: 1.3;`</td></tr>
+    <tr><td class="mdx-mono">`vw-text-sm`</td><td class="mdx-mono">`(375px) 14px; line-height: 1.3;`</td></tr>
+    <tr><td class="mdx-mono">`vw-text-base`</td><td class="mdx-mono">`(375px) 16px; line-height: 1.3;`</td></tr>
+    <tr><td class="mdx-mono">`vw-text-lg`</td><td class="mdx-mono">`(375px) 20px; line-height: 1.3;`</td></tr>
+    <tr><td class="mdx-mono">`vw-text-xl`</td><td class="mdx-mono">`(375px) 22px; line-height: 1.3;`</td></tr>
+    <tr><td class="mdx-mono">`vw-text-2xl`</td><td class="mdx-mono">`(375px) 24px; line-height: 1.3;`</td></tr>
+    <tr><td class="mdx-mono">`vw-text-3xl`</td><td class="mdx-mono">`(375px) 28px; line-height: 1.3;`</td></tr>
+    <tr><td class="mdx-mono">`vw-text-4xl`</td><td class="mdx-mono">`(375px) 32px; line-height: 1.3;`</td></tr>
+    <tr><td class="mdx-mono">`vw-text-5xl`</td><td class="mdx-mono">`(375px) 44px; line-height: 1.3;`</td></tr>
+    <tr><td class="mdx-mono">`vw-text-6xl`</td><td class="mdx-mono">`(375px) 56px; line-height: 1.3;`</td></tr>
+    <tr><td class="mdx-mono">`vw-text-7xl`</td><td class="mdx-mono">`(375px) 72px; line-height: 1.3;`</td></tr>
+  </tbody>
+</table>

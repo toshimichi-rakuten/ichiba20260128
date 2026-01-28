@@ -1,0 +1,23 @@
+.title-type {
+  width: 364px;
+}
+
+.title-device {
+  width: 64px;
+}
+
+.sub-title {
+  width: 300px;
+}
+
+.select [data-selected='true'] {
+  background-color: #228be6;
+
+  &:hover {
+    background-color: #228be6;
+  }
+}
+
+.select-input:focus {
+  border-color: #228be6;
+}

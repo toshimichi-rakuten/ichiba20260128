@@ -1,0 +1,70 @@
+import Demo from 'src/components/Demo'
+import Html from 'src/components/Html'
+import Code from 'src/components/Code'
+import Note from 'src/components/Note'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import ad100208soloHtml from 'scm/src/modules/ad/100208/solo.html'
+import ad100208integrationHtml from 'scm/src/modules/ad/100208/integration.html'
+import ad100208referenceHtml from 'scm/src/modules/ad/100208/index.html'
+import ad100208referenceCodeHtml from 'scm/src/modules/ad/100208/index_code.html'
+
+export const meta = {
+  title: '原稿タイプID 100208 ランキング形式',
+  description: '送料無料あり ショップロゴ画像(比率1:1)＋店舗名＋商品名＋画像(比率1:1)＋説明文＋価格＋ギフトアイコン',
+  url: '/scm/docs/ad/100208',
+  tags: ['商品', 'ad', '原稿タイプ'],
+}
+
+# 原稿タイプID 100208 ランキング形式
+
+送料無料あり ショップロゴ画像(比率1:1)＋店舗名＋商品名＋画像(比率1:1)＋説明文＋価格＋ギフトアイコン
+
+<Space />
+
+<Tabs
+  keepMounted={false}
+  defaultValue='demo'
+  styles={{ panel: { paddingTop: '16px' } }}
+>
+  <Tabs.List>
+    <Tabs.Tab value='demo'>デモ</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel value='demo'>
+    <Html
+      scm={true}
+      content={ad100208soloHtml}
+    />
+  </Tabs.Panel>
+  <Tabs.Panel value='code'>
+    <Code content={ad100208integrationHtml} />
+  </Tabs.Panel>
+</Tabs>
+
+## バリエーション一覧
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='md'>MD</Tabs.Tab>
+    <Tabs.Tab value='lg'>LG</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html scm={true} content={ad100208referenceHtml}/>
+  </Tabs.Panel>
+
+  <Tabs.Panel value='md'>
+    <Html scm={true} device='md' content={ad100208referenceHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='lg'>
+    <Html scm={true} device='lg' content={ad100208referenceHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={ad100208referenceCodeHtml}/>
+  </Tabs.Panel>
+</Tabs>

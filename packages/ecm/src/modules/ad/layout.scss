@@ -1,0 +1,11 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+.sm-ecm-ad-container-divided-y {
+  @include screen('md', 'down') {
+    > .ecm-ad + .ecm-ad {
+      border-top: 1px solid $color-gray-5;
+      padding-top: $space-16;
+    }
+  }
+}

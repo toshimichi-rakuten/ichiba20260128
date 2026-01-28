@@ -1,0 +1,29 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+.ecm-commentary-headline {
+  padding-bottom: $space-16;
+  position: relative;
+  text-align: center;
+
+  &::after {
+    background-color: $color-gray-1;
+    bottom: 0;
+    content: '';
+    height: 2px;
+    left: 50%;
+    margin-left: -60px;
+    position: absolute;
+    width: 120px;
+  }
+}
+
+.ecm-commentary {
+  border-bottom: 1px solid #c4c4c4;
+  padding-bottom: $space-24;
+}
+
+.ecm-commentary-button {
+  background-color: transparent;
+  border-color: $color-gray-1;
+}

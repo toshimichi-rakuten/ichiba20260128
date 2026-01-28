@@ -1,0 +1,309 @@
+@import 'ecm/src/_scss/variables';
+@import 'ecm/src/_scss/mixins';
+
+/** 
+* Reuse the default classes as much as possible.  
+If you need a complicated styling, please create a new class and add the id number in the end.
+
+class="scm-ad scm-ad-xxxxx"
+class="scm-ad-name scm-ad-name-xxxxx"
+class="scm-ad-triangle scm-ad-triangle-xxxxx"
+*/
+
+.scm-ad {
+  background-color: $color-white;
+  box-sizing: border-box;
+
+  &.scm-ad-bg-gray {
+    background-color: $color-gray-6;
+  }
+
+  &.scm-ad-shadowed {
+    box-shadow: 0 3px 15px rgb(0 0 0 / 20%);
+  }
+
+  &.scm-ad-bordered {
+    border: 1px solid $color-gray-2;
+  }
+
+  &.scm-ad-rounded {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+}
+
+.scm-ad-triangle {
+  border: 5px solid transparent;
+  border-bottom-color: $color-gray-1;
+  border-right-color: $color-gray-1;
+  bottom: 8px;
+  position: absolute;
+  right: 8px;
+
+  @include screen('md', 'up') {
+    border-width: 7px;
+  }
+}
+
+.scm-ad-image-link {
+  display: block;
+
+  @include screen('md', 'up') {
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.scm-ad-image {
+  aspect-ratio: 1/1;
+  height: auto;
+  width: 100%;
+
+  &.scm-ad-image-ratio-3x2 {
+    aspect-ratio: 3/2;
+  }
+
+  &.scm-ad-image-ratio-72x11 {
+    aspect-ratio: 72/11;
+  }
+
+  &.scm-ad-image-ratio-24x13 {
+    aspect-ratio: 24/13;
+  }
+}
+
+.scm-ad-name {
+  @include font-default;
+  @include text-sm;
+  @include colorize-link($color-gray-1 !important);
+
+  display: block;
+
+  @include screen('md', 'up') {
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.scm-ad-note {
+  @include font-default;
+  @include text-12px;
+  @include colorize-link($color-gray-2 !important);
+
+  display: block;
+
+  @include screen('md', 'up') {
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.scm-ad-price {
+  align-items: flex-end;
+  color: $color-crimson;
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 1;
+}
+
+.scm-ad-price-num {
+  @include font-roboto(500);
+
+  font-size: 20px;
+  margin-right: 6px;
+
+  @include screen('md', 'up') {
+    font-size: 24px;
+  }
+}
+
+.scm-ad-price-unit {
+  @include font-default;
+  @include text-xs;
+
+  font-weight: bold;
+  margin-left: 1px;
+
+  @include screen('md', 'up') {
+    @include text-sm;
+  }
+}
+
+.scm-ad-price-shipping {
+  @include font-default;
+  @include text-xs;
+
+  font-weight: bold;
+
+  /* stylelint-disable-next-line */
+  &.scm-ad-price-shipping- {
+    display: none;
+  }
+
+  @include screen('md', 'up') {
+    @include text-sm;
+
+    flex-shrink: 0;
+  }
+}
+
+.scm-ad-badge-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -#{$space-4} 0 0 -#{$space-4};
+}
+
+.scm-ad-badge {
+  @include font-default;
+  @include text-10px;
+
+  background-color: $color-crimson;
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: $color-white;
+  display: block;
+  margin: $space-4 0 0 $space-4;
+  padding: 2px $space-4;
+
+  &.scm-ad-badge-bg-gray {
+    background-color: #8f8f8f;
+  }
+
+  &.scm-ad-badge-outline {
+    background-color: transparent;
+    border: 1px solid $color-gray-1;
+    color: $color-gray-1;
+    font-size: 12px;
+  }
+
+  /* stylelint-disable-next-line */
+  &.scm-ad-badge- {
+    display: none;
+  }
+}
+
+.scm-ad-shop {
+  @include colorize-link($color-gray-2 !important);
+
+  align-items: baseline;
+  display: flex;
+
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  i {
+    @include text-sm;
+
+    flex-shrink: 0;
+    line-height: 1;
+    margin: 0 $space-4 0.05em 0;
+  }
+
+  span {
+    @include font-default;
+    @include text-12px;
+  }
+
+  @include screen('md', 'up') {
+    i {
+      flex-shrink: 0;
+      font-size: 14px;
+    }
+
+    span {
+      @media (hover: hover) {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.scm-ad-review {
+  @include colorize-link($color-gray-1 !important);
+
+  align-items: center;
+  background-color: $color-white;
+  border: 1px solid $color-gray-1;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  line-height: 1;
+  min-height: 40px;
+  padding: $space-4;
+
+  i {
+    @include text-sm;
+
+    flex-shrink: 0;
+    line-height: 1;
+    margin-right: $space-4;
+  }
+
+  span {
+    @include text-xs;
+
+    line-height: 1;
+  }
+
+  @include screen('md', 'up') {
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.scm-ad-asuraku {
+  background-color: $color-white;
+  border-radius: 4px;
+  padding: $space-16;
+}
+
+.scm-ad-asuraku-title {
+  display: block;
+  height: 16px;
+  width: 75px;
+}
+
+.scm-ad-asuraku-text {
+  @include text-12px;
+  @include colorize-link($color-gray-1 !important);
+
+  display: block;
+  line-height: 1.2;
+
+  @include screen('md', 'up') {
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.scm-ad-logo-39shop {
+  display: block;
+  width: 64px;
+  height: 16px;
+
+  /* stylelint-disable-next-line */
+  &.scm-ad-logo-39shop- {
+    display: none;
+  }
+}

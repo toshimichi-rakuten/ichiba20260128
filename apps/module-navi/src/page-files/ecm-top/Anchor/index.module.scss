@@ -1,0 +1,38 @@
+.anchor {
+  justify-content: space-between;
+  align-items: center;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.anchor-type-default {
+  display: flex;
+  border-radius: 4px;
+  border: 1px solid rgb(0 0 0 / 8%);
+  background: #fff;
+  padding: 16px 20px;
+}
+
+.anchor-type-text {
+  display: inline-flex;
+  padding: 8px 20px;
+}
+
+.anchor-text {
+  color: #333;
+  font-size: 16px;
+}
+
+.anchor-icon {
+  flex-basis: 16px;
+  height: 16px;
+  margin-left: 4px;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    display: block;
+  }
+}

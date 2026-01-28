@@ -1,0 +1,480 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import allConfigHtml from 'ecm/src/modules/slider/all-config.html'
+import paginationHtml from 'ecm/src/modules/slider/pagination.html'
+import overflowHtml from 'ecm/src/modules/slider/overflow.html'
+
+export const meta = {
+  title: 'スライダー',
+  description: 'バナーなど複数の画像をスライダー表示',
+  url: '/ecm/docs/ui/slider',
+  tags: ['スワイプ', 'swiper', 'slider', 'layout'],
+}
+
+# スライダー
+
+バナーなど複数の画像をスライダー表示させるモジュールです。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={allConfigHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={allConfigHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={allConfigHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## 使い方
+
+- 挙動をカスタマイズすることが可能です。下記説明と「アトリビュート」を参考にしてください。
+
+### ecm-containerにはみ出す
+
+スライダーが`ecm-container`内に配置されている場合、`ecm-slider-container-sp-overflow`クラスを使用して、SPでスライダーをはみ出させる事が出来ます。
+<Space />
+
+<Code copy={false} content={`
+<main class="ecm-container">
+  <div class="ecm-slider-container ecm-slider-container-sp-overflow" data-module-name="ecm-slider">...</div>
+</main>
+`} />
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={overflowHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={overflowHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={overflowHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+### ループの有無を設定する
+
+- `ecm-slider` 要素の `data-loop="true”` と設定します。  
+  ※またスライダーをloopさせるには、すべてのスライドの数を最低でも **`data-slides-per-view + data-slides-per-group`** にしなければ正しく動作しません。  
+  例えば一度に表示させるスライドを5枚でloopさせるには `data-slides-per-view` を5、スライドの合計を6以上にしなければ動作しません。  
+  `data-slides-per-view` を3にして、loopさせる場合はスライドの合計は4枚以上に設定してください。
+
+<Space />
+
+1度に表示させるスライドが3枚でループさせる例。必要画像枚数は4枚以上
+
+<Space />
+
+<Code content={`
+<div
+  class="ecm-slider-container"
+  data-module-name="ecm-slider"
+  data-loop="true"
+  data-initial-slide="0"
+  data-slides-per-group="1"
+  data-slides-per-view="3"
+  data-space-between="16"
+>
+`}/>
+
+### 一度に表示させる画像（スライド）の数を変更する
+
+- バナーの表示数を変更したい場合は、`ecm-slider` 要素の `data-slides-per-view` に任意の数字を設定します。
+- 「4.5」など小数点を含む値を設定して、1スライドの途中で見切れさせることが可能です。
+
+<Space />
+
+1度に表示させるスライドが4枚と5枚目の半分とする例。
+
+<Space />
+
+<Code content={`
+<div
+  class="ecm-slider-container"
+  data-module-name="ecm-slider"
+  data-loop="false"
+  data-initial-slide="0"
+  data-slides-per-group="1"
+  data-slides-per-view="4.5"
+  data-space-between="16"
+>`}/>
+
+### 画像（スライド）の間の余白を変更する
+
+- スライド間の距離を変更したい場合は、`ecm-slider` 要素の `data-space-between` に px 単位で任意の値を設定します。
+
+<Space />
+
+スライド間の距離を `8px` にする例
+
+<Space />
+
+<Code content={`
+<div
+  class="ecm-slider-container"
+  data-module-name="ecm-slider"
+  data-loop="false"
+  data-initial-slide="0"
+  data-slides-per-group="1"
+  data-slides-per-view="4.5"
+  data-space-between="8"
+>`}/>
+
+### ナビゲーション表示について
+
+- 消す場合は以下のコードをまるっと削除します。
+
+<Code content={`
+<!-- If we need navigation buttons -->
+<div class="ecm-slider-prev d-none md-d-flex">
+  <i aria-hidden="true" class="ecm-icon-chevron-left"></i>
+</div>
+<div class="ecm-slider-next d-none md-d-flex">
+  <i aria-hidden="true" class="ecm-icon-chevron-right"></i>
+</div>
+`}/>
+
+<Space />
+
+- SPでも表示させる場合は、上記の `d-none md-d-flex` を削除してください。
+
+## SP1.5カラム／PC5カラム表示
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={allConfigHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={allConfigHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={allConfigHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Note type='info'>
+  適宜設定したい内容で各アトリビュート値を変更して利用してください。
+</Note>
+
+## 1枚スライド表示・ページネーション付き
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={paginationHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={paginationHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='code'>
+    <Code content={paginationHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+`<div class="ecm-slider-pagination"></div>` を追加するとページネーションがつきます。  
+`data-autoplay`を `true` にするとオート再生します。再生間隔は `data-autoplay-delay` にミリ秒で設定します。初期値は `3000` です。  
+ページネーションのリンクを無効にする場合は `data-pagination-clickable` を `false` にします。
+
+
+## カスタムイベント
+
+<Code language='js' content={`
+// Set
+slider.dispatchEvent(new CustomEvent('ecmSliderGetInstance', { detail: callback }))
+`}/>
+
+## アトリビュート一覧
+
+<table class="mdx-table">
+  <thead class="mdx-table-header">
+    <tr>
+      <th style={{minWidth: '320px', width: '320px'}}>アトリビュート</th>
+      <th style={{minWidth: '260px', width: '260px'}}>値</th>
+      <th style={{width: '100%'}}>メモ</th>
+    </tr>
+  </thead>
+  <tbody class="mdx-table-body">
+    <tr>
+      <td class="mdx-mono">`data-module-name`</td>
+      <td class="mdx-mono">"ecm-slider"</td>
+      <td>モジュール名</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`data-loop`</td>
+      <td class="mdx-mono">
+        <div>
+          boolean
+        </div>
+        <div style={{ color: "#8f8f8f"}}>
+          デフォルト: false
+        </div>
+      </td>
+      <td>ループさせるかどうか</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`data-centered-slides`</td>
+      <td class="mdx-mono">
+        <div>
+          boolean
+        </div>
+        <div style={{ color: "#8f8f8f"}}>
+          デフォルト: false
+        </div>
+      </td>
+      <td>
+        <div>アクティブなスライドを中央に配置するかどうか</div>
+        <div style={{ marginTop: "16px"}}>
+          ※`data-loop="true"` との併用は禁止
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`data-centered-slides-bounds`</td>
+      <td class="mdx-mono">
+        <div>
+          boolean
+        </div>
+        <div style={{ color: "#8f8f8f"}}>
+          デフォルト: false
+        </div>
+      </td>
+      <td>
+        <div>
+          アクティブなスライドを中央に配置したときに、スライダーの最初と最後に余白を追加するかどうか
+        </div>
+        <div style={{ marginTop: "16px"}}>
+          ※`data-centered-slides="true"` が必要<br />
+          ※`data-loop="true"` との併用は禁止
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`data-center-insufficient-slides`</td>
+      <td class="mdx-mono">
+        <div>
+          boolean
+        </div>
+        <div style={{ color: "#8f8f8f"}}>
+          デフォルト: true
+        </div>
+      </td>
+      <td>
+        <div>
+          `data-slides-per-view="#"` 以下のスライドの数の場合、有効にするとスライドを中央に配置するかどうか
+        </div>
+        <div style={{ marginTop: "16px"}}>
+          ※`data-loop="true"` との併用は禁止
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`data-enabled`</td>
+      <td class="mdx-mono">
+        <div>
+          boolean
+        </div>
+        <div style={{ color: "#8f8f8f"}}>
+          デフォルト: true
+        </div>
+      </td>
+      <td>Swiperが初期状態で有効かどうか</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`data-grab-cursor`</td>
+      <td class="mdx-mono">
+        <div>
+          boolean
+        </div>
+        <div style={{ color: "#8f8f8f"}}>
+          デフォルト: true
+        </div>
+      </td>
+      <td>Swiperにカーソルを置いたときに「つかむ」カーソルを表示するかどうか</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`data-initial-slide`</td>
+      <td class="mdx-mono">
+        <div>
+          number
+        </div>
+        <div style={{ color: "#8f8f8f"}}>
+          デフォルト: 0
+        </div>
+      </td>
+      <td>最初のスライドのインデックス番号</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`data-rewind`</td>
+      <td class="mdx-mono">
+        <div>
+          boolean
+        </div>
+        <div style={{ color: "#8f8f8f"}}>
+          デフォルト: false
+        </div>
+      </td>
+      <td>
+        最後のスライドをクリックしたときに最初のスライドに戻すかどうか<br />
+        ※`data-loop="true"` との併用は禁止
+      </td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`data-slides-per-group`</td>
+      <td class="mdx-mono">
+        <div>
+          number
+        </div>
+        <div style={{ color: "#8f8f8f"}}>
+          デフォルト: 1
+        </div>
+      </td>
+      <td>1以上の数を指定すると、その数のスライドがグループ化されて同時にスライドする</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`data-slides-per-view`</td>
+      <td class="mdx-mono">
+        <div>
+          number | 'auto'
+        </div>
+        <div style={{ color: "#8f8f8f"}}>
+          デフォルト: 1
+        </div>
+      </td>
+      <td>1ビューあたりのスライド数（スライダーのコンテナで同時に表示されるスライド）。'auto'の場合は、スライドのサイズをCSSでセットする必要があります。</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`data-space-between`</td>
+      <td class="mdx-mono">
+        <div>
+          number
+        </div>
+        <div style={{ color: "#8f8f8f"}}>
+          デフォルト: 16
+        </div>
+      </td>
+      <td>スライド間の距離（※単位はpx）</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`data-md-slides-per-group`</td>
+      <td class="mdx-mono">number</td>
+      <td>（PC）1以上の数を指定すると、その数のスライドがグループ化されて同時にスライドする</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`data-md-slides-per-view`</td>
+      <td class="mdx-mono">number</td>
+      <td>（PC）1ビューあたりのスライド数（スライダーのコンテナで同時に表示されるスライド）</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`data-md-space-between`</td>
+      <td class="mdx-mono">number</td>
+      <td>（PC）スライド間の距離（※単位はpx）</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`data-lg-slides-per-group`</td>
+      <td class="mdx-mono">number</td>
+      <td>（PC）1以上の数を指定すると、その数のスライドがグループ化されて同時にスライドする</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`data-lg-slides-per-view`</td>
+      <td class="mdx-mono">number</td>
+      <td>（PC）1ビューあたりのスライド数（スライダーのコンテナで同時に表示されるスライド）</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`data-lg-space-between`</td>
+      <td class="mdx-mono">number</td>
+      <td>（PC）スライド間の距離（※単位はpx）</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`data-autoplay`</td>
+      <td class="mdx-mono">
+        <div>
+          boolean
+        </div>
+        <div style={{ color: "#8f8f8f"}}>
+          デフォルト: false
+        </div>
+      </td>
+      <td>自動再生するかどうか</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`data-autoplay-delay`</td>
+      <td class="mdx-mono">
+        <div>
+          number
+        </div>
+        <div style={{ color: "#8f8f8f"}}>
+          デフォルト: 3000（単位はms）
+        </div>
+      </td>
+      <td>自動再生時のページ移動間隔</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`data-pagination-clickable`</td>
+      <td class="mdx-mono">
+        <div>
+          boolean
+        </div>
+        <div style={{ color: "#8f8f8f"}}>
+          デフォルト: false
+        </div>
+      </td>
+      <td>ページネーションをリンクにするかどうか</td>
+    </tr>
+    <tr>
+      <td class="mdx-mono">`data-observer`</td>
+      <td class="mdx-mono">
+        <div>
+          boolean
+        </div>
+        <div style={{ color: "#8f8f8f"}}>
+          デフォルト: false
+        </div>
+      </td>
+      <td>スライダー とその要素で Mutation Observer が有効になります。この場合、スタイル（表示/非表示など）を変更したり、子要素（スライドの追加・削除など）を変更したりするたびに、スライダー は更新（再初期化）されます。</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,91 @@
+@function dynamicFontFunction($value) {
+  /* stylelint-disable */
+  @return min(
+    calc((#{map-get($font-sizes, $value)} / #{$base-sp-width}) * 100vw),
+    #{map-get($font-sizes, $value) * 2}px
+  );
+}
+
+@mixin vw-text-10px {
+  @include font-default;
+
+  font-size: dynamicFontFunction(10px);
+}
+
+@mixin vw-text-11px {
+  @include font-default;
+
+  font-size: dynamicFontFunction(11px);
+}
+
+@mixin vw-text-12px {
+  @include font-default;
+
+  font-size: dynamicFontFunction(12px);
+}
+
+@mixin vw-text-xs {
+  @include font-default;
+
+  font-size: dynamicFontFunction(xs);
+}
+
+@mixin vw-text-sm {
+  @include font-default;
+
+  font-size: dynamicFontFunction(sm);
+}
+
+@mixin vw-text-base {
+  @include font-default;
+
+  font-size: dynamicFontFunction(base);
+}
+
+@mixin vw-text-lg {
+  @include font-default;
+
+  font-size: dynamicFontFunction(lg);
+}
+
+@mixin vw-text-xl {
+  @include font-default;
+
+  font-size: dynamicFontFunction(xl);
+}
+
+@mixin vw-text-2xl {
+  @include font-default;
+
+  font-size: dynamicFontFunction(2xl);
+}
+
+@mixin vw-text-3xl {
+  @include font-default;
+
+  font-size: dynamicFontFunction(3xl);
+}
+
+@mixin vw-text-4xl {
+  @include font-default;
+
+  font-size: dynamicFontFunction(4xl);
+}
+
+@mixin vw-text-5xl {
+  @include font-default;
+
+  font-size: dynamicFontFunction(5xl);
+}
+
+@mixin vw-text-6xl {
+  @include font-default;
+
+  font-size: dynamicFontFunction(6xl);
+}
+
+@mixin vw-text-7xl {
+  @include font-default;
+
+  font-size: dynamicFontFunction(7xl);
+}

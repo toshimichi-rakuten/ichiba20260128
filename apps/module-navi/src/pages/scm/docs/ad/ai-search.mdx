@@ -1,0 +1,95 @@
+import Demo from 'src/components/Demo'
+import Html from 'src/components/Html'
+import Code from 'src/components/Code'
+import Note from 'src/components/Note'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import { 
+  xmasHtml, 
+  oseiboHtml, 
+} from 'scm/src/modules/ai-search/html'
+import {
+  getScmJsHref,
+} from 'src/utils'
+
+export const meta = {
+  title: 'AIサーチ',
+  description: '',
+  url: '/scm/docs/ad/ai-search',
+  tags: ['商品', 'ad', 'ai', 'search'],
+}
+
+# AIサーチ
+
+## 使い方
+
+### 1. JSの読み込み
+
+JSをページに読み込んでください  
+
+<Code content={`
+<script
+  src="${getScmJsHref()}"
+  type="text/javascript"
+></script>
+`}/>
+
+<Space />
+
+位置は`ページJavaScript`の方に入力してください  
+
+<Code copy={false} content={`
+  <!-- ==================== ページJavaScript ==================== -->
+  <!-- ページで作成するJavaScriptはここに追加してください。-->
+  <script
+    src="${getScmJsHref()}"
+    type="text/javascript"
+  ></script>
+  <!-- ==================== /ページJavaScript ==================== -->
+</body>
+`}/>
+
+<Space />
+
+<Note type='info'>
+  SCM JSは、AISearchモジュールを使用するページでのみ必要です。
+</Note>
+
+<Space />
+
+### 2. HTMLをページに追加
+
+<Tabs
+  keepMounted={false}
+  defaultValue='codeOseibo'
+  styles={{ panel: { paddingTop: '16px' } }}
+>
+  <Tabs.List>
+    <Tabs.Tab value='codeOseibo'>お歳暮</Tabs.Tab>
+    <Tabs.Tab value='codeXmas'>クリスマス</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel value='codeOseibo'>
+    <Code content={oseiboHtml} />
+  </Tabs.Panel>
+  <Tabs.Panel value='codeXmas'>
+    <Code content={xmasHtml} />
+  </Tabs.Panel>
+</Tabs>
+
+### 3. 設定を調整
+
+企画によって、`<style>`と`<script data-settings>`を調整してください
+
+<Space />
+
+<Code copy={false} language="html" content={`
+<style>
+  :root {
+    (中身を調整)
+  }
+</style>
+
+<script data-settings="" type="application/json">
+  (中身を調整)
+</script>
+`}/>

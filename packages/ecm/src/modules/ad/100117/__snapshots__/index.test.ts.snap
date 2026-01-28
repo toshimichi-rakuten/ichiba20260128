@@ -1,0 +1,703 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Integration 100046 > SP1columnPC2column 1`] = `
+"<!-- JSON-RASTA:100117--SPx1PCx2  -->
+<div
+  style="display: none"
+  class="rad-table-existItemDisplay"
+  data-module-name="ecm-dynamic-content"
+>
+  <script
+    class="rad-table-proto"
+    type="text/template"
+  >
+    <div
+      class="ecm-ad"
+      data-ad-id="100117"
+    >
+      <a
+        class="ecm-ad-link"
+        href="#TEXTURL1#"
+      >
+        <div class="ecm-ad-image-block">
+          <img
+            class="ecm-ad-image ecm-ad-image-ratio-3x2"
+            src="https://r.r10s.jp/com/img/home/t.gif"
+            data-lazy-loading="#IMAGESRC1#"
+            alt="#IMAGEALT1#"
+          />
+        </div>
+        <div class="ecm-ad-body mt-12">
+          <p class="ecm-ad-name text-sm">#TEXT1L1#</p>
+          <p class="ecm-ad-coupon-lead-text mt-8 #ICONTXTCLASS1-1#">#ICONTXT1-1# クーポン利用で</p>
+          <p class="ecm-ad-discount-text mt-4">#TEXT4L1#</p>
+          <div class="ecm-ad-price-container mt-4">
+            <p class="ecm-ad-original-price mr-8">#TEXT2L1##TEXT2L2#</p>
+            <p class="text-xs">#TEXT3L1##TEXT3L2#</p>
+          </div>
+        </div>
+      </a>
+      <a
+        class="ecm-ad-shop mt-8 md-mt-t-12"
+        href="#SHOPURL1#"
+      >
+        <i
+          class="ecm-icon-shop-outlined"
+          aria-hidden="true"
+        ></i>
+        <span class="text-12px">#SHOP1#</span>
+      </a>
+      <a
+        class="ecm-ad-coupon mt-12"
+        href="#TEXTURL5#"
+      >
+        <i
+          class="ecm-icon-coupon-filled"
+          aria-hidden="true"
+        ></i>
+        <span>#TEXT5L1#</span>
+      </a>
+      <p class="text-11px text-center mt-12">有効期間：#TEXT6L1#</p>
+    </div>
+  </script>
+  <div
+    class="rad-table-config"
+    event_target="body"
+    noready="1"
+    event_name="rastaloadcomplete"
+    url="★"
+    ★
+    ★
+    ★
+    ★
+    ★
+  ></div>
+  <div class="rad-table-frame">
+    <div class="rad-table-body d-grid d-grid-col-1 md-d-grid-col-2 d-grid-gap-y-16 md-d-grid-gap-x-24 md-d-grid-gap-y-32 sm-ecm-ad-container-divided-y"></div>
+  </div>
+</div>
+<!-- /JSON-RASTA:100117--SPx1PCx2  -->
+"
+`;
+
+exports[`Integration 100046 > SP1columnPC3column 1`] = `
+"<!-- JSON-RASTA:100117--SPx1PCx3  -->
+<div
+  style="display: none"
+  class="rad-table-existItemDisplay"
+  data-module-name="ecm-dynamic-content"
+>
+  <script
+    class="rad-table-proto"
+    type="text/template"
+  >
+    <div
+      class="ecm-ad"
+      data-ad-id="100117"
+    >
+      <a
+        class="ecm-ad-link"
+        href="#TEXTURL1#"
+      >
+        <div class="ecm-ad-image-block">
+          <img
+            class="ecm-ad-image ecm-ad-image-ratio-3x2"
+            src="https://r.r10s.jp/com/img/home/t.gif"
+            data-lazy-loading="#IMAGESRC1#"
+            alt="#IMAGEALT1#"
+          />
+        </div>
+        <div class="ecm-ad-body mt-12">
+          <p class="ecm-ad-name text-sm">#TEXT1L1#</p>
+          <p class="ecm-ad-coupon-lead-text mt-8 #ICONTXTCLASS1-1#">#ICONTXT1-1# クーポン利用で</p>
+          <p class="ecm-ad-discount-text mt-4">#TEXT4L1#</p>
+          <div class="ecm-ad-price-container mt-4">
+            <p class="ecm-ad-original-price mr-8">#TEXT2L1##TEXT2L2#</p>
+            <p class="text-xs">#TEXT3L1##TEXT3L2#</p>
+          </div>
+        </div>
+      </a>
+      <a
+        class="ecm-ad-shop mt-8 md-mt-t-12"
+        href="#SHOPURL1#"
+      >
+        <i
+          class="ecm-icon-shop-outlined"
+          aria-hidden="true"
+        ></i>
+        <span class="text-12px">#SHOP1#</span>
+      </a>
+      <a
+        class="ecm-ad-coupon mt-12"
+        href="#TEXTURL5#"
+      >
+        <i
+          class="ecm-icon-coupon-filled"
+          aria-hidden="true"
+        ></i>
+        <span>#TEXT5L1#</span>
+      </a>
+      <p class="text-11px text-center mt-12">有効期間：#TEXT6L1#</p>
+    </div>
+  </script>
+  <div
+    class="rad-table-config"
+    event_target="body"
+    noready="1"
+    event_name="rastaloadcomplete"
+    url="★"
+    ★
+    ★
+    ★
+    ★
+    ★
+  ></div>
+  <div class="rad-table-frame">
+    <div class="rad-table-body d-grid d-grid-col-1 md-d-grid-col-3 d-grid-gap-y-16 md-d-grid-gap-x-24 md-d-grid-gap-y-32 sm-ecm-ad-container-divided-y"></div>
+  </div>
+</div>
+<!-- /JSON-RASTA:100117--SPx1PCx3  -->
+"
+`;
+
+exports[`Integration 100046 > SP1columnPC4column 1`] = `
+"<!-- JSON-RASTA:100117--SPx1PCx4  -->
+<div
+  style="display: none"
+  class="rad-table-existItemDisplay"
+  data-module-name="ecm-dynamic-content"
+>
+  <script
+    class="rad-table-proto"
+    type="text/template"
+  >
+    <div
+      class="ecm-ad"
+      data-ad-id="100117"
+    >
+      <a
+        class="ecm-ad-link"
+        href="#TEXTURL1#"
+      >
+        <div class="ecm-ad-image-block">
+          <img
+            class="ecm-ad-image ecm-ad-image-ratio-3x2"
+            src="https://r.r10s.jp/com/img/home/t.gif"
+            data-lazy-loading="#IMAGESRC1#"
+            alt="#IMAGEALT1#"
+          />
+        </div>
+        <div class="ecm-ad-body mt-12">
+          <p class="ecm-ad-name text-sm">#TEXT1L1#</p>
+          <p class="ecm-ad-coupon-lead-text mt-8 #ICONTXTCLASS1-1#">#ICONTXT1-1# クーポン利用で</p>
+          <p class="ecm-ad-discount-text mt-4">#TEXT4L1#</p>
+          <div class="ecm-ad-price-container mt-4">
+            <p class="ecm-ad-original-price mr-8">#TEXT2L1##TEXT2L2#</p>
+            <p class="text-xs">#TEXT3L1##TEXT3L2#</p>
+          </div>
+        </div>
+      </a>
+      <a
+        class="ecm-ad-shop mt-8 md-mt-t-12"
+        href="#SHOPURL1#"
+      >
+        <i
+          class="ecm-icon-shop-outlined"
+          aria-hidden="true"
+        ></i>
+        <span class="text-12px">#SHOP1#</span>
+      </a>
+      <a
+        class="ecm-ad-coupon mt-12"
+        href="#TEXTURL5#"
+      >
+        <i
+          class="ecm-icon-coupon-filled"
+          aria-hidden="true"
+        ></i>
+        <span>#TEXT5L1#</span>
+      </a>
+      <p class="text-11px text-center mt-12">有効期間：#TEXT6L1#</p>
+    </div>
+  </script>
+  <div
+    class="rad-table-config"
+    event_target="body"
+    noready="1"
+    event_name="rastaloadcomplete"
+    url="★"
+    ★
+    ★
+    ★
+    ★
+    ★
+  ></div>
+  <div class="rad-table-frame">
+    <div class="rad-table-body d-grid d-grid-col-1 md-d-grid-col-4 d-grid-gap-y-16 md-d-grid-gap-x-24 md-d-grid-gap-y-32 sm-ecm-ad-container-divided-y"></div>
+  </div>
+</div>
+<!-- /JSON-RASTA:100117--SPx1PCx4  -->
+"
+`;
+
+exports[`Static 100046 > SP1columnPC2column 1`] = `
+"
+    <div
+      class="d-grid d-grid-col-1 md-d-grid-col-2 d-grid-gap-y-16 md-d-grid-gap-x-24 md-d-grid-gap-y-32 sm-ecm-ad-container-divided-y"
+    >
+      <div
+  class="ecm-ad"
+  data-ad-id="100117"
+>
+  <a
+    class="ecm-ad-link"
+    href="#"
+  >
+    <div class="ecm-ad-image-block">
+      <img
+        class="ecm-ad-image ecm-ad-image-ratio-3x2"
+        src="https://r.r10s.jp/com/img/home/t.gif"
+        data-lazy-loading="https://placehold.co/720x480?text=3x2"
+        alt=""
+      />
+    </div>
+    <div class="ecm-ad-body mt-12">
+      <p class="ecm-ad-name text-sm">商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０</p>
+      <p class="ecm-ad-coupon-lead-text mt-8 free_shipping">店内全品 クーポン利用で</p>
+      <p class="ecm-ad-discount-text mt-4">10％OFF</p>
+      <div class="ecm-ad-price-container mt-4">
+        <p class="ecm-ad-original-price mr-8">999,980円</p>
+        <p class="text-xs">999,980円</p>
+      </div>
+    </div>
+  </a>
+  <a
+    class="ecm-ad-shop mt-8 md-mt-t-12"
+    href="#"
+  >
+    <i
+      class="ecm-icon-shop-outlined"
+      aria-hidden="true"
+    ></i>
+    <span class="text-12px">ショップ名６７８９０ショップ名</span>
+  </a>
+  <a
+    class="ecm-ad-coupon mt-12"
+    href="#"
+  >
+    <i
+      class="ecm-icon-coupon-filled"
+      aria-hidden="true"
+    ></i>
+    <span>クーポンを獲得する</span>
+  </a>
+  <p class="text-11px text-center mt-12">有効期間：01/01(日)00:00まで</p>
+</div>
+<div
+  class="ecm-ad"
+  data-ad-id="100117"
+>
+  <a
+    class="ecm-ad-link"
+    href="#"
+  >
+    <div class="ecm-ad-image-block">
+      <img
+        class="ecm-ad-image ecm-ad-image-ratio-3x2"
+        src="https://r.r10s.jp/com/img/home/t.gif"
+        data-lazy-loading="https://placehold.co/720x480?text=3x2"
+        alt=""
+      />
+    </div>
+    <div class="ecm-ad-body mt-12">
+      <p class="ecm-ad-name text-sm">商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０</p>
+      <p class="ecm-ad-coupon-lead-text mt-8 free_shipping">対象アイテム限定 クーポン利用で</p>
+      <p class="ecm-ad-discount-text mt-4">10％OFF</p>
+      <div class="ecm-ad-price-container mt-4">
+        <p class="ecm-ad-original-price mr-8">999,980円</p>
+        <p class="text-xs">999,980円</p>
+      </div>
+    </div>
+  </a>
+  <a
+    class="ecm-ad-shop mt-8 md-mt-t-12"
+    href="#"
+  >
+    <i
+      class="ecm-icon-shop-outlined"
+      aria-hidden="true"
+    ></i>
+    <span class="text-12px">ショップ名６７８９０ショップ名</span>
+  </a>
+  <a
+    class="ecm-ad-coupon mt-12"
+    href="#"
+  >
+    <i
+      class="ecm-icon-coupon-filled"
+      aria-hidden="true"
+    ></i>
+    <span>クーポンを獲得する</span>
+  </a>
+  <p class="text-11px text-center mt-12">有効期間：01/01(日)00:00まで</p>
+</div>
+
+    </div>
+  "
+`;
+
+exports[`Static 100046 > SP1columnPC3column 1`] = `
+"
+    <div
+      class="d-grid d-grid-col-1 md-d-grid-col-3 d-grid-gap-y-16 md-d-grid-gap-x-24 md-d-grid-gap-y-32 sm-ecm-ad-container-divided-y"
+    >
+      <div
+  class="ecm-ad"
+  data-ad-id="100117"
+>
+  <a
+    class="ecm-ad-link"
+    href="#"
+  >
+    <div class="ecm-ad-image-block">
+      <img
+        class="ecm-ad-image ecm-ad-image-ratio-3x2"
+        src="https://r.r10s.jp/com/img/home/t.gif"
+        data-lazy-loading="https://placehold.co/720x480?text=3x2"
+        alt=""
+      />
+    </div>
+    <div class="ecm-ad-body mt-12">
+      <p class="ecm-ad-name text-sm">商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０</p>
+      <p class="ecm-ad-coupon-lead-text mt-8 free_shipping">店内全品 クーポン利用で</p>
+      <p class="ecm-ad-discount-text mt-4">10％OFF</p>
+      <div class="ecm-ad-price-container mt-4">
+        <p class="ecm-ad-original-price mr-8">999,980円</p>
+        <p class="text-xs">999,980円</p>
+      </div>
+    </div>
+  </a>
+  <a
+    class="ecm-ad-shop mt-8 md-mt-t-12"
+    href="#"
+  >
+    <i
+      class="ecm-icon-shop-outlined"
+      aria-hidden="true"
+    ></i>
+    <span class="text-12px">ショップ名６７８９０ショップ名</span>
+  </a>
+  <a
+    class="ecm-ad-coupon mt-12"
+    href="#"
+  >
+    <i
+      class="ecm-icon-coupon-filled"
+      aria-hidden="true"
+    ></i>
+    <span>クーポンを獲得する</span>
+  </a>
+  <p class="text-11px text-center mt-12">有効期間：01/01(日)00:00まで</p>
+</div>
+<div
+  class="ecm-ad"
+  data-ad-id="100117"
+>
+  <a
+    class="ecm-ad-link"
+    href="#"
+  >
+    <div class="ecm-ad-image-block">
+      <img
+        class="ecm-ad-image ecm-ad-image-ratio-3x2"
+        src="https://r.r10s.jp/com/img/home/t.gif"
+        data-lazy-loading="https://placehold.co/720x480?text=3x2"
+        alt=""
+      />
+    </div>
+    <div class="ecm-ad-body mt-12">
+      <p class="ecm-ad-name text-sm">商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０</p>
+      <p class="ecm-ad-coupon-lead-text mt-8 free_shipping">対象アイテム限定 クーポン利用で</p>
+      <p class="ecm-ad-discount-text mt-4">10％OFF</p>
+      <div class="ecm-ad-price-container mt-4">
+        <p class="ecm-ad-original-price mr-8">999,980円</p>
+        <p class="text-xs">999,980円</p>
+      </div>
+    </div>
+  </a>
+  <a
+    class="ecm-ad-shop mt-8 md-mt-t-12"
+    href="#"
+  >
+    <i
+      class="ecm-icon-shop-outlined"
+      aria-hidden="true"
+    ></i>
+    <span class="text-12px">ショップ名６７８９０ショップ名</span>
+  </a>
+  <a
+    class="ecm-ad-coupon mt-12"
+    href="#"
+  >
+    <i
+      class="ecm-icon-coupon-filled"
+      aria-hidden="true"
+    ></i>
+    <span>クーポンを獲得する</span>
+  </a>
+  <p class="text-11px text-center mt-12">有効期間：01/01(日)00:00まで</p>
+</div>
+<div
+  class="ecm-ad"
+  data-ad-id="100117"
+>
+  <a
+    class="ecm-ad-link"
+    href="#"
+  >
+    <div class="ecm-ad-image-block">
+      <img
+        class="ecm-ad-image ecm-ad-image-ratio-3x2"
+        src="https://r.r10s.jp/com/img/home/t.gif"
+        data-lazy-loading="https://placehold.co/720x480?text=3x2"
+        alt=""
+      />
+    </div>
+    <div class="ecm-ad-body mt-12">
+      <p class="ecm-ad-name text-sm">商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０</p>
+      <p class="ecm-ad-coupon-lead-text mt-8 free_shipping">店内全品 クーポン利用で</p>
+      <p class="ecm-ad-discount-text mt-4">10％OFF</p>
+      <div class="ecm-ad-price-container mt-4">
+        <p class="ecm-ad-original-price mr-8">999,980円</p>
+        <p class="text-xs">999,980円</p>
+      </div>
+    </div>
+  </a>
+  <a
+    class="ecm-ad-shop mt-8 md-mt-t-12"
+    href="#"
+  >
+    <i
+      class="ecm-icon-shop-outlined"
+      aria-hidden="true"
+    ></i>
+    <span class="text-12px">ショップ名６７８９０ショップ名</span>
+  </a>
+  <a
+    class="ecm-ad-coupon mt-12"
+    href="#"
+  >
+    <i
+      class="ecm-icon-coupon-filled"
+      aria-hidden="true"
+    ></i>
+    <span>クーポンを獲得する</span>
+  </a>
+  <p class="text-11px text-center mt-12">有効期間：01/01(日)00:00まで</p>
+</div>
+
+    </div>
+  "
+`;
+
+exports[`Static 100046 > SP1columnPC4column 1`] = `
+"
+    <div
+      class="d-grid d-grid-col-1 md-d-grid-col-4 d-grid-gap-y-16 md-d-grid-gap-x-24 md-d-grid-gap-y-32 sm-ecm-ad-container-divided-y"
+    >
+      <div
+  class="ecm-ad"
+  data-ad-id="100117"
+>
+  <a
+    class="ecm-ad-link"
+    href="#"
+  >
+    <div class="ecm-ad-image-block">
+      <img
+        class="ecm-ad-image ecm-ad-image-ratio-3x2"
+        src="https://r.r10s.jp/com/img/home/t.gif"
+        data-lazy-loading="https://placehold.co/720x480?text=3x2"
+        alt=""
+      />
+    </div>
+    <div class="ecm-ad-body mt-12">
+      <p class="ecm-ad-name text-sm">商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０</p>
+      <p class="ecm-ad-coupon-lead-text mt-8 free_shipping">店内全品 クーポン利用で</p>
+      <p class="ecm-ad-discount-text mt-4">10％OFF</p>
+      <div class="ecm-ad-price-container mt-4">
+        <p class="ecm-ad-original-price mr-8">999,980円</p>
+        <p class="text-xs">999,980円</p>
+      </div>
+    </div>
+  </a>
+  <a
+    class="ecm-ad-shop mt-8 md-mt-t-12"
+    href="#"
+  >
+    <i
+      class="ecm-icon-shop-outlined"
+      aria-hidden="true"
+    ></i>
+    <span class="text-12px">ショップ名６７８９０ショップ名</span>
+  </a>
+  <a
+    class="ecm-ad-coupon mt-12"
+    href="#"
+  >
+    <i
+      class="ecm-icon-coupon-filled"
+      aria-hidden="true"
+    ></i>
+    <span>クーポンを獲得する</span>
+  </a>
+  <p class="text-11px text-center mt-12">有効期間：01/01(日)00:00まで</p>
+</div>
+<div
+  class="ecm-ad"
+  data-ad-id="100117"
+>
+  <a
+    class="ecm-ad-link"
+    href="#"
+  >
+    <div class="ecm-ad-image-block">
+      <img
+        class="ecm-ad-image ecm-ad-image-ratio-3x2"
+        src="https://r.r10s.jp/com/img/home/t.gif"
+        data-lazy-loading="https://placehold.co/720x480?text=3x2"
+        alt=""
+      />
+    </div>
+    <div class="ecm-ad-body mt-12">
+      <p class="ecm-ad-name text-sm">商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０</p>
+      <p class="ecm-ad-coupon-lead-text mt-8 free_shipping">対象アイテム限定 クーポン利用で</p>
+      <p class="ecm-ad-discount-text mt-4">10％OFF</p>
+      <div class="ecm-ad-price-container mt-4">
+        <p class="ecm-ad-original-price mr-8">999,980円</p>
+        <p class="text-xs">999,980円</p>
+      </div>
+    </div>
+  </a>
+  <a
+    class="ecm-ad-shop mt-8 md-mt-t-12"
+    href="#"
+  >
+    <i
+      class="ecm-icon-shop-outlined"
+      aria-hidden="true"
+    ></i>
+    <span class="text-12px">ショップ名６７８９０ショップ名</span>
+  </a>
+  <a
+    class="ecm-ad-coupon mt-12"
+    href="#"
+  >
+    <i
+      class="ecm-icon-coupon-filled"
+      aria-hidden="true"
+    ></i>
+    <span>クーポンを獲得する</span>
+  </a>
+  <p class="text-11px text-center mt-12">有効期間：01/01(日)00:00まで</p>
+</div>
+<div
+  class="ecm-ad"
+  data-ad-id="100117"
+>
+  <a
+    class="ecm-ad-link"
+    href="#"
+  >
+    <div class="ecm-ad-image-block">
+      <img
+        class="ecm-ad-image ecm-ad-image-ratio-3x2"
+        src="https://r.r10s.jp/com/img/home/t.gif"
+        data-lazy-loading="https://placehold.co/720x480?text=3x2"
+        alt=""
+      />
+    </div>
+    <div class="ecm-ad-body mt-12">
+      <p class="ecm-ad-name text-sm">商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０</p>
+      <p class="ecm-ad-coupon-lead-text mt-8 free_shipping">店内全品 クーポン利用で</p>
+      <p class="ecm-ad-discount-text mt-4">10％OFF</p>
+      <div class="ecm-ad-price-container mt-4">
+        <p class="ecm-ad-original-price mr-8">999,980円</p>
+        <p class="text-xs">999,980円</p>
+      </div>
+    </div>
+  </a>
+  <a
+    class="ecm-ad-shop mt-8 md-mt-t-12"
+    href="#"
+  >
+    <i
+      class="ecm-icon-shop-outlined"
+      aria-hidden="true"
+    ></i>
+    <span class="text-12px">ショップ名６７８９０ショップ名</span>
+  </a>
+  <a
+    class="ecm-ad-coupon mt-12"
+    href="#"
+  >
+    <i
+      class="ecm-icon-coupon-filled"
+      aria-hidden="true"
+    ></i>
+    <span>クーポンを獲得する</span>
+  </a>
+  <p class="text-11px text-center mt-12">有効期間：01/01(日)00:00まで</p>
+</div>
+<div
+  class="ecm-ad"
+  data-ad-id="100117"
+>
+  <a
+    class="ecm-ad-link"
+    href="#"
+  >
+    <div class="ecm-ad-image-block">
+      <img
+        class="ecm-ad-image ecm-ad-image-ratio-3x2"
+        src="https://r.r10s.jp/com/img/home/t.gif"
+        data-lazy-loading="https://placehold.co/720x480?text=3x2"
+        alt=""
+      />
+    </div>
+    <div class="ecm-ad-body mt-12">
+      <p class="ecm-ad-name text-sm">商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０商品名４５６７８９０</p>
+      <p class="ecm-ad-coupon-lead-text mt-8 free_shipping">対象アイテム限定 クーポン利用で</p>
+      <p class="ecm-ad-discount-text mt-4">10％OFF</p>
+      <div class="ecm-ad-price-container mt-4">
+        <p class="ecm-ad-original-price mr-8">999,980円</p>
+        <p class="text-xs">999,980円</p>
+      </div>
+    </div>
+  </a>
+  <a
+    class="ecm-ad-shop mt-8 md-mt-t-12"
+    href="#"
+  >
+    <i
+      class="ecm-icon-shop-outlined"
+      aria-hidden="true"
+    ></i>
+    <span class="text-12px">ショップ名６７８９０ショップ名</span>
+  </a>
+  <a
+    class="ecm-ad-coupon mt-12"
+    href="#"
+  >
+    <i
+      class="ecm-icon-coupon-filled"
+      aria-hidden="true"
+    ></i>
+    <span>クーポンを獲得する</span>
+  </a>
+  <p class="text-11px text-center mt-12">有効期間：01/01(日)00:00まで</p>
+</div>
+
+    </div>
+  "
+`;

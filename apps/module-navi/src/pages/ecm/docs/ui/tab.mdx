@@ -1,0 +1,384 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'ecm/src/modules/tab/default.html'
+import default4colHtml from 'ecm/src/modules/tab/default-with-4column.html'
+import cardHtml from 'ecm/src/modules/tab/card.html'
+import cardImage from 'ecm/src/modules/tab/card-image.html'
+import unstyledHtml from 'ecm/src/modules/tab/unstyled.html'
+import nestedHtml from 'ecm/src/modules/tab/nested.html'
+
+export const meta = {
+  title: 'タブ',
+  description: '企画コンテンツで利用できるタブ切り替え表示',
+  url: '/ecm/docs/ui/tab',
+  tags: ['tab', 'layout'],
+}
+
+# タブ
+
+タブは、企画コンテンツで利用できるタブ切り替え表示のモジュールです。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html contentPadding={"0px"} content={cardHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html contentPadding={"0px"} device='lg' content={cardHtml} />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={cardHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html contentPadding={"0px"} content={default4colHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html contentPadding={"0px"} device='lg' content={default4colHtml} />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={default4colHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## 使い方
+
+- 背景色や余白などは、個別ページCSSで設定してください。（ソースコード上style属性で設定している部分）
+- スタイルを自由に設定したい場合は、Unstyledパーツを使用してください。
+- `data-session="true"` を設定した場合、同じセッションでは最後に開かれていたタブ状態を記憶し、以降はそのタブが選択されている状態になります。
+
+## Card 画像なし
+
+<Tabs keepMounted={false} defaultValue='lg' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html contentPadding={"0px"} content={cardHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html contentPadding={"0px"} device='lg' content={cardHtml} />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={cardHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+SP利用時、1行のタブの数は `ecm-tab-grid-*` の `*` の部分を1〜5で設定してください。 `ecm-tab-grid-3` の場合、タブ数が5つだと1行から余る数分（4,5つ目）のタブについては、コンテンツ幅で均等に割り付けになります。  
+`ecm-tab-grid-*` を削除すると、タブ内容量でなりゆきの配置になります。
+
+## Card 画像あり
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html contentPadding={"0px"} content={cardImage} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html contentPadding={"0px"} device='lg' content={cardImage} />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={cardImage}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+SP利用時、1行のタブの数は `ecm-tab-grid-*` の `*` の部分を1〜5で設定してください。 `ecm-tab-grid-3` の場合、タブ数が5つだと1行から余る数分（4,5つ目）のタブについては、コンテンツ幅で均等に割り付けになります。  
+`ecm-tab-grid-*` を削除すると、タブ内容量でなりゆきの配置になります。
+
+## RexによせたUI
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html contentPadding={"0px"} content={defaultHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html contentPadding={"0px"} device='lg' content={defaultHtml} />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={defaultHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+「ReXによせたUI」タブではタブの横幅は各タブの `style` で設定しております。デフォルトでは `style="width: 33.33%"` となっているので3分割されています。3分割されている時に3つ以上のタブがあるときは横スクロールができます。  
+`width` の指定を削除すると、タブ内容量でなりゆきの配置になります。  
+`style="width: 50%"` とすると2分割されます。2分割されている時に3つ以上のタブがあるときは横スクロールができます。  
+`style="width: 25%"` とすると4分割されます。4分割されている時に5つ以上のタブがあるときは横スクロールができます。  
+`style="width: 22.7273%"` とすると4分割と少しでレイアウトされます。右端にタブが少し見えているのでスクロールができるのが視覚的にわかりやすいレイアウトとなっております。
+
+## Nested
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html contentPadding={"0px"} content={nestedHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html contentPadding={"0px"} device='lg' content={nestedHtml} />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={nestedHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## Unstyled
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html contentPadding={"0px"} content={unstyledHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html contentPadding={"0px"} device='lg' content={unstyledHtml} />
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={unstyledHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+<Space />
+
+<Note type='info'>
+  styleの指定がはいっていないものになります。  
+  各ページ用の任意のclassを追加して、追加したclassに対してスタイルの指定をしてください。
+</Note>
+
+## カスタムイベント
+
+<Code language='js' content={`
+// Set
+tab.dispatchEvent(new CustomEvent('ecmTabSet', { detail: panelId }))
+`}/>
+
+## アトリビュート一覧
+
+<Tabs keepMounted={false} defaultValue='attribute' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value="attribute">アトリビュート</Tabs.Tab>
+    <Tabs.Tab value="trigger">タブアトリビュート</Tabs.Tab>
+    <Tabs.Tab value="content">タブパネルアトリビュート</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value="attribute">
+    <table class="mdx-table">
+      <thead class="mdx-table-header">
+        <tr>
+          <th style={{minWidth: '240px', width: '240px'}}>アトリビュート</th>
+          <th style={{minWidth: '220px', width: '220px'}}>値</th>
+          <th style={{width: '100%'}}>メモ</th>
+        </tr>
+      </thead>
+      <tbody class="mdx-table-body">
+        <tr>
+          <td class="mdx-mono">`data-module-name`</td>
+          <td class="mdx-mono">"ecm-tab"</td>
+          <td>モジュール名</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`role`</td>
+          <td class="mdx-mono">"tablist"</td>
+          <td>`a11y`用</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`data-default-open`</td>
+          <td class="mdx-mono">string</td>
+          <td>
+            <div>
+              デフォルトで開くコンテンツのユニークID
+            </div>
+            <div style={{ marginTop: "16px"}}>
+              ※`tabpanel` 要素の `id` と同じ
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`data-session`</td>
+          <td class="mdx-mono">
+            <div>
+              boolean
+            </div>
+            <div style={{ color: "#8f8f8f"}}>
+              デフォルト: true
+            </div>
+          </td>
+          <td>
+            <div>
+              ブラウザーのセッションにアクティブタブを保存するかどうか
+            </div>
+            <div style={{ marginTop: "16px"}}>
+              ※保存したくない場合は、`"false"`にセットしてください。
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`data-tab-group-name`</td>
+          <td class="mdx-mono">
+            <div>
+              string?
+            </div>
+          </td>
+          <td>
+            <div>
+              `Nested`用のグループ
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </Tabs.Panel>
+
+  <Tabs.Panel value="trigger">
+    <table class="mdx-table">
+      <thead class="mdx-table-header">
+        <tr>
+          <th style={{minWidth: '240px', width: '240px'}}>アトリビュート</th>
+          <th style={{minWidth: '220px', width: '220px'}}>値</th>
+          <th style={{width: '100%'}}>メモ</th>
+        </tr>
+      </thead>
+      <tbody class="mdx-table-body">
+        <tr>
+          <td class="mdx-mono">`id`</td>
+          <td class="mdx-mono">string</td>
+          <td>
+            <div>
+              タブのユニークID
+            </div>
+            <div style={{ marginTop: "16px"}}>
+              ※紐付いているコンテンツ要素（`role="tabpanel"`）の `aria-labelledby` の値と同じ
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`data-tab`</td>
+          <td class="mdx-mono">"" | tab-group-name</td>
+          <td>`JS`用</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`role`</td>
+          <td class="mdx-mono">"tab"</td>
+          <td>`a11y`用</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`aria-controls`</td>
+          <td class="mdx-mono">string</td>
+          <td>紐付けるコンテンツ要素（`role="tabpanel"`）の `id` の値を設定</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`aria-selected`</td>
+          <td class="mdx-mono">boolean</td>
+          <td>紐付けるコンテンツが展開されているかどうか</td>
+        </tr>
+      </tbody>
+    </table>
+  </Tabs.Panel>
+
+  <Tabs.Panel value="content">
+    <table class="mdx-table">
+      <thead class="mdx-table-header">
+        <tr>
+          <th style={{minWidth: '240px', width: '240px'}}>アトリビュート</th>
+          <th style={{minWidth: '220px', width: '220px'}}>値</th>
+          <th style={{width: '100%'}}>メモ</th>
+        </tr>
+      </thead>
+      <tbody class="mdx-table-body">
+        <tr>
+          <td class="mdx-mono">`id`</td>
+          <td class="mdx-mono">string</td>
+          <td>
+            <div>
+              コンテンツのユニークID
+            </div>
+            <div style={{ marginTop: "16px"}}>
+              ※紐付いているタブ要素（`role="tab"`）の `aria-controls` の値と同じ
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`data-tabpanel`</td>
+          <td class="mdx-mono">"" | tab-group-name</td>
+          <td>`JS`用</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`role`</td>
+          <td class="mdx-mono">"tabpanel"</td>
+          <td>`a11y`用</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`aria-labelledby`</td>
+          <td class="mdx-mono">string</td>
+          <td>紐付いているタブ要素（`role="tab"`）の `id` の値を設定（`a11y`用）</td>
+        </tr>
+        <tr>
+          <td class="mdx-mono">`aria-hidden`</td>
+          <td class="mdx-mono">boolean</td>
+          <td>コンテンツが表示されているかどうか</td>
+        </tr>
+      </tbody>
+    </table>
+  </Tabs.Panel>
+</Tabs>

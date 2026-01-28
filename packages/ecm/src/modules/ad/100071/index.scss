@@ -1,0 +1,57 @@
+@import '../../../_scss/variables';
+@import '../../../_scss/mixins';
+
+.ecm-ad-100071-span-2 {
+  grid-column: span 2;
+}
+
+.md-ecm-ad-100071-span-3 {
+  @include screen('md', 'up') {
+    grid-column: span 3;
+  }
+}
+
+.md-ecm-ad-100071-span-2 {
+  @include screen('md', 'up') {
+    grid-column: span 2;
+  }
+}
+
+.ecm-ad-ranking-rank-100071 {
+  @include text-2xl;
+
+  @include screen('md', 'up') {
+    @include text-3xl;
+  }
+
+  span {
+    @include text-sm;
+
+    @include screen('md', 'up') {
+      @include text-base;
+    }
+  }
+}
+
+.ecm-ad-ranking-crown-100071 {
+  font-size: 18px;
+
+  @include screen('md', 'up') {
+    font-size: 21px;
+  }
+}
+
+.ecm-ad-image-100071 {
+  object-position: top;
+}
+
+.ecm-ad-copy-100071 {
+  @include text-sm;
+
+  font-weight: bold;
+  color: $color-gray-1;
+
+  @include screen('md', 'up') {
+    @include text-base;
+  }
+}

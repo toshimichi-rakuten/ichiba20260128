@@ -1,0 +1,49 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+.ecm-breadcrumb {
+  @include text-12px;
+
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: $space-12 0;
+  margin: 0;
+
+  @include screen('md', 'up') {
+    @include text-sm;
+
+    min-height: $space-48;
+    align-items: center;
+    padding: 0;
+  }
+}
+
+.ecm-breadcrumb-item {
+  a {
+    @include colorize-link(#828282);
+
+    @include screen('md', 'up') {
+      @include colorize-link($color-link);
+    }
+  }
+
+  &:not(:last-child) {
+    &::after {
+      padding-left: $space-4;
+      padding-right: $space-4;
+      content: '>';
+    }
+  }
+
+  &:last-child {
+    pointer-events: none;
+
+    a {
+      @include colorize-link(#828282);
+      @include screen('md', 'up') {
+        @include colorize-link($color-gray-1);
+      }
+    }
+  }
+}

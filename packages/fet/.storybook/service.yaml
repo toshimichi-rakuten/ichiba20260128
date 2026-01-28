@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: fet-sb-GIT_BRANCH_NAME
+spec:
+  ports:
+    - name: http-fet-sb-GIT_BRANCH_NAME
+      port: 80
+      targetPort: 8080
+  selector:
+    app: fet-sb-GIT_BRANCH_NAME

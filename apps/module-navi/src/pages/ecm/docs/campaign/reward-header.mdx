@@ -1,0 +1,45 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'ecm/src/modules/reward-header/default.html'
+
+export const meta = {
+  title: 'キャンペーン共通アイコン・記載必須文言',
+  description: 'リワード系企画のページに利用',
+  url: '/ecm/docs/campaign/reward-header',
+  tags: ['reward', 'header'],
+}
+
+# キャンペーン共通アイコン・記載必須文言
+
+楽天市場内で開催される、リワード系企画（ポイントキャンペーン・サービスクーポンなど）のページに利用します。  
+規定についてはRUP[リワード系企画表記統一Project](https://confluence.rakuten-it.com/confluence/pages/viewpage.action?pageId=3153249132)（閲覧は社内環境限定）をご確認ください。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='lg'>PC</Tabs.Tab>
+    <Tabs.Tab value='code'>コード</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={defaultHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='lg'>
+    <Html device='lg' content={defaultHtml}/>
+  </Tabs.Panel>
+  
+  <Tabs.Panel value='code'>
+    <Code content={defaultHtml}/>
+  </Tabs.Panel>
+</Tabs>
+
+## 使い方
+
+- 企画内容に該当するアイコン・必須文言など、規定については[リワード系企画表記統一Project](https://confluence.rakuten-it.com/confluence/pages/viewpage.action?pageId=3153249132)（閲覧は社内環境限定）をご確認ください。
+- 各企画にて入稿原稿／規定に従って、アイコン・文言を編集してください。

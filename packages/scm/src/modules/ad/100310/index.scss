@@ -1,0 +1,141 @@
+.scm-ad-logo-100310 {
+  display: block;
+  flex-shrink: 0;
+  width: 64px;
+
+  @include screen('md', 'up') {
+    width: 80px;
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.scm-ad-shop-100310 {
+  @include colorize-link($color-gray-1);
+
+  margin-left: $space-8;
+
+  @include screen('md', 'up') {
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.scm-ad-shop-title-100310 {
+  @include font-default;
+  @include text-12px;
+
+  display: block;
+  font-weight: bold;
+
+  @include screen('md', 'up') {
+    @include text-base;
+  }
+}
+
+.scm-ad-shop-detail-100310 {
+  @include font-default;
+  @include text-11px;
+
+  display: block;
+
+  @include screen('md', 'up') {
+    @include text-sm;
+  }
+}
+
+.scm-ad-price-num-100310 {
+  @include text-2xl;
+
+  @include screen('md', 'up') {
+    @include text-3xl;
+
+    margin-right: 7px;
+  }
+}
+
+.scm-ad-price-unit-100310 {
+  @include text-sm;
+
+  @include screen('md', 'up') {
+    @include text-base;
+  }
+}
+
+.scm-ad-price-shipping-100310 {
+  @include text-sm;
+
+  @include screen('md', 'up') {
+    @include text-base;
+  }
+}
+
+.scm-ad-other-image-100310 {
+  @extend .scm-ad-image-link;
+
+  width: 50%;
+
+  @include screen('md', 'up') {
+    flex-shrink: 0;
+    width: 150px;
+  }
+}
+
+.scm-ad-note-100310 {
+  @include font-default;
+  @include text-12px;
+  @include colorize-link($color-gray-1);
+
+  background: $color-gray-6;
+  box-sizing: border-box;
+  display: block;
+  padding: $space-12;
+  width: 50%;
+
+  @include screen('md', 'up') {
+    @include text-sm;
+
+    width: 100%;
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.scm-ad-more-100310 {
+  @include text-xs;
+  @include colorize-link($color-gray-1 !important);
+
+  align-items: center;
+  background-color: $color-white;
+  border: 1px solid $color-gray-1;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  line-height: 1;
+  min-height: 40px;
+  padding: $space-4;
+
+  @include screen('md', 'up') {
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.scm-ad-shop-name-100310 {
+  @extend .scm-ad-shop;
+}

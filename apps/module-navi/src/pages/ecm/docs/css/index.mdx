@@ -1,0 +1,85 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+
+export const meta = {
+  title: 'CSSユーティリティについて',
+  description: 'ページでコーディングをする際によく使われるCSSのスタイルをクラス名で定義したもの',
+  url: '/ecm/docs/css',
+  tags: ['css', 'utilities'],
+}
+
+# CSSユーティリティについて
+
+CSSユーティリティは、ページでコーディングをする際によく使われるCSSのスタイルをクラス名で定義したものです。  
+モジュールの一部だけを調整したい場合など、ページ全体のCSSファイルを作成して調整するよりも簡単にスタイルを変更できます。
+
+## 使い方
+
+- CSSスタイル一覧から、調整したいCSSプロパティのクラス名を選んでください。
+- HTMLの調整したい場所に、選択したクラス名を追記してください。
+
+### デバイスごとに指定したい場合
+
+各ユーティリティクラスに接頭辞をつけることで指定できます。設定はデバイス判定ではなく、スクリーンサイズで切り替わります。ブレイクポイント詳細については注意事項を参照ください。
+
+- 接頭辞なし：SP/PCすべてへ反映
+- 接頭辞 `md-` 追加：PC（幅 `768px` 以上）のみへ反映
+- 接頭辞 `lg-` 追加：PC（幅 `1024px` 以上）のみへ反映
+
+<Space />
+
+**例）表示・非表示を切り替える**  
+
+<Code content={`
+<要素① class="md-d-none">SP（幅767px以内）だけ表示される</要素①>
+<要素② class="d-none md-d-block">PC（幅768px以上）だけ表示される</要素②>
+`}/>
+
+<Space />
+
+**例）SPだけ改行させる**  
+
+<Code content={`
+<br class="md-d-none">
+`}/>
+
+### 優先度を強くしたい場合（!important;）
+
+強くスタイルを上書きする必要がある場合、ユーティリティに `!important` を追加することができます。  
+クラス名に `!` を追加してください。
+
+<Space />
+
+**例)**  
+
+<Code content={`
+<span class="md-text-xl! font-weight-bold!">SuperSale</span>
+`}/>
+
+## 注意事項
+
+ページ全体のスタイルに影響を及ぼすおそれがありますので、ユーティリティーのクラス名に直接別のプロパティ・値を上書きすることはしないでください。
+
+<Space />
+
+**NG例)**  
+
+<Code language={'css'} copy={false} content={`
+.text-xl {
+  font-size: 20px; 
+  color: red; 
+  font-weight: bold;
+}`}/>
+
+<Space />
+
+スクリーンサイズのブレイクポイント指定については、以下の設定になっています。
+
+- 接頭辞無し：すべてへ反映
+- 接頭辞 `md-` 追加：幅 `768px` 以上のウィンドウのみへ反映
+- 接頭辞 `lg-` 追加：幅 `1024px` 以上のウィンドウのみへ反映
+
+SP端末の場合でも横向きの際などはPCと同様の指定が反映されます。

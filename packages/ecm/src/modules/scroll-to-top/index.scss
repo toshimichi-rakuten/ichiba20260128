@@ -1,0 +1,29 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+[data-module-name='ecm-scroll-to-top'] {
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 1.25px 6px rgb(0 0 0 / 20%);
+  border-radius: 100%;
+  background-color: white;
+  border: 0;
+  appearance: none;
+
+  .ecm-icon-chevron-up {
+    @include text-xl;
+
+    color: $color-gray-1;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: #ededed;
+      text-decoration: none;
+    }
+  }
+}

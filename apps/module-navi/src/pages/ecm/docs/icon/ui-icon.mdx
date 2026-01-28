@@ -1,0 +1,78 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import IconGrid from 'src/page-files/ui-icon/icon-grid'
+
+export const meta = {
+  title: 'UI アイコン (ReX)',
+  description: '楽天市場内で使用可能なRexアイコン',
+  url: '/ecm/docs/icon/ui-icon',
+  tags: ['ui', 'icon'],
+}
+
+# UI アイコン（ReX）
+
+楽天市場内で使用可能なReXアイコンをまとめたモジュールです。
+
+<Space />
+
+<Tabs keepMounted={false} defaultValue='basic' styles={{panel: { paddingTop: '24px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='basic'>BASIC</Tabs.Tab>
+    <Tabs.Tab value='outlined'>アウトライン</Tabs.Tab>
+    <Tabs.Tab value='filled'>FILLED</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='basic'>
+    <IconGrid type="basic" />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='outlined'>
+    <IconGrid type="outlined" />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='filled'>
+    <IconGrid type="filled" />
+  </Tabs.Panel>
+</Tabs>
+
+
+## 使い方
+
+1. 一覧から利用するアイコンを探し、クリックするとソースコードをコピーできます。
+
+    <Space />
+
+    HTMLに貼り付け、必要に応じて各ページ任意のclass名を追加します。
+
+    <Space />
+
+    <Code content={`
+    <ul class="sample">
+     <li class="sample-list"><i aria-hidden="true" class="ecm-icon-arrow-right sample-list-icon"></i>こちら</li>
+     <li class="sample-list"><i aria-hidden="true" class="ecm-icon-check sample-list-icon"></i>チェック</li>
+   </ul>
+    `}/>
+
+    <Space />
+
+2. ページ側CSSで大きさ・色を調整してください。Web Fontのため、`font-size/color` で変更してください。
+
+    <Space />
+
+    <Code language='css' content={`
+    .sample-list-icon {
+     /* アイコンの色を設定 */
+     color: #bf0000;
+     /* アイコンの大きさを設定 */
+     font-size: 24px;
+   }
+    `}/>
+
+### 注意事項
+
+- デザインレギュレーションの変更に伴って、モジュールの更新に関わらず表示されるアイコンが変わる可能性があります。ご了承下さい。
+- **それぞれのアイコンには利用目的があります。必ずディレクター・デザイナーの指示に基づいてご利用ください。**
+- モジュールのクラス名には直接スタイルを設定せず、ページ側で追加したクラス名にスタイルを設定してください。

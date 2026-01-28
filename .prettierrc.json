@@ -1,0 +1,27 @@
+{
+  "trailingComma": "es5",
+  "semi": false,
+  "singleQuote": true,
+  "jsxSingleQuote": true,
+  "printWidth": 120,
+  "singleAttributePerLine": true,
+  "htmlWhitespaceSensitivity": "strict",
+  "plugins": ["prettier-plugin-organize-attributes"],
+  "attributeGroups": [
+    "^key$",
+    "^id$",
+    "^style$",
+    "^class$",
+    "^className$",
+    "^href$",
+    "^src$",
+    "^data-lazy-loading$",
+    "^alt$",
+    "^data-module-name$",
+    "^data-",
+    "^aria-",
+    "^role$",
+    "^tabindex$",
+    "$DEFAULT"
+  ]
+}

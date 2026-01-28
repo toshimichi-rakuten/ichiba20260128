@@ -1,0 +1,172 @@
+{
+  "data": [
+    {
+      "genre_id": 100371,
+      "genre_name": "レディース ファッション"
+    },
+    {
+      "genre_id": 551177,
+      "genre_name": "メンズ ファッション"
+    },
+    {
+      "genre_id": 111078,
+      "genre_name": "キッズ ファッション"
+    },
+    {
+      "genre_id": 100433,
+      "genre_name": "インナー・下着・ナイトウェア"
+    },
+    {
+      "genre_id": 216131,
+      "genre_name": "バッグ・小物・ブランド雑貨"
+    },
+    {
+      "genre_id": 558885,
+      "genre_name": "靴"
+    },
+    {
+      "genre_id": 558929,
+      "genre_name": "腕時計"
+    },
+    {
+      "genre_id": 216129,
+      "genre_name": "ジュエリー・アクセサリー"
+    },
+    {
+      "genre_id": 100227,
+      "genre_name": "食品"
+    },
+    {
+      "genre_id": 551167,
+      "genre_name": "スイーツ・お菓子"
+    },
+    {
+      "genre_id": 100316,
+      "genre_name": "水・ソフトドリンク"
+    },
+    {
+      "genre_id": 510915,
+      "genre_name": "ビール・洋酒"
+    },
+    {
+      "genre_id": 100317,
+      "genre_name": "ワイン"
+    },
+    {
+      "genre_id": 510901,
+      "genre_name": "日本酒・焼酎"
+    },
+    {
+      "genre_id": 215783,
+      "genre_name": "日用品雑貨・文房具・手芸"
+    },
+    {
+      "genre_id": 100938,
+      "genre_name": "ダイエット・健康"
+    },
+    {
+      "genre_id": 551169,
+      "genre_name": "医薬品・コンタクト・介護"
+    },
+    {
+      "genre_id": 100939,
+      "genre_name": "美容・コスメ・香水"
+    },
+    {
+      "genre_id": 100533,
+      "genre_name": "キッズ・ベビー・マタニティ"
+    },
+    {
+      "genre_id": 566382,
+      "genre_name": "おもちゃ"
+    },
+    {
+      "genre_id": 562637,
+      "genre_name": "家電"
+    },
+    {
+      "genre_id": 565004,
+      "genre_name": "光回線・モバイル通信"
+    },
+    {
+      "genre_id": 211742,
+      "genre_name": "TV・オーディオ・カメラ"
+    },
+    {
+      "genre_id": 564500,
+      "genre_name": "スマートフォン・タブレット"
+    },
+    {
+      "genre_id": 100026,
+      "genre_name": "パソコン・周辺機器"
+    },
+    {
+      "genre_id": 101070,
+      "genre_name": "スポーツ・アウトドア"
+    },
+    {
+      "genre_id": 101077,
+      "genre_name": "ゴルフ"
+    },
+    {
+      "genre_id": 503190,
+      "genre_name": "車用品・バイク用品"
+    },
+    {
+      "genre_id": 101114,
+      "genre_name": "車・バイク"
+    },
+    {
+      "genre_id": 100804,
+      "genre_name": "インテリア・寝具・収納"
+    },
+    {
+      "genre_id": 558944,
+      "genre_name": "キッチン用品・食器・調理器具"
+    },
+    {
+      "genre_id": 101213,
+      "genre_name": "ペット・ペットグッズ"
+    },
+    {
+      "genre_id": 100005,
+      "genre_name": "花・ガーデン・DIY"
+    },
+    {
+      "genre_id": 101438,
+      "genre_name": "サービス・リフォーム"
+    },
+    {
+      "genre_id": 101205,
+      "genre_name": "テレビゲーム"
+    },
+    {
+      "genre_id": 101240,
+      "genre_name": "CD・DVD"
+    },
+    {
+      "genre_id": 101164,
+      "genre_name": "ホビー"
+    },
+    {
+      "genre_id": 112493,
+      "genre_name": "楽器・音響器材"
+    },
+    {
+      "genre_id": 200162,
+      "genre_name": "本・雑誌・コミック"
+    },
+    {
+      "genre_id": 111427,
+      "genre_name": "住宅・不動産"
+    },
+    {
+      "genre_id": 101381,
+      "genre_name": "カタログギフト・チケット"
+    },
+    {
+      "genre_id": 100000,
+      "genre_name": "百貨店・総合通販・ギフト"
+    }
+  ]
+}

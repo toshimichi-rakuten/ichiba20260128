@@ -1,0 +1,6 @@
+.sm-ecm-ad-horizontal-image-100123 {
+  @include screen('md', 'down') {
+    // Copy of existing code
+    width: calc((100vw - 164px) / 12 * 4 + 36px);
+  }
+}

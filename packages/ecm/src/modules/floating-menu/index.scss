@@ -1,0 +1,41 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+.ecm-floating-menu {
+  display: flex;
+  flex-direction: column;
+
+  @include screen('md', 'up') {
+    display: none;
+  }
+
+  @media screen and (width >= 1280px) {
+    display: flex;
+  }
+}
+
+.ecm-floating-nav-pill {
+  @include text-xs;
+  @include colorize-link($color-white);
+
+  padding: $space-12;
+  border-radius: $space-20 0 0 $space-20;
+  background-color: #7b7b7b;
+  transition: background-color 0.2s ease;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: $color-black;
+      text-decoration: none;
+    }
+  }
+
+  &[data-in-viewport='true'] {
+    background-color: $color-black;
+  }
+
+  // Only highlight the first element with 'data-in-viewport'.
+  &[data-in-viewport='true'] + &[data-in-viewport='true'] {
+    background-color: #7b7b7b;
+  }
+}

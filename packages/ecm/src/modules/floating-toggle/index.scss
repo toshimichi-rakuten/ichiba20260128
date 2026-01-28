@@ -1,0 +1,51 @@
+@import '../../_scss/variables';
+@import '../../_scss/mixins';
+
+$body-width: 166px;
+$body-height: 85.6px;
+
+.ecm-floating-toggle {
+  display: flex;
+  height: $body-height;
+}
+
+.ecm-floating-trigger {
+  @include text-xs;
+
+  font-weight: 700;
+  border: 0;
+  background-color: $color-gray-1;
+  display: flex;
+  flex-direction: column;
+  padding: $space-12;
+  color: $color-white;
+  border-radius: $space-8 0 0 $space-8;
+
+  .ecm-icon-arrow-left {
+    @include text-base;
+
+    padding-top: $space-4;
+    padding-bottom: $space-4;
+  }
+
+  &[aria-expanded='true'] {
+    .ecm-icon-arrow-left {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.ecm-floating-content {
+  width: $body-width;
+  padding: $space-8;
+  transition: width 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-white;
+
+  &[aria-hidden='true'] {
+    display: flex;
+    width: 0;
+    padding: 0;
+  }
+}

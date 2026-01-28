@@ -1,0 +1,25 @@
+<div id="customArea"> </div>
+
+<script>
+  let customArea = document.getElementById('customArea')
+  customArea.innerHTML = `
+    <div 
+      data-testid="autoparameter"
+      data-module-name="ecm-auto-parameter"
+      data-param-name="s-id"
+      data-area-name="area_01"
+    >
+      <a href="https://www.rakuten.co.jp/">One</a>
+      <a href="https://www.rakuten.co.jp/">Two</a>
+      <a href="https://www.rakuten.co.jp/">Three</a>
+    </div>
+  `
+
+  document.dispatchEvent(
+    new CustomEvent('ecmInitializeBlock', {
+      detail: {
+        target: document.body,
+      },
+    })
+  )
+</script>

@@ -1,0 +1,370 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Code from 'src/components/Code'
+import Space from 'src/components/Space'
+import { Tabs } from '@mantine/core'
+import defaultHtml from 'ecm/src/modules/auto-parameter/default.html'
+
+export const meta = {
+  title: 'オートパラメーター',
+  description: 'オートパラメーターは、ページ内のリンクにl-id, s-idなどのパラメーターを自動付与するプラグイン',
+  url: '/ecm/docs/js/auto-parameter',
+  tags: ['autoparameter', 'script'],
+}
+
+# オートパラメーター
+
+オートパラメーターは、ページ内のリンクに`l-id`, `s-id`などのパラメーターを自動付与するプラグインです。
+
+## 主な機能・特徴
+
+- リンククリック時にパラメーターを付与するため、サーチエンジンにパラメーター付きのリンクがキャッシュされるのを防ぎます。
+- ページ内の指定した範囲に、同じルールでパラメーターを付与できるため、共通化（＝インクルード化）したパーツにページごとに違うパラメーターを付与できます。
+- 特定のドメイン（event, www, itemなど）だけに絞って指定のパラメーターを付与できます。
+- リンク順に連番でパラメーターを付与できます。
+
+## 使い方
+
+1. パラメーターを設定したい範囲を `div` 要素などを使って囲み、オートパラメーターのモジュール名 `data-module-name="ecm-auto-parameter"` を付けます。
+
+    <Space />
+
+    <Code content={defaultHtml}/>
+
+    <Space />
+
+2. 設定したいパラメーター名を `data-param-name` で設定します。
+
+    <Space />
+
+    <Code content={`
+    <div data-module-name="ecm-auto-parameter" data-param-name="s-id">
+     <a target="_blank" href="https://www.rakuten.co.jp/">Rakuten</a>
+     <a target="_blank" href="https://www.rakuten.co.jp/">Rakuten</a>
+     <a target="_blank" href="https://www.rakuten.co.jp/">Rakuten</a>
+     <a target="_blank" href="https://www.rakuten.co.jp/">Rakuten</a>
+   </div>
+    `}/>
+
+    <Space />
+
+    **※何も指定しなかった場合は `l-id` が設定されます。**
+
+    <Space />
+
+3. 設定したいパラメーターの値の共通部分を、`data-page-name` を使って設定します。
+
+    <Space />
+
+    <Code content={`
+    <div data-module-name="ecm-auto-parameter" data-param-name="s-id" data-page-name="campaign_pc_leftnavi">
+     <a target="_blank" href="https://www.rakuten.co.jp/">Rakuten</a>
+     <a target="_blank" href="https://www.rakuten.co.jp/">Rakuten</a>
+     <a target="_blank" href="https://www.rakuten.co.jp/">Rakuten</a>
+     <a target="_blank" href="https://www.rakuten.co.jp/">Rakuten</a>
+   </div>
+    `}/>
+
+    <Space />
+
+    <Note type='info'>
+      `data-page-name` に何も設定しなかった場合は、表示しているページのURL（リンク先のURLではありません）から文字列が生成されます。
+    </Note>
+
+    <Space />
+
+    > **例:**  
+    > `https://event.rakuten.co.jp/campaign/newcampaign/` → `event_campaign_newcampaign`
+
+    {/* **例:**
+    <Note type='info'>
+      https://event.rakuten.co.jp/campaign/newcampaign/  
+      ↓  
+      `event_campaign_newcampaign`
+    </Note> */}
+
+    <Space />
+
+    `data-page-name` を利用しない場合は、`data-area-name` を使って共通部分を設定できます。
+
+    <Space />
+
+    <Code content={`
+    <div data-module-name="ecm-auto-parameter" data-param-name="s-id" data-area-name="pc_leftnavi">
+     <a target="_blank" href="https://www.rakuten.co.jp/">Rakuten</a>
+     <a target="_blank" href="https://www.rakuten.co.jp/">Rakuten</a>
+     <a target="_blank" href="https://www.rakuten.co.jp/">Rakuten</a>
+     <a target="_blank" href="https://www.rakuten.co.jp/">Rakuten</a>
+   </div>
+    `}/>
+
+    <Space />
+
+    > **例:**  
+    > `https://event.rakuten.co.jp/campaign/newcampaign/` で `data-area-name="pc_leftnavi"` を設定 → `event_campaign_newcampaign_pc_leftnavi` 
+
+    <Space />
+
+4. パラメーター値の個別部分は、リンクそれぞれに `data-link-name` を使って設定します。
+
+    <Space />
+
+    <Code content={`
+    <div data-module-name="ecm-auto-parameter" data-param-name="s-id" data-page-name="campaign_pc_leftnavi">
+     <a target="_blank" href="https://www.rakuten.co.jp/" data-link-name="ichibatop">Rakuten</a>
+     <a target="_blank" href="https://www.rakuten.co.jp/" data-link-name="dealtop">Rakuten</a>
+     <a target="_blank" href="https://www.rakuten.co.jp/" data-link-name="guide">Rakuten</a>
+     <a target="_blank" href="https://www.rakuten.co.jp/" data-link-name="traveltop">Rakuten</a>
+   </div>
+    `}/>
+
+    <Space />
+
+    上記の設定をすると、それぞれのリンクには以下のようにパラメーターが追加されます。
+
+    <Space />
+
+    <Code content={`
+    https://www.rakuten.co.jp/?s-id=campaign_pc_leftnavi_ichibatop
+   https://www.rakuten.co.jp/?s-id=campaign_pc_leftnavi_dealtop
+   https://www.rakuten.co.jp/?s-id=campaign_pc_leftnavi_guide
+   https://www.rakuten.co.jp/?s-id=campaign_pc_leftnavi_traveltop
+    `}/>
+
+    <Space />
+
+    `data-link-name` を設定しなかった場合は、リンク順で連番が追加されます。
+
+    <Space />
+
+    <Code content={`
+    https://www.rakuten.co.jp/?s-id=campaign_pc_leftnavi_1
+   https://www.rakuten.co.jp/?s-id=campaign_pc_leftnavi_2
+   https://www.rakuten.co.jp/?s-id=campaign_pc_leftnavi_3
+   https://www.rakuten.co.jp/?s-id=campaign_pc_leftnavi_4
+    `}/>
+
+## その他の設定
+
+### 連番をオフに設定する
+
+`data-link-name` が設定されていないリンクには、デフォルトではリンク順に応じて連番が付与されます。  
+連番の設定をオフにする場合は、`data-count="false"` を設定してください。
+
+<Space />
+
+<Code content={`
+<div data-module-name="ecm-auto-parameter" data-count="false">
+`}/>
+
+<Space />
+
+※連番をオフにした場合、対象のリンクには `data-page-name`, `data-area-name` で設定したパラメーターのみが追加されます。
+
+### JSパーツにパラメーターを設定する
+
+スライダーなどのJavaScriptパーツでは、ブラウザで最初にページを表示した後にHTMLの内容がAPIからのデータ取得やユーザーの操作によって動的（ダイナミック）に変化します。  
+JavaScriptパーツにパラメーターを設定する場合は、`data-dynamic="true"` を設定してください。
+
+<Space />
+
+<Code content={`
+<div data-module-name="ecm-auto-parameter" data-dynamic="true">
+`}/>
+
+<Space />
+
+ ※`data-dynamic="true"` を設定した場合、リンク数の連番は自動でオフになります（動的にリンク数が変化するため）。
+
+### ドメインを絞ってパラメーターを設定する
+
+event.rakuten.co.jpのページのみにパラメーターを設定したい場合など、特定のドメインのリンクに限定してパラメーターを設定するには、`data-target-domain` にドメイン名を設定してください。  
+ドメイン名は `event.rakuten.co.jp` のように書いても動作しますが、`event` のように省略しても構いません（ドメイン名に部分一致するかどうかで判定しています）。
+
+<Space />
+
+<Code content={`
+<div data-module-name="ecm-auto-parameter" data-target-domain="event">
+`}/>
+
+<Space />
+
+複数のドメインを指定したい場合は、`,` で区切って複数指定できます。
+
+<Space />
+
+<Code content={`
+<div data-module-name="ecm-auto-parameter" data-target-domain="www,item">
+`}/>
+
+### ドメインごとに違うパラメーターを設定する
+
+eventには `l-id`、itemには `s-id` といったように、ドメインごとに違うパラメーターを設定する場合は、Auto Parameterの設定を複数用意して入れ子に設定してください。
+
+<Space />
+
+<Code content={`
+<div data-module-name="ecm-auto-parameter" data-param-name="l-id" data-target-domain="event" data-page-name="campaign_pc_leftnavi">
+  <div data-module-name="ecm-auto-parameter" data-param-name="s-id" data-target-domain="www,travel" data-page-name="campaign_pc_leftnavi">
+    <a target="_blank" href="https://www.rakuten.co.jp/">Rakuten</a>
+    <a target="_blank" href="https://www.rakuten.co.jp/">Rakuten</a>
+    <a target="_blank" href="https://www.rakuten.co.jp/">Rakuten</a>
+    <a target="_blank" href="https://www.rakuten.co.jp/">Rakuten</a>
+  </div>
+</div>
+`}/>
+
+## 応用
+
+### RASTA広告にs-idを付けたい
+
+RASTAのパーツ自体にも `s-id` を付ける設定がありますが、パーツの外から一括で設定したい場合、広告をPC/SP共通化している場合などでお使いください。
+
+<Space />
+
+<Code content={`
+<div data-module-name="ecm-auto-parameter" data-target-domain="grp10" data-param-name="ap" data-page-name="s-id%3Dyourpage_pc_top">
+  ・・・
+</div>
+`}/>
+
+- data-target-domainにRASTAのリダイレクトURL（**grp10**.ias.rakuten.co.jp）を設定
+- data-param-nameにs-idではなくリダイレクトURL用の**ap**をパラメーター名として設定
+- data-page-nameに `s-id%3D` を付けて本来付けたいs-idの値を設定（s-id%3Dはエンコードされた"s-id="です）
+
+## すべての設定
+
+### data-module-name="ecm-auto-parameter" に設定する値
+
+<table class="mdx-table">
+  <thead class="mdx-table-header">
+    <tr>
+      <th style={{width: '18%'}}>data-属性</th>
+      <th style={{width: '12%'}}>型</th>
+      <th style={{width: '12%'}}>初期値</th>
+      <th style={{width: '18%'}}>例</th>
+      <th style={{width: '40%'}}>内容</th>
+    </tr>
+  </thead>
+  <tbody class="mdx-table-body">
+    <tr>
+      <th class="mdx-mono">`data-param-name`</th>
+      <td>文字列</td>
+      <td class="mdx-mono">"l-id"</td>
+      <td class="mdx-mono">
+        "s-id"<br />
+        "scid"
+      </td>
+      <td>付与するパラメーター名を設定します。</td>
+    </tr>
+    <tr>
+      <th class="mdx-mono">`data-page-name`</th>
+      <td>文字列</td>
+      <td class="mdx-mono">"subdomaindirectory..."</td>
+      <td class="mdx-mono">
+        "ss_pc_top"<br />
+        "oseibo_pc_top"
+      </td>
+      <td>パラメーターの値に共通で設定する値を設定します。`data-page-name`を設定しない場合は、ページURLから文字列が自動生成されます。</td>
+    </tr>
+    <tr>
+      <th class="mdx-mono">`data-area-name`</th>
+      <td>文字列</td>
+      <td>" "</td>
+      <td class="mdx-mono">
+        "leftnavi"<br />
+        "floating"<br />
+        "footer"
+      </td>
+      <td>ページ名に続く範囲名を設定します。設定しない場合は何も追加されません。</td>
+    </tr>
+    <tr>
+      <th class="mdx-mono">`data-target-domain`</th>
+      <td>文字列,カンマ区切り文字列</td>
+      <td>" "</td>
+      <td class="mdx-mono">
+        "event"<br />
+        "item,www"<br />
+        "rebates,rakuten-bank"
+      </td>
+      <td>
+        <div>自動付与するリンクのドメイン名を設定します。設定しない場合は、範囲内のすべてのリンク（ページ内アンカーを除く）のすべてが自動付与の対象になります。</div>
+        <div style={{ marginTop: "24px"}}>
+          ドメイン名を設定する場合は、リンク先ドメイン名がマッチするように設定します。<br />
+          ・`event.rakuten.co.jp` に自動付与を設定したい場合<br />
+          ⇒`data-target-domain="event.rakuten.co.jp"`<br />
+          <div style={{ marginTop: "16px"}}>
+            ただし、フルでドメイン名を指定しなくても、ドメイン名の一部がマッチすれば自動付与の対象になります。<br />
+            ・`event.rakuten.co.jp` に自動付与を設定したい場合<br />
+            ⇒`data-target-domain="event"`
+          </div>
+        </div>
+        <div style={{ marginTop: "24px"}}>
+          複数のドメイン名をを対象にする場合は、カンマ区切りでドメイン名を設定します。<br />
+          ・`item.rakuten.co.jp`, `www.rakuten.co.jp` に自動付与を設定したい場合<br />
+          ⇒`data-target-domain="item,www"`
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th class="mdx-mono">`data-count`</th>
+      <td class="mdx-mono">Boolean</td>
+      <td class="mdx-mono">true</td>
+      <td>--</td>
+      <td>リンクのカウントを付与するかどうかを設定します。カウントが不要な場合は、data-count=**"false"** を設定して下さい。</td>
+    </tr>
+    <tr>
+      <th class="mdx-mono">`data-dynamic`</th>
+      <td class="mdx-mono">Boolean</td>
+      <td class="mdx-mono">false</td>
+      <td>--</td>
+      <td>動的リンクにパラメーターを付与するかどうかを設定します。`true`**の場合、カウントは付与されません。**</td>
+    </tr>
+    <tr>
+      <th class="mdx-mono">`data-separator`</th>
+      <td>文字列</td>
+      <td>"\_"</td>
+      <td>
+        "-"  
+        "/"
+      </td>
+      <td>ページ名・エリア名・リンク名を区切る、区切り（＝セパレーター）を設定します。デフォルトは"\_"（アンダースコア）です。ただし、自動で生成されるページ名は既定の通り"\_"で区切られます。</td>
+    </tr>
+    <tr>
+      <th class="mdx-mono">`data-link-name-attribute`</th>
+      <td>文字列,カンマ区切り文字列</td>
+      <td class="mdx-mono">"data-link-name,sc_linkname"</td>
+      <td class="mdx-mono">"class"</td>
+      <td>リンク名を取得する属性を変更します。通常は変更する必要はありませんが、必要に応じてその他の属性（たとえば、classなど）からリンク名を生成したい場合に設定を変更して下さい。</td>
+    </tr>
+  </tbody>
+</table>
+
+### リンクに設定する値 
+
+<table class="mdx-table">
+  <thead class="mdx-table-header">
+    <tr>
+      <th style={{width: '18%'}}>data-属性</th>
+      <th style={{width: '12%'}}>型</th>
+      <th style={{width: '12%'}}>初期値</th>
+      <th style={{width: '18%'}}>例</th>
+      <th style={{width: '40%'}}>内容</th>
+    </tr>
+  </thead>
+  <tbody class="mdx-table-body">
+    <tr>
+      <th class="mdx-mono">`data-link-name`</th>
+      <td>文字列</td>
+      <td>" "</td>
+      <td class="mdx-mono">
+        "guide"<br />
+        "coupon"
+      </td>
+      <td>
+        <div>リンク名を設定します。何も設定しない場合、自動的にカウントが追加されます。ただし、上記の `data-count="false"` が設定されている場合は、カウントも追加されません。</div>
+        <div style={{ marginTop: "16px"}}>※後方互換のため、`sc_linkname` でも動作しますが、原則 `data-link-name` を利用してください。</div>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,6 @@
+node_modules
+apps/module-navi/public
+apps/documents/public
+apps/module-navi/.next
+packages/ecm/global_inc
+packages/rakuten-sans/.storybook/preview-head.html

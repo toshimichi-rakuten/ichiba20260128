@@ -1,0 +1,85 @@
+import Html from 'src/components/Html'
+import Note from 'src/components/Note'
+import Space from 'src/components/Space'
+import Code from 'src/components/Code'
+import { Tabs } from '@mantine/core'
+
+{/** ICW-18716: Do not show actual code. */}
+
+import defaultHtml from 'ecm/src/modules/du-ranking/default.html'
+import default704Html from 'ecm/src/modules/du-ranking/default-704.html'
+import defaultWithTabHtml from 'ecm/src/modules/du-ranking/default-with-tab.html'
+import defaultWithTab704Html from 'ecm/src/modules/du-ranking/default-with-tab-704.html'
+import defaultSpHtml from 'ecm/src/modules/du-ranking/default-sp.html'
+import defaultSpWithTabHtml from 'ecm/src/modules/du-ranking/default-sp-with-tab.html'
+
+export const meta = {
+  title: 'ランキングパーツ',
+  url: '/ecm/docs/ichiba-js/du-ranking',
+  tags: ['ranking'],
+}
+
+# ランキングパーツ
+
+ランキングをパーツ形式で表示することができます。ランキングパーツには様々なランキングを設定をすることが可能です。  
+利用にあたっては、制作依頼を申請しソースコードを受け取ることが必要です。[ランキングパーツ](https://confluence.rakuten-it.com/confluence/pages/viewpage.action?pageId=2736403238)（閲覧は社内環境限定）ページを参照し申請してください。
+
+<Space />
+
+本ページはパーツのレイアウト動作サンプルを表示します。このソースコードは個別ページでは利用できません。
+
+<Space />
+
+<Note type='warn'>
+  スライダー機能はパーツ独自のもので、モジュールのスライダー機能の設定方法とは異なり、本ページでは正しく動作しません。実際のページで確認してください。
+</Note>
+
+## スライダー
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='md704'>PC (横幅704)</Tabs.Tab>
+    <Tabs.Tab value='md960'>PC (横幅960)</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={defaultSpHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='md704'>
+    <Html content={default704Html} device='md' />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='md960'>
+    <Html content={defaultHtml} device='lg' />
+  </Tabs.Panel>
+</Tabs>
+
+## タブ付きスライダー
+
+<Tabs keepMounted={false} defaultValue='sp' styles={{panel: { paddingTop: '16px' }}}>
+  <Tabs.List>
+    <Tabs.Tab value='sp'>SP</Tabs.Tab>
+    <Tabs.Tab value='md704'>PC (横幅704)</Tabs.Tab>
+    <Tabs.Tab value='md960'>PC (横幅960)</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel value='sp'>
+    <Html content={defaultSpWithTabHtml} />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='md704'>
+    <Html content={defaultWithTab704Html} device='md' />
+  </Tabs.Panel>
+
+  <Tabs.Panel value='md960'>
+    <Html content={defaultWithTabHtml} device='lg' />
+  </Tabs.Panel>
+</Tabs>
+
+## for developer
+
+[JSリポジトリ（閲覧は社内限定）](https://git.rakuten-it.com/projects/JP_MALL_GROUP_NAVIGATION/repos/ichiba-javascript/browse/JavaScript/ranking/smartphone)
+
+

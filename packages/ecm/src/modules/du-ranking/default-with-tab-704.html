@@ -1,0 +1,858 @@
+<div
+  id="rnkEventColumn"
+  class="ecm-du-ranking ecm-du-ranking-pc704"
+  data-ratevent="appear"
+  data-ratid="rk_appear_pc"
+>
+  <script
+    id="rnkDailyItem"
+    type="text/template"
+  >
+    <div class="ecm-du-ranking-item">
+      <a class="ecm-du-ranking-item-link" href="#ITEMURL#">
+        <div class="ecm-du-ranking-item-image">#ITEMIMGELE#</div>
+        <div class="ecm-du-ranking-item-rank">#ITEMRNK#<div class="ecm-du-ranking-item-rank-text">位</div></div>
+        <p class="ecm-du-ranking-item-name">#ITEMNAME#</p>
+        <p class="ecm-du-ranking-item-price">#KAKAKU#</p>
+        <div class="ecm-du-ranking-item-review">
+          <div class="ecm-du-ranking-item-review-star">#ITEMREVIEW#</div>
+          <p class="ecm-du-ranking-item-review-count">#REVIEWNUM#</p>
+        </div>
+      </a>
+    </div>
+  </script>
+  <script
+    id="rnkGenreTab"
+    type="text/template"
+  >
+    <div id="#GENRELINKEVENT#_tab" class="ecm-du-ranking-tab">
+      <div id="#GENRELINKEVENT#_linked" class="ecm-du-ranking-link">
+    		<div id="#GENRELINKEVENT#">#ITEMNAME#</div>
+    	</div>
+      <div id="#GENRELINKEVENT#_unlink" class="ecm-du-ranking-tab-unlink" style="display:none;">
+        <div>#ITEMNAME#</div>
+      </div>
+    </div>
+  </script>
+  <div
+    id="rnkDailyConfig"
+    disptab="1"
+    autoresize="1"
+    ajaxtimer="10"
+    mouseoverdelay="300"
+    imagesize="280"
+    autoslide="0"
+    updatetype="1"
+    sidtype="0"
+    maxitem="4"
+    sid="hogehoge"
+    svrgrp="1"
+    reviewlid="rk_parts_review"
+  ></div>
+
+  <ul
+    id="rnkDailyGenreList"
+    style="display: none"
+  >
+    <li
+      gid="216129"
+      du="7"
+      ge="9"
+      offset="30"
+      unqid="rk_xmas2023_01"
+      eventid="xmas2023"
+      itemname="アクセサリー"
+    >
+      アクセサリー
+    </li>
+    <li
+      gid="216131"
+      du="7"
+      ge="9"
+      offset="30"
+      unqid="rk_xmas2023_02"
+      eventid="xmas2023"
+      itemname="バッグ・ブランド"
+    >
+      バッグ・ブランド
+    </li>
+    <li
+      gid="551167"
+      du="7"
+      ge="9"
+      offset="30"
+      unqid="rk_xmas2023_03"
+      eventid="xmas2023"
+      itemname="スイーツ・お菓子"
+    >
+      スイーツ・お菓子
+    </li>
+    <li
+      gid="100227"
+      du="7"
+      ge="9"
+      offset="30"
+      unqid="rk_xmas2023_04"
+      eventid="xmas2023"
+      itemname="グルメ"
+    >
+      グルメ
+    </li>
+    <li
+      gid="566382"
+      du="7"
+      ge="9"
+      offset="30"
+      unqid="rk_xmas2023_05"
+      eventid="xmas2023"
+      itemname="おもちゃ"
+    >
+      おもちゃ
+    </li>
+    <li
+      gid="100804"
+      du="7"
+      ge="9"
+      offset="30"
+      unqid="rk_xmas2023_06"
+      eventid="xmas2023"
+      itemname="インテリア"
+    >
+      インテリア
+    </li>
+    <li
+      gid="213795"
+      du="7"
+      ge="9"
+      offset="30"
+      unqid="rk_xmas2023_07"
+      eventid="xmas2023"
+      itemname="パーティー・イベント用品"
+    >
+      パーティー・イベント用品
+    </li>
+    <li
+      gid="100939"
+      du="7"
+      ge="9"
+      offset="30"
+      unqid="rk_xmas2023_08"
+      eventid="xmas2023"
+      itemname="美容・コスメ・香水"
+    >
+      美容・コスメ・香水
+    </li>
+  </ul>
+  <div
+    id="rnkDailyExistItemDisplay"
+    class="ecm-du-ranking-pc704"
+  >
+    <div class="ecm-du-ranking-header">
+      <h3 class="ecm-du-ranking-header-title">リアルタイムランキング</h3>
+      <p class="ecm-du-ranking-header-link">
+        <span id="rnkDailyUpdateDate">12月20日(水) 19:15</span>
+      </p>
+    </div>
+    <div id="rnkRankingColumn">
+      <div id="rnkGenreTabBase">
+        <div
+          id="rnkDailyGenreTabs"
+          class="ecm-du-ranking-genre-tab"
+        >
+          <div
+            id="rnkDailyGenrePrevButton"
+            style="visibility: visible"
+            class="ecm-rank-tab-prev-btn"
+          >
+            <a
+              class="ecm-rank-tab-prev-btn-link"
+              href="#"
+              ><i
+                class="ecm-icon-chevron-left"
+                aria-hidden="true"
+              ></i
+            ></a>
+          </div>
+          <div
+            id="rnkDailyGenreItemsDisplay"
+            class="ecm-du-ranking-genre-tab-display"
+          >
+            <div
+              id="rnkDailyGenreLink_0_tab"
+              style="position: absolute; z-index: 100; left: 0px"
+              class="ecm-du-ranking-tab"
+            >
+              <div
+                id="rnkDailyGenreLink_0_linked"
+                style="display: none"
+                class="ecm-du-ranking-link"
+              >
+                <div id="rnkDailyGenreLink_0">アクセサリー</div>
+              </div>
+              <div
+                id="rnkDailyGenreLink_0_unlink"
+                class="ecm-du-ranking-tab-unlink"
+              >
+                <div>アクセサリー</div>
+              </div>
+            </div>
+
+            <div
+              id="rnkDailyGenreLink_1_tab"
+              style="position: absolute; z-index: 100; left: 114px"
+              class="ecm-du-ranking-tab"
+            >
+              <div
+                id="rnkDailyGenreLink_1_linked"
+                class="ecm-du-ranking-link"
+              >
+                <div id="rnkDailyGenreLink_1">バッグ・ブランド</div>
+              </div>
+              <div
+                id="rnkDailyGenreLink_1_unlink"
+                style="display: none"
+                class="ecm-du-ranking-tab-unlink"
+              >
+                <div>バッグ・ブランド</div>
+              </div>
+            </div>
+
+            <div
+              id="rnkDailyGenreLink_2_tab"
+              style="position: absolute; z-index: 100; left: 228px"
+              class="ecm-du-ranking-tab"
+            >
+              <div
+                id="rnkDailyGenreLink_2_linked"
+                class="ecm-du-ranking-link"
+              >
+                <div id="rnkDailyGenreLink_2">スイーツ・お菓子</div>
+              </div>
+              <div
+                id="rnkDailyGenreLink_2_unlink"
+                style="display: none"
+                class="ecm-du-ranking-tab-unlink"
+              >
+                <div>スイーツ・お菓子</div>
+              </div>
+            </div>
+
+            <div
+              id="rnkDailyGenreLink_3_tab"
+              style="position: absolute; z-index: 100; left: 342px"
+              class="ecm-du-ranking-tab"
+            >
+              <div
+                id="rnkDailyGenreLink_3_linked"
+                class="ecm-du-ranking-link"
+              >
+                <div id="rnkDailyGenreLink_3">グルメ</div>
+              </div>
+              <div
+                id="rnkDailyGenreLink_3_unlink"
+                style="display: none"
+                class="ecm-du-ranking-tab-unlink"
+              >
+                <div>グルメ</div>
+              </div>
+            </div>
+
+            <div
+              id="rnkDailyGenreLink_4_tab"
+              style="position: absolute; z-index: 100; left: 456px"
+              class="ecm-du-ranking-tab"
+            >
+              <div
+                id="rnkDailyGenreLink_4_linked"
+                class="ecm-du-ranking-link"
+              >
+                <div id="rnkDailyGenreLink_4">おもちゃ</div>
+              </div>
+              <div
+                id="rnkDailyGenreLink_4_unlink"
+                style="display: none"
+                class="ecm-du-ranking-tab-unlink"
+              >
+                <div>おもちゃ</div>
+              </div>
+            </div>
+
+            <div
+              id="rnkDailyGenreLink_5_tab"
+              style="position: absolute; z-index: 100; left: 570px; display: none"
+              class="ecm-du-ranking-tab"
+            >
+              <div
+                id="rnkDailyGenreLink_5_linked"
+                class="ecm-du-ranking-link"
+              >
+                <div id="rnkDailyGenreLink_5">インテリア</div>
+              </div>
+              <div
+                id="rnkDailyGenreLink_5_unlink"
+                style="display: none"
+                class="ecm-du-ranking-tab-unlink"
+              >
+                <div>インテリア</div>
+              </div>
+            </div>
+
+            <div
+              id="rnkDailyGenreLink_6_tab"
+              style="position: absolute; z-index: 100; left: 684px; display: none"
+              class="ecm-du-ranking-tab"
+            >
+              <div
+                id="rnkDailyGenreLink_6_linked"
+                class="ecm-du-ranking-link"
+              >
+                <div id="rnkDailyGenreLink_6">パーティー・イベント用品</div>
+              </div>
+              <div
+                id="rnkDailyGenreLink_6_unlink"
+                style="display: none"
+                class="ecm-du-ranking-tab-unlink"
+              >
+                <div>パーティー・イベント用品</div>
+              </div>
+            </div>
+
+            <div
+              id="rnkDailyGenreLink_7_tab"
+              style="position: absolute; z-index: 100; left: 798px; display: none"
+              class="ecm-du-ranking-tab"
+            >
+              <div
+                id="rnkDailyGenreLink_7_linked"
+                class="ecm-du-ranking-link"
+              >
+                <div id="rnkDailyGenreLink_7">美容・コスメ・香水</div>
+              </div>
+              <div
+                id="rnkDailyGenreLink_7_unlink"
+                style="display: none"
+                class="ecm-du-ranking-tab-unlink"
+              >
+                <div>美容・コスメ・香水</div>
+              </div>
+            </div>
+          </div>
+          <div
+            id="rnkDailyGenreNextButton"
+            style="visibility: visible"
+            class="ecm-rank-tab-next-btn"
+          >
+            <a
+              class="ecm-rank-tab-next-btn-link"
+              href="#"
+              ><i
+                class="ecm-icon-chevron-right"
+                aria-hidden="true"
+              ></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div
+        id="rnkTabSet"
+        style="display: grid"
+        class="ecm-rank-tab-set"
+      >
+        <div
+          id="rnkTabItemdiv_#GENRELINKEVENT#"
+          style="height: 0px; visibility: hidden"
+          class="ecm-rank-tab-item-div"
+        >
+          <div id="rnkDailyPrevButton_#GENRELINKEVENT#">
+            <a class="ecm-rank-link-prev">
+              <div
+                class="ecm-rank-link-prev-btn"
+                href="#"
+              >
+                <i
+                  class="ecm-icon-chevron-left"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </a>
+          </div>
+          <div
+            id="rnkDailyItemsDisplay_#GENRELINKEVENT#"
+            class="ecm-rank-wrap"
+          ></div>
+          <div id="rnkDailyNextButton_#GENRELINKEVENT#">
+            <a class="ecm-rank-link-next">
+              <div
+                class="ecm-rank-link-next-btn"
+                href="#"
+              >
+                <i
+                  class="ecm-icon-chevron-right"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div
+          id="rnkTabItemdiv_rnkDailyGenreLink_0"
+          style="height: 223px; visibility: visible"
+          class="ecm-rank-tab-item-div"
+        >
+          <div id="rnkDailyPrevButton_rnkDailyGenreLink_0">
+            <a
+              style="display: none"
+              class="ecm-rank-link-prev"
+            >
+              <div
+                class="ecm-rank-link-prev-btn"
+                href="#"
+              >
+                <i
+                  class="ecm-icon-chevron-left"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </a>
+          </div>
+          <div
+            id="rnkDailyItemsDisplay_rnkDailyGenreLink_0"
+            class="ecm-rank-wrap"
+          >
+            <div style="position: absolute; width: 100%; float: none">
+              <div
+                style="z-index: 2; opacity: 1; position: relative; width: 24.75%"
+                class="ecm-du-ranking-item"
+              >
+                <a
+                  class="ecm-du-ranking-item-link"
+                  href="https://item.rakuten.co.jp/umu/pn0502/?s-id=rk_xmas2023_01"
+                >
+                  <div class="ecm-du-ranking-item-image">
+                    <img src="https://tshop.r10s.jp/umu/cabinet/white_bg/pn0502.jpg?fitin=280:280" />
+                  </div>
+                  <div class="ecm-du-ranking-item-rank">
+                    1
+                    <div class="ecm-du-ranking-item-rank-text">位</div>
+                  </div>
+                  <p class="ecm-du-ranking-item-name">ペンダントトップ ダイヤモンド 0.05ct …</p>
+                  <p class="ecm-du-ranking-item-price">15,180円</p>
+                </a>
+                <div class="ecm-du-ranking-item-review">
+                  <a
+                    class="ecm-du-ranking-item-link"
+                    href="https://item.rakuten.co.jp/umu/pn0502/?s-id=rk_xmas2023_01"
+                  >
+                    <div class="ecm-du-ranking-item-review-star">
+                      <img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10_half.gif"
+                      />
+                    </div>
+                  </a>
+                  <p class="ecm-du-ranking-item-review-count">
+                    <a
+                      class="ecm-du-ranking-item-link"
+                      href="https://item.rakuten.co.jp/umu/pn0502/?s-id=rk_xmas2023_01"
+                    ></a
+                    ><a href="https://review.rakuten.co.jp/item/1/200555_10006087/1.1/?l-id=rk_parts_review">(32件)</a>
+                  </p>
+                </div>
+              </div>
+              <div
+                style="z-index: 2; opacity: 1; position: relative; width: 24.75%"
+                class="ecm-du-ranking-item"
+              >
+                <a
+                  class="ecm-du-ranking-item-link"
+                  href="https://item.rakuten.co.jp/carat/1005780/?s-id=rk_xmas2023_01"
+                >
+                  <div class="ecm-du-ranking-item-image">
+                    <img src="https://tshop.r10s.jp/carat/cabinet/pierce-hoop/sar11ks.jpg?fitin=280:280" />
+                  </div>
+                  <div class="ecm-du-ranking-item-rank">
+                    2
+                    <div class="ecm-du-ranking-item-rank-text">位</div>
+                  </div>
+                  <p class="ecm-du-ranking-item-name">K18中折れ式フープピアス(11mmラウンド)(…</p>
+                  <p class="ecm-du-ranking-item-price">26,400円</p>
+                </a>
+                <div class="ecm-du-ranking-item-review">
+                  <a
+                    class="ecm-du-ranking-item-link"
+                    href="https://item.rakuten.co.jp/carat/1005780/?s-id=rk_xmas2023_01"
+                  >
+                    <div class="ecm-du-ranking-item-review-star">
+                      <img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10_half.gif"
+                      />
+                    </div>
+                  </a>
+                  <p class="ecm-du-ranking-item-review-count">
+                    <a
+                      class="ecm-du-ranking-item-link"
+                      href="https://item.rakuten.co.jp/carat/1005780/?s-id=rk_xmas2023_01"
+                    ></a
+                    ><a href="https://review.rakuten.co.jp/item/1/194888_10011272/1.1/?l-id=rk_parts_review">(93件)</a>
+                  </p>
+                </div>
+              </div>
+              <div
+                style="z-index: 2; opacity: 1; position: relative; width: 24.75%"
+                class="ecm-du-ranking-item"
+              >
+                <a
+                  class="ecm-du-ranking-item-link"
+                  href="https://item.rakuten.co.jp/carat/1146287/?s-id=rk_xmas2023_01"
+                >
+                  <div class="ecm-du-ranking-item-image">
+                    <img src="https://tshop.r10s.jp/carat/cabinet/pierce-hoop/sadks.jpg?fitin=280:280" />
+                  </div>
+                  <div class="ecm-du-ranking-item-rank">
+                    3
+                    <div class="ecm-du-ranking-item-rank-text">位</div>
+                  </div>
+                  <p class="ecm-du-ranking-item-name">K18中折れ式フープピアス(10mmスピンドル…</p>
+                  <p class="ecm-du-ranking-item-price">24,200円</p>
+                </a>
+                <div class="ecm-du-ranking-item-review">
+                  <a
+                    class="ecm-du-ranking-item-link"
+                    href="https://item.rakuten.co.jp/carat/1146287/?s-id=rk_xmas2023_01"
+                  >
+                    <div class="ecm-du-ranking-item-review-star">
+                      <img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10.gif"
+                      /><img
+                        class="rnkReviewStar"
+                        src="https://r.r10s.jp/com/img/home/201306/ranking/review_star10_half.gif"
+                      />
+                    </div>
+                  </a>
+                  <p class="ecm-du-ranking-item-review-count">
+                    <a
+                      class="ecm-du-ranking-item-link"
+                      href="https://item.rakuten.co.jp/carat/1146287/?s-id=rk_xmas2023_01"
+                    ></a
+                    ><a href="https://review.rakuten.co.jp/item/1/194888_10012319/1.1/?l-id=rk_parts_review">(317件)</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="rnkDailyNextButton_rnkDailyGenreLink_0">
+            <a
+              style="display: none"
+              class="ecm-rank-link-next"
+            >
+              <div
+                class="ecm-rank-link-next-btn"
+                href="#"
+              >
+                <i
+                  class="ecm-icon-chevron-right"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div
+          id="rnkTabItemdiv_rnkDailyGenreLink_1"
+          style="height: 0px; visibility: hidden"
+          class="ecm-rank-tab-item-div"
+        >
+          <div id="rnkDailyPrevButton_rnkDailyGenreLink_1">
+            <a class="ecm-rank-link-prev">
+              <div
+                class="ecm-rank-link-prev-btn"
+                href="#"
+              >
+                <i
+                  class="ecm-icon-chevron-left"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </a>
+          </div>
+          <div
+            id="rnkDailyItemsDisplay_rnkDailyGenreLink_1"
+            class="ecm-rank-wrap"
+          ></div>
+          <div id="rnkDailyNextButton_rnkDailyGenreLink_1">
+            <a class="ecm-rank-link-next">
+              <div
+                class="ecm-rank-link-next-btn"
+                href="#"
+              >
+                <i
+                  class="ecm-icon-chevron-right"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div
+          id="rnkTabItemdiv_rnkDailyGenreLink_2"
+          style="height: 0px; visibility: hidden"
+          class="ecm-rank-tab-item-div"
+        >
+          <div id="rnkDailyPrevButton_rnkDailyGenreLink_2">
+            <a class="ecm-rank-link-prev">
+              <div
+                class="ecm-rank-link-prev-btn"
+                href="#"
+              >
+                <i
+                  class="ecm-icon-chevron-left"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </a>
+          </div>
+          <div
+            id="rnkDailyItemsDisplay_rnkDailyGenreLink_2"
+            class="ecm-rank-wrap"
+          ></div>
+          <div id="rnkDailyNextButton_rnkDailyGenreLink_2">
+            <a class="ecm-rank-link-next">
+              <div
+                class="ecm-rank-link-next-btn"
+                href="#"
+              >
+                <i
+                  class="ecm-icon-chevron-right"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div
+          id="rnkTabItemdiv_rnkDailyGenreLink_3"
+          style="height: 0px; visibility: hidden"
+          class="ecm-rank-tab-item-div"
+        >
+          <div id="rnkDailyPrevButton_rnkDailyGenreLink_3">
+            <a class="ecm-rank-link-prev">
+              <div
+                class="ecm-rank-link-prev-btn"
+                href="#"
+              >
+                <i
+                  class="ecm-icon-chevron-left"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </a>
+          </div>
+          <div
+            id="rnkDailyItemsDisplay_rnkDailyGenreLink_3"
+            class="ecm-rank-wrap"
+          ></div>
+          <div id="rnkDailyNextButton_rnkDailyGenreLink_3">
+            <a class="ecm-rank-link-next">
+              <div
+                class="ecm-rank-link-next-btn"
+                href="#"
+              >
+                <i
+                  class="ecm-icon-chevron-right"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div
+          id="rnkTabItemdiv_rnkDailyGenreLink_4"
+          style="height: 0px; visibility: hidden"
+          class="ecm-rank-tab-item-div"
+        >
+          <div id="rnkDailyPrevButton_rnkDailyGenreLink_4">
+            <a class="ecm-rank-link-prev">
+              <div
+                class="ecm-rank-link-prev-btn"
+                href="#"
+              >
+                <i
+                  class="ecm-icon-chevron-left"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </a>
+          </div>
+          <div
+            id="rnkDailyItemsDisplay_rnkDailyGenreLink_4"
+            class="ecm-rank-wrap"
+          ></div>
+          <div id="rnkDailyNextButton_rnkDailyGenreLink_4">
+            <a class="ecm-rank-link-next">
+              <div
+                class="ecm-rank-link-next-btn"
+                href="#"
+              >
+                <i
+                  class="ecm-icon-chevron-right"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div
+          id="rnkTabItemdiv_rnkDailyGenreLink_5"
+          style="height: 0px; visibility: hidden"
+          class="ecm-rank-tab-item-div"
+        >
+          <div id="rnkDailyPrevButton_rnkDailyGenreLink_5">
+            <a class="ecm-rank-link-prev">
+              <div
+                class="ecm-rank-link-prev-btn"
+                href="#"
+              >
+                <i
+                  class="ecm-icon-chevron-left"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </a>
+          </div>
+          <div
+            id="rnkDailyItemsDisplay_rnkDailyGenreLink_5"
+            class="ecm-rank-wrap"
+          ></div>
+          <div id="rnkDailyNextButton_rnkDailyGenreLink_5">
+            <a class="ecm-rank-link-next">
+              <div
+                class="ecm-rank-link-next-btn"
+                href="#"
+              >
+                <i
+                  class="ecm-icon-chevron-right"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div
+          id="rnkTabItemdiv_rnkDailyGenreLink_6"
+          style="height: 0px; visibility: hidden"
+          class="ecm-rank-tab-item-div"
+        >
+          <div id="rnkDailyPrevButton_rnkDailyGenreLink_6">
+            <a class="ecm-rank-link-prev">
+              <div
+                class="ecm-rank-link-prev-btn"
+                href="#"
+              >
+                <i
+                  class="ecm-icon-chevron-left"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </a>
+          </div>
+          <div
+            id="rnkDailyItemsDisplay_rnkDailyGenreLink_6"
+            class="ecm-rank-wrap"
+          ></div>
+          <div id="rnkDailyNextButton_rnkDailyGenreLink_6">
+            <a class="ecm-rank-link-next">
+              <div
+                class="ecm-rank-link-next-btn"
+                href="#"
+              >
+                <i
+                  class="ecm-icon-chevron-right"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div
+          id="rnkTabItemdiv_rnkDailyGenreLink_7"
+          style="height: 0px; visibility: hidden"
+          class="ecm-rank-tab-item-div"
+        >
+          <div id="rnkDailyPrevButton_rnkDailyGenreLink_7">
+            <a class="ecm-rank-link-prev">
+              <div
+                class="ecm-rank-link-prev-btn"
+                href="#"
+              >
+                <i
+                  class="ecm-icon-chevron-left"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </a>
+          </div>
+          <div
+            id="rnkDailyItemsDisplay_rnkDailyGenreLink_7"
+            class="ecm-rank-wrap"
+          ></div>
+          <div id="rnkDailyNextButton_rnkDailyGenreLink_7">
+            <a class="ecm-rank-link-next">
+              <div
+                class="ecm-rank-link-next-btn"
+                href="#"
+              >
+                <i
+                  class="ecm-icon-chevron-right"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
