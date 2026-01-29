@@ -1,0 +1,21 @@
+{
+  "command": "corepack pnpm --filter module-navi dev",
+  "serverUrl": "http://localhost:3000",
+  "commitMode": "draft-prs",
+  "allowedCommands": [
+    "npm *",
+    "npx *",
+    "pnpm *",
+    "corepack *",
+    "ls *",
+    "cat *",
+    "grep *",
+    "find *",
+    "git status *",
+    "git diff *",
+    "git log *"
+  ],
+  "repoIndexingConfig": {
+    "designSystems": []
+  }
+}
